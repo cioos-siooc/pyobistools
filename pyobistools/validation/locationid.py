@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 from dash import dash_table, dcc, html
+from pyobistools.validation.sub_routines.analyse_colonne import AfficheOccurrenceParValeur
+
 NaN = np.nan
-from app import app
-from validations_bio.sub_routines.analyse_colonne import AfficheOccurrenceParValeur
 
 def validate_locationIDOccurrences(data):
 
