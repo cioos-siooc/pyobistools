@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
 from dash import dash_table, html
+
 NaN = np.nan
 
 
-def basisofrecord_fonction(data):
+def validate_basisofrecord(data):
     data = data.rename(columns=str.lower)
     
     valeur_exemples = ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'MaterialSample', 'Event', 'HumanObservation', 'MachineObservation', 'Taxon', 'Occurrence', 'MaterialCitation']

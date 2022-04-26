@@ -1,15 +1,13 @@
 import asyncio
 import time
-import httpx
 import numpy as np
 import pandas as pd
 NaN = np.nan
 import time
-import requests
  
-from validations_bio.sub_routines.suffix_function  import function_suffix_removal, function_add_suffix
-from validations_bio.sub_routines.analysis_function import names_analyse, names_ids_analyse, names_taxons_ids_analyse
-from validations_bio.sub_routines.tables_function  import names_table, names_ids_tables, names_taxons_ids_tables
+from pyobistools.validation.sub_routines.suffix_function  import function_suffix_removal, function_add_suffix
+from pyobistools.validation.sub_routines.analysis_function import names_analyse, names_ids_analyse, names_taxons_ids_analyse
+from pyobistools.validation.sub_routines.tables_function  import names_table, names_ids_tables, names_taxons_ids_tables
 
 
 def validation_Worms_Itis_fonction(data, value):

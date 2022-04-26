@@ -3,7 +3,7 @@ import pandas as pd
 from dash import dash_table, html
 NaN = np.nan
 
-def occurrencestatus_fonction(data):
+def validate_occurrencestatus(data):
     data = data.rename(columns=str.lower)
 
     valeur_exemples = ['present', 'absent']
