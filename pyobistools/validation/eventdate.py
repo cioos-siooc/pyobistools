@@ -5,7 +5,7 @@ NaN = np.nan
 import iso8601
 
 
-def eventdate_fonction(data):
+def validate_eventdate(data):
   
     tableau_eventdate = pd.DataFrame(data=data["eventdate"])
     tableau_eventdate = tableau_eventdate.rename(columns=str.lower)

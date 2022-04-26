@@ -6,7 +6,7 @@ from dash import dcc, html
 NaN = np.nan
 
 
-def decimal_coordinates_fonction(data):
+def validate_decimal_coordinates(data):
     data1 = data.rename(columns=str.lower)
     
     colonne1 = "decimallatitude"

@@ -5,7 +5,7 @@ NaN = np.nan
 from app import app
 from validations_bio.sub_routines.analyse_colonne import AfficheOccurrenceParValeur
 
-def AfficheLocationIDOccurrences(data):
+def validate_locationIDOccurrences(data):
 
     liste_quantityType = ["Les valeurs trouvées dans la colonne 'locationID' sont présentées dans le tableau.",
     "Lien vers référence: https://dwc.tdwg.org/terms/#dwc:locationID"]
