@@ -1,0 +1,49 @@
+source: src\validations_bio\basisofrecord_fonction.py
+variable: liste_basisofrecord 
+french: "Les valeurs trouvées dans la colonne 'basisofrecord' sont présentées dans le tableau et leur présence ou non dans la documentation est analysée.",
+    "Les valeurs données en exemple dans la documentation sont: 'PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'MaterialSample', 'Event', 'HumanObservation', 'MachineObservation', 'Taxon', 'Occurrence', 'MaterialCitation'.",
+    "Lien vers référence: https://dwc.tdwg.org/terms/#dwc:basisOfRecord"
+english: "The values found in the 'basisofrecord' column are present in the table and their presence or absence in the documentation was analysed.",
+    "The possible values for basisofrecord are: 'PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'MaterialSample', 'Event', 'HumanObservation', 'MachineObservation', 'Taxon', 'Occurrence', 'MaterialCitation'.",
+    "Link to reference:  https://dwc.tdwg.org/terms/#dwc:basisOfRecord"
+
+source: src\validations_bio\datasetid_fonction.py
+variable: liste_datasetid 
+french: "Les valeurs trouvées dans la colonne 'datasetID' sont présentées dans le tableau.",
+    "Lien vers référence: https://dwc.tdwg.org/terms/#dwc:datasetID"
+english: "The values found in the column 'datasetID' are found in the table.",
+    "Link to reference: https://dwc.tdwg.org/terms/#dwc:datasetID"
+
+source: src\validations_bio\decimal_coordinates_fonction_avec_nom.py
+variable: un 
+french: "Toutes les latitudes sont entre -90 et 90 degrés et toutes les longitudes sont entre -180 et 180 degrés."
+english: "All latitudes are betweeen -90 et 90 degrees and all longitudes are between -180 and 180 degrees."
+
+source: src\validations_bio\decimal_coordinates_fonction_avec_nom.py
+variable: deux 
+french: "Toutes les latitudes sont entre -90 et 90 degrés et toutes les longitudes sont entre -180 et 180 degrés."
+english: "All latitudes are betweeen -90 et 90 degrees and all longitudes are between -180 and 180 degrees."
+
+source: src\validations_bio\decimal_coordinates_fonction.py
+variable: un 
+french: "Toutes les latitudes sont entre -90 et 90 degrés et toutes les longitudes sont entre -180 et 180 degrés."
+english: "All latitudes are betweeen -90 et 90 degrees and all longitudes are between -180 and 180 degrees."
+
+source: src\validations_bio\decimal_coordinates_fonction.py
+variable: deux 
+french: "Toutes les latitudes sont entre -90 et 90 degrés et toutes les longitudes sont entre -180 et 180 degrés."
+english: "All latitudes are betweeen -90 et 90 degrees and all longitudes are between -180 and 180 degrees."
+
+source: src\validations_bio\decimal_coordinates_fonction.py
+variable: liste_decimal_coordinates 
+french: "Les paires de coordonnées des colonnes 'decimalLatitude' et 'decimalLongitude' sont représentées sur une carte géographique.",
+    "Liens vers référence: https://dwc.tdwg.org/terms/#dwc:decimalLatitude et https://dwc.tdwg.org/terms/#dwc:decimalLongitude"
+english: "The pairs of coordinates in the columns 'decimalLatitude' and 'decimalLongitude' are within the bounds.",
+    "Links for reference: https://dwc.tdwg.org/terms/#dwc:decimalLatitude and https://dwc.tdwg.org/terms/#dwc:decimalLongitude"
+
+source: src\validations_bio\eventdate_fonction.py
+variable: liste_eventdate_fonction 
+french: "Les valeurs uniques trouvées dans la colonne 'eventDate' sont présentées dans le tableau et leur validité par rapport au standard ISO8601 est analysée.",
+    "Lien vers référence: https://dwc.tdwg.org/terms/#dwc:eventDate"
+english: "The unique values found in the 'eventDate' column are present in the table, and they have been validated as ISO8601 standard.",
+    "Link for reference: https://dwc.tdwg.org/terms/#dwc:eventDate"
