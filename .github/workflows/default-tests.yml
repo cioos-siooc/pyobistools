@@ -24,19 +24,12 @@ jobs:
     - name: Python ${{ matrix.python-version }}
       shell: bash -l {0}
       run: |
-        mamba create --name TEST -c conda-forge python=${{ matrix.python-version }} --file requirements.txt --file tests/requirements.txt
-        source activate TEST
+        micromamba create -n TEST -f requirements.txt -f tests/requirements.txt -c conda-forge
+        micromamba activate TEST
         pip install -e . --no-deps --force-reinstall
-
-    - name: Debug conda
-      shell: bash -l {0}
-      run: |
-        conda activate TEST
-        conda info --all
-        conda list
 
     - name: Tests
       shell: bash -l {0}
       run: |
-        conda activate TEST
+        micromamba activate TEST
         pytest --disable-warnings
