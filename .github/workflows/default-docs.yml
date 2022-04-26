@@ -1,0 +1,17 @@
+name: Build Sphinx Docs
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-python@v2
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - name: Build and Commit
+      uses: sphinx-notes/pages@v2
+      with:
+        requirements_path: ./docs/requirements.txt

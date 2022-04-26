@@ -1,0 +1,42 @@
+name: Default-Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9"]
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Mamba
+      uses: mamba-org/provision-with-micromamba@main
+      with:
+        environment-file: false
+
+    - name: Python ${{ matrix.python-version }}
+      shell: bash -l {0}
+      run: |
+        mamba create --name TEST -c conda-forge python=${{ matrix.python-version }} --file requirements.txt --file tests/requirements.txt
+        source activate TEST
+        pip install -e . --no-deps --force-reinstall
+
+    - name: Debug conda
+      shell: bash -l {0}
+      run: |
+        conda activate TEST
+        conda info --all
+        conda list
+
+    - name: Tests
+      shell: bash -l {0}
+      run: |
+        conda activate TEST
+        pytest --disable-warnings
