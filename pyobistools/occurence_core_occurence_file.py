@@ -22,8 +22,9 @@ from pyobistools.validation.worms_itis              import (
 
 NaN = np.nan
 
-def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
+def occurence_core_occurence_file(data):
     # filtrer les champs présent dans le jeu de données
+    column_names = data.columns
     col_analyse = {
         "Nom du champ / Field name": [
             "basisofrecord",
@@ -78,7 +79,7 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
     colonne_analyse = pd.DataFrame(data=col_analyse)
     colonne_analyse["Présence/Presence ou/or absence"] = colonne_analyse[
         "Nom du champ / Field name"
-    ].isin(colonne_jeu_donnees)
+    ].isin(column_names)
     colonne_analyse["Présence/Presence ou/or absence"].replace(
         False, "Absent", inplace=True
     )
@@ -96,7 +97,7 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
     liste_format = list(liste_format)
 
     # liste des différences entre le tableau des champs nécessaires/optionnels présents et tous les champs présents dans le jeu de données
-    colonnes_extra = list(set(colonne_jeu_donnees) - set(liste_format))
+    colonnes_extra = list(set(column_names) - set(liste_format))
     colonnes_extra = sorted(colonnes_extra)
     if len(colonnes_extra) == 0:
         colonnes_extra = ["aucune colonne / no column"]
@@ -171,6 +172,4 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
         liste_affichage.append(organismquantitytype)
 
     # section retournant le tableau d'analyse du format ainsi que les retours des fonctions des champs présents
-    return table_format_analysis(
-        colonne_analyse, colonnes_extra, liste_affichage, nombre_rangees
-    )
+    return liste_affichage
