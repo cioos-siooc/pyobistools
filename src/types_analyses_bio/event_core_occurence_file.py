@@ -82,4 +82,5 @@ def event_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
 
 
     # section retournant le tableau d'analyse du format ainsi que les retours des fonctions des champs présents
+    # this section returns the format analysis table as well as the function outputs for field presence
     return table_format_analysis(colonne_analyse, colonnes_extra, liste_affichage, nombre_rangees)
