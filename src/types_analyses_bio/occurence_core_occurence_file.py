@@ -20,6 +20,7 @@ from types_analyses_bio.table_format_analysis       import table_format_analysis
 
 def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
     #filtrer les champs présent dans le jeu de données
+    #filter the fields given in the dataset
     col_analyse = {
         'Nom du champ / Field name': ["basisofrecord", "datasetid","decimallatitude", "decimallongitude", "eventdate", "occurrenceid", "occurrencestatus", "scientificname","scientificnameid", "taxonid","footprintwkt","locationID", "organismquantity", "organismquantitytype"],
         'Nécéssaire ou optionnel / Necessary or optionnal': ["Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Nécéssaire / Necessary","Optionnel / Optionnal","Optionnel / Optionnal","Optionnel / Optionnal","Optionnel / Optionnal"],
@@ -32,16 +33,20 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
     colonne_analyse.sort_values(by='Présence/Presence ou/or absence', ascending=True, inplace=True)
 
     # liste de champs présents dans le jeu de données
+    # list of fields presented in the data set
     liste_format = colonne_analyse[colonne_analyse['Présence/Presence ou/or absence']=='Présent/Present']['Nom du champ / Field name']
     liste_format = list(liste_format)
     
     # liste des différences entre le tableau des champs nécessaires/optionnels présents et tous les champs présents dans le jeu de données
+    #listing the differences between the table of required/optional fields AND the fields given in the dataset
     colonnes_extra = list(set(colonne_jeu_donnees) - set(liste_format))
     colonnes_extra = sorted(colonnes_extra)
     if len(colonnes_extra) == 0:
         colonnes_extra = ['aucune colonne / no column']
 
     #section servant à rouler les fonctions de validation pour les colonnes présentes dans le jeu de données
+    #this section tests the validation functions for the columns given in the dataset
+    
     liste_affichage = []
     if 'basisofrecord' in liste_format:
         basisofrecord = basisofrecord_fonction(data)
@@ -92,6 +97,7 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
         liste_affichage.append(locationid) 
 
     # S'assure que si organismquantitytype ou organismquantity est présent, l'autre l'est aussi
+    # Confirming that if one of organismquantitytype or organismquantity is present, the other is too
     organismQuantityEtType = AfficheSiOrganismQuantityEtTypeSontPresent(liste_format)
     if organismQuantityEtType is not None:
         liste_affichage.append(organismQuantityEtType) 
@@ -102,4 +108,5 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
 
 
     # section retournant le tableau d'analyse du format ainsi que les retours des fonctions des champs présents
+    # section returns the format analysis table as well as the output from the field presence functions
     return table_format_analysis(colonne_analyse, colonnes_extra, liste_affichage, nombre_rangees)
