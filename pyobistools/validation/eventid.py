@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from dash import dash_table, html
+
 NaN = np.nan
 
 def validate_eventid(data):

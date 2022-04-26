@@ -4,7 +4,7 @@ from dash import dash_table, html
 NaN = np.nan
 
 
-def occurrenceid_fonction(data):
+def validate_occurrenceid(data):
     data = data.rename(columns=str.lower)
 
     tableau_occurrenceid = {'Nombre de valeur unique / Number of unique values': [data["occurrenceid"].nunique(dropna=False)] }
