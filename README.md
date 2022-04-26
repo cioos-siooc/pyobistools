@@ -7,4 +7,4 @@ Other relevant OBIS Python modules
 
 ### Starting point Python code developed under Departement of Fisheries and Oceans Canada internal project
 
-The python files that served as a starting point for the development of this module were developed by [OGSL.ca](OGSL) for a specific project funded by the Departement of Fisheries and Oceans Canada.
+The python files that served as a starting point for the development of this module were developed by [OGSL](https://ogsl.ca) for a specific project funded by the Departement of Fisheries and Oceans Canada.
