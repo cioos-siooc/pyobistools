@@ -11,35 +11,6 @@ data_goodformats = pd.DataFrame({'eventDate': [ "2016", "2016-01", "2016-01-02",
 
 data_badformats = pd.DataFrame({'eventDate': ["2016/01/02", "2016-01-02 13h00"]})
 
-"""
-data_nodate <- data.frame(
-  scientificName = c("Abra alba", "Lanice conchilega"),
-  stringsAsFactors = FALSE
-)
-
-data_goodformats = pd.DataFrame({'scientificName': ["Abra alva", "Buccinum fusiforme", "Buccinum fusiforme", "Buccinum fusiforme", "ljkf hlqsdkf"]})
-data_goodformats <- data.frame(
-  eventDate = c(
-    "2016",
-    "2016-01",
-    "2016-01-02",
-    "2016-01-02 13:00",
-    "2016-01-02T13:00",
-    "2016-01-02 13:00:00/2016-01-02 14:00:00",
-    "2016-01-02 13:00:00/14:00:00"
-  ),
-  stringsAsFactors = FALSE
-)
-
-data_badformats <- data.frame(
-  eventDate = c(
-    "2016/01/02",
-    "2016-01-02 13h00"
-  ),
-  stringsAsFactors = FALSE
-)
-"""
-
 def test_good_bad_eventdate():
     """
     good and bad eventDate work
