@@ -1,1 +1,0 @@
-from eventid import validate_eventid

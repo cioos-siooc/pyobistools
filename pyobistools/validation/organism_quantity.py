@@ -1,10 +1,9 @@
 import numpy as np
 import pandas as pd
 from dash import dash_table, dcc, html
-NaN = np.nan
-from app import app
-from validations_bio.sub_routines.analyse_colonne import AfficheOccurrenceParValeur
+from pyobistools.validation.sub_routines.analyse_colonne import AfficheOccurrenceParValeur
 
+NaN = np.nan
 
 
 def AfficheOrgnismQuantityTypeOccurrences(data):

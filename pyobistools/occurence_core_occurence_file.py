@@ -9,7 +9,7 @@ from pyobistools.validation.datasetid               import validate_datasetid
 from pyobistools.validation.decimal_coordinates     import validate_decimal_coordinates
 from pyobistools.validation.eventdate               import validate_eventdate
 from pyobistools.validation.footprintwkt            import validate_foorprintwkt
-from pyobistools.validation.locationid              import validate_LocationIDOccurrences
+from pyobistools.validation.locationid              import validate_locationIDOccurrences
 from pyobistools.validation.occurrenceid            import validate_occurrenceid
 from pyobistools.validation.occurrencestatus        import validate_occurrencestatus
 from pyobistools.validation.organism_quantity       import (
@@ -158,7 +158,7 @@ def occurence_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees):
         liste_affichage.append(footprintwkt)
 
     if "locationid" in liste_format:
-        locationid = validate_LocationIDOccurrences(data)
+        locationid = validate_locationIDOccurrences(data)
         liste_affichage.append(locationid)
 
     # S'assure que si organismquantitytype ou organismquantity est présent, l'autre l'est aussi
