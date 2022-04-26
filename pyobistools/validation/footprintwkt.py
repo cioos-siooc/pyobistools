@@ -9,7 +9,7 @@ import geopandas as gpd
 NaN = np.nan
 
 
-def footprintwkt_fonction(data):
+def validate_foorprintwkt(data):
     data = data.rename(columns=str.lower)
     data_travail = data 
 

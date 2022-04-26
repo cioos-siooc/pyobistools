@@ -3,13 +3,13 @@ import pandas as pd
 from dash import dash_table, html
 NaN = np.nan
 
-from validations_bio.datasetid_fonction            import datasetid_fonction
-from validations_bio.eventid_fonction              import eventid_fonction
-from validations_bio.eventdate_fonction            import eventdate_fonction
-from validations_bio.decimal_coordinates_fonction  import decimal_coordinates_fonction
-from validations_bio.footprintwkt_fonction         import footprintwkt_fonction
-from validations_bio.locationid_function           import AfficheLocationIDOccurrences
-from types_analyses_bio.table_format_analysis      import table_format_analysis
+from pyobistools.validation.datasetid            import validate_datasetid
+from pyobistools.validation.eventid              import validate_eventid
+from pyobistools.validation.eventdate            import validate_eventdate
+from pyobistools.validation.decimal_coordinates  import validate_decimal_coordinates
+from pyobistools.validation.footprintwkt         import validate_foorprintwkt
+from pyobistools.validation.locationid           import validate_LocationIDOccurrences
+from pyobistools.table_format_analysis           import table_format_analysis
 
 def event_core_event_file(data, colonne_jeu_donnees, nombre_rangees):
     #filtrer les champs présent dans le jeu de données et créer un tableau
@@ -37,27 +37,27 @@ def event_core_event_file(data, colonne_jeu_donnees, nombre_rangees):
     #section servant à rouler les fonctions de validation pour les colonnes présentes dans le jeu de données
     liste_affichage = []
     if 'datasetid' in liste_format:
-        datasetid = datasetid_fonction(data)
+        datasetid = validate_datasetid(data)
         liste_affichage.append(datasetid)
     
     if 'decimallatitude' in liste_format and 'decimallongitude' in liste_format:
-        latitude_longitude = decimal_coordinates_fonction(data)
+        latitude_longitude = validate_decimal_coordinates(data)
         liste_affichage.append(latitude_longitude)
 
     if 'eventdate' in liste_format:
-        eventdate = eventdate_fonction(data)
+        eventdate = validate_eventdate(data)
         liste_affichage.append(eventdate)
 
     if 'eventid' in liste_format:
-        eventid  = eventid_fonction(data)
+        eventid  = validate_eventid(data)
         liste_affichage.append(eventid)
     
     if 'footprintwkt' in liste_format:
-        footprintwkt = footprintwkt_fonction(data)
+        footprintwkt = validate_foorprintwkt(data)
         liste_affichage.append(footprintwkt)
 
     if 'locationid' in liste_format:
-        locationid = AfficheLocationIDOccurrences(data)
+        locationid = validate_LocationIDOccurrences(data)
         liste_affichage.append(locationid) 
     
 

@@ -3,7 +3,7 @@ import pandas as pd
 from dash import dash_table, html
 NaN = np.nan
 #
-def datasetid_fonction(data):
+def validate_datasetid(data):
     data = data.rename(columns=str.lower)
 
     tableau_datasetid = pd.DataFrame(data=data["datasetid"].value_counts(dropna=False))
