@@ -1,0 +1,14 @@
+:py:mod:`pyobistools`
+=====================
+
+.. py:module:: pyobistools
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   :annotation: = 1.0.0
+
+   
+
