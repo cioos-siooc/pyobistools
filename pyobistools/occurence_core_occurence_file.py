@@ -1,26 +1,24 @@
-import dash
 import numpy as np
 import pandas as pd
-from dash import dash_table, html
 
-from pyobistools.table_format_analysis              import table_format_analysis
-from pyobistools.validation.basisofrecord           import validate_basisofrecord
-from pyobistools.validation.datasetid               import validate_datasetid
-from pyobistools.validation.decimal_coordinates     import validate_decimal_coordinates
-from pyobistools.validation.eventdate               import validate_eventdate
-from pyobistools.validation.footprintwkt            import validate_foorprintwkt
-from pyobistools.validation.locationid              import validate_locationIDOccurrences
-from pyobistools.validation.occurrenceid            import validate_occurrenceid
-from pyobistools.validation.occurrencestatus        import validate_occurrencestatus
-from pyobistools.validation.organism_quantity       import (
-                                                        AfficheOrgnismQuantityTypeOccurrences,
-                                                        AfficheSiOrganismQuantityEtTypeSontPresent,
-                                                    )
-from pyobistools.validation.worms_itis              import (
-                                                        validation_Worms_Itis_fonction,
-                                                    )
+from pyobistools.validation.basisofrecord import validate_basisofrecord
+from pyobistools.validation.datasetid import validate_datasetid
+from pyobistools.validation.decimal_coordinates import validate_decimal_coordinates
+from pyobistools.validation.eventdate import validate_eventdate
+from pyobistools.validation.footprintwkt import validate_foorprintwkt
+from pyobistools.validation.locationid import validate_locationIDOccurrences
+from pyobistools.validation.occurrenceid import validate_occurrenceid
+from pyobistools.validation.occurrencestatus import validate_occurrencestatus
+from pyobistools.validation.organism_quantity import (
+    AfficheOrgnismQuantityTypeOccurrences,
+    AfficheSiOrganismQuantityEtTypeSontPresent,
+)
+from pyobistools.validation.worms_itis import (
+    validation_Worms_Itis_fonction,
+)
 
 NaN = np.nan
+
 
 def occurence_core_occurence_file(data):
     # filtrer les champs présent dans le jeu de données

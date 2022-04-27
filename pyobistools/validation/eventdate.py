@@ -24,7 +24,7 @@ def validate_eventdate(data):
     def iso8601_check(a):
         try:
             iso8601.parse_date(a)
-        except:
+        except BaseException:
             return "Non valide / Invalid"
         return "Valide / Valid"
 
