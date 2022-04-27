@@ -1,50 +1,61 @@
 
 import numpy as np
 
-from pyobistools.taxa import match_taxa, remove_suffix, add_suffix
+from pyobistools import taxa
 
 
-def test_match_single_name():
-    results = match_taxa([
-        'thisisntaspecies',
-        'Mola mola'
-    ])
+def test_match_quick():
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ],
+        quick=True
+    )
     assert len(results) == 2
+
+
+def test_match_all_with_details():
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ]
+    )
+    assert len(results) == 6
 
     # No match for first result, but the standard columns are still returned
     notaspecies = results.iloc[0]
-    assert notaspecies.input_name == 'thisisntaspecies'
+    assert notaspecies.match_input == 'thisisntaspecies'
+    assert not notaspecies['url']
+    assert not notaspecies['scientificname']
+    assert not notaspecies['authority']
+    assert not notaspecies['status']
+    assert not notaspecies['unacceptreason']
+    assert not notaspecies['rank']
+    assert not notaspecies['valid_name']
+    assert not notaspecies['valid_authority']
+    assert not notaspecies['kingdom']
+    assert not notaspecies['phylum']
+    assert not notaspecies['class']
+    assert not notaspecies['order']
+    assert not notaspecies['family']
+    assert not notaspecies['genus']
+    assert not notaspecies['citation']
+    assert not notaspecies['lsid']
+    assert not notaspecies['is_marine']
+    assert not notaspecies['is_brackish']
+    assert not notaspecies['is_fresh_water']
+    assert not notaspecies['is_terrestrial']
+    assert not notaspecies['is_extinct']
     assert np.isnan(notaspecies['taxon_id'])
-    assert np.isnan(notaspecies['url'])
-    assert np.isnan(notaspecies['scientificname'])
-    assert np.isnan(notaspecies['authority'])
-    assert np.isnan(notaspecies['status'])
-    assert np.isnan(notaspecies['unacceptreason'])
     assert np.isnan(notaspecies['taxon_rank_id'])
-    assert np.isnan(notaspecies['rank'])
     assert np.isnan(notaspecies['valid_taxon_id'])
-    assert np.isnan(notaspecies['valid_name'])
-    assert np.isnan(notaspecies['valid_authority'])
     assert np.isnan(notaspecies['parent_name_usage_id'])
-    assert np.isnan(notaspecies['kingdom'])
-    assert np.isnan(notaspecies['phylum'])
-    assert np.isnan(notaspecies['class'])
-    assert np.isnan(notaspecies['order'])
-    assert np.isnan(notaspecies['family'])
-    assert np.isnan(notaspecies['genus'])
-    assert np.isnan(notaspecies['citation'])
-    assert np.isnan(notaspecies['lsid'])
-    assert np.isnan(notaspecies['is_marine'])
-    assert np.isnan(notaspecies['is_brackish'])
-    assert np.isnan(notaspecies['is_fresh_water'])
-    assert np.isnan(notaspecies['is_terrestrial'])
-    assert np.isnan(notaspecies['is_extinct'])
-    assert np.isnan(notaspecies['match_type'])
-    assert np.isnan(notaspecies['modified'])
+    assert not notaspecies['match_type']
+    assert not notaspecies['modified']
 
     # Found a match for second result
     mola = results.iloc[1]
-    assert mola['input_name'] == 'Mola mola'
+    assert mola['match_input'] == 'Mola mola'
     assert mola['taxon_id'] == 127405.0
     assert mola['url'] == 'https://www.marinespecies.org/aphia.php?p=taxdetails&id=127405'
     assert mola['scientificname'] == 'Mola mola'
@@ -64,14 +75,14 @@ def test_match_single_name():
     assert mola['genus'] == 'Mola'
     assert mola['citation'] == 'Froese, R. and D. Pauly. Editors. (2022). FishBase. Mola mola (Linnaeus, 1758). Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&id=127405 on 2022-04-27'
     assert mola['lsid'] == 'urn:lsid:marinespecies.org:taxname:127405'
-    assert mola['is_marine'] == 1.0
-    assert mola['is_brackish'] == 0.0
-    assert mola['is_fresh_water'] == 0.0
-    assert mola['is_terrestrial'] == 0.0
+    assert mola['is_marine']
+    assert not mola['is_brackish']
+    assert not mola['is_fresh_water']
+    assert not mola['is_terrestrial']
+    assert not mola['is_extinct']
     assert mola['match_type'] == 'exact'
     assert mola['modified'] == '2021-12-07T22:23:16.560Z'
-    assert np.isnan(mola['unacceptreason'])
-    assert np.isnan(mola['is_extinct'])
+    assert mola['unacceptreason'] == 'None'
 
 
 def test_add_suffix():
@@ -81,13 +92,13 @@ def test_add_suffix():
         'hello sp',
         'hello spp',
     ]
-    assert add_suffix('hello') == expected
-    assert add_suffix('hello    ') == expected
-    assert add_suffix('    hello') == expected
-    assert add_suffix('hello sp.') == expected
-    assert add_suffix('hello spp.') == expected
-    assert add_suffix('hello sp') == expected
-    assert add_suffix('hello spp') == expected
+    assert taxa.add_suffix('hello') == expected
+    assert taxa.add_suffix('hello    ') == expected
+    assert taxa.add_suffix('    hello') == expected
+    assert taxa.add_suffix('hello sp.') == expected
+    assert taxa.add_suffix('hello spp.') == expected
+    assert taxa.add_suffix('hello sp') == expected
+    assert taxa.add_suffix('hello spp') == expected
 
     expected = [
         'spaces and other things sp.',
@@ -95,30 +106,94 @@ def test_add_suffix():
         'spaces and other things sp',
         'spaces and other things spp',
     ]
-    assert add_suffix('spaces and other things') == expected
-    assert add_suffix('spaces and other things    ') == expected
-    assert add_suffix('    spaces and other things') == expected
-    assert add_suffix('spaces and other things sp.') == expected
-    assert add_suffix('spaces and other things spp.') == expected
-    assert add_suffix('spaces and other things sp') == expected
-    assert add_suffix('spaces and other things spp') == expected
+    assert taxa.add_suffix('spaces and other things') == expected
+    assert taxa.add_suffix('spaces and other things    ') == expected
+    assert taxa.add_suffix('    spaces and other things') == expected
+    assert taxa.add_suffix('spaces and other things sp.') == expected
+    assert taxa.add_suffix('spaces and other things spp.') == expected
+    assert taxa.add_suffix('spaces and other things sp') == expected
+    assert taxa.add_suffix('spaces and other things spp') == expected
 
 
 def test_remove_suffix():
     expected = 'hello'
-    assert remove_suffix('hello') == expected
-    assert remove_suffix('hello    ') == expected
-    assert remove_suffix('    hello') == expected
-    assert remove_suffix('hello sp.') == expected
-    assert remove_suffix('hello spp.') == expected
-    assert remove_suffix('hello sp') == expected
-    assert remove_suffix('hello spp') == expected
+    assert taxa.remove_suffix('hello') == expected
+    assert taxa.remove_suffix('hello    ') == expected
+    assert taxa.remove_suffix('    hello') == expected
+    assert taxa.remove_suffix('hello sp.') == expected
+    assert taxa.remove_suffix('hello spp.') == expected
+    assert taxa.remove_suffix('hello sp') == expected
+    assert taxa.remove_suffix('hello spp') == expected
 
     expected = 'spaces and other things'
-    assert remove_suffix('spaces and other things') == expected
-    assert remove_suffix('spaces and other things    ') == expected
-    assert remove_suffix('    spaces and other things') == expected
-    assert remove_suffix('spaces and other things sp.') == expected
-    assert remove_suffix('spaces and other things spp.') == expected
-    assert remove_suffix('spaces and other things sp') == expected
-    assert remove_suffix('spaces and other things spp') == expected
+    assert taxa.remove_suffix('spaces and other things') == expected
+    assert taxa.remove_suffix('spaces and other things    ') == expected
+    assert taxa.remove_suffix('    spaces and other things') == expected
+    assert taxa.remove_suffix('spaces and other things sp.') == expected
+    assert taxa.remove_suffix('spaces and other things spp.') == expected
+    assert taxa.remove_suffix('spaces and other things sp') == expected
+    assert taxa.remove_suffix('spaces and other things spp') == expected
+
+
+def test_search_worms():
+    results = taxa.search_worms([
+        'thisisntaspecies',
+        'Mola mola'
+    ])
+    assert len(results) == 2
+
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ],
+        order=['worms']
+    )
+    assert len(results) == 2
+
+
+def test_search_itis():
+    results = taxa.search_itis([
+        'thisisntaspecies',
+        'Mola mola'
+    ])
+    assert len(results) == 2
+
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ],
+        order=['itis']
+    )
+    assert len(results) == 2
+
+
+def test_search_obis():
+    results = taxa.search_obis([
+        'thisisntaspecies',
+        'Mola mola'
+    ])
+    assert len(results) == 2
+
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ],
+        order=['obis']
+    )
+    assert len(results) == 2
+
+
+def test_search_two():
+    results = taxa.search_obis([
+        'thisisntaspecies',
+        'Mola mola'
+    ])
+    assert len(results) == 2
+
+    results = taxa.search([
+            'thisisntaspecies',
+            'Mola mola'
+        ],
+        order=['worms', 'obis']
+    )
+    assert len(results) == 4
