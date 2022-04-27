@@ -1,0 +1,39 @@
+:py:mod:`pyobistools.validation.organism_quantity`
+==================================================
+
+.. py:module:: pyobistools.validation.organism_quantity
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.organism_quantity.AfficheOrgnismQuantityTypeOccurrences
+   pyobistools.validation.organism_quantity.AfficheSiOrganismQuantityEtTypeSontPresent
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.organism_quantity.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: AfficheOrgnismQuantityTypeOccurrences(data)
+
+
+.. py:function:: AfficheSiOrganismQuantityEtTypeSontPresent(listecolonnes)
+
+

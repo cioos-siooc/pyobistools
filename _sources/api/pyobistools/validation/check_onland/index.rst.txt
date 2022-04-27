@@ -1,0 +1,32 @@
+:py:mod:`pyobistools.validation.check_onland`
+=============================================
+
+.. py:module:: pyobistools.validation.check_onland
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_onland.check_onland
+
+
+
+.. py:function:: check_onland(data, land=None, report=False, buffer=0, offline=False)
+
+   Check which points are likely to be located on land
+
+   @param data         a Pandas dataframe with the data
+   @param land         A custom land polygon to check against. If not provided, use Natural Earth.
+   @param report       If True, errors returned instead of records
+   @param buffer       Set how far inland points are still to be deemed valid
+   @param offline      if True, a local simplified shoreline is used, otherwise an OBIS webservice is used. Default is False
+
+   @return Errors or problematic records
+
+

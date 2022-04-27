@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.validation.datasetid`
+==========================================
+
+.. py:module:: pyobistools.validation.datasetid
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.datasetid.validate_datasetid
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.datasetid.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: validate_datasetid(data)
+
+

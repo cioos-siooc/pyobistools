@@ -1,0 +1,39 @@
+:py:mod:`suffix_function`
+=========================
+
+.. py:module:: suffix_function
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   suffix_function.function_suffix_removal
+   suffix_function.function_add_suffix
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   suffix_function.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: function_suffix_removal(data_valid_nom_scientifique)
+
+
+.. py:function:: function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp_point)
+
+

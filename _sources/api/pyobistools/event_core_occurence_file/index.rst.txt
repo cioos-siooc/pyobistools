@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.event_core_occurence_file`
+===============================================
+
+.. py:module:: pyobistools.event_core_occurence_file
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.event_core_occurence_file.event_core_occurence_file
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.event_core_occurence_file.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: event_core_occurence_file(data, colonne_jeu_donnees, nombre_rangees)
+
+

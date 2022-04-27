@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.validation.worms_itis`
+===========================================
+
+.. py:module:: pyobistools.validation.worms_itis
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.worms_itis.validation_Worms_Itis_fonction
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.worms_itis.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: validation_Worms_Itis_fonction(data, value)
+
+

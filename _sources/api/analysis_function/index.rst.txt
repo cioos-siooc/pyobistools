@@ -1,0 +1,51 @@
+:py:mod:`analysis_function`
+===========================
+
+.. py:module:: analysis_function
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   analysis_function.exact_match_suffix
+   analysis_function.exact_match
+   analysis_function.names_analyse
+   analysis_function.names_ids_analyse
+   analysis_function.names_taxons_ids_analyse
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   analysis_function.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: exact_match_suffix(a, b)
+
+
+.. py:function:: exact_match(a, b)
+
+
+.. py:function:: names_analyse(data_valid_scientific_name)
+
+
+.. py:function:: names_ids_analyse(data_valid_scientific_name, data)
+
+
+.. py:function:: names_taxons_ids_analyse(data_valid_scientific_name, data)
+
+

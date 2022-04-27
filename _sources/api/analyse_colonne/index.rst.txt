@@ -1,0 +1,35 @@
+:py:mod:`analyse_colonne`
+=========================
+
+.. py:module:: analyse_colonne
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   analyse_colonne.AfficheOccurrenceParValeur
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   analyse_colonne.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: AfficheOccurrenceParValeur(data, nomcolonne)
+
+

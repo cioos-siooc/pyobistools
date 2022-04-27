@@ -4,6 +4,27 @@
 .. py:module:: pyobistools
 
 
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   validation/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   event_core_event_file/index.rst
+   event_core_occurence_file/index.rst
+   occurence_core_occurence_file/index.rst
+   table_format_analysis/index.rst
+
+
 Package Contents
 ----------------
 

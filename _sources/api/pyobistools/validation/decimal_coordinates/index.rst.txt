@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.validation.decimal_coordinates`
+====================================================
+
+.. py:module:: pyobistools.validation.decimal_coordinates
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.decimal_coordinates.validate_decimal_coordinates
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.decimal_coordinates.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: validate_decimal_coordinates(data)
+
+
