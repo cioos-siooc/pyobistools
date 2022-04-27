@@ -6,6 +6,8 @@ import typing as t
 import pyworms
 import pandas as pd
 
+from pyobistools.utils import removesuffix
+
 
 STANDARD_SPECIES_COLUMNS = [
     'taxon_id', 'url', 'scientificname', 'authority', 'status', 'unacceptreason',
@@ -25,7 +27,7 @@ def remove_suffix(name: str) -> str:
     ]
     for suf in suffixes:
         if name.endswith(suf):
-            return name.removesuffix(suf)
+            return removesuffix(name, suf)
 
     # If no suffix was found return the original name
     # with whitespace removed
@@ -46,7 +48,7 @@ def add_suffix(name: str) -> t.List[str]:
         if name.endswith(suf):
             # Strip off any existing suffixes from the name
             # and break out
-            name = name.removesuffix(suf)
+            name = removesuffix(name, suf)
             break
 
     # Return a name for each suffix with whitespace remvoed
