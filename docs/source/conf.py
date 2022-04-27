@@ -28,17 +28,20 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'autoapi.extension',
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx_autodoc_typehints',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autodoc.typehints',
+    'autoapi.extension',
 ]
 
 autoapi_dirs = ['../../pyobistools']
 autoapi_root = 'api'
+autoapi_keep_files = False
+autodoc_typehints = 'description'
 
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
