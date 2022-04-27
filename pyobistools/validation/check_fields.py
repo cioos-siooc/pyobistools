@@ -1,10 +1,10 @@
-
 import numpy as np
 import pandas as pd
-NaN = np.nan  
+NaN = np.nan
+
 
 def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
-    NaN = np.nan  
+    NaN = np.nan
     data = pd.DataFrame(data=data)
     data.rename(columns=str.lower, inplace=True)
     column_names = list(data.columns)
@@ -60,7 +60,8 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
             "measurementdetermineddate",
             "measurementdeterminedby",
             "measurementmethod",
-            "measurementremarks",],
+            "measurementremarks"
+        ],
 
         "Required or recommended": [
             "Required field",
@@ -129,46 +130,45 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
             "Recommended field",
             "Recommended field",
             ],
-        }       
+        }
 
     # function that do the analysis
     def analysis_level_error(analysis):
-        analysis = analysis.loc[analysis['Required or recommended']=='Required field']
-        
-        analysis.loc[:,'level'] = 'error'
-        analysis.loc[:,'row'] = NaN
-        analysis.loc[:,'message'] = NaN
+        analysis = analysis.loc[analysis['Required or recommended'] == 'Required field']
 
-        analysis = analysis.reindex(columns=['level','field','row','message']).copy()
+        analysis.loc[:, 'level'] = 'error'
+        analysis.loc[:, 'row'] = NaN
+        analysis.loc[:, 'message'] = NaN
 
-        analysis.loc[:,'message'] = analysis["field"].isin(column_names)
+        analysis = analysis.reindex(columns=['level', 'field', 'row', 'message']).copy()
+
+        analysis.loc[:, 'message'] = analysis["field"].isin(column_names)
         analysis = analysis.loc[~analysis.message].copy()
-        analysis.loc[:,'message'] = 'Required field ' + analysis['field'] + " is missing"
-        
+        analysis.loc[:, 'message'] = 'Required field ' + analysis['field'] + " is missing"
+
         if analysis.empty:
             return print('No errors')
-        else: 
+        else:
             return analysis
 
     def analysis_level_warning(analysis):
-        if len(analysis.loc[analysis['Required or recommended']=='Recommended field']) == 0:
+        if len(analysis.loc[analysis['Required or recommended'] == 'Recommended field']) == 0:
             print('No recommended fields for this analysis type, therefore no warnings')
-            return 
+            return
         else:
-            analysis = analysis.loc[analysis['Required or recommended']=='Recommended field']
+            analysis = analysis.loc[analysis['Required or recommended'] == 'Recommended field']
 
-            analysis.loc[:,'level'] = 'warning'
-            analysis.loc[:,'row'] = NaN
-            analysis.loc[:,'message'] = NaN
+            analysis.loc[:, 'level'] = 'warning'
+            analysis.loc[:, 'row'] = NaN
+            analysis.loc[:, 'message'] = NaN
 
-            analysis = analysis.reindex(columns=['level','field','row','message']).copy()
+            analysis = analysis.reindex(columns=['level', 'field', 'row', 'message']).copy()
 
-            analysis.loc[:,'message'] = analysis["field"].isin(column_names)
+            analysis.loc[:, 'message'] = analysis["field"].isin(column_names)
             analysis = analysis.loc[~analysis.message].copy()
-            analysis.loc[:,'message'] = 'Recommended field ' + analysis['field'] + " is missing"
+            analysis.loc[:, 'message'] = 'Recommended field ' + analysis['field'] + " is missing"
 
             return analysis
-
 
     # if statements to determine the analysis to run
     if level == 'error':
@@ -180,7 +180,7 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
             analysis = pd.DataFrame(data=extended_measurement_or_fact_extension)
         elif analysis_type == 'occurrence_core':
             analysis = pd.DataFrame(data=occurrence_core)
-        
+
         return analysis_level_error(analysis)
 
     if level == 'warning':
@@ -192,5 +192,5 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
             analysis = pd.DataFrame(data=extended_measurement_or_fact_extension)
         elif analysis_type == 'occurrence_core':
             analysis = pd.DataFrame(data=occurrence_core)
-        
+
         return analysis_level_warning(analysis)
