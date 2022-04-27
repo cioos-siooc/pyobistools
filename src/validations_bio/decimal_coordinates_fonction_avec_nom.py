@@ -17,19 +17,22 @@ def decimal_coordinates_fonction_avec_nom(data, colonne1, colonne2, colonne3):
     data1.astype({colonne1: 'float64'}).dtypes
     print(data1[colonne1].dtypes)
     
-    # obtenir les valeurs qui ne correspondent pas en terme de chiffre à des latitudes et longitudes
+    # obtenir les valeurs qui ne sont pas dans les limites données des latitudes et longitudes
+    # get the values that are not within the given bounds for latitude and longitude
     latitudes_non_valides = data1.loc[(data1[colonne1].gt(90)) | (data1[colonne1].lt(-90)) ]
     longitudes_non_valides = (data1.loc[(data1[colonne2].gt(180)) | (data1[colonne2].lt(-180))]) 
     frames = [latitudes_non_valides, longitudes_non_valides]
     coordonees_non_valides = pd.concat(frames)
 
         # on garde les colonnes de coordonnées et la colonne d'id et on se débarasse des duplicata
+        # keep the coordiante columns and the id column and remove the duplicates
     latitude_colonne  =  coordonees_non_valides.columns.get_loc(colonne1)
     longitude_colonne =  coordonees_non_valides.columns.get_loc(colonne2)
     coordonees_non_valides = coordonees_non_valides.iloc[:,[0,latitude_colonne, longitude_colonne]]
     coordonees_non_valides.drop_duplicates(inplace=True)
 
     # obtenir les valeurs de latitudes et de longitudes entre -90 et 90 degrés et -180 et 180 degrés
+    # get the latitude and longitude values between -90 and 90 / -180 and 180 degrees
     coordonnees_valides = data1[data1[colonne1].between(-90,90) & data1[colonne2].between(-180,180)]
 
     def afficher_tableau_coordo_non_valides(coordonees_non_valides):
@@ -68,6 +71,7 @@ def decimal_coordinates_fonction_avec_nom(data, colonne1, colonne2, colonne3):
         liste_affichage1.append(afficher_phrase_coordo_valides(coordonees_non_valides))
 
     # affichage de la carte
+    # print the map
     centre_long =.5*(max(np.asarray(np.float64(coordonnees_valides[colonne2]).tolist())) + min(np.asarray(np.float64(coordonnees_valides[colonne2]).tolist())))
     centre_lat = .5*(max(np.asarray(np.float64(coordonnees_valides[colonne1]).tolist())) + min(np.asarray(np.float64(coordonnees_valides[colonne1]).tolist())))
     height = max(np.asarray(np.float64(coordonnees_valides[colonne1]).tolist())) - min(np.asarray(np.float64(coordonnees_valides[colonne1]).tolist()))
@@ -79,7 +83,7 @@ def decimal_coordinates_fonction_avec_nom(data, colonne1, colonne2, colonne3):
                     fp=[12,        9.5,    6,     4,   2,     1])
     print('centre lat: ', centre_lat) 
     print('centre lon: ', centre_long) 
-    print('aire: ', area)
+    print('aire / area: ', area)
     print('zoom : ', zoom)
 
     fig = go.Figure(go.Scattermapbox(
@@ -102,7 +106,7 @@ def decimal_coordinates_fonction_avec_nom(data, colonne1, colonne2, colonne3):
 
         
         html.Div(children=[liste_affichage1[i] for i in range(len(liste_affichage1))]),
-        html.H6("Coordonnées géographiques / Geographical coordinates:"),
+        html.H6("Coordonnées géographiques / Geographic coordinates:"),
         dcc.Graph(figure=fig),
     
         ])
