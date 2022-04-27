@@ -119,7 +119,7 @@ def search_itis(names: t.List[str],
         pd.DataFrame: Species records
     """
     # ITIS wants suffixes?
-    suffix_names = [ add_suffix(s) for s in names ]
+    suffix_names = [ add_suffix(s) for s in names ]  # noqa
 
     # TODO: Hit ITIS API to return results
 
