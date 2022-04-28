@@ -20,6 +20,10 @@ Run tests::
 
     pytest
 
+Run pre-commit before sending in a merge request to speed up review time::
+
+    pre-commit run --all-files
+
 
 Documentation Setup
 -------------------

@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyobistools.taxa &#8212; pyobistools 2.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for pyobistools.taxa</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># coding=utf-8</span>
+
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="kn">import</span> <span class="nn">pyworms</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">pyobistools.utils</span> <span class="kn">import</span> <span class="n">removesuffix</span>
+
+
+<div class="viewcode-block" id="STANDARD_SPECIES_COLUMNS"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.STANDARD_SPECIES_COLUMNS">[docs]</a><span class="n">STANDARD_SPECIES_COLUMNS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;taxon_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;scientificname&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;authority&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;unacceptreason&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;taxon_rank_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+    <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;valid_taxon_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+    <span class="s1">&#39;valid_name&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;valid_authority&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;parent_name_usage_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+    <span class="s1">&#39;kingdom&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;phylum&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;genus&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;citation&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lsid&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;is_marine&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;is_brackish&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;is_fresh_water&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;is_terrestrial&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;is_extinct&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;match_type&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;modified&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_from&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="_standardize_types"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa._standardize_types">[docs]</a><span class="k">def</span> <span class="nf">_standardize_types</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">STANDARD_SPECIES_COLUMNS</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">STANDARD_SPECIES_COLUMNS</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">bool</span><span class="p">):</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">STANDARD_SPECIES_COLUMNS</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">STANDARD_SPECIES_COLUMNS</span><span class="p">[</span><span class="n">c</span><span class="p">]):</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="remove_suffix"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.remove_suffix">[docs]</a><span class="k">def</span> <span class="nf">remove_suffix</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">suffixes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39; sp.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; spp.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; sp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; spp&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">suf</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suf</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">removesuffix</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">suf</span><span class="p">)</span>
+
+    <span class="c1"># If no suffix was found return the original name</span>
+    <span class="c1"># with whitespace removed</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="add_suffix"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.add_suffix">[docs]</a><span class="k">def</span> <span class="nf">add_suffix</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds suffixes to a name for searching ITIS</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">suffixes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39; sp.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; spp.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; sp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39; spp&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">suf</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suf</span><span class="p">):</span>
+            <span class="c1"># Strip off any existing suffixes from the name</span>
+            <span class="c1"># and break out</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">removesuffix</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">suf</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="c1"># Return a name for each suffix with whitespace remvoed</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">suffixes</span> <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="search_worms"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.search_worms">[docs]</a><span class="k">def</span> <span class="nf">search_worms</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                 <span class="n">kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Searches WoRMS for records based on a list of scientific names and returns</span>
+<span class="sd">    a standardized pandas DataFrame representing the results</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        names (t.List[str]): List of scientific names to match</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Species records</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># WoRMS doesn&#39;t like suffixes so remove them</span>
+    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>
+
+    <span class="c1"># Renames from pyworks output to the standard columns</span>
+    <span class="n">renames</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;AphiaID&#39;</span><span class="p">:</span> <span class="s1">&#39;taxon_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;valid_AphiaID&#39;</span><span class="p">:</span> <span class="s1">&#39;valid_taxon_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;taxonRankID&#39;</span><span class="p">:</span> <span class="s1">&#39;taxon_rank_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;isExtinct&#39;</span><span class="p">:</span> <span class="s1">&#39;is_extinct&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parentNameUsageID&#39;</span><span class="p">:</span> <span class="s1">&#39;parent_name_usage_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;isFreshwater&#39;</span><span class="p">:</span> <span class="s1">&#39;is_fresh_water&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;isTerrestrial&#39;</span><span class="p">:</span> <span class="s1">&#39;is_terrestrial&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;isMarine&#39;</span><span class="p">:</span> <span class="s1">&#39;is_marine&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;isBrackish&#39;</span><span class="p">:</span> <span class="s1">&#39;is_brackish&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pyworms</span><span class="o">.</span><span class="n">aphiaRecordsByMatchNames</span><span class="p">(</span>
+        <span class="n">suffixless_names</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">input_idx</span><span class="p">,</span> <span class="n">name_results</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+
+        <span class="c1"># Carry through the input name for the output DataFrame</span>
+        <span class="n">match_input</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="n">input_idx</span><span class="p">]</span>
+
+        <span class="c1"># Track rows which did not return any data</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name_results</span><span class="p">:</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">match_input</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span> <span class="p">})</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">name_results</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">renames</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                    <span class="n">row</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">match_input</span><span class="p">,</span>
+                <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">True</span>
+            <span class="p">})</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="c1"># Now standardize the columns</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="c1"># Fill in columns that don&#39;t exist</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">STANDARD_SPECIES_COLUMNS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">r</span>
+        <span class="p">})</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;match_from&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;worms&#39;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">_standardize_types</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span></div>
+
+
+<div class="viewcode-block" id="search_itis"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.search_itis">[docs]</a><span class="k">def</span> <span class="nf">search_itis</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                <span class="n">kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Searches ITIS for records based on a list of scientific names and returns</span>
+<span class="sd">    a standardized pandas DataFrame representing the results</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        names (t.List[str]): List of scientific names to match</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Species records</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># ITIS wants suffixes?</span>
+    <span class="n">suffix_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">add_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>  <span class="c1"># noqa</span>
+
+    <span class="c1"># TODO: Hit ITIS API to return results</span>
+    <span class="c1"># renames = {</span>
+    <span class="c1">#     &#39;tsn&#39;: &#39;taxon_id&#39;,</span>
+    <span class="c1">#     &#39;combinedName&#39;: &#39;valid_name&#39;,</span>
+    <span class="c1"># }</span>
+
+    <span class="c1"># This is a placeholder for now, we don&#39;t actually hit ITIS at all</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+    <span class="c1"># Now standardize the columns</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="c1"># Fill in columns that don&#39;t exist</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">STANDARD_SPECIES_COLUMNS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">r</span>
+        <span class="p">})</span>
+
+    <span class="c1"># Standardize the OBIS return data format</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+
+    <span class="c1"># Set the lsid when a taxon_id is defined</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">results</span><span class="o">.</span><span class="n">taxon_id</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="s1">&#39;lsid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;urn:lsid:itis.gov:itis_tsn:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">taxon_id</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;valid_taxon_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">taxon_id</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;match_from&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;itis&#39;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">_standardize_types</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span></div>
+
+
+<div class="viewcode-block" id="search_obis"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.search_obis">[docs]</a><span class="k">def</span> <span class="nf">search_obis</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                <span class="n">kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Searches OBIS for records based on a list of scientific names and returns</span>
+<span class="sd">    a standardized pandas DataFrame representing the results</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        names (t.List[str]): List of scientific names to match</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Species records</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">obis_api</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;https://api.obis.org/v3/&#39;</span><span class="p">)</span>
+    <span class="n">http_headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json; charset=utf-8&#39;</span>
+    <span class="p">}</span>
+
+    <span class="n">renames</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;taxonRank&#39;</span><span class="p">:</span> <span class="s1">&#39;rank&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;scientificName&#39;</span><span class="p">:</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;scientificNameAuthorship&#39;</span><span class="p">:</span> <span class="s1">&#39;authority&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;taxonID&#39;</span><span class="p">:</span> <span class="s1">&#39;taxon_id&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;taxonomicStatus&#39;</span><span class="p">:</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;acceptedNameUsage&#39;</span><span class="p">:</span> <span class="s1">&#39;valid_name&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># WoRMS doesn&#39;t like suffixes so remove them</span>
+    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">suffixless_names</span><span class="p">:</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">obis_api</span><span class="si">}</span><span class="s1">taxon/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="n">http_headers</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">BaseException</span><span class="p">:</span>
+            <span class="c1"># Error, fill with empty dataframe</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">results</span><span class="p">:</span>
+                <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">renames</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                        <span class="n">row</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">row</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                    <span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                    <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">True</span>
+                <span class="p">})</span>
+                <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="c1"># Now standardize the columns</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="c1"># Fill in columns that don&#39;t exist</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">STANDARD_SPECIES_COLUMNS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">r</span>
+        <span class="p">})</span>
+
+    <span class="c1"># Standardize the OBIS return data format</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;match_from&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;obis&#39;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">_standardize_types</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span></div>
+
+
+<div class="viewcode-block" id="search"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.search">[docs]</a><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+           <span class="n">worms_kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+           <span class="n">itis_kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+           <span class="n">obis_kwargs</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+           <span class="n">order</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+           <span class="n">quick</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search a list of scientific names in WoRMS, ITIS and OBIS and return the resulting</span>
+<span class="sd">    record information in a DataFrame. Tries WoRMS first, ITIS second, and OBIS third unless</span>
+<span class="sd">    another order is specificed with the &quot;order&quot; parameter.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        names (t.List[str]): List of scientific names to match</span>
+<span class="sd">        worms_kwargs (t.Dict[str, t.Any]): keyword arguments to pass to pyworm&#39;s</span>
+<span class="sd">            &quot;aphiaRecordsByMatchNames&quot; function</span>
+<span class="sd">        itis_kwargs (t.Dict[str, t.Any]): keyword arguments to pass to ITIS</span>
+<span class="sd">        obis_kwargs (t.Dict[str, t.Any]): keyword arguments to pass to OBIS</span>
+<span class="sd">        order (t.List[str]): order which to to check external services, defaults to</span>
+<span class="sd">            [&#39;worms&#39;, &#39;idis&#39;, &#39;obis&#39;]. To only check a subset of sources set to a smaller list.</span>
+<span class="sd">        quick (bool): Stop when the first match is found and return rather than query additional</span>
+<span class="sd">            services</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Species records</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Accept inputs that are strings (single species)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">names</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">order</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;worms&#39;</span><span class="p">,</span> <span class="s1">&#39;itis&#39;</span><span class="p">,</span> <span class="s1">&#39;obis&#39;</span><span class="p">]</span>
+
+    <span class="c1"># A mapping between the &quot;order&quot; and the function to call</span>
+    <span class="c1"># for each one</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;worms&#39;</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="n">search_worms</span><span class="p">,</span> <span class="o">**</span><span class="n">worms_kwargs</span><span class="p">),</span>
+        <span class="s1">&#39;itis&#39;</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="n">search_itis</span><span class="p">,</span> <span class="o">**</span><span class="n">itis_kwargs</span><span class="p">),</span>
+        <span class="s1">&#39;obis&#39;</span><span class="p">:</span> <span class="n">partial</span><span class="p">(</span><span class="n">search_obis</span><span class="p">,</span> <span class="o">**</span><span class="n">obis_kwargs</span><span class="p">),</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Call individual search functions until one doesn&#39;t return empty</span>
+    <span class="n">all_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">o</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="n">funcs</span><span class="p">[</span><span class="n">o</span><span class="p">](</span><span class="n">names</span><span class="p">)</span>
+        <span class="n">all_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+        <span class="c1"># Break if we want to stop searching on first match</span>
+        <span class="k">if</span> <span class="n">results</span><span class="o">.</span><span class="n">matched</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">and</span> <span class="n">quick</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="c1"># Return all results subset by the standard columns</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_results</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">STANDARD_SPECIES_COLUMNS</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="n">results</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">pyobistools</a></h1>
+
+
+
+<p class="blurb">Python library for working with OBIS data</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=cioos-siooc&repo=pyobistools&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Development and Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  <li><a href="../pyobistools.html">pyobistools</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, BunchOfPeople.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

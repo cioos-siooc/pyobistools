@@ -1,0 +1,22 @@
+:py:mod:`pyobistools.utils`
+===========================
+
+.. py:module:: pyobistools.utils
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.utils.removesuffix
+
+
+
+.. py:function:: removesuffix(obj, suffix)
+
+

@@ -1,0 +1,111 @@
+:py:mod:`pyobistools.taxa`
+==========================
+
+.. py:module:: pyobistools.taxa
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.taxa._standardize_types
+   pyobistools.taxa.remove_suffix
+   pyobistools.taxa.add_suffix
+   pyobistools.taxa.search_worms
+   pyobistools.taxa.search_itis
+   pyobistools.taxa.search_obis
+   pyobistools.taxa.search
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.taxa.STANDARD_SPECIES_COLUMNS
+
+
+.. py:data:: STANDARD_SPECIES_COLUMNS
+   
+
+   
+
+.. py:function:: _standardize_types(df)
+
+
+.. py:function:: remove_suffix(name)
+
+
+.. py:function:: add_suffix(name)
+
+   Adds suffixes to a name for searching ITIS
+
+
+.. py:function:: search_worms(names, kwargs = {})
+
+   Searches WoRMS for records based on a list of scientific names and returns
+   a standardized pandas DataFrame representing the results
+
+   :param names: List of scientific names to match
+   :type names: t.List[str]
+
+   :returns: Species records
+   :rtype: pd.DataFrame
+
+
+.. py:function:: search_itis(names, kwargs = {})
+
+   Searches ITIS for records based on a list of scientific names and returns
+   a standardized pandas DataFrame representing the results
+
+   :param names: List of scientific names to match
+   :type names: t.List[str]
+
+   :returns: Species records
+   :rtype: pd.DataFrame
+
+
+.. py:function:: search_obis(names, kwargs = {})
+
+   Searches OBIS for records based on a list of scientific names and returns
+   a standardized pandas DataFrame representing the results
+
+   :param names: List of scientific names to match
+   :type names: t.List[str]
+
+   :returns: Species records
+   :rtype: pd.DataFrame
+
+
+.. py:function:: search(names, worms_kwargs = {}, itis_kwargs = {}, obis_kwargs = {}, order = None, quick = False)
+
+   Search a list of scientific names in WoRMS, ITIS and OBIS and return the resulting
+   record information in a DataFrame. Tries WoRMS first, ITIS second, and OBIS third unless
+   another order is specificed with the "order" parameter.
+
+   :param names: List of scientific names to match
+   :type names: t.List[str]
+   :param worms_kwargs: keyword arguments to pass to pyworm's
+                        "aphiaRecordsByMatchNames" function
+   :type worms_kwargs: t.Dict[str, t.Any]
+   :param itis_kwargs: keyword arguments to pass to ITIS
+   :type itis_kwargs: t.Dict[str, t.Any]
+   :param obis_kwargs: keyword arguments to pass to OBIS
+   :type obis_kwargs: t.Dict[str, t.Any]
+   :param order: order which to to check external services, defaults to
+                 ['worms', 'idis', 'obis']. To only check a subset of sources set to a smaller list.
+   :type order: t.List[str]
+   :param quick: Stop when the first match is found and return rather than query additional
+                 services
+   :type quick: bool
+
+   :returns: Species records
+   :rtype: pd.DataFrame
+
+
