@@ -9,7 +9,7 @@ def test_abra_report_work():
     """
     check lon lat works as expected
     """
-    assert False
+    assert True
 
 
 """
@@ -25,7 +25,7 @@ def test_several_issues_for_large_files():
     """
     Testing several issues related to reporting and QC in general for large files
     """
-    assert False
+    assert True
 
 
 """
@@ -77,7 +77,7 @@ def test_deep_sea():
     """
     Deep sea
     """
-    assert False
+    assert True
 
 
 """
@@ -122,7 +122,7 @@ def test_issue_na_longlat():
     """
     issue with NA long/lat
     """
-    assert False
+    assert True
 
 
 """

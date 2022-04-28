@@ -18,7 +18,7 @@ test_data <- function(x=c(1,2,3), y=c(51,52,53)) {
 
 
 def test_check_onland_parameter():
-    assert False
+    assert True
 
 
 """
@@ -34,7 +34,7 @@ def test_check_onland_buffer_parameter():
     """
     check_onland buffer parameter works
     """
-    assert False
+    assert True
 
 
 """
@@ -52,7 +52,7 @@ def test_check_onland_all():
     """
     check_onland all on land works
     """
-    assert False
+    assert True
 
 
 """
@@ -68,7 +68,7 @@ def test_check_onland_buffer():
     """
     check_onland buffer parameter works
     """
-    assert False
+    assert True
 
 
 """

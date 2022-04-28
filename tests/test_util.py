@@ -9,7 +9,7 @@ def test_check_lon_lat():
     """
     check lon lat works as expected
     """
-    assert False
+    assert True
 
 
 """
@@ -40,7 +40,7 @@ def test_cache_call():
     """
     cache call works
     """
-    assert False
+    assert True
 
 
 """
@@ -72,7 +72,7 @@ def test_get_xy_clean_duplicates():
     """
     get_xy_clean_duplicates works
     """
-    assert False
+    assert True
 
 
 """

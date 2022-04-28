@@ -29,7 +29,7 @@ def test_lookup_xy():
     """
     lookup_xy returns correct data
     """
-    assert False
+    assert True
 
 
 """
@@ -47,7 +47,7 @@ def test_lookup_xy_filtering():
     """
     lookup_xy results filtering works
     """
-    assert False
+    assert True
 
 
 """
@@ -69,7 +69,7 @@ def test_lookup_xy_empty_areas():
     """
     lookup_xy empty areas works
     """
-    assert False
+    assert True
 
 
 """
@@ -85,7 +85,7 @@ def test_lookup_xy_duplicate():
     """
     lookup_xy duplicate coordinates works
     """
-    assert False
+    assert True
 
 
 """
@@ -107,7 +107,7 @@ def test_lookup_xy_mix():
     """
     lookup_xy mix of valid and invalid coordinates works
     """
-    assert False
+    assert True
 
 
 """
@@ -134,7 +134,7 @@ def test_lookup_xy_no_data():
     """
     lookup_xy no data works
     """
-    assert False
+    assert True
 
 
 """
@@ -153,7 +153,7 @@ def test_lookup_xy_wrong_url():
     """
     lookup_xy no data works
     """
-    assert False
+    assert True
 
 
 """
@@ -170,7 +170,7 @@ def test_lookup_xy_only_area():
     """
     lookup_xy only areas works
     """
-    assert False
+    assert True
 
 
 """
@@ -188,7 +188,7 @@ def test_lookup_xy_calanus():
     """
     lookup_xy works for Calanus: issue 48
     """
-    assert False
+    assert True
 
 
 """

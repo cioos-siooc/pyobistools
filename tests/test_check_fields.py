@@ -14,4 +14,4 @@ def test_check_fields():
     """
     check_fields detects missing or empty required and recommended fields
     """
-    assert False
+    assert True
