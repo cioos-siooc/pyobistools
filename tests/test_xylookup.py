@@ -10,10 +10,12 @@ check_skip <- function() {
 }
 """
 
+
 def make_data():
     return pd.DataFrame({
-        'x': [1,2,3],
-        'y': [51,52,53]})
+        'x': [1, 2, 3],
+        'y': [51, 52, 53]})
+
 
 """
 test_data <- function(x=c(1,2,3), y=c(51,52,53)) {
@@ -22,11 +24,13 @@ test_data <- function(x=c(1,2,3), y=c(51,52,53)) {
 }
 """
 
+
 def test_lookup_xy():
     """
     lookup_xy returns correct data
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("lookup_xy returns correct data", {
@@ -38,11 +42,13 @@ test_that("lookup_xy returns correct data", {
 })
 """
 
+
 def test_lookup_xy_filtering():
     """
     lookup_xy results filtering works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("lookup_xy results filtering works", {
@@ -58,11 +64,14 @@ test_that("lookup_xy results filtering works", {
 })
 """
 
+
 def test_lookup_xy_empty_areas():
     """
     lookup_xy empty areas works
     """
-    assert 4 == 5
+    assert False
+
+
 """
 test_that("lookup_xy empty areas works", {
   results <- lookup_xy(test_data(x=90,y=60), areas = TRUE, shoredistance = FALSE, grids = FALSE)
@@ -71,11 +80,14 @@ test_that("lookup_xy empty areas works", {
 })
 """
 
+
 def test_lookup_xy_duplicate():
     """
     lookup_xy duplicate coordinates works
     """
-    assert 4 == 5
+    assert False
+
+
 """
 test_that("lookup_xy duplicate coordinates works", {
   results <- lookup_xy(test_data(x=c(90,90,0,1,2,1),y=c(60,60,0,4,3,4)), asdataframe = FALSE)
@@ -90,11 +102,13 @@ test_that("lookup_xy duplicate coordinates works", {
 })
 """
 
+
 def test_lookup_xy_mix():
     """
     lookup_xy mix of valid and invalid coordinates works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("lookup_xy mix of valid and invalid coordinates works", {
@@ -115,11 +129,13 @@ test_that("lookup_xy mix of valid and invalid coordinates works", {
 })
 """
 
+
 def test_lookup_xy_no_data():
     """
     lookup_xy no data works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("lookup_xy no data works", {
@@ -132,11 +148,13 @@ test_that("lookup_xy no data works", {
 })
 """
 
+
 def test_lookup_xy_wrong_url():
     """
     lookup_xy no data works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("wrong url fails", {
@@ -147,11 +165,14 @@ test_that("wrong url fails", {
 })
 """
 
+
 def test_lookup_xy_only_area():
     """
     lookup_xy only areas works
     """
-    assert 4 == 5
+    assert False
+
+
 """
 test_that("lookup_xy only areas works", {
   data <- test_data(x=c(0,1),y=c(0,0))
@@ -162,11 +183,13 @@ test_that("lookup_xy only areas works", {
 })
 """
 
+
 def test_lookup_xy_calanus():
     """
     lookup_xy works for Calanus: issue 48
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("lookup_xy works for Calanus: issue 48", {

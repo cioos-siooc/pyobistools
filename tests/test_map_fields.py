@@ -2,10 +2,12 @@
 map_fields
 """
 
-import pandas as pd
+# import pandas as pd
+
 
 def test_map_fields():
-    assert 4 == 5
+    assert False
+
 
 """
   df <- map_fields(data.frame(x=1:3, y=4:6),

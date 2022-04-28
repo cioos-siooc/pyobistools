@@ -12,7 +12,8 @@ def test_match_taxa():
     """
     match_taxa works as expected
     """
-    assert 4 == 5
+    assert False
+
 
 """
   results <- match_taxa(test_names, ask = FALSE)

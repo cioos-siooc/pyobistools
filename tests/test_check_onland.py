@@ -2,7 +2,7 @@
 check_onland
 """
 
-import pandas as pd
+# import pandas as pd
 
 """
 check_skip <- function() {
@@ -16,8 +16,10 @@ test_data <- function(x=c(1,2,3), y=c(51,52,53)) {
 }
 """
 
+
 def test_check_onland_parameter():
-    assert 4 == 5
+    assert False
+
 
 """
   data <- test_data(x=c(2.922825, 2.918780), y=c(51.236716, 51.237912))
@@ -27,11 +29,13 @@ def test_check_onland_parameter():
   expect_equal(nrow(df), 1)
 """
 
+
 def test_check_onland_buffer_parameter():
     """
     check_onland buffer parameter works
     """
-    assert 4 == 5
+    assert False
+
 
 """
   data <- test_data(x=c(2.922825, 2.918780), y=c(51.236716, 51.237912))
@@ -43,11 +47,13 @@ def test_check_onland_buffer_parameter():
   expect_equal(nrow(df), 0)
 """
 
+
 def test_check_onland_all():
     """
     check_onland all on land works
     """
-    assert 4 == 5
+    assert False
+
 
 """
   data <- test_data(x=c(20, 30), y=c(0, 0))
@@ -57,11 +63,13 @@ def test_check_onland_all():
   expect_equal(nrow(df), 2)
 """
 
-def test_check_onland_all():
+
+def test_check_onland_buffer():
     """
     check_onland buffer parameter works
     """
-    assert 4 == 5
+    assert False
+
 
 """
   data <- test_data(x=c(2.922825, 2.918780), y=c(51.236716, 51.237912))

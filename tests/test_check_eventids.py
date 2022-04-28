@@ -14,7 +14,9 @@ def test_check_eventids_missing_columns():
     """
     check_eventids detects missing columns
     """
-    assert 4 == 5
+    assert False
+
+
 """
   results <- check_eventids(test_data_1)
   expect_true(nrow(results) == 1)
@@ -23,8 +25,10 @@ def test_check_eventids_missing_columns():
   expect_true(nrow(results) == 1)
 """
 
+
 def test_check_eventids_missing_eventIDs():
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("check_eventids detects missing eventIDs", {
@@ -33,8 +37,11 @@ test_that("check_eventids detects missing eventIDs", {
   expect_true(nrow(results) == 1)
   expect_true(5 %in% results$row)
 """
+
+
 def test_check_eventids_duplicate_eventIDs():
-    assert 4 == 5
+    assert False
+
 
 """
   results <- check_eventids(test_data_4)
@@ -42,14 +49,15 @@ def test_check_eventids_duplicate_eventIDs():
   expect_true(3 %in% results$row)
 """
 
+
 def test_check_extension_eventids():
     """
     check_extension_eventids works
     """
-    event = pd.DataFrame({'eventID': ["a", "b", "b", "c"]})
-    extension = pd.DataFrame({'xeventID': ["a", "b", "b", "d", "e"]})
-    
-    assert 4 == 5
+    # event = pd.DataFrame({'eventID': ["a", "b", "b", "c"]})
+    # extension = pd.DataFrame({'xeventID': ["a", "b", "b", "d", "e"]})
+
+    assert False
 
 
 """

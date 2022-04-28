@@ -2,13 +2,15 @@
 test report
 """
 
-import pandas as pd
+# import pandas as pd
+
 
 def test_abra_report_work():
     """
     check lon lat works as expected
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("abra report works", {
@@ -18,11 +20,13 @@ test_that("abra report works", {
 })
 """
 
+
 def test_several_issues_for_large_files():
     """
     Testing several issues related to reporting and QC in general for large files
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("Testing several issues related to reporting and QC in general for large files", {
@@ -68,11 +72,14 @@ test_that("Testing several issues related to reporting and QC in general for lar
 })
 """
 
+
 def test_deep_sea():
     """
     Deep sea
     """
-    assert 4 == 5
+    assert False
+
+
 """
 test_that('Deep sea', {
   skip("Skip deep sea file checking")
@@ -110,11 +117,13 @@ test_that('Deep sea', {
 })
 """
 
+
 def test_issue_na_longlat():
     """
     issue with NA long/lat
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that('issue with NA long/lat', {

@@ -3,13 +3,15 @@
 check depth
 """
 
-import pandas as pd
+# import pandas as pd
+
 
 def test_check_depth_invalid():
     """
     check_depth detects invalid or impossible depth values
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("check_depth detects invalid or impossible depth values", {
@@ -79,11 +81,13 @@ test_that("check_depth detects invalid or impossible depth values", {
 })
 """
 
+
 def test_issue_42():
     """
     Issue 42
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("Issue 42", {
@@ -99,11 +103,13 @@ test_that("Issue 42", {
 })
 """
 
+
 def test_external_bathymetry_raster():
     """
     Issue 42
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("External bathymetry raster is used", {
@@ -130,11 +136,14 @@ test_that("External bathymetry raster is used", {
 })
 """
 
+
 def test_support_tibble():
     """
-    Issue 42
+    support for tibble
     """
-    assert 4 == 5
+    assert False
+
+
 """
 test_that("support for tibble", {
   skip_if_not_installed("dplyr")

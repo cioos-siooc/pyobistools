@@ -2,13 +2,15 @@
 util
 """
 
-import pandas as pd
+# import pandas as pd
+
 
 def test_check_lon_lat():
     """
     check lon lat works as expected
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("check lon lat works as expected", {
@@ -33,11 +35,13 @@ test_that("check lon lat works as expected", {
 })
 """
 
+
 def test_cache_call():
     """
     cache call works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("cache call works", {
@@ -63,11 +67,13 @@ test_that("cache call works", {
 })
 """
 
+
 def test_get_xy_clean_duplicates():
     """
     get_xy_clean_duplicates works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("get_xy_clean_duplicates works", {

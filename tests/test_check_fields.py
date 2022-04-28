@@ -1,5 +1,5 @@
 
-import pandas as pd
+# import pandas as pd
 
 """test_data <- data.frame(
   occurrenceID = c("1", "2", "3"),
@@ -14,4 +14,4 @@ def test_check_fields():
     """
     check_fields detects missing or empty required and recommended fields
     """
-    assert 4 == 5
+    assert False

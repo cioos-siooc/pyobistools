@@ -1,16 +1,16 @@
-library(testthat)
-context("calculate_centroid")
 """
 calculate_centroid
 """
 
-import pandas as pd
+# import pandas as pd
+
 
 def get_test_wkt():
     """
-    generate wkt 
+    generate wkt
     """
     return None
+
 
 """
 get_test_wkt <- function(bbox=NULL) {
@@ -27,13 +27,15 @@ get_test_wkt <- function(bbox=NULL) {
 }
 """
 
+
 def test_calculate_centroid_multiple():
     """
     calculate_centroid for multiple common WKT formats works
     """
-    assert 4 == 5
+    assert False
 
-"""venv\
+
+"""
 test_that("calculate_centroid for multiple common WKT formats works", {
   d <- get_test_wkt()
   for (n in names(d)) {
@@ -44,11 +46,13 @@ test_that("calculate_centroid for multiple common WKT formats works", {
 })
 """
 
+
 def test_calculate_centroid_missing():
     """
     calculate_centroid missing wkt works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid missing wkt works", {
@@ -56,11 +60,13 @@ test_that("calculate_centroid missing wkt works", {
 })
 """
 
+
 def test_calculate_centroid_simple_point():
     """
     calculate_centroid simple wkt point works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid simple wkt point works", {
@@ -70,11 +76,13 @@ test_that("calculate_centroid simple wkt point works", {
 })
 """
 
+
 def test_calculate_centroid_simple_linestring():
     """
     calculate_centroid simple wkt linestring works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid simple wkt linestring works", {
@@ -84,11 +92,13 @@ test_that("calculate_centroid simple wkt linestring works", {
 })
 """
 
-def test_calculate_centroid_simple_linestring():
+
+def test_calculate_centroid_simple_linestring2():
     """
     calculate_centroid simple wkt linestring works2
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid simple wkt linestring works", {
@@ -98,11 +108,13 @@ test_that("calculate_centroid simple wkt linestring works", {
 })
 """
 
-def test_calculate_centroid_simple_point():
+
+def test_calculate_centroid_simple_point2():
     """
     calculate_centroid simple wkt point works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid simple wkt polygon works", {
@@ -112,11 +124,13 @@ test_that("calculate_centroid simple wkt polygon works", {
 })
 """
 
+
 def test_calculate_centroid_accross_dateline():
     """
     calculate_centroid accross dateline works
     """
-    assert 4 == 5
+    assert False
+
 
 """
 test_that("calculate_centroid accross dateline works", {
