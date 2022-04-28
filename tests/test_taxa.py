@@ -73,7 +73,8 @@ def test_match_all_with_details():
     assert mola['order'] == 'Tetraodontiformes'
     assert mola['family'] == 'Molidae'
     assert mola['genus'] == 'Mola'
-    assert mola['citation'] == 'Froese, R. and D. Pauly. Editors. (2022). FishBase. Mola mola (Linnaeus, 1758). Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&id=127405 on 2022-04-27'
+    # Can't assert citation this way, today's date is part of the return string from WoRMS.
+    # assert mola['citation'] == 'Froese, R. and D. Pauly. Editors. (2022). FishBase. Mola mola (Linnaeus, 1758). Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&id=127405 on 2022-04-27'
     assert mola['lsid'] == 'urn:lsid:marinespecies.org:taxname:127405'
     assert mola['is_marine']
     assert not mola['is_brackish']
