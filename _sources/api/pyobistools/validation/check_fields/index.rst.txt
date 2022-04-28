@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.validation.check_fields`
+=============================================
+
+.. py:module:: pyobistools.validation.check_fields
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_fields.check_fields
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_fields.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: check_fields(data, level='error', analysis_type='occurrence_core')
+
+
