@@ -1,6 +1,8 @@
 # pyobistools - Tools for data enhancement and quality control - but in Python
 Python port of OBIS's [obistools](https://github.com/iobis/obistools) QC R package
 
+Documentation available [here](https://cioos-siooc.github.io/pyobistools/)
+
 Other relevant OBIS Python modules
 [pyobis](https://github.com/iobis/pyobis) - retrieving data from OBIS for consumption/usage in analyses
 [obis-qc](https://github.com/iobis/obis-qc) - database-wide quality control of OBIS data held at OBIS
