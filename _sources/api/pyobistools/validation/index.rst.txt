@@ -11,6 +11,7 @@ Submodules
    :maxdepth: 1
 
    basisofrecord/index.rst
+   check_eventids/index.rst
    check_fields/index.rst
    check_onland/index.rst
    datasetid/index.rst

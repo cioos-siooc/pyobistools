@@ -1,0 +1,39 @@
+:py:mod:`pyobistools.validation.check_eventids`
+===============================================
+
+.. py:module:: pyobistools.validation.check_eventids
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_eventids.check_eventids
+   pyobistools.validation.check_eventids.check_extension_eventids
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_eventids.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: check_eventids(data)
+
+
+.. py:function:: check_extension_eventids(event, extension, field='eventID')
+
+
