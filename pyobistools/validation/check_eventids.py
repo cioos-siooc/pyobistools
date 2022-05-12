@@ -54,7 +54,11 @@ def check_eventids(data):
     if len(field_analysis3) != 0:
         field_analysis = field_analysis.append(field_analysis3, ignore_index=True)
 
-    return field_analysis
+    # error table output
+    if field_analysis.empty:
+        return print('No errors')
+    else:
+        return field_analysis
 
 #Check if all eventIDs in an extension have corresponding eventIDs in the core.
 # event - The event records.
@@ -85,8 +89,7 @@ def check_extension_eventids(event, extension, field = 'eventID'):
         extension_eventids = pd.DataFrame(data = extension_eventids)
         extension_eventids.loc[:, 'message'] = extension_eventids['eventid'].isin(event_eventids)
 
-        extension_eventids = extension_eventids[~extension_eventids['message'] ]
-        #extension_eventids = extension_eventids.loc[~extension_eventids.message].copy()
+        extension_eventids = extension_eventids[~extension_eventids['message']]
 
         if len(extension_eventids) != 0:
             field_analysis['field'] = extension_eventids['eventid']
@@ -94,4 +97,8 @@ def check_extension_eventids(event, extension, field = 'eventID'):
             field_analysis['row'] = extension_eventids.index
             field_analysis['message'] = field_analysis.agg('{0[field]}, row {0[row]} has no corresponding eventID in the core'.format, axis=1)
 
-        return field_analysis
+        # error table output
+        if field_analysis.empty:
+            return print('No errors')
+        else:
+            return field_analysis
