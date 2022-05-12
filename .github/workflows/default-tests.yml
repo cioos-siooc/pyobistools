@@ -20,17 +20,18 @@ jobs:
       uses: mamba-org/provision-with-micromamba@main
       with:
         environment-file: false
+        environment-name: TEST
+        channels: conda-forge
+        extra-specs: |
+            python=${{ matrix.python-version }}
 
     - name: Python ${{ matrix.python-version }}
       shell: bash -l {0}
       run: |
-        micromamba create -n TEST python=${{ matrix.python-version }} -c conda-forge
-        micromamba activate TEST
         micromamba install -f requirements.txt -f tests/requirements.txt -c conda-forge
         pip install -e . --no-deps --force-reinstall
 
     - name: Tests
       shell: bash -l {0}
       run: |
-        micromamba activate TEST
         pytest --disable-warnings
