@@ -88,7 +88,11 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_analysis3</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field_analysis3</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">field_analysis</span></div>
+    <span class="c1"># error table output</span>
+    <span class="k">if</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No errors&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">field_analysis</span></div>
 
 <span class="c1">#Check if all eventIDs in an extension have corresponding eventIDs in the core.</span>
 <span class="c1"># event - The event records.</span>
@@ -119,8 +123,7 @@
         <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">)</span>
         <span class="n">extension_eventids</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">event_eventids</span><span class="p">)</span>
 
-        <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="o">~</span><span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="p">]</span>
-        <span class="c1">#extension_eventids = extension_eventids.loc[~extension_eventids.message].copy()</span>
+        <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="o">~</span><span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]]</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">extension_eventids</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span>
@@ -128,7 +131,11 @@
             <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="o">.</span><span class="n">index</span>
             <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0[field]}</span><span class="s1">, row </span><span class="si">{0[row]}</span><span class="s1"> has no corresponding eventID in the core&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">field_analysis</span></div>
+        <span class="c1"># error table output</span>
+        <span class="k">if</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No errors&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">field_analysis</span></div>
 </pre></div>
 
           </div>
