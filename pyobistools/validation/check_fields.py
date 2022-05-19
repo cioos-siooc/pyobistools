@@ -177,7 +177,7 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
                     field_analysis2.loc[:, 'row'] = table_na_values[column][table_na_values[column]].index
                     field_analysis2.loc[:, 'field'] = column
                     field_analysis2.loc[:, 'level'] = 'error'
-                    field_analysis2.loc[:, 'message'] = field_analysis2.agg('Empty value for required field {0[field]} '.format, axis=1)
+                    field_analysis2.loc[:, 'message'] = field_analysis2.agg('Empty value for required field {0[field]}'.format, axis=1)
 
                     analysis_field = analysis_field.append(field_analysis2).copy()
 

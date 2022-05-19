@@ -1,7 +1,8 @@
 
 import pandas as pd
 from pyobistools.validation import check_fields
-
+import numpy as np
+NaN = np.nan
 
 def test_check_fields_default():
     """
@@ -14,9 +15,16 @@ def test_check_fields_default():
       'locality': ["North Sea", "English Channel", "Flemish Banks"],
       'minimumDepthInMeters': ["10", "", "5"]})
     # required terms
+    correct_data = pd.DataFrame(data={
+      'field': ["basisofrecord", "scientificnameid", "eventdate", "decimallatitude", "decimallongitude", "occurrencestatus", "countrycode", "kingdom", "geodeticdatum", "scientificname"], 
+      'level': ["error", "error", "error", "error", "error", "error", "error", "error", "error", "error"], 
+      'message': ["Required field basisofrecord is missing", "Required field scientificnameid is missing", "Required field eventdate is missing", "Required field decimallatitude is missing", "Required field decimallongitude is missing", "Required field occurrencestatus is missing", "Required field countrycode is missing", "Required field kingdom is missing", "Required field geodeticdatum is missing", 'Empty value for required field scientificname'], 
+      'row': [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 1] })
     error = check_fields.check_fields(field_data)
     # print(error)
-    assert len(error.index) == 9
+
+    # reset index of both dataframe or the compare won't work
+    assert correct_data.reset_index(drop=True).equals(error.reset_index(drop=True)) == True
 
     # recommended terms
     error = check_fields.check_fields(field_data, level="warning")
