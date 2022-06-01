@@ -82,17 +82,17 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
 
     occurrence_core = {
         'field': [
-            "occurrenceid",
-            "basisofrecord",
+            "occurrenceid", 
+            "basisofrecord", 
             "scientificname",
-            "scientificnameid",
-            "eventdate",
-            "decimallatitude",
-            "decimallongitude",
-            "occurrencestatus",
-            "countrycode",
-            "kingdom",
-            "geodeticdatum",
+            "scientificnameid", 
+            "eventdate", 
+            "decimallatitude", 
+            "decimallongitude", 
+            "occurrencestatus", 
+            "countrycode", 
+            "kingdom", 
+            "geodeticdatum", 
             "minimumdepthinmeters",
             "maximumdepthinmeters",
             "coordinateuncertaintyinmeters",
@@ -164,11 +164,12 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
                 analysis_field.loc[:, 'level'] = 'warning'
                 analysis_field.loc[:, 'message'] = 'Recommended field ' + analysis_field['field'] + " is missing"
 
-            # FIND EMPLTY VALUES FOR REQUIRED FIELDS
+            # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
             # dataframe for errors login
             field_analysis2 = pd.DataFrame(columns=['field', 'level', 'message', 'row'])
 
             # subset of dataset using required or recommended columns and keeping na values
+            data = data.replace('', NaN)
             table_na_values = data[data.columns[data.columns.isin(analysis_type_column_names)]].isna()
 
             for column in table_na_values:
@@ -179,8 +180,7 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
                     field_analysis2.loc[:, 'level'] = 'error'
                     field_analysis2.loc[:, 'message'] = field_analysis2.agg('Empty value for required field {0[field]}'.format, axis=1)
 
-                    analysis_field = analysis_field.append(field_analysis2).copy()
-
+                    analysis_field = pd.concat([analysis_field, field_analysis2])
             # error table output
             if analysis.empty:
                 return print('No errors')
