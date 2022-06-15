@@ -16,14 +16,15 @@ def test_check_fields_default():
       'minimumDepthInMeters': ["10", "", "5"]})
     # required terms
     correct_data = pd.DataFrame(data={
-      'field': ["basisofrecord", "scientificnameid", "eventdate", "decimallatitude", "decimallongitude", "occurrencestatus", "countrycode", "kingdom", "geodeticdatum", "scientificname", "scientificname"], 
-      'level': ["error", "error", "error", "error", "error", "error", "error", "error", "error", "error", "error"], 
-      'message': ["Required field basisofrecord is missing", "Required field scientificnameid is missing", "Required field eventdate is missing", "Required field decimallatitude is missing", "Required field decimallongitude is missing", "Required field occurrencestatus is missing", "Required field countrycode is missing", "Required field kingdom is missing", "Required field geodeticdatum is missing", 'Empty value for required field scientificname', 'Empty value for required field scientificname'], 
-      'row': [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 1, 2] })
+        'field': ["basisofrecord", "scientificnameid", "eventdate", "decimallatitude", "decimallongitude", "occurrencestatus", "countrycode", "kingdom", "geodeticdatum", "scientificname", "scientificname"], 
+        'level': ["error", "error", "error", "error", "error", "error", "error", "error", "error", "error", "error"], 
+        'row': ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', '1', '2'],
+        'message': ["Required field basisofrecord is missing", "Required field scientificnameid is missing", "Required field eventdate is missing", "Required field decimallatitude is missing", "Required field decimallongitude is missing", "Required field occurrencestatus is missing", "Required field countrycode is missing", "Required field kingdom is missing", "Required field geodeticdatum is missing", 'Empty value for required field scientificname', 'Empty value for required field scientificname']
+        })
     error = check_fields(field_data)
 
     # reset index of both dataframe or the compare won't work
-    assert correct_data.reset_index(drop=True).equals(error.reset_index(drop=True)) == True
+    assert correct_data.astype(str).reset_index(drop=True).equals(error.astype(str).reset_index(drop=True)) == True
 
     # recommended terms
     error = check_fields(field_data, level="warning")

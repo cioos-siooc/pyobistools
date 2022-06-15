@@ -152,11 +152,11 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
         else:
             # dataframe filling for column analysis
             analysis_field = analysis_field.drop(columns=['Required or recommended'])
-            analysis_field.loc[:, 'level'] = NaN
+            analysis_field.loc[:, 'level'] = 'NaN'
+            analysis_field.loc[:, 'row'] = 'NaN'
             analysis_field.loc[:, 'message'] = analysis_field["field"].isin(dataset_column_names)
             analysis_field = analysis_field.loc[~analysis_field.message].copy()
-            analysis_field.loc[:, 'row'] = NaN
-
+            
             if level == "error":
                 analysis_field.loc[:, 'level'] = 'error'
                 analysis_field.loc[:, 'message'] = 'Required field ' + analysis_field['field'] + " is missing"
@@ -166,14 +166,14 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
 
             # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
             # dataframe for errors login
-            field_analysis2 = pd.DataFrame(columns=['field', 'level', 'message', 'row'])
+            field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
 
             # subset of dataset using required or recommended columns and keeping na values
             data = data.replace('', NaN)
             table_na_values = data[data.columns[data.columns.isin(analysis_type_column_names)]].isna()
 
             for column in table_na_values:
-                field_analysis2 = pd.DataFrame(columns=['field', 'level', 'message', 'row'])
+                field_analysis2 = pd.DataFrame(columns=['field', 'level','row', 'message'])
                 if len(table_na_values[table_na_values[column]]) != 0:
                     field_analysis2.loc[:, 'row'] = table_na_values[column][table_na_values[column]].index
                     field_analysis2.loc[:, 'field'] = column
