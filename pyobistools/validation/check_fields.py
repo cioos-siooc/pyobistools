@@ -156,7 +156,7 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
             analysis_field.loc[:, 'row'] = NaN #'NaN'
             analysis_field.loc[:, 'message'] = analysis_field["field"].isin(dataset_column_names)
     
-            if len(analysis_field.loc[~analysis_field.message]) == 0:
+            if analysis_field['message'].all() == True:
                 analysis_field = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
             else: 
                 analysis_field = analysis_field.loc[~analysis_field.message].copy() 
