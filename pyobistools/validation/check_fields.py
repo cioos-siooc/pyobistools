@@ -149,39 +149,39 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
         if len(analysis_type_column_names) == 0:
             return print('This combination of level and analysis type has no field presence to analyze')
 
-        else:
-            # dataframe filling for column analysis
-            analysis_field = analysis_field.drop(columns=['Required or recommended'])
-            analysis_field.loc[:, 'level'] = 'NaN'
-            analysis_field.loc[:, 'row'] = 'NaN'
-            analysis_field.loc[:, 'message'] = analysis_field["field"].isin(dataset_column_names)
-            
-            if analysis_field.message.all() == True:
-                analysis_field = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-            else:
-                analysis_field = analysis_field.loc[~analysis_field.message].copy()
-
-                if level == "error":
-                    analysis_field.loc[:, 'level'] = 'error'
-                    analysis_field.loc[:, 'message'] = 'Required field ' + analysis_field['field'] + " is missing"
-                if level == "warning":
-                    analysis_field.loc[:, 'level'] = 'warning'
-                    analysis_field.loc[:, 'message'] = 'Recommended field ' + analysis_field['field'] + " is missing"
-        
         # else:
         #     # dataframe filling for column analysis
         #     analysis_field = analysis_field.drop(columns=['Required or recommended'])
         #     analysis_field.loc[:, 'level'] = 'NaN'
         #     analysis_field.loc[:, 'row'] = 'NaN'
         #     analysis_field.loc[:, 'message'] = analysis_field["field"].isin(dataset_column_names)
-        #     analysis_field = analysis_field.loc[~analysis_field.message] #.copy()
             
-        #     if level == "error":
-        #         analysis_field.loc[:, 'level'] = 'error'
-        #         analysis_field.loc[:, 'message'] = 'Required field ' + analysis_field['field'] + " is missing"
-        #     if level == "warning":
-        #         analysis_field.loc[:, 'level'] = 'warning'
-        #         analysis_field.loc[:, 'message'] = 'Recommended field ' + analysis_field['field'] + " is missing"
+        #     if analysis_field.message.all() == True:
+        #         analysis_field = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
+        #     else:
+        #         analysis_field = analysis_field.loc[~analysis_field.message].copy()
+
+        #         if level == "error":
+        #             analysis_field.loc[:, 'level'] = 'error'
+        #             analysis_field.loc[:, 'message'] = 'Required field ' + analysis_field['field'] + " is missing"
+        #         if level == "warning":
+        #             analysis_field.loc[:, 'level'] = 'warning'
+        #             analysis_field.loc[:, 'message'] = 'Recommended field ' + analysis_field['field'] + " is missing"
+        
+        else:
+            # dataframe filling for column analysis
+            analysis_field = analysis_field.drop(columns=['Required or recommended'])
+            analysis_field.loc[:, 'level'] = 'NaN'
+            analysis_field.loc[:, 'row'] = 'NaN'
+            analysis_field.loc[:, 'message'] = analysis_field["field"].isin(dataset_column_names)
+            analysis_field = analysis_field.loc[~analysis_field.message] #.copy()
+            
+            if level == "error":
+                analysis_field.loc[:, 'level'] = 'error'
+                analysis_field.loc[:, 'message'] = 'Required field ' + analysis_field['field'] + " is missing"
+            if level == "warning":
+                analysis_field.loc[:, 'level'] = 'warning'
+                analysis_field.loc[:, 'message'] = 'Recommended field ' + analysis_field['field'] + " is missing"
 
             # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
             # dataframe for errors login
