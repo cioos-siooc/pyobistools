@@ -54,10 +54,12 @@ def check_eventids(data):
 
     # append error tables together
     if len(field_analysis2) != 0:
-        field_analysis = field_analysis.append(field_analysis2, ignore_index=True)
+        #field_analysis = field_analysis.append(field_analysis2, ignore_index=True)
+        field_analysis = pd.concat([field_analysis, field_analysis2])
 
     if len(field_analysis3) != 0:
-        field_analysis = field_analysis.append(field_analysis3, ignore_index=True)
+       # field_analysis = field_analysis.append(field_analysis3, ignore_index=True)
+        field_analysis = pd.concat([field_analysis, field_analysis3])
 
     # error table output
     if field_analysis.empty:
