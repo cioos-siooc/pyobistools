@@ -18,6 +18,7 @@ def check_eventids(data):
     for item in list_fields_to_check_presence:
         if item not in column_names:
             row = {'field': item, 'level': 'error', 'row': 'NaN', 'message': 'Field ' + item + ' is missing'}
+            row = pd.DataFrame.from_dict(row, orient='index').T
             field_analysis = pd.concat([field_analysis, row])
 
     # check duplicate eventIDs
