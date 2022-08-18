@@ -182,10 +182,10 @@ def check_fields(data, level = 'error', analysis_type = 'occurrence_core'):
 
                     analysis_field = pd.concat([analysis_field, field_analysis2])
             # error table output
-            if analysis.empty:
-                return print('No errors')
-            else:
-                return analysis_field
+            # if analysis.empty:
+            #     return print('No errors')
+            # else:
+            return analysis_field
 
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
