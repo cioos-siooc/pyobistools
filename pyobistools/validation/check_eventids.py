@@ -18,7 +18,7 @@ def check_eventids(data):
     for item in list_fields_to_check_presence:
         if item not in column_names:
             row = {'field': item, 'level': 'error', 'row': 'NaN', 'message': 'Field ' + item + ' is missing'}
-            field_analysis = field_analysis.append(row, ignore_index = True)
+            field_analysis = pd.concat([field_analysis, row])
 
     # check duplicate eventIDs
     field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
@@ -40,10 +40,9 @@ def check_eventids(data):
             event_eventids       = data["eventid"][ (data["eventid"].notnull())  & (data["eventid"] != '') ]
             event_parenteventids = data["parenteventid"][ (data["parenteventid"].notna()) & (data["parenteventid"] != '')]
             event_parenteventids = pd.DataFrame(data = event_parenteventids)
-
             event_parenteventids.loc[:, 'message'] = event_parenteventids['parenteventid'].isin(event_eventids)
             event_parenteventids = event_parenteventids[~event_parenteventids["message"]]
-            #print(event_parenteventids)
+
             if len(event_parenteventids[~event_parenteventids["message"] ] ) != 0:
                 
                 field_analysis3['field'] = event_parenteventids['parenteventid']
@@ -54,11 +53,9 @@ def check_eventids(data):
 
     # append error tables together
     if len(field_analysis2) != 0:
-        #field_analysis = field_analysis.append(field_analysis2, ignore_index=True)
         field_analysis = pd.concat([field_analysis, field_analysis2])
 
     if len(field_analysis3) != 0:
-       # field_analysis = field_analysis.append(field_analysis3, ignore_index=True)
         field_analysis = pd.concat([field_analysis, field_analysis3])
 
     # error table output
