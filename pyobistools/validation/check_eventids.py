@@ -84,8 +84,6 @@ def check_extension_eventids(event, extension, field = 'eventID'):
 
     if 'eventid' in column_names:
         field = field.lower()
-        event.rename(columns=str.lower, inplace=True)
-        extension.rename(columns=str.lower, inplace=True)
 
         extension_eventids = extension[field]
         event_eventids = event['eventid']
@@ -104,8 +102,4 @@ def check_extension_eventids(event, extension, field = 'eventID'):
             field_analysis['message'] = field_analysis.agg('Field {0[field]} has no corresponding eventID in the core'.format, axis=1)
             field_analysis['field'] = field
 
-        # error table output
-        if field_analysis.empty:
-            return print('No errors')
-        else:
-            return field_analysis
+        return field_analysis
