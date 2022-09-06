@@ -60,11 +60,8 @@ def check_eventids(data):
     if len(field_analysis3) != 0:
         field_analysis = pd.concat([field_analysis, field_analysis3])
 
-    # error table output
-    # if field_analysis.empty:
-    #     return print('No errors')
-    # else:
     return field_analysis
+
 
 #Check if all eventIDs in an extension have corresponding eventIDs in the core.
 # event - The event records.
