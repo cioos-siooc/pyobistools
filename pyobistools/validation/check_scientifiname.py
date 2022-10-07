@@ -6,8 +6,7 @@ import pandas as pd
 NaN = np.nan
 import time
 import requests
-from utils import function_add_suffix, function_suffix_removal, names_analyse, names_ids_analyse, names_taxons_ids_analyse
-
+from pyobistools.utils import function_add_suffix, function_suffix_removal, names_analyse, names_ids_analyse, names_taxons_ids_analyse
 
 def check_scientificname(data, value):
     data = pd.DataFrame(data=data)
