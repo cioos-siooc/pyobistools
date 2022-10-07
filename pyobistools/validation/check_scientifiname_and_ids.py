@@ -8,7 +8,7 @@ import time
 import requests
 from pyobistools.utils import function_add_suffix, function_suffix_removal, names_analyse, names_ids_analyse, names_taxons_ids_analyse
 
-def check_scientificname(data, value):
+def check_scientifiname_and_ids(data, value):
     data = pd.DataFrame(data=data)
     data = data.rename(columns=str.lower)
     data_valid_scientific_name = data
