@@ -31,8 +31,8 @@ def check_scientifiname_and_ids(data, value):
     async def info_noms(index, nom):
         async with httpx.AsyncClient(timeout = timeout) as client:
             list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-            response = requests.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
-            #response = await client.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
+           # response = requests.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
+            response = await client.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
             
             # si réponse positive de Worms, fait:
             if response.status_code == 200:
@@ -52,8 +52,8 @@ def check_scientifiname_and_ids(data, value):
             # if no answer from Worms, try Itis:
             if response.status_code == 204:
                 try:
-                  #  response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
-                    response3 = requests.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
+                    response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
+                  #  response3 = requests.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
 
                     response4 = response3.json()
                                         
