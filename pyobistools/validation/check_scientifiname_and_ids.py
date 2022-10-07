@@ -37,7 +37,7 @@ def check_scientificname(data, value):
             # si réponse positive de Worms, fait:
             if response.status_code == 200:
                 for key in list_of_list:
-                    print(key,',', list_of_list[key])
+                    #print(key,',', list_of_list[key])
                     response2 = response.json()
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']         = response2[0]['AphiaID']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Status']          = response2[0]['status']
