@@ -131,7 +131,7 @@ def names_analyse(data_valid_scientific_name):
         ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
-    
+
     return data_valid_scientific_name
 
 
@@ -158,6 +158,13 @@ def names_ids_analyse(data_valid_scientific_name, data):
     # classer les valeurs par validité
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_cross_validation.sort_values(by=['ScientificName_V', 'scientificNameID_V'], ascending=True, inplace=True)
+
+
+    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
+        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
+        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+
+    data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
     return data_valid_scientific_name, data_cross_validation
 
@@ -189,5 +196,12 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_cross_validation.sort_values(by=['ScientificName_V', 'TaxonRank_V','scientificNameID_V'], ascending=True, inplace=True)
 
+
+    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
+        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
+        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+
+    data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
+    
     return data_valid_scientific_name, data_cross_validation
 
