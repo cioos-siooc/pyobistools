@@ -125,6 +125,13 @@ def exact_match(a, b):
 def names_analyse(data_valid_scientific_name):
     # Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial
     data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"], data_valid_scientific_name['Valid_Name'] )
+
+    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
+        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
+        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+
+    data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
+    
     return data_valid_scientific_name
 
 
