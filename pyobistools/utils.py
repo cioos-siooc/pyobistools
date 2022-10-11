@@ -166,6 +166,14 @@ def names_ids_analyse(data_valid_scientific_name, data):
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
+
+    columns=[('Ref. ID', 'occurrenceid'), ('Validation', 'ScientificName_V'), ('Validation', 'scientificNameID_V'), ('Values', 'scientificname'), 
+    ('Values', 'scientificnameid'), ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), 
+    ('Database_values', 'scientificname2')]
+
+    data_cross_validation.columns = pd.MultiIndex.from_tuples(columns)
+
+
     return data_valid_scientific_name, data_cross_validation
 
 
@@ -202,6 +210,6 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
         ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
-    
+
     return data_valid_scientific_name, data_cross_validation
 
