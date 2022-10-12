@@ -168,7 +168,7 @@ def names_ids_analyse(data_valid_scientific_name, data):
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
 
-    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName'), ('Validation', 'scientificNameID'), ('Dataset Values', 'ScientificName'), 
+    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName_Validation'), ('Validation', 'scientificNameID_Validation'), ('Dataset Values', 'ScientificName'), 
     ('Dataset Values', 'ScientificNameID'), ('Database values', 'Valid_Name'), ('Database values', 'LSID'), 
     ('Database values', 'scientificname2')]
 
@@ -211,7 +211,7 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
-    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName'), ('Validation', 'TaxonRank'), ('Validation', 'scientificNameID'), ('Dataset Values', 'ScientificName'), 
+    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName_Validation'), ('Validation', 'TaxonRank_Validation'), ('Validation', 'scientificNameID_Validation'), ('Dataset Values', 'ScientificName'), 
     ('Dataset Values', 'TaxonRank'), ('Dataset Values', 'ScientificNameID'), ('Database values', 'Valid_Name'), ('Database values', 'Taxon_Rank'), ('Database values', 'LSID'), 
     ('Database values', 'scientificname2')]
 
