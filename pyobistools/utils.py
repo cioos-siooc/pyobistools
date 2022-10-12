@@ -125,10 +125,12 @@ def exact_match(a, b):
 def names_analyse(data_valid_scientific_name):
     # Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial
     data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"], data_valid_scientific_name['Valid_Name'] )
+   
+    data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
 
-    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
-        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
-        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+    columns=[('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'), 
+        ('Database values', 'Unacceptreason'), ('Database values', 'Taxon_Rank'), ('Database values', 'Valid_TaxonID'), 
+        ('Database values', 'Valid_Name'), ('Database values', 'LSID'), ('Database values', 'scientificname2')]
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
@@ -159,17 +161,16 @@ def names_ids_analyse(data_valid_scientific_name, data):
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_cross_validation.sort_values(by=['ScientificName_V', 'scientificNameID_V'], ascending=True, inplace=True)
 
-
-    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
-        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
-        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+    columns=[('Dataset Values', 'scientificname'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'), 
+        ('Database values', 'Unacceptreason'), ('Database values', 'Taxon_Rank'), ('Database values', 'Valid_TaxonID'), 
+        ('Database values', 'Valid_Name'), ('Database values', 'LSID'), ('Database values', 'scientificname2')]
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
 
 
-    columns=[('Ref. ID', 'occurrenceid'), ('Validation', 'ScientificName_V'), ('Validation', 'scientificNameID_V'), ('Values', 'scientificname'), 
-    ('Values', 'scientificnameid'), ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), 
-    ('Database_values', 'scientificname2')]
+    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName'), ('Validation', 'scientificNameID'), ('Dataset Values', 'ScientificName'), 
+    ('Dataset Values', 'ScientificNameID'), ('Database values', 'Valid_Name'), ('Database values', 'LSID'), 
+    ('Database values', 'scientificname2')]
 
     data_cross_validation.columns = pd.MultiIndex.from_tuples(columns)
 
@@ -204,12 +205,17 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_cross_validation.sort_values(by=['ScientificName_V', 'TaxonRank_V','scientificNameID_V'], ascending=True, inplace=True)
 
-
-    columns=[('Value', 'scientificname'), ('Validation', 'Exact_Match'), ('Database_values', 'TaxonID'), ('Database_values', 'Status'), 
-        ('Database_values', 'Unacceptreason'), ('Database_values', 'Taxon_Rank'), ('Database_values', 'Valid_TaxonID'), 
-        ('Database_values', 'Valid_Name'), ('Database_values', 'LSID'), ('Database_values', 'scientificname2')]
+    columns=[('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'), 
+        ('Database values', 'Unacceptreason'), ('Database values', 'Taxon_Rank'), ('Database values', 'Valid_TaxonID'), 
+        ('Database values', 'Valid_Name'), ('Database values', 'LSID'), ('Database values', 'scientificname2')]
 
     data_valid_scientific_name.columns = pd.MultiIndex.from_tuples(columns)
+
+    columns=[('Ref. ID', 'OccurrenceID'), ('Validation', 'ScientificName'), ('Validation', 'TaxonRank'), ('Validation', 'scientificNameID'), ('Dataset Values', 'ScientificName'), 
+    ('Dataset Values', 'TaxonRank'), ('Dataset Values', 'ScientificNameID'), ('Database values', 'Valid_Name'), ('Database values', 'Taxon_Rank'), ('Database values', 'LSID'), 
+    ('Database values', 'scientificname2')]
+
+    data_cross_validation.columns = pd.MultiIndex.from_tuples(columns)
 
     return data_valid_scientific_name, data_cross_validation
 
