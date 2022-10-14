@@ -52,8 +52,8 @@ def check_scientifiname_and_ids(data, value):
             # if no answer from Worms, try Itis:
             if response.status_code == 204:
                 try:
-                    response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
-                  #  response3 = requests.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
+                    #response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
+                    response3 = requests.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
 
                     response4 = response3.json()
                                         
