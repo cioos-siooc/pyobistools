@@ -52,27 +52,33 @@ def check_scientifiname_and_ids(data, value):
             # if no answer from Worms, try Itis:
             if response.status_code == 204:
                 list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-                #for key in list_of_list:
-                 #   data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Exact_Match'] = 'Itis'
+
                 try:
                     response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
                     response4 = response3.json()
-                                        
+                #    print(response4)
                     # entre les valeurs du serveur dans le tableau
                     if response4['scientificNames'] != [None]:
-                        print(response4)
                         for key in list_of_list:
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = response4['scientificNames'][0]['tsn']
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = response4['scientificNames'][0]['tsn']
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']     = response4['scientificNames'][0]['combinedName']
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']           = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
-                        #   print(f"{index} : {response3.status_code}: Itis {list_of_list[key]}")
+                            print(f"{index} : {response3.status_code}: Itis {list_of_list[key]}")
+                   
+                    if response4['scientificNames'] == [None]:
+                        for key in list_of_list:
+                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = 'no_answer Worms & Itis'
+                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = 'no_answer Worms & Itis'
+                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']     = 'no_answer Worms & Itis'
+                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']           = 'no_answer Worms & Itis'
+                            print(f"{index} : no answer:   Worms & Itis {list_of_list[key]}")
 
                 # if Itis timeout:
                 except:
                     response3 = None
                     response4 = response3
-                    
+
                     # entre les valeurs 'timeout' dans le tableau
                     if response4 == None:
                         print(response4)
