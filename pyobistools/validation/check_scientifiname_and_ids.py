@@ -46,7 +46,7 @@ def check_scientifiname_and_ids(data, value):
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']   = response2[0]['valid_AphiaID']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']      = response2[0]['valid_name']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']            = response2[0]['lsid']
-                    print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                  #  print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
            
 
             # if no answer from Worms, try Itis:
@@ -58,6 +58,7 @@ def check_scientifiname_and_ids(data, value):
                                         
                     # entre les valeurs du serveur dans le tableau
                     if response4['scientificNames'] != [None]:
+                        print(response4)
                         for key in list_of_list:
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = response4['scientificNames'][0]['tsn']
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = response4['scientificNames'][0]['tsn']
@@ -72,6 +73,7 @@ def check_scientifiname_and_ids(data, value):
                     
                     # entre les valeurs 'timeout' dans le tableau
                     if response4 == None:
+                        print(response4)
                         for key in list_of_list:
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = 'timeout-Itis'
                             data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = 'timeout-Itis'
