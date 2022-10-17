@@ -51,10 +51,9 @@ def check_scientifiname_and_ids(data, value):
 
             # if no answer from Worms, try Itis:
             if response.status_code == 204:
+                list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
                 try:
                     response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
-                    #response3 = requests.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
-
                     response4 = response3.json()
                                         
                     # entre les valeurs du serveur dans le tableau
