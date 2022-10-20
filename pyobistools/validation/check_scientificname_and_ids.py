@@ -31,13 +31,15 @@ def check_scientificname_and_ids(data, value):
     async def info_noms(index, nom):
         async with httpx.AsyncClient(timeout = timeout) as client:
             list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-           # response = requests.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
+            # print(list_of_list)
+            # print(list_of_list.keys())
+
             response = await client.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
             
             # si réponse positive de Worms, fait:
             if response.status_code == 200:
                 for key in list_of_list:
-                   # print(key,',', list_of_list[key])
+                    # print(list_of_list[key])
                     response2 = response.json()
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']         = response2[0]['AphiaID']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Status']          = response2[0]['status']
@@ -46,14 +48,15 @@ def check_scientificname_and_ids(data, value):
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']   = response2[0]['valid_AphiaID']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']      = response2[0]['valid_name']
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']            = response2[0]['lsid']
-                   # print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "Worms"
+                    print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
            
 
             # if empty answer from Worms, prepare table for Itis later on
             if response.status_code == 204:
                 list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
                 for key in list_of_list:
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']    
+                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "Itis"
 
              
     # definition of async calls sequence
