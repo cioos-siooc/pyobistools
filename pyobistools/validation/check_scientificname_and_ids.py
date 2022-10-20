@@ -49,46 +49,11 @@ def check_scientificname_and_ids(data, value):
                    # print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
            
 
-            # if no answer from Worms, try Itis:
+            # if empty answer from Worms, prepare table for Itis later on
             if response.status_code == 204:
                 list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-
-                try:
-                    response3 = await client.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={nom}")
-                    response4 = response3.json()
-                #    print(response4)
-                    # entre les valeurs du serveur dans le tableau
-                    if response4['scientificNames'] != [None]:
-                        for key in list_of_list:
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = response4['scientificNames'][0]['tsn']
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = response4['scientificNames'][0]['tsn']
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']     = response4['scientificNames'][0]['combinedName']
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']           = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
-                            print(f"{index} : {response3.status_code}: Itis {list_of_list[key]}")
-                   
-                    if response4['scientificNames'] == [None]:
-                        for key in list_of_list:
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = 'no_answer Worms & Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = 'no_answer Worms & Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']     = 'no_answer Worms & Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']           = 'no_answer Worms & Itis'
-                            print(f"{index} : no answer:   Worms & Itis {list_of_list[key]}")
-
-                # if Itis timeout:
-                except:
-                    response3 = None
-                    response4 = response3
-
-                    # entre les valeurs 'timeout' dans le tableau
-                    if response4 == None:
-                        print(response4)
-                        for key in list_of_list:
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID']        = 'timeout-Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID']  = 'timeout-Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name']     = 'timeout-Itis'
-                            data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID']           = 'timeout-Itis'
-                            print(f"{index} : timeout:   Itis {list_of_list[key]}")
-
+                for key in list_of_list:
+                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']    
 
              
     # definition of async calls sequence
@@ -103,6 +68,29 @@ def check_scientificname_and_ids(data, value):
     start_time = time.monotonic()
     asyncio.run(main(liste_noms))
     end_time = time.monotonic()
+
+    
+    # for empty answers from WORMS, try ITIS
+    s = requests.Session()
+    for row in data_valid_scientific_name.index:
+        if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
+                
+            response3 = s.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
+            if response3.status_code == 200:
+                response4 = response3.json()
+                                    
+                # entre les valeurs du serveur dans le tableau
+                if response4['scientificNames'] != [None]:
+                    #   for key in list_of_list:
+                    data_valid_scientific_name.loc[row, 'TaxonID'] = response4['scientificNames'][0]['tsn']
+                    data_valid_scientific_name.loc[row, 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
+                    data_valid_scientific_name.loc[row, 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
+                    data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
+                    print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+            else:
+                print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+   
+    data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
 
     # Analysis and tables preparation section
