@@ -124,7 +124,7 @@ def exact_match(a, b):
 
 def names_analyse(data_valid_scientific_name):
     # Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial
-    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"], data_valid_scientific_name['Valid_Name'] )
+    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower() )
    
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
 
@@ -137,7 +137,7 @@ def names_analyse(data_valid_scientific_name):
 
 
 def names_ids_analyse(data_valid_scientific_name, data):
-    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"], data_valid_scientific_name['Valid_Name'] )
+    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower() )
 
     # Préparation du tableau de comparaison des noms scientifiques, rangs taxonimique et LSID (si applicable)
     data_cross_validation = data.copy()
@@ -153,8 +153,8 @@ def names_ids_analyse(data_valid_scientific_name, data):
     data_cross_validation = data_cross_validation.merge(data_valid_scientific_name[['Valid_Name','LSID','scientificname2']],how='left',left_on='scientificname', right_on='scientificname2' )
 
     # Vérification des colonnes pour fin de validation
-    data_cross_validation['ScientificName_V'] = np.vectorize(exact_match_suffix)(data_cross_validation["scientificname"], data_cross_validation['Valid_Name'] )
-    data_cross_validation['scientificNameID_V'] = np.vectorize(exact_match)(data_cross_validation["scientificnameid"], data_cross_validation['LSID'] )
+    data_cross_validation['ScientificName_V'] = np.vectorize(exact_match_suffix)(data_cross_validation["scientificname"].str.lower(), data_cross_validation['Valid_Name'].str.lower() )
+    data_cross_validation['scientificNameID_V'] = np.vectorize(exact_match)(data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower() )
 
     # classer les valeurs par validité
     data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
@@ -181,7 +181,7 @@ def names_ids_analyse(data_valid_scientific_name, data):
 
 def names_taxons_ids_analyse(data_valid_scientific_name, data):
     # Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial
-    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"], data_valid_scientific_name['Valid_Name'] )
+    data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower() )
 
     # Préparation du tableau de comparaison des noms scientifiques, rangs taxonimique et LSID (si applicable)
     data_cross_validation = data.copy()
@@ -197,9 +197,9 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
     data_cross_validation = data_cross_validation.merge(data_valid_scientific_name[['Valid_Name','Taxon_Rank','LSID','scientificname2']],how='left',left_on='scientificname', right_on='scientificname2' )
 
     # Vérification des colonnes pour fin de validation
-    data_cross_validation['ScientificName_V'] = np.vectorize(exact_match_suffix)(data_cross_validation["scientificname"], data_cross_validation['Valid_Name'] )
-    data_cross_validation['TaxonRank_V'] = np.vectorize(exact_match)(data_cross_validation["taxonrank"], data_cross_validation['Taxon_Rank'] ) 
-    data_cross_validation['scientificNameID_V'] = np.vectorize(exact_match)(data_cross_validation["scientificnameid"], data_cross_validation['LSID'] )
+    data_cross_validation['ScientificName_V'] = np.vectorize(exact_match_suffix)(data_cross_validation["scientificname"].str.lower(), data_cross_validation['Valid_Name'].str.lower() )
+    data_cross_validation['TaxonRank_V'] = np.vectorize(exact_match)(data_cross_validation["taxonrank"].str.lower(), data_cross_validation['Taxon_Rank'].str.lower() ) 
+    data_cross_validation['scientificNameID_V'] = np.vectorize(exact_match)(data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower() )
 
     
     # classer les valeurs par validité
