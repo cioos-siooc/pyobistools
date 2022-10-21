@@ -198,7 +198,7 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
 
     # Vérification des colonnes pour fin de validation
     data_cross_validation['ScientificName_V'] = np.vectorize(exact_match_suffix)(data_cross_validation["scientificname"], data_cross_validation['Valid_Name'] )
-    data_cross_validation['TaxonRank_V'] = np.vectorize(exact_match)(data_cross_validation["taxonrank"], data_cross_validation['Taxon_Rank'] )
+    data_cross_validation['TaxonRank_V'] = np.vectorize(exact_match)(data_cross_validation["taxonrank"], data_cross_validation['Taxon_Rank'].lower() )
     data_cross_validation['scientificNameID_V'] = np.vectorize(exact_match)(data_cross_validation["scientificnameid"], data_cross_validation['LSID'] )
 
     
