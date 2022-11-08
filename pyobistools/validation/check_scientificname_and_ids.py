@@ -75,7 +75,7 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
     end_time = time.monotonic()
 
     # for empty answers from WORMS, try ITIS if option is selected
-    if itis_usage:
+    if itis_usage == True:
         s = requests.Session()
         for row in data_valid_scientific_name.index:
             if data_valid_scientific_name.loc[row, 'Source'] == 'check Itis':
