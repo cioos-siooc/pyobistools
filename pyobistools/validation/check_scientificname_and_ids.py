@@ -8,7 +8,8 @@ import time
 import requests
 from pyobistools.utils import function_add_suffix, function_suffix_removal, names_analyse, names_ids_analyse, names_taxons_ids_analyse
 
-def check_scientificname_and_ids(data, value):
+
+def check_scientificname_and_ids(data, value, itis_usage = False):
     data = pd.DataFrame(data=data)
     data = data.rename(columns=str.lower)
     data_valid_scientific_name = data
@@ -56,7 +57,7 @@ def check_scientificname_and_ids(data, value):
             if response.status_code == 204:
                 list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
                 for key in list_of_list:
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "Itis"
+                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "Worms: 204 - No Content"
 
              
     # definition of async calls sequence
@@ -72,28 +73,28 @@ def check_scientificname_and_ids(data, value):
     asyncio.run(main(liste_noms))
     end_time = time.monotonic()
 
-    
-    # for empty answers from WORMS, try ITIS
-    s = requests.Session()
-    for row in data_valid_scientific_name.index:
-        if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
-                
-            response3 = s.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
-            if response3.status_code == 200:
-                response4 = response3.json()
-                                    
-                # entre les valeurs du serveur dans le tableau
-                if response4['scientificNames'] != [None]:
-                    #   for key in list_of_list:
-                    data_valid_scientific_name.loc[row, 'TaxonID'] = response4['scientificNames'][0]['tsn']
-                    data_valid_scientific_name.loc[row, 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
-                    data_valid_scientific_name.loc[row, 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
-                    data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
+    # for empty answers from WORMS, try ITIS if option is selected
+    if itis_usage:
+        s = requests.Session()
+        for row in data_valid_scientific_name.index:
+            if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
+                    
+                response3 = s.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
+                if response3.status_code == 200:
+                    response4 = response3.json()
+                                        
+                    # entre les valeurs du serveur dans le tableau
+                    if response4['scientificNames'] != [None]:
+                        #   for key in list_of_list:
+                        data_valid_scientific_name.loc[row, 'TaxonID'] = response4['scientificNames'][0]['tsn']
+                        data_valid_scientific_name.loc[row, 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
+                        data_valid_scientific_name.loc[row, 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
+                        data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
+                        print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+                else:
                     print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
-            else:
-                print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
    
-    data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
+   # data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
 
     # Analysis and tables preparation section
