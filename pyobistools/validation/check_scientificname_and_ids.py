@@ -90,9 +90,10 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
                         data_valid_scientific_name.loc[row, 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
                         data_valid_scientific_name.loc[row, 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
                         data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
-                       # print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+                        print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
                     
-                    print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+                    else:
+                        print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']} - Empty answer")
 
                 else:
                     print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
