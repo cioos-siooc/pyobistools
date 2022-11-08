@@ -57,7 +57,7 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
             if response.status_code == 204:
                 list_of_list = function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
                 for key in list_of_list:
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "check Itis"
+                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source']          = "Itis"
                     print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
 
              
@@ -76,9 +76,10 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
 
     # for empty answers from WORMS, try ITIS if option is selected
     if itis_usage == True:
+        print('test itis')
         s = requests.Session()
         for row in data_valid_scientific_name.index:
-            if data_valid_scientific_name.loc[row, 'Source'] == 'check Itis':
+            if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
                     
                 response3 = s.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
                 if response3.status_code == 200:
