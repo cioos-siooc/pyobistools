@@ -76,13 +76,13 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
 
     # for empty answers from WORMS, try ITIS if option is selected
     if itis_usage == True:
-        print('test itis')
         s = requests.Session()
         for row in data_valid_scientific_name.index:
             if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
-                    
+                print('test itis')
                 response3 = s.get(f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
                 if response3.status_code == 200:
+                    print('test itis 200')
                     response4 = response3.json()
                                         
                     # entre les valeurs du serveur dans le tableau
@@ -94,8 +94,10 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
                         data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:"+response4['scientificNames'][0]['tsn']
                         print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
                 else:
+                    print('test itis marche pas')
                     print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
-   
+                print('test fin')
+
     data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
 
