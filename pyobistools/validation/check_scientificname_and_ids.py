@@ -98,8 +98,8 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
                 else:
                     print(f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
 
-    data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
+    data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
     # Analysis and tables preparation section
     if value == 'names':
