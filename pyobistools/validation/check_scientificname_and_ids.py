@@ -27,7 +27,7 @@ def check_scientificname_and_ids(data, value, itis_usage = False):
     liste_noms_pre_modif, liste_noms, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point = function_suffix_removal(data_valid_scientific_name)
 
     # fonction async
-    timeout = httpx.Timeout(5.0, read=10.0) 
+    timeout = httpx.Timeout() 
 
     async def info_noms(index, nom):
         async with httpx.AsyncClient(timeout = timeout) as client:
