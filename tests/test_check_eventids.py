@@ -24,9 +24,9 @@ def test_check_eventids_presence_eventids_parenteventid():
   
   error = check_eventids(field_data)
 
-  # reset index of both dataframe or the compare won't work
-  # assert correct_data.reset_index(drop=True).equals(error.reset_index(drop=True)) == True
-    assert correct_data.astype(str).reset_index(drop=True).equals(error.astype(str).reset_index(drop=True)) == True
+    # reset index of both dataframe or the compare won't work
+    # assert correct_data.reset_index(drop=True).equals(error.reset_index(drop=True)) == True
+  assert correct_data.astype(str).reset_index(drop=True).equals(error.astype(str).reset_index(drop=True)) == True
 
 
 def test_check_eventids_duplicate_eventIDs():

@@ -9,7 +9,7 @@ import requests
 import numpy as np
 import pandas as pd
 
-from utils import removesuffix
+from pyobistools.utils import removesuffix
 
 
 STANDARD_SPECIES_COLUMNS = {
