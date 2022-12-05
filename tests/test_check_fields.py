@@ -28,7 +28,7 @@ def test_check_fields_default():
 
     # reset index of both dataframe or the compare won't work
     assert correct_data.astype(str).reset_index(drop=True).equals(
-        error.astype(str).reset_index(drop=True)) == True
+        error.astype(str).reset_index(drop=True))
 
     # recommended terms
     error = check_fields(field_data, level="warning")
