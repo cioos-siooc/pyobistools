@@ -1,0 +1,12 @@
+name: pyobistools
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+- geopandas
+- pyworms
+- ckanapi
+- plotly
+- pip
+- pip:
+  - -r requirements.txt
