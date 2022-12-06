@@ -2,71 +2,99 @@
 check eventIDs
 """
 
+import numpy as np
 import pandas as pd
 
-test_data_1 = pd.DataFrame({'eventID': ["a", "b"]})
-test_data_2 = pd.DataFrame({'parentEventID': ["a", "b"]})
-test_data_3 = pd.DataFrame({'eventID': ["a", "b", "c", "d", "e", "f"], 'parentEventID': ["", "", "a", "a", "bb", "b"]})
-test_data_2 = pd.DataFrame({'eventID': ["a", "b", "b", "c"]})
+from pyobistools.validation.check_eventids import (check_eventids,
+                                                   check_extension_eventids)
+
+NaN = np.nan
 
 
-def test_check_eventids_missing_columns():
-    """
-    check_eventids detects missing columns
-    """
-    assert True
+def test_check_eventids_presence_eventids_parenteventid():
+    field_data = pd.DataFrame({
+        'occurrenceID': ["1", "2", "3"],
+        'measurementid': ["1", "2", "3"],
+        'measurementtype': ["temperature", "tail length", "temperature"],
+        'measurementvalue': [12, 12.7, 15.873],
+        'measurementunit': ["C", "cm", "C"],
+        'measurementremarks': ["", NaN, "not calibrated"]
+    })
+    correct_data = pd.DataFrame(data={
+        'field': ["eventid", "parenteventid"],
+        'level': ["error", "error"],
+        'row':  ['NaN', 'NaN'],
+        'message': ["Field eventid is missing", "Field parenteventid is missing"]})
 
+    error = check_eventids(field_data)
 
-"""
-  results <- check_eventids(test_data_1)
-  expect_true(nrow(results) == 1)
-
-  results <- check_eventids(test_data_2)
-  expect_true(nrow(results) == 1)
-"""
-
-
-def test_check_eventids_missing_eventIDs():
-    assert True
-
-
-"""
-test_that("check_eventids detects missing eventIDs", {
-
-  results <- check_eventids(test_data_3)
-  expect_true(nrow(results) == 1)
-  expect_true(5 %in% results$row)
-"""
+    # reset index of both dataframe or the compare won't work
+    # assert correct_data.reset_index(drop=True).equals(error.reset_index(drop=True)) == True
+    assert correct_data.astype(str).reset_index(drop=True).equals(
+        error.astype(str).reset_index(drop=True))
 
 
 def test_check_eventids_duplicate_eventIDs():
-    assert True
-
-
-"""
-  results <- check_eventids(test_data_4)
-  expect_true(nrow(results) == 1)
-  expect_true(3 %in% results$row)
-"""
-
-
-def test_check_extension_eventids():
     """
-    check_extension_eventids works
+    check_fields_eventcore detects missing or empty required and recommended fields
+    for the event_core format.
+
     """
-    # event = pd.DataFrame({'eventID': ["a", "b", "b", "c"]})
-    # extension = pd.DataFrame({'xeventID': ["a", "b", "b", "d", "e"]})
+    field_data = pd.DataFrame({
+        'eventid': [1, 1, 3],
+        'decimallatitude': [46.0, 48, ''],
+        'parenteventid': [1, 1, 1],
+        'countrycode': ["CA", "CA", "US"],
+    })
 
-    assert True
+    error = check_eventids(field_data)
+    assert len(error.index) == 2
 
 
-"""
-  event <- data.frame(eventID = c("a", "b", "b", "c"), stringsAsFactors = FALSE)
-  extension <- data.frame(xeventID = c("a", "b", "b", "d", "e"), stringsAsFactors = FALSE)
-  df <- check_extension_eventids(event, extension, "xeventID")
-  expect_equal(nrow(df), 2)
-  expect_true(all(c(4,5) %in% df$row))
+def test_check_eventids_parenteventids_corresponding_eventIDs():
+    field_data = pd.DataFrame({
+        'eventid': ["1", "2", "3"],
+        'parenteventid': ["1", "2", "4"],
+        'measurementid': ["1", "2", "3"],
+        'measurementtype': ["temperature", "tail length", "temperature"],
+        'measurementvalue': [12, 12.7, 15.873],
+        'measurementunit': ["C", "cm", "C"],
+        'measurementremarks': ["", NaN, "not calibrated"]
+    })
 
-  df <- check_extension_eventids(event[NULL, , drop=FALSE], extension[NULL, , drop=FALSE], "xeventID")
-  expect_equal(nrow(df), 0)
-"""
+    correct_data = pd.DataFrame(data={
+        'field': ["parenteventid"],
+        'level': ["error"],
+        'row':  [2],
+        'message': ["parenteventid 4 has no corresponding eventID"]})
+
+    error = check_eventids(field_data)
+
+    assert correct_data.astype(str).reset_index(drop=True).equals(
+        error.astype(str).reset_index(drop=True))
+
+
+def test_check_eventids_eventids_extension_corresponding_core():
+
+    event = pd.DataFrame({
+        'eventid': ["1", "2", "3"],
+        'parenteventid': ["1", "2", "4"],
+        'measurementid': ["1", "2", "3"],
+        'measurementtype': ["temperature", "tail length", "temperature"],
+        'measurementvalue': [12, 12.7, 15.873],
+        'measurementunit': ["C", "cm", "C"],
+        'measurementremarks': ["", NaN, "not calibrated"]
+    })
+
+    extension = pd.DataFrame({
+        'eventid': ["1", "6", "3"],
+        'parenteventid': ["1", "2", "4"],
+        'measurementid': ["1", "2", "3"],
+        'measurementtype': ["temperature", "tail length", "temperature"],
+        'measurementvalue': [12, 12.7, 15.873],
+        'measurementunit': ["C", "cm", "C"],
+        'measurementremarks': ["", NaN, "not calibrated"]
+    })
+
+    error = check_extension_eventids(event=event, extension=extension)
+    assert len(error.index) == 1

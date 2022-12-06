@@ -4,13 +4,12 @@
 import typing as t
 from functools import partial
 
-import pyworms
-import requests
 import numpy as np
 import pandas as pd
+import pyworms
+import requests
 
 from pyobistools.utils import removesuffix
-
 
 STANDARD_SPECIES_COLUMNS = {
     'taxon_id': np.nan,
@@ -92,7 +91,7 @@ def add_suffix(name: str) -> t.List[str]:
             break
 
     # Return a name for each suffix with whitespace remvoed
-    return [ name.strip() + s for s in suffixes ]
+    return [name.strip() + s for s in suffixes]
 
 
 def search_worms(names: t.List[str],
@@ -108,7 +107,7 @@ def search_worms(names: t.List[str],
         pd.DataFrame: Species records
     """
     # WoRMS doesn't like suffixes so remove them
-    suffixless_names = [ remove_suffix(s) for s in names ]
+    suffixless_names = [remove_suffix(s) for s in names]
 
     # Renames from pyworks output to the standard columns
     renames = {
@@ -136,7 +135,7 @@ def search_worms(names: t.List[str],
 
         # Track rows which did not return any data
         if not name_results:
-            rows.append({'match_input': match_input, 'matched': False })
+            rows.append({'match_input': match_input, 'matched': False})
 
         for row in name_results:
             for k, v in renames.items():
@@ -175,7 +174,7 @@ def search_itis(names: t.List[str],
         pd.DataFrame: Species records
     """
     # ITIS wants suffixes?
-    suffix_names = [ add_suffix(s) for s in names ]  # noqa
+    suffix_names = [add_suffix(s) for s in names]  # noqa
 
     # TODO: Hit ITIS API to return results
     # renames = {
@@ -236,7 +235,7 @@ def search_obis(names: t.List[str],
     }
 
     # WoRMS doesn't like suffixes so remove them
-    suffixless_names = [ remove_suffix(s) for s in names ]
+    suffixless_names = [remove_suffix(s) for s in names]
 
     rows = []
     for name in suffixless_names:
