@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>pyobistools.utils &#8212; pyobistools 2.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,9 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="analysis_function" href="../../analysis_function/index.html" />
@@ -35,37 +37,104 @@
           <div class="body" role="main">
             
   <section id="module-pyobistools.utils">
-<span id="pyobistools-utils"></span><h1><a class="reference internal" href="#module-pyobistools.utils" title="pyobistools.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.utils</span></code></a><a class="headerlink" href="#module-pyobistools.utils" title="Permalink to this headline">¶</a></h1>
+<span id="pyobistools-utils"></span><h1><a class="reference internal" href="#module-pyobistools.utils" title="pyobistools.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.utils</span></code></a><a class="headerlink" href="#module-pyobistools.utils" title="Permalink to this heading">¶</a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.removesuffix" title="pyobistools.utils.removesuffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removesuffix</span></code></a>(obj, suffix)</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.utils.function_suffix_removal" title="pyobistools.utils.function_suffix_removal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_suffix_removal</span></code></a>(data_valid_nom_scientifique)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.function_add_suffix" title="pyobistools.utils.function_add_suffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function_add_suffix</span></code></a>(nom, liste_noms_sans_suffix, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.utils.exact_match_suffix" title="pyobistools.utils.exact_match_suffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exact_match_suffix</span></code></a>(a, b)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.exact_match" title="pyobistools.utils.exact_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exact_match</span></code></a>(a, b)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.utils.names_analyse" title="pyobistools.utils.names_analyse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">names_analyse</span></code></a>(data_valid_scientific_name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.names_ids_analyse" title="pyobistools.utils.names_ids_analyse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">names_ids_analyse</span></code></a>(data_valid_scientific_name, data)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.utils.names_taxons_ids_analyse" title="pyobistools.utils.names_taxons_ids_analyse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">names_taxons_ids_analyse</span></code></a>(data_valid_scientific_name, data)</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.NaN" title="pyobistools.utils.NaN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyobistools.utils.NaN">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">NaN</span></span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#NaN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.NaN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="pyobistools.utils.removesuffix">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#removesuffix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.removesuffix" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<em>str</em>) – </p></li>
 <li><p><strong>suffix</strong> (<em>str</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.function_suffix_removal">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">function_suffix_removal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_valid_nom_scientifique</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#function_suffix_removal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.function_suffix_removal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.function_add_suffix">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">function_add_suffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_noms_sans_suffix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_noms_sp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_noms_sp_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_noms_spp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_noms_spp_point</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#function_add_suffix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.function_add_suffix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.exact_match_suffix">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">exact_match_suffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#exact_match_suffix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.exact_match_suffix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.exact_match">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">exact_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#exact_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.exact_match" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.names_analyse">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">names_analyse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_valid_scientific_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#names_analyse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.names_analyse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.names_ids_analyse">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">names_ids_analyse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_valid_scientific_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#names_ids_analyse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.names_ids_analyse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.names_taxons_ids_analyse">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">names_taxons_ids_analyse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_valid_scientific_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#names_taxons_ids_analyse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.names_taxons_ids_analyse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </section>
 </section>
@@ -128,7 +197,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -145,7 +214,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

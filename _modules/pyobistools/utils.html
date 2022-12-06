@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,9 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -34,6 +36,10 @@
   <h1>Source code for pyobistools.utils</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># coding=utf-8</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<div class="viewcode-block" id="NaN"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.NaN">[docs]</a><span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span></div>
 
 
 <div class="viewcode-block" id="removesuffix"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.removesuffix">[docs]</a><span class="k">def</span> <span class="nf">removesuffix</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -42,6 +48,234 @@
         <span class="k">return</span> <span class="n">obj</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">obj</span><span class="p">[:]</span></div>
+
+
+<div class="viewcode-block" id="function_suffix_removal"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.function_suffix_removal">[docs]</a><span class="k">def</span> <span class="nf">function_suffix_removal</span><span class="p">(</span><span class="n">data_valid_nom_scientifique</span><span class="p">):</span>
+    <span class="n">liste_noms_pre_modif</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms_sans_suffix</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms_sp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms_sp_point</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms_spp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">liste_noms_spp_point</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">liste_noms_pre_modif</span> <span class="o">=</span> <span class="n">data_valid_nom_scientifique</span><span class="p">[</span><span class="s1">&#39;scientificname&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">rows</span> <span class="ow">in</span> <span class="n">data_valid_nom_scientifique</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">scientificName</span> <span class="o">=</span> <span class="n">data_valid_nom_scientifique</span><span class="p">[</span><span class="s1">&#39;scientificname&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">rows</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+            <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;%20&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;sp.&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;sp&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;spp&#39;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;spp.&#39;</span><span class="p">:</span>
+                        <span class="n">liste_noms_sans_suffix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;sp.&#39;</span><span class="p">:</span>
+            <span class="n">scientificName</span> <span class="o">=</span> <span class="n">scientificName</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+            <span class="n">liste_noms_sp_point</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;sp&#39;</span><span class="p">:</span>
+            <span class="n">scientificName</span> <span class="o">=</span> <span class="n">scientificName</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+            <span class="n">liste_noms_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;spp.&#39;</span><span class="p">:</span>
+            <span class="n">scientificName</span> <span class="o">=</span> <span class="n">scientificName</span><span class="p">[:</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span>
+            <span class="n">liste_noms_spp_point</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scientificName</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;spp&#39;</span><span class="p">:</span>
+            <span class="n">scientificName</span> <span class="o">=</span> <span class="n">scientificName</span><span class="p">[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+            <span class="n">liste_noms_spp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+
+        <span class="n">liste_noms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scientificName</span><span class="p">)</span>
+
+    <span class="n">liste_noms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">liste_noms</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">liste_noms_pre_modif</span><span class="p">,</span> <span class="n">liste_noms</span><span class="p">,</span> <span class="n">liste_noms_sans_suffix</span><span class="p">,</span> <span class="n">liste_noms_sp</span><span class="p">,</span> <span class="n">liste_noms_sp_point</span><span class="p">,</span> <span class="n">liste_noms_spp</span><span class="p">,</span> <span class="n">liste_noms_spp_point</span></div>
+
+
+<div class="viewcode-block" id="function_add_suffix"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.function_add_suffix">[docs]</a><span class="k">def</span> <span class="nf">function_add_suffix</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">liste_noms_sans_suffix</span><span class="p">,</span> <span class="n">liste_noms_sp</span><span class="p">,</span> <span class="n">liste_noms_sp_point</span><span class="p">,</span> <span class="n">liste_noms_spp</span><span class="p">,</span> <span class="n">liste_noms_spp_point</span><span class="p">):</span>
+    <span class="n">list_of_list</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">nom_recomposed</span> <span class="o">=</span> <span class="n">nom</span>
+    <span class="n">nom_recomposed</span> <span class="o">=</span> <span class="n">nom_recomposed</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%20&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">nom_recomposed_sp</span> <span class="o">=</span> <span class="n">NaN</span>
+    <span class="n">nom_recomposed_sp_point</span> <span class="o">=</span> <span class="n">NaN</span>
+    <span class="n">nom_recomposed_spp</span> <span class="o">=</span> <span class="n">NaN</span>
+    <span class="n">nom_recomposed_spp_point</span> <span class="o">=</span> <span class="n">NaN</span>
+
+    <span class="k">if</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">liste_noms_sp</span><span class="p">:</span>
+        <span class="n">nom_recomposed_sp</span> <span class="o">=</span> <span class="n">nom_recomposed</span> <span class="o">+</span> <span class="s2">&quot; sp&quot;</span>
+        <span class="n">list_of_list</span><span class="p">[</span><span class="s2">&quot;noms_sp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nom_recomposed_sp</span>
+
+    <span class="k">if</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">liste_noms_sp_point</span><span class="p">:</span>
+        <span class="n">nom_recomposed_sp_point</span> <span class="o">=</span> <span class="n">nom_recomposed</span> <span class="o">+</span> <span class="s2">&quot; sp.&quot;</span>
+        <span class="n">list_of_list</span><span class="p">[</span><span class="s2">&quot;noms_sp_point&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nom_recomposed_sp_point</span>
+
+    <span class="k">if</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">liste_noms_spp</span><span class="p">:</span>
+        <span class="n">nom_recomposed_spp</span> <span class="o">=</span> <span class="n">nom_recomposed</span> <span class="o">+</span> <span class="s2">&quot; spp&quot;</span>
+        <span class="n">list_of_list</span><span class="p">[</span><span class="s2">&quot;noms_spp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nom_recomposed_spp</span>
+
+    <span class="k">if</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">liste_noms_spp_point</span><span class="p">:</span>
+        <span class="n">nom_recomposed_spp_point</span> <span class="o">=</span> <span class="n">nom_recomposed</span> <span class="o">+</span> <span class="s2">&quot; spp.&quot;</span>
+        <span class="n">list_of_list</span><span class="p">[</span><span class="s2">&quot;noms_spp_point&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nom_recomposed_spp_point</span>
+
+    <span class="k">if</span> <span class="n">nom</span> <span class="ow">in</span> <span class="n">liste_noms_sans_suffix</span><span class="p">:</span>
+        <span class="n">list_of_list</span><span class="p">[</span><span class="s2">&quot;noms_sans_suffix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nom_recomposed</span>
+
+    <span class="k">return</span> <span class="n">list_of_list</span></div>
+
+
+<span class="c1"># fonction qui permet de vérifier le match des colonnes de noms scientifiques mais en enlevant les suffixes d&#39;une des colonnes</span>
+<div class="viewcode-block" id="exact_match_suffix"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.exact_match_suffix">[docs]</a><span class="k">def</span> <span class="nf">exact_match_suffix</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Oui/Yes&quot;</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;sp.&#39;</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Oui, avec qualificatif / Yes, with qualifier&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Non/no&#39;</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;sp&#39;</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Oui, avec qualificatif / Yes, with qualifier&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Non/no&#39;</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;spp.&#39;</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Oui, avec qualificatif / Yes, with qualifier&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Non/no&#39;</span>
+    <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;spp&#39;</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Oui, avec qualificatif / Yes, with qualifier&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Non/no&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Non/no&quot;</span></div>
+
+<span class="c1"># fonction qui permet de vérifier le match des colonnes</span>
+
+
+<div class="viewcode-block" id="exact_match"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.exact_match">[docs]</a><span class="k">def</span> <span class="nf">exact_match</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Oui/Yes&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Non/No&quot;</span></div>
+
+
+<div class="viewcode-block" id="names_analyse"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.names_analyse">[docs]</a><span class="k">def</span> <span class="nf">names_analyse</span><span class="p">(</span><span class="n">data_valid_scientific_name</span><span class="p">):</span>
+    <span class="c1"># Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial</span>
+    <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match_suffix</span><span class="p">)(</span>
+        <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s2">&quot;scientificname&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Valid_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;Exact_Match&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Status&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Unacceptreason&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span>
+                                                       <span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_TaxonID&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_Name&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">)]</span>
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data_valid_scientific_name</span></div>
+
+
+<div class="viewcode-block" id="names_ids_analyse"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.names_ids_analyse">[docs]</a><span class="k">def</span> <span class="nf">names_ids_analyse</span><span class="p">(</span><span class="n">data_valid_scientific_name</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match_suffix</span><span class="p">)(</span>
+        <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s2">&quot;scientificname&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Valid_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="c1"># Préparation du tableau de comparaison des noms scientifiques, rangs taxonimique et LSID (si applicable)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="p">[[</span>
+        <span class="s1">&#39;occurrenceid&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificnameid&#39;</span><span class="p">,</span> <span class="p">]]</span>
+    <span class="n">header_list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;occurrenceid&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;scientificnameid&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName_V&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">]</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">header_list1</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+    <span class="c1"># création d&#39;une colonne avec autre nom afin de pouvoir la comparer à une autre colonne</span>
+    <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;scientificname&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Merge du tableau des noms et du tableau des noms, rangs taxonomiques et LSID</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_valid_scientific_name</span><span class="p">[[</span>
+                                                        <span class="s1">&#39;Valid_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname2&#39;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;scientificname&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Vérification des colonnes pour fin de validation</span>
+    <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;ScientificName_V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match_suffix</span><span class="p">)(</span>
+        <span class="n">data_cross_validation</span><span class="p">[</span><span class="s2">&quot;scientificname&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;Valid_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match</span><span class="p">)(</span>
+        <span class="n">data_cross_validation</span><span class="p">[</span><span class="s2">&quot;scientificnameid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;LSID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="c1"># classer les valeurs par validité</span>
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ScientificName_V&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">data_valid_scientific_name</span> <span class="o">=</span> <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;Exact_Match&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Status&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Unacceptreason&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span>
+                                                       <span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_TaxonID&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_Name&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">)]</span>
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Ref. ID&#39;</span><span class="p">,</span> <span class="s1">&#39;OccurrenceID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName_Validation&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_Validation&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificNameID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_Name&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">)]</span>
+    <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data_valid_scientific_name</span><span class="p">,</span> <span class="n">data_cross_validation</span></div>
+
+
+<div class="viewcode-block" id="names_taxons_ids_analyse"><a class="viewcode-back" href="../../api/pyobistools/utils/index.html#pyobistools.utils.names_taxons_ids_analyse">[docs]</a><span class="k">def</span> <span class="nf">names_taxons_ids_analyse</span><span class="p">(</span><span class="n">data_valid_scientific_name</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="c1"># Comparaison des noms scientifiques du serveur vs. ceux du jeu de données initial</span>
+    <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match_suffix</span><span class="p">)(</span>
+        <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s2">&quot;scientificname&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;Valid_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="c1"># Préparation du tableau de comparaison des noms scientifiques, rangs taxonimique et LSID (si applicable)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="p">[[</span>
+        <span class="s1">&#39;occurrenceid&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonrank&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificnameid&#39;</span><span class="p">,</span> <span class="p">]]</span>
+    <span class="n">header_list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;occurrenceid&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonrank&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;scientificnameid&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName_V&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonRank_V&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">]</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">header_list1</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+
+    <span class="c1"># création d&#39;une colonne avec autre nom afin de pouvoir la comparer à une autre colonne</span>
+    <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_valid_scientific_name</span><span class="p">[</span><span class="s1">&#39;scientificname&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Merge du tableau des noms et du tableau des noms, rangs taxonomiques et LSID</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_valid_scientific_name</span><span class="p">[[</span>
+                                                        <span class="s1">&#39;Valid_Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificname2&#39;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;scientificname&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Vérification des colonnes pour fin de validation</span>
+    <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;ScientificName_V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match_suffix</span><span class="p">)(</span>
+        <span class="n">data_cross_validation</span><span class="p">[</span><span class="s2">&quot;scientificname&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;Valid_Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;TaxonRank_V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match</span><span class="p">)(</span>
+        <span class="n">data_cross_validation</span><span class="p">[</span><span class="s2">&quot;taxonrank&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">exact_match</span><span class="p">)(</span>
+        <span class="n">data_cross_validation</span><span class="p">[</span><span class="s2">&quot;scientificnameid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">data_cross_validation</span><span class="p">[</span><span class="s1">&#39;LSID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="c1"># classer les valeurs par validité</span>
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Exact_Match&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ScientificName_V&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonRank_V&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_V&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">data_valid_scientific_name</span> <span class="o">=</span> <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data_cross_validation</span> <span class="o">=</span> <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;scientificname2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;Exact_Match&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Status&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Unacceptreason&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span>
+                                                       <span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_TaxonID&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_Name&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">)]</span>
+
+    <span class="n">data_valid_scientific_name</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Ref. ID&#39;</span><span class="p">,</span> <span class="s1">&#39;OccurrenceID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName_Validation&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonRank_Validation&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificNameID_Validation&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificName&#39;</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;TaxonRank&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Dataset Values&#39;</span><span class="p">,</span> <span class="s1">&#39;ScientificNameID&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Valid_Name&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;Taxon_Rank&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Database values&#39;</span><span class="p">,</span> <span class="s1">&#39;LSID&#39;</span><span class="p">)]</span>
+
+    <span class="n">data_cross_validation</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data_valid_scientific_name</span><span class="p">,</span> <span class="n">data_cross_validation</span></div>
 </pre></div>
 
           </div>
@@ -98,7 +332,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -115,7 +349,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

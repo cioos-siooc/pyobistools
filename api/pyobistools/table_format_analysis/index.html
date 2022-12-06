@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>pyobistools.table_format_analysis &#8212; pyobistools 2.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,11 +13,13 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pyobistools.taxa" href="../taxa/index.html" />
-    <link rel="prev" title="pyobistools.validation.worms_itis" href="../validation/worms_itis/index.html" />
+    <link rel="prev" title="pyobistools.validation.check_scientificname_and_ids" href="../validation/check_scientificname_and_ids/index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -35,30 +37,22 @@
           <div class="body" role="main">
             
   <section id="module-pyobistools.table_format_analysis">
-<span id="pyobistools-table-format-analysis"></span><h1><a class="reference internal" href="#module-pyobistools.table_format_analysis" title="pyobistools.table_format_analysis"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.table_format_analysis</span></code></a><a class="headerlink" href="#module-pyobistools.table_format_analysis" title="Permalink to this headline">¶</a></h1>
+<span id="pyobistools-table-format-analysis"></span><h1><a class="reference internal" href="#module-pyobistools.table_format_analysis" title="pyobistools.table_format_analysis"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.table_format_analysis</span></code></a><a class="headerlink" href="#module-pyobistools.table_format_analysis" title="Permalink to this heading">¶</a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.table_format_analysis.table_format_analysis" title="pyobistools.table_format_analysis.table_format_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">table_format_analysis</span></code></a>(colonne_analyse, colonnes_extra, liste_affichage, nombre_rangees)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.table_format_analysis.table_format_analysis" title="pyobistools.table_format_analysis.table_format_analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">table_format_analysis</span></code></a>(colonne_analyse, colonnes_extra, ...)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.table_format_analysis.NaN" title="pyobistools.table_format_analysis.NaN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaN</span></code></a></p></td>
 <td><p></p></td>
@@ -120,7 +114,7 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">API Reference</a><ul>
   <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools</span></code></a><ul>
-      <li>Previous: <a href="../validation/worms_itis/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.worms_itis</span></code></a></li>
+      <li>Previous: <a href="../validation/check_scientificname_and_ids/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_scientificname_and_ids</span></code></a></li>
       <li>Next: <a href="../taxa/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.taxa</span></code></a></li>
   </ul></li>
   </ul></li>
@@ -136,7 +130,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -153,7 +147,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

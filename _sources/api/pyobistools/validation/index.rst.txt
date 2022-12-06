@@ -10,19 +10,9 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 
-   basisofrecord/index.rst
    check_eventids/index.rst
    check_fields/index.rst
    check_onland/index.rst
-   datasetid/index.rst
-   decimal_coordinates/index.rst
-   eventdate/index.rst
-   eventid/index.rst
-   footprintwkt/index.rst
-   locationid/index.rst
-   occurrenceid/index.rst
-   occurrencestatus/index.rst
-   organism_quantity/index.rst
-   worms_itis/index.rst
+   check_scientificname_and_ids/index.rst
 
 

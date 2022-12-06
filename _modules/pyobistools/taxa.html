@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,9 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -38,13 +40,12 @@
 <span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 
-<span class="kn">import</span> <span class="nn">pyworms</span>
-<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pyworms</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="kn">from</span> <span class="nn">pyobistools.utils</span> <span class="kn">import</span> <span class="n">removesuffix</span>
-
 
 <div class="viewcode-block" id="STANDARD_SPECIES_COLUMNS"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.STANDARD_SPECIES_COLUMNS">[docs]</a><span class="n">STANDARD_SPECIES_COLUMNS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;taxon_id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
@@ -126,7 +127,7 @@
             <span class="k">break</span>
 
     <span class="c1"># Return a name for each suffix with whitespace remvoed</span>
-    <span class="k">return</span> <span class="p">[</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">suffixes</span> <span class="p">]</span></div>
+    <span class="k">return</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="search_worms"><a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.search_worms">[docs]</a><span class="k">def</span> <span class="nf">search_worms</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
@@ -142,7 +143,7 @@
 <span class="sd">        pd.DataFrame: Species records</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># WoRMS doesn&#39;t like suffixes so remove them</span>
-    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>
+    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
 
     <span class="c1"># Renames from pyworks output to the standard columns</span>
     <span class="n">renames</span> <span class="o">=</span> <span class="p">{</span>
@@ -170,7 +171,7 @@
 
         <span class="c1"># Track rows which did not return any data</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">name_results</span><span class="p">:</span>
-            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">match_input</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span> <span class="p">})</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;match_input&#39;</span><span class="p">:</span> <span class="n">match_input</span><span class="p">,</span> <span class="s1">&#39;matched&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
 
         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">name_results</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">renames</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -209,7 +210,7 @@
 <span class="sd">        pd.DataFrame: Species records</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># ITIS wants suffixes?</span>
-    <span class="n">suffix_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">add_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>  <span class="c1"># noqa</span>
+    <span class="n">suffix_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">add_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>  <span class="c1"># noqa</span>
 
     <span class="c1"># TODO: Hit ITIS API to return results</span>
     <span class="c1"># renames = {</span>
@@ -270,7 +271,7 @@
     <span class="p">}</span>
 
     <span class="c1"># WoRMS doesn&#39;t like suffixes so remove them</span>
-    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span> <span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span> <span class="p">]</span>
+    <span class="n">suffixless_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_suffix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
 
     <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">suffixless_names</span><span class="p">:</span>
@@ -427,7 +428,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -444,7 +445,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -1,0 +1,35 @@
+:py:mod:`pyobistools.validation.check_scientificname_and_ids`
+=============================================================
+
+.. py:module:: pyobistools.validation.check_scientificname_and_ids
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_scientificname_and_ids.check_scientificname_and_ids
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pyobistools.validation.check_scientificname_and_ids.NaN
+
+
+.. py:data:: NaN
+   
+
+   
+
+.. py:function:: check_scientificname_and_ids(data, value, itis_usage=False)
+
+

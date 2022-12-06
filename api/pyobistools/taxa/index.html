@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>pyobistools.taxa &#8212; pyobistools 2.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,9 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pyobistools.utils" href="../utils/index.html" />
@@ -35,16 +37,12 @@
           <div class="body" role="main">
             
   <section id="module-pyobistools.taxa">
-<span id="pyobistools-taxa"></span><h1><a class="reference internal" href="#module-pyobistools.taxa" title="pyobistools.taxa"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.taxa</span></code></a><a class="headerlink" href="#module-pyobistools.taxa" title="Permalink to this headline">¶</a></h1>
+<span id="pyobistools-taxa"></span><h1><a class="reference internal" href="#module-pyobistools.taxa" title="pyobistools.taxa"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.taxa</span></code></a><a class="headerlink" href="#module-pyobistools.taxa" title="Permalink to this heading">¶</a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa._standardize_types" title="pyobistools.taxa._standardize_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_standardize_types</span></code></a>(df)</p></td>
 <td><p></p></td>
@@ -55,28 +53,24 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.add_suffix" title="pyobistools.taxa.add_suffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_suffix</span></code></a>(name)</p></td>
 <td><p>Adds suffixes to a name for searching ITIS</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_worms" title="pyobistools.taxa.search_worms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_worms</span></code></a>(names, kwargs = {})</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_worms" title="pyobistools.taxa.search_worms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_worms</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches WoRMS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search_itis" title="pyobistools.taxa.search_itis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_itis</span></code></a>(names, kwargs = {})</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search_itis" title="pyobistools.taxa.search_itis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_itis</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches ITIS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_obis" title="pyobistools.taxa.search_obis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_obis</span></code></a>(names, kwargs = {})</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_obis" title="pyobistools.taxa.search_obis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_obis</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches OBIS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search" title="pyobistools.taxa.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(names, worms_kwargs = {}, itis_kwargs = {}, obis_kwargs = {}, order = None, quick = False)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search" title="pyobistools.taxa.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(names[, worms_kwargs, itis_kwargs, ...])</p></td>
 <td><p>Search a list of scientific names in WoRMS, ITIS and OBIS and return the resulting</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.STANDARD_SPECIES_COLUMNS" title="pyobistools.taxa.STANDARD_SPECIES_COLUMNS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STANDARD_SPECIES_COLUMNS</span></code></a></p></td>
 <td><p></p></td>
@@ -92,10 +86,10 @@
 <dt class="sig sig-object py" id="pyobistools.taxa._standardize_types">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.taxa.</span></span><span class="sig-name descname"><span class="pre">_standardize_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/taxa.html#_standardize_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.taxa._standardize_types" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>df</strong> (<em>pandas.DataFrame</em>) – </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>pandas.DataFrame</p>
 </dd>
 </dl>
@@ -105,10 +99,10 @@
 <dt class="sig sig-object py" id="pyobistools.taxa.remove_suffix">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.taxa.</span></span><span class="sig-name descname"><span class="pre">remove_suffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/taxa.html#remove_suffix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.taxa.remove_suffix" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -119,10 +113,10 @@
 <span class="sig-prename descclassname"><span class="pre">pyobistools.taxa.</span></span><span class="sig-name descname"><span class="pre">add_suffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/taxa.html#add_suffix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.taxa.add_suffix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds suffixes to a name for searching ITIS</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>List[str]</p>
 </dd>
 </dl>
@@ -134,16 +128,16 @@
 <dd><p>Searches WoRMS for records based on a list of scientific names and returns
 a standardized pandas DataFrame representing the results</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>t.List</em><em>[</em><em>str</em><em>]</em>) – List of scientific names to match</p></li>
 <li><p><strong>kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Species records</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
@@ -155,16 +149,16 @@ a standardized pandas DataFrame representing the results</p>
 <dd><p>Searches ITIS for records based on a list of scientific names and returns
 a standardized pandas DataFrame representing the results</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>t.List</em><em>[</em><em>str</em><em>]</em>) – List of scientific names to match</p></li>
 <li><p><strong>kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Species records</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
@@ -176,16 +170,16 @@ a standardized pandas DataFrame representing the results</p>
 <dd><p>Searches OBIS for records based on a list of scientific names and returns
 a standardized pandas DataFrame representing the results</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>t.List</em><em>[</em><em>str</em><em>]</em>) – List of scientific names to match</p></li>
 <li><p><strong>kwargs</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Species records</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
@@ -198,7 +192,7 @@ a standardized pandas DataFrame representing the results</p>
 record information in a DataFrame. Tries WoRMS first, ITIS second, and OBIS third unless
 another order is specificed with the “order” parameter.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>t.List</em><em>[</em><em>str</em><em>]</em>) – List of scientific names to match</p></li>
 <li><p><strong>worms_kwargs</strong> (<em>t.Dict</em><em>[</em><em>str</em><em>, </em><em>t.Any</em><em>]</em>) – keyword arguments to pass to pyworm’s
@@ -211,10 +205,10 @@ another order is specificed with the “order” parameter.</p>
 services</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Species records</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
@@ -281,7 +275,7 @@ services</p></li>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -298,7 +292,7 @@ services</p></li>
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

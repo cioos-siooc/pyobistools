@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>pyobistools.validation.check_eventids &#8212; pyobistools 2.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,11 +13,13 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="pyobistools.validation.check_fields" href="../check_fields/index.html" />
-    <link rel="prev" title="pyobistools.validation.basisofrecord" href="../basisofrecord/index.html" />
+    <link rel="prev" title="pyobistools.validation" href="../index.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -35,33 +37,25 @@
           <div class="body" role="main">
             
   <section id="module-pyobistools.validation.check_eventids">
-<span id="pyobistools-validation-check-eventids"></span><h1><a class="reference internal" href="#module-pyobistools.validation.check_eventids" title="pyobistools.validation.check_eventids"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_eventids</span></code></a><a class="headerlink" href="#module-pyobistools.validation.check_eventids" title="Permalink to this headline">¶</a></h1>
+<span id="pyobistools-validation-check-eventids"></span><h1><a class="reference internal" href="#module-pyobistools.validation.check_eventids" title="pyobistools.validation.check_eventids"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_eventids</span></code></a><a class="headerlink" href="#module-pyobistools.validation.check_eventids" title="Permalink to this heading">¶</a></h1>
 <section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_eventids.check_eventids" title="pyobistools.validation.check_eventids.check_eventids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_eventids</span></code></a>(data)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_eventids.check_extension_eventids" title="pyobistools.validation.check_eventids.check_extension_eventids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_extension_eventids</span></code></a>(event, extension, field='eventID')</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_eventids.check_extension_eventids" title="pyobistools.validation.check_eventids.check_extension_eventids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_extension_eventids</span></code></a>(event, extension[, field])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_eventids.NaN" title="pyobistools.validation.check_eventids.NaN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaN</span></code></a></p></td>
 <td><p></p></td>
@@ -129,7 +123,7 @@
   <li><a href="../../../index.html">API Reference</a><ul>
   <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools</span></code></a><ul>
   <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation</span></code></a><ul>
-      <li>Previous: <a href="../basisofrecord/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.basisofrecord</span></code></a></li>
+      <li>Previous: <a href="../index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation</span></code></a></li>
       <li>Next: <a href="../check_fields/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_fields</span></code></a></li>
   </ul></li>
   </ul></li>
@@ -146,7 +140,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -163,7 +157,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

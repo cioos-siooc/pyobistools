@@ -30,6 +30,6 @@ Attributes
 
    
 
-.. py:function:: check_fields(data, level='error', analysis_type='occurrence_core')
+.. py:function:: check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False)
 
 

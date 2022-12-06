@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,9 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
    
@@ -34,73 +36,81 @@
   <h1>Source code for pyobistools.validation.check_eventids</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
 <div class="viewcode-block" id="NaN"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_eventids/index.html#pyobistools.validation.check_eventids.NaN">[docs]</a><span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span></div>
 
 
 <div class="viewcode-block" id="check_eventids"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_eventids/index.html#pyobistools.validation.check_eventids.check_eventids">[docs]</a><span class="k">def</span> <span class="nf">check_eventids</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">NaN</span><span class="p">)</span>
     <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">column_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 
-    <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
+    <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
 
     <span class="c1"># check field presence in the dataset</span>
     <span class="n">list_fields_to_check_presence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">,</span> <span class="s1">&#39;parenteventid&#39;</span><span class="p">]</span>
 
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_fields_to_check_presence</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
-            <span class="n">row</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">:</span> <span class="n">NaN</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Field &#39;</span> <span class="o">+</span> <span class="n">item</span> <span class="o">+</span> <span class="s1">&#39; is missing&#39;</span><span class="p">}</span>
-            <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># row = {&#39;field&#39;: item, &#39;level&#39;: &#39;error&#39;, &#39;row&#39;: &#39;NaN&#39;, &#39;message&#39;: &#39;Field &#39; + item + &#39; is missing&#39;}</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;NaN&#39;</span><span class="p">,</span> <span class="s1">&#39;Field &#39;</span> <span class="o">+</span> <span class="n">item</span> <span class="o">+</span> <span class="s1">&#39; is missing&#39;</span><span class="p">]]),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
+            <span class="c1"># row = pd.DataFrame.from_dict(row, orient=&#39;index&#39;).T</span>
+            <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">field_analysis</span><span class="p">,</span> <span class="n">row</span><span class="p">])</span>
 
     <span class="c1"># check duplicate eventIDs</span>
-    <span class="n">field_analysis2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
+    <span class="n">field_analysis2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
     <span class="k">if</span> <span class="s1">&#39;eventid&#39;</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
         <span class="n">duplicates_eventid</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="s1">&#39;eventid&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
-
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">duplicates_eventid</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+
             <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">duplicates_eventid</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span>
             <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
             <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">duplicates_eventid</span><span class="o">.</span><span class="n">index</span>
-            <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis2</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0[field]}</span><span class="s1">, row </span><span class="si">{0[row]}</span><span class="s1"> is duplicated&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis2</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+                <span class="s1">&#39;eventid </span><span class="si">{0[field]}</span><span class="s1"> is duplicated&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">field_analysis2</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;eventid&#39;</span>
 
     <span class="c1"># check if all parentEventIDs have corresponding eventID</span>
-    <span class="n">field_analysis3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
+    <span class="n">field_analysis3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
     <span class="k">if</span> <span class="s1">&#39;eventid&#39;</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
         <span class="k">if</span> <span class="s1">&#39;parenteventid&#39;</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
-            <span class="n">event_eventids</span>       <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;eventid&quot;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;eventid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
-            <span class="n">event_parenteventids</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;parenteventid&quot;</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;parenteventid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
-            <span class="n">event_parenteventids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="p">)</span>
-
-            <span class="n">event_parenteventids</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="p">[</span><span class="s1">&#39;parenteventid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">event_eventids</span><span class="p">)</span>
+            <span class="n">event_eventids</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;eventid&quot;</span><span class="p">][(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;eventid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;eventid&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span>
+            <span class="n">event_parenteventids</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;parenteventid&quot;</span><span class="p">][(</span>
+                <span class="n">data</span><span class="p">[</span><span class="s2">&quot;parenteventid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;parenteventid&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span>
+            <span class="n">event_parenteventids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event_parenteventids</span><span class="p">)</span>
+            <span class="n">event_parenteventids</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="p">[</span><span class="s1">&#39;parenteventid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+                <span class="n">event_eventids</span><span class="p">)</span>
             <span class="n">event_parenteventids</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="p">[</span><span class="o">~</span><span class="n">event_parenteventids</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]]</span>
 
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">event_parenteventids</span><span class="p">[</span><span class="o">~</span><span class="n">event_parenteventids</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">event_parenteventids</span><span class="p">[</span><span class="o">~</span><span class="n">event_parenteventids</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+
                 <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="p">[</span><span class="s1">&#39;parenteventid&#39;</span><span class="p">]</span>
                 <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
                 <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">event_parenteventids</span><span class="o">.</span><span class="n">index</span>
-                <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis3</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0[field]}</span><span class="s1">, row </span><span class="si">{0[row]}</span><span class="s1"> has no corresponding eventID&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis3</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+                    <span class="s1">&#39;parenteventid </span><span class="si">{0[field]}</span><span class="s1"> has no corresponding eventID&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">field_analysis3</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;parenteventid&#39;</span>
 
     <span class="c1"># append error tables together</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_analysis2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field_analysis2</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">field_analysis</span><span class="p">,</span> <span class="n">field_analysis2</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_analysis3</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field_analysis3</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">field_analysis</span><span class="p">,</span> <span class="n">field_analysis3</span><span class="p">])</span>
 
-    <span class="c1"># error table output</span>
-    <span class="k">if</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No errors&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">field_analysis</span></div>
+    <span class="k">return</span> <span class="n">field_analysis</span></div>
 
-<span class="c1">#Check if all eventIDs in an extension have corresponding eventIDs in the core.</span>
+
+<span class="c1"># Check if all eventIDs in an extension have corresponding eventIDs in the core.</span>
 <span class="c1"># event - The event records.</span>
 <span class="c1"># extension - The extension records.</span>
 <span class="c1"># field - The eventID field name in the extension records.</span>
 
 
-<div class="viewcode-block" id="check_extension_eventids"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_eventids/index.html#pyobistools.validation.check_eventids.check_extension_eventids">[docs]</a><span class="k">def</span> <span class="nf">check_extension_eventids</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">extension</span><span class="p">,</span> <span class="n">field</span> <span class="o">=</span> <span class="s1">&#39;eventID&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="check_extension_eventids"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_eventids/index.html#pyobistools.validation.check_eventids.check_extension_eventids">[docs]</a><span class="k">def</span> <span class="nf">check_extension_eventids</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">extension</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;eventID&#39;</span><span class="p">):</span>
     <span class="n">event</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event</span><span class="p">)</span>
     <span class="n">event</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">NaN</span><span class="p">)</span>
     <span class="n">event</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -112,30 +122,26 @@
 
     <span class="k">if</span> <span class="s1">&#39;eventid&#39;</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">:</span>
         <span class="n">field</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        <span class="n">event</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">extension</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">extension</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
         <span class="n">event_eventids</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span>
 
-        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
+        <span class="n">field_analysis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
 
-        <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">)</span>
-        <span class="n">extension_eventids</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">event_eventids</span><span class="p">)</span>
+        <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">extension_eventids</span><span class="p">)</span>
+        <span class="n">extension_eventids</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">event_eventids</span><span class="p">)</span>
 
         <span class="n">extension_eventids</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="o">~</span><span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]]</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">extension_eventids</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="s1">&#39;eventid&#39;</span><span class="p">]</span>
+            <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
             <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
             <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extension_eventids</span><span class="o">.</span><span class="n">index</span>
-            <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0[field]}</span><span class="s1">, row </span><span class="si">{0[row]}</span><span class="s1"> has no corresponding eventID in the core&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+                <span class="s1">&#39;Field </span><span class="si">{0[field]}</span><span class="s1"> has no corresponding eventID in the core&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">field_analysis</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span>
 
-        <span class="c1"># error table output</span>
-        <span class="k">if</span> <span class="n">field_analysis</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No errors&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">field_analysis</span></div>
+        <span class="k">return</span> <span class="n">field_analysis</span></div>
 </pre></div>
 
           </div>
@@ -192,7 +198,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -209,7 +215,7 @@
       &copy;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
