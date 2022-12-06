@@ -19,7 +19,6 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 
-   table_format_analysis/index.rst
    taxa/index.rst
    utils/index.rst
 
