@@ -10,6 +10,7 @@ dependencies:
 - requests
 - pandas
 - numpy
+- pytest
 - pip
 - pip:
   - git+https://github.com/iobis/pyxylookup.git#egg=pyxylookup
