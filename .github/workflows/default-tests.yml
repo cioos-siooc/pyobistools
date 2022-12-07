@@ -28,7 +28,7 @@ jobs:
     - name: Python ${{ matrix.python-version }}
       shell: bash -l {0}
       run: |
-        micromamba install -f requirements.txt -f tests/requirements.txt -c conda-forge
+        micromamba install -f environment.yml -f tests/requirements.txt -c conda-forge
         pip install -e . --no-deps --force-reinstall
 
     - name: Tests
