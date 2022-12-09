@@ -3,13 +3,7 @@ import pandas as pd
 
 NaN = np.nan
 
-
-def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
-    NaN = np.nan
-    data = pd.DataFrame(data=data)
-    data.rename(columns=str.lower, inplace=True)
-
-    event_core = {
+event_core = {
         'field': [
             "eventid",
             "eventdate",
@@ -26,7 +20,7 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
             "Required field"],
     }
 
-    occurrence_extension = {
+occurrence_extension = {
         'field': [
             "eventid",
             "occurrenceid",
@@ -45,92 +39,94 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
             "Required field"],
     }
 
-    extended_measurement_or_fact_extension = {
-        "field": [
-            "measurementid",
-            "eventid",
-            "occurrenceid",
-            "measurementtype",
-            "measurementtypeid",
-            "measurementvalue",
-            "measurementvalueid",
-            "measurementaccuracy",
-            "measurementunit",
-            "measurementunitid",
-            "measurementdetermineddate",
-            "measurementdeterminedby",
-            "measurementmethod",
-            "measurementremarks"
-        ],
+extended_measurement_or_fact_extension = {
+    "field": [
+        "measurementid",
+        "eventid",
+        "occurrenceid",
+        "measurementtype",
+        "measurementtypeid",
+        "measurementvalue",
+        "measurementvalueid",
+        "measurementaccuracy",
+        "measurementunit",
+        "measurementunitid",
+        "measurementdetermineddate",
+        "measurementdeterminedby",
+        "measurementmethod",
+        "measurementremarks"
+    ],
 
-        "Required or recommended": [
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-        ],
-    }
+    "Required or recommended": [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+    ],
+}
 
-    occurrence_core = {
-        'field': [
-            "occurrenceid",
-            "basisofrecord",
-            "scientificname",
-            "scientificnameid",
-            "eventdate",
-            "decimallatitude",
-            "decimallongitude",
-            "occurrencestatus",
-            "countrycode",
-            "kingdom",
-            "geodeticdatum",
-            "minimumdepthinmeters",
-            "maximumdepthinmeters",
-            "coordinateuncertaintyinmeters",
-            "samplingprotocol",
-            "taxonrank",
-            "organismquantity",
-            "organismquantityType",
-            "datasetname",
-            "datageneralizations",
-            "informationwithheld",
-            "institutioncode",
-        ],
-        'Required or recommended': [
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Required field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-            "Recommended field",
-        ],
-    }
+occurrence_core = {
+    'field': [
+        "occurrenceid",
+        "basisofrecord",
+        "scientificname",
+        "scientificnameid",
+        "eventdate",
+        "decimallatitude",
+        "decimallongitude",
+        "occurrencestatus",
+        "countrycode",
+        "kingdom",
+        "geodeticdatum",
+        "minimumdepthinmeters",
+        "maximumdepthinmeters",
+        "coordinateuncertaintyinmeters",
+        "samplingprotocol",
+        "taxonrank",
+        "organismquantity",
+        "organismquantityType",
+        "datasetname",
+        "datageneralizations",
+        "informationwithheld",
+        "institutioncode",
+    ],
+    'Required or recommended': [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+    ],
+}
+
+def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
         dataframe_column_key = pd.DataFrame(data=event_core)
@@ -140,6 +136,13 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
         dataframe_column_key = pd.DataFrame(data=extended_measurement_or_fact_extension)
     elif analysis_type == 'occurrence_core':
         dataframe_column_key = pd.DataFrame(data=occurrence_core)
+
+    return check_fields_generic(data, level, dataframe_column_key, accepted_name_usage_id_check)
+
+def check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False):
+    NaN = np.nan
+    data = pd.DataFrame(data=data)
+    data.rename(columns=str.lower, inplace=True)
 
     # list of columns in dataset
     dataset_column_names = list(data.columns)
