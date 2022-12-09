@@ -47,6 +47,9 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_fields" title="pyobistools.validation.check_fields.check_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_fields</span></code></a>(data[, level, analysis_type, ...])</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_fields_generic" title="pyobistools.validation.check_fields.check_fields_generic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_fields_generic</span></code></a>(data[, level, ...])</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -57,6 +60,18 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.NaN" title="pyobistools.validation.check_fields.NaN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.event_core" title="pyobistools.validation.check_fields.event_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">event_core</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.occurrence_extension" title="pyobistools.validation.check_fields.occurrence_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">occurrence_extension</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.extended_measurement_or_fact_extension" title="pyobistools.validation.check_fields.extended_measurement_or_fact_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extended_measurement_or_fact_extension</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.occurrence_core" title="pyobistools.validation.check_fields.occurrence_core"><code class="xref py py-obj docutils literal notranslate"><span class="pre">occurrence_core</span></code></a></p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py data">
@@ -64,9 +79,34 @@
 <span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">NaN</span></span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#NaN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.NaN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py data">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.event_core">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">event_core</span></span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#event_core"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.event_core" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.occurrence_extension">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">occurrence_extension</span></span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#occurrence_extension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.occurrence_extension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.extended_measurement_or_fact_extension">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">extended_measurement_or_fact_extension</span></span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#extended_measurement_or_fact_extension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.extended_measurement_or_fact_extension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.occurrence_core">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">occurrence_core</span></span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#occurrence_core"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.occurrence_core" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="pyobistools.validation.check_fields.check_fields">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">check_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'occurrence_core'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accepted_name_usage_id_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#check_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.check_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.check_fields_generic">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">check_fields_generic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe_column_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accepted_name_usage_id_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#check_fields_generic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.check_fields_generic" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>

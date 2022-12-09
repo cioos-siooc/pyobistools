@@ -39,13 +39,7 @@
 
 <div class="viewcode-block" id="NaN"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.NaN">[docs]</a><span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span></div>
 
-
-<div class="viewcode-block" id="check_fields"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_fields">[docs]</a><span class="k">def</span> <span class="nf">check_fields</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">analysis_type</span><span class="o">=</span><span class="s1">&#39;occurrence_core&#39;</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="n">event_core</span> <span class="o">=</span> <span class="p">{</span>
+<div class="viewcode-block" id="event_core"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.event_core">[docs]</a><span class="n">event_core</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">&quot;eventid&quot;</span><span class="p">,</span>
             <span class="s2">&quot;eventdate&quot;</span><span class="p">,</span>
@@ -60,9 +54,9 @@
             <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Required field&quot;</span><span class="p">],</span>
-    <span class="p">}</span>
+    <span class="p">}</span></div>
 
-    <span class="n">occurrence_extension</span> <span class="o">=</span> <span class="p">{</span>
+<div class="viewcode-block" id="occurrence_extension"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.occurrence_extension">[docs]</a><span class="n">occurrence_extension</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">&quot;eventid&quot;</span><span class="p">,</span>
             <span class="s2">&quot;occurrenceid&quot;</span><span class="p">,</span>
@@ -79,94 +73,97 @@
             <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Required field&quot;</span><span class="p">],</span>
-    <span class="p">}</span>
+    <span class="p">}</span></div>
 
-    <span class="n">extended_measurement_or_fact_extension</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;measurementid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;eventid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;occurrenceid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementtype&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementtypeid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementvalue&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementvalueid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementaccuracy&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementunit&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementunitid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementdetermineddate&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementdeterminedby&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementmethod&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;measurementremarks&quot;</span>
-        <span class="p">],</span>
+<div class="viewcode-block" id="extended_measurement_or_fact_extension"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.extended_measurement_or_fact_extension">[docs]</a><span class="n">extended_measurement_or_fact_extension</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;measurementid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;eventid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;occurrenceid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementtype&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementtypeid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementvalue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementvalueid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementaccuracy&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementunit&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementunitid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementdetermineddate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementdeterminedby&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementmethod&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;measurementremarks&quot;</span>
+    <span class="p">],</span>
 
-        <span class="s2">&quot;Required or recommended&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
+    <span class="s2">&quot;Required or recommended&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span></div>
 
-    <span class="n">occurrence_core</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;occurrenceid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;basisofrecord&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;scientificname&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;scientificnameid&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;eventdate&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;decimallatitude&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;decimallongitude&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;occurrencestatus&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;countrycode&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kingdom&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;geodeticdatum&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;minimumdepthinmeters&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;maximumdepthinmeters&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;coordinateuncertaintyinmeters&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;samplingprotocol&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;taxonrank&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;organismquantity&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;organismquantityType&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;datasetname&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;datageneralizations&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;informationwithheld&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;institutioncode&quot;</span><span class="p">,</span>
-        <span class="p">],</span>
-        <span class="s1">&#39;Required or recommended&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
-        <span class="p">],</span>
-    <span class="p">}</span>
+<div class="viewcode-block" id="occurrence_core"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.occurrence_core">[docs]</a><span class="n">occurrence_core</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;occurrenceid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;basisofrecord&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scientificname&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;scientificnameid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;eventdate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;decimallatitude&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;decimallongitude&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;occurrencestatus&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;countrycode&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;kingdom&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;geodeticdatum&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;minimumdepthinmeters&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;maximumdepthinmeters&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;coordinateuncertaintyinmeters&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;samplingprotocol&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;taxonrank&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;organismquantity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;organismquantityType&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;datasetname&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;datageneralizations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;informationwithheld&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;institutioncode&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;Required or recommended&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Required field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Recommended field&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="check_fields"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_fields">[docs]</a><span class="k">def</span> <span class="nf">check_fields</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">analysis_type</span><span class="o">=</span><span class="s1">&#39;occurrence_core&#39;</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="c1"># if statements to determine the analysis to run</span>
     <span class="k">if</span> <span class="n">analysis_type</span> <span class="o">==</span> <span class="s1">&#39;event_core&#39;</span><span class="p">:</span>
         <span class="n">dataframe_column_key</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event_core</span><span class="p">)</span>
@@ -176,6 +173,14 @@
         <span class="n">dataframe_column_key</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">extended_measurement_or_fact_extension</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">analysis_type</span> <span class="o">==</span> <span class="s1">&#39;occurrence_core&#39;</span><span class="p">:</span>
         <span class="n">dataframe_column_key</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">occurrence_core</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">check_fields_generic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="check_fields_generic"><a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_fields_generic">[docs]</a><span class="k">def</span> <span class="nf">check_fields_generic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">NaN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># list of columns in dataset</span>
     <span class="n">dataset_column_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
