@@ -24,10 +24,10 @@ Attributes
 .. autoapisummary::
 
    pyobistools.validation.check_fields.NaN
-   pyobistools.validation.check_fields.event_core
-   pyobistools.validation.check_fields.occurrence_extension
-   pyobistools.validation.check_fields.extended_measurement_or_fact_extension
-   pyobistools.validation.check_fields.occurrence_core
+   pyobistools.validation.check_fields.event_core_fields
+   pyobistools.validation.check_fields.occurrence_extension_fields
+   pyobistools.validation.check_fields.extended_measurement_or_fact_extension_fields
+   pyobistools.validation.check_fields.occurrence_core_fields
 
 
 .. py:data:: NaN
@@ -35,22 +35,22 @@ Attributes
 
    
 
-.. py:data:: event_core
+.. py:data:: event_core_fields
    
 
    
 
-.. py:data:: occurrence_extension
+.. py:data:: occurrence_extension_fields
    
 
    
 
-.. py:data:: extended_measurement_or_fact_extension
+.. py:data:: extended_measurement_or_fact_extension_fields
    
 
    
 
-.. py:data:: occurrence_core
+.. py:data:: occurrence_core_fields
    
 
    
