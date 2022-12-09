@@ -126,6 +126,7 @@ occurrence_core = {
     ],
 }
 
+
 def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
@@ -138,6 +139,7 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
         dataframe_column_key = pd.DataFrame(data=occurrence_core)
 
     return check_fields_generic(data, level, dataframe_column_key, accepted_name_usage_id_check)
+
 
 def check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False):
     NaN = np.nan
