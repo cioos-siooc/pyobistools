@@ -3,7 +3,7 @@ import pandas as pd
 
 NaN = np.nan
 
-event_core = {
+event_core_fields = {
         'field': [
             "eventid",
             "eventdate",
@@ -20,7 +20,7 @@ event_core = {
             "Required field"],
     }
 
-occurrence_extension = {
+occurrence_extension_fields = {
         'field': [
             "eventid",
             "occurrenceid",
@@ -39,7 +39,7 @@ occurrence_extension = {
             "Required field"],
     }
 
-extended_measurement_or_fact_extension = {
+extended_measurement_or_fact_extension_fields = {
     "field": [
         "measurementid",
         "eventid",
@@ -75,7 +75,7 @@ extended_measurement_or_fact_extension = {
     ],
 }
 
-occurrence_core = {
+occurrence_core_fields = {
     'field': [
         "occurrenceid",
         "basisofrecord",
@@ -130,13 +130,13 @@ occurrence_core = {
 def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
-        dataframe_column_key = pd.DataFrame(data=event_core)
+        dataframe_column_key = pd.DataFrame(data=event_core_fields)
     elif analysis_type == 'occurrence_extension':
-        dataframe_column_key = pd.DataFrame(data=occurrence_extension)
+        dataframe_column_key = pd.DataFrame(data=occurrence_extension_fields)
     elif analysis_type == 'extended_measurement_or_fact_extension':
-        dataframe_column_key = pd.DataFrame(data=extended_measurement_or_fact_extension)
+        dataframe_column_key = pd.DataFrame(data=extended_measurement_or_fact_extension_fields)
     elif analysis_type == 'occurrence_core':
-        dataframe_column_key = pd.DataFrame(data=occurrence_core)
+        dataframe_column_key = pd.DataFrame(data=occurrence_core_fields)
 
     return check_fields_generic(data, level, dataframe_column_key, accepted_name_usage_id_check)
 
