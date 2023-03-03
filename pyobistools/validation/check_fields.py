@@ -145,9 +145,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     data_columns_normal_case =              list(data.columns)
     data_columns_lower_case =               list(map(str.lower,data.columns))
 
-
     required_fields_list_lower_case =       dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Required field']
-    required_fields_list_lower_case.loc['field'] = required_fields_list_lower_case['field'].str.lower()
+    required_fields_list_lower_case.loc[:,'field'] = required_fields_list_lower_case['field'].str.lower()
     recommended_fields_list_lower_case =    dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Recommended field']
     recommended_fields_list_lower_case.loc[:,'field'] = recommended_fields_list_lower_case['field'].str.lower()
 
