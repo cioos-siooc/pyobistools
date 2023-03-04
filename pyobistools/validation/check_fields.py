@@ -203,6 +203,9 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
 
             analysis_missing_values = pd.concat([analysis_missing_values, field_analysis])
 
+    if len(analysis_missing_values) == 0:
+        analysis_missing_values = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
+        
     # ACCEPTED_NAME_USAGE_ID_CHECK
     if accepted_name_usage_id_check:
         if 'acceptednameusageid' in data_columns_lower_case:
