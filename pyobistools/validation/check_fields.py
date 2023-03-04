@@ -264,5 +264,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
 
     if analysis_case_check_fields.empty == False:
         analysis_results = pd.concat([analysis_results, analysis_case_check_fields])
+
+    if len(analysis_results) == 0:
+        analysis_results = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
     
     return analysis_results
