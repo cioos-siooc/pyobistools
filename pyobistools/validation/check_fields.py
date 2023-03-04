@@ -145,9 +145,10 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     data_columns_normal_case =              list(data.columns)
     data_columns_lower_case =               list(map(str.lower,data.columns))
 
-    required_fields_list_lower_case =       dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Required field']
+    required_fields_list_lower_case =       dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
     required_fields_list_lower_case.loc[:,'field'] = required_fields_list_lower_case['field'].str.lower()
-    recommended_fields_list_lower_case =    dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Recommended field']
+
+    recommended_fields_list_lower_case =    dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
     recommended_fields_list_lower_case.loc[:,'field'] = recommended_fields_list_lower_case['field'].str.lower()
 
     analysis_fields_presence =                  pd.DataFrame()
@@ -165,7 +166,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             analysis_fields_presence.loc[:, 'row'] = 'NaN'
             analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].isin(data_columns_lower_case)
             analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy()
-            analysis_fields_presence.loc[:, 'level'] = 'error'
+            analysis_fields_presence.loc[:, 'level'] = 'warning'
             analysis_fields_presence.loc[:, 'message'] = 'Required field ' + analysis_fields_presence['field'] + " is missing"
 
     if level == 'error':
@@ -175,7 +176,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         analysis_fields_presence.loc[:, 'row'] = 'NaN'
         analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].isin(data_columns_lower_case)
         analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy()
-        analysis_fields_presence.loc[:, 'level'] = 'warning'
+        analysis_fields_presence.loc[:, 'level'] = 'error'
         analysis_fields_presence.loc[:, 'message'] = 'Required field ' + analysis_fields_presence['field'] + " is missing"
 
     # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
@@ -201,9 +202,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
                 field_analysis.loc[:, 'message'] = field_analysis.agg('Empty value for recommended field {0[field]}'.format, axis=1)
 
             analysis_missing_values = pd.concat([analysis_missing_values, field_analysis])
-            
-            
-    # CHECKS FOR ACCEPTED_NAME_USAGE_ID_CHECK
+
+    # ACCEPTED_NAME_USAGE_ID_CHECK
     if accepted_name_usage_id_check:
         if 'acceptednameusageid' in data_columns_lower_case:
             data2 = data
@@ -251,7 +251,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             analysis_case_check_fields.loc[:,'level'] = 'warning'
             analysis_case_check_fields.loc[:,'message'] = analysis_case_check_fields.agg('{0[field]} has incorrect case'.format, axis=1)
 
-    # ANALYSIS RESULTS MERGE
+    #ANALYSIS RESULTS MERGE
     if analysis_fields_presence.empty == False:
         analysis_results = pd.concat([analysis_results, analysis_fields_presence])
 
@@ -266,4 +266,3 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         analysis_results = pd.concat([analysis_results, analysis_case_check_fields])
     
     return analysis_results
-
