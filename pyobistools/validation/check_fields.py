@@ -146,7 +146,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     data_columns_lower_case = list(map(str.lower, data.columns))
 
     required_fields_list_normal_case = dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
-    required_fields_list_normal_case.loc[:, 'field'] = required_fields_list_normal_case['field'] 
+    required_fields_list_normal_case.loc[:, 'field'] = required_fields_list_normal_case['field']
 
     recommended_fields_list_normal_case = dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
     recommended_fields_list_normal_case.loc[:, 'field'] = recommended_fields_list_normal_case['field']
@@ -221,10 +221,10 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             analysis_accepted_name_usage_id_check = analysis_accepted_name_usage_id_check[analysis_accepted_name_usage_id_check['field'].str.lower() == 'scientificnameid'].copy()
 
             # data table filtered to find index to substract from analysis_field
-            index_of_filtered_data = data2[(data2['scientificnameid'].isna()) & (data2['acceptednameusageid'].notna())].index 
+            index_of_filtered_data = data2[(data2['scientificnameid'].isna()) & (data2['acceptednameusageid'].notna())].index
 
             # filter analysis_accepted_name_usage_id_check to keep only rows where we know scientificnameid IS EMPTY and acceptednameusageid IS NOT EMPTY
-            analysis_accepted_name_usage_id_check = analysis_accepted_name_usage_id_check[analysis_accepted_name_usage_id_check["row"].isin(index_of_filtered_data)] 
+            analysis_accepted_name_usage_id_check = analysis_accepted_name_usage_id_check[analysis_accepted_name_usage_id_check["row"].isin(index_of_filtered_data)]
 
     # FIND FIELDS WITH INCORRECT CASE
     if level == 'warning':
