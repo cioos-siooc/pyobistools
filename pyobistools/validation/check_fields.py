@@ -145,11 +145,11 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     data_columns_normal_case =              list(data.columns)
     data_columns_lower_case =               list(map(str.lower,data.columns))
 
-    required_fields_list_lower_case =       dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
-    required_fields_list_lower_case.loc[:,'field'] = required_fields_list_lower_case['field'].str.lower()
+    required_fields_list_normal_case =       dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
+    required_fields_list_normal_case.loc[:,'field'] = required_fields_list_normal_case['field'] 
 
-    recommended_fields_list_lower_case =    dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
-    recommended_fields_list_lower_case.loc[:,'field'] = recommended_fields_list_lower_case['field'].str.lower()
+    recommended_fields_list_normal_case =    dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
+    recommended_fields_list_normal_case.loc[:,'field'] = recommended_fields_list_normal_case['field'] 
 
     analysis_fields_presence =                  pd.DataFrame()
     analysis_missing_values =                   pd.DataFrame()
@@ -159,22 +159,22 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
 
     # FIND IF REQUIRED OR RECOMMENDED FIELDS ARE PRESENT
     if level == 'warning':
-        if recommended_fields_list_lower_case.empty == False:
-            analysis_fields_presence = recommended_fields_list_lower_case
+        if recommended_fields_list_normal_case.empty == False:
+            analysis_fields_presence = recommended_fields_list_normal_case
             analysis_fields_presence = analysis_fields_presence.drop(columns=['Required or recommended'])
             analysis_fields_presence.loc[:, 'level'] = 'NaN'
             analysis_fields_presence.loc[:, 'row'] = 'NaN'
-            analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].isin(data_columns_lower_case)
+            analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].str.lower().isin(data_columns_lower_case)
             analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy()
             analysis_fields_presence.loc[:, 'level'] = 'warning'
             analysis_fields_presence.loc[:, 'message'] = 'Required field ' + analysis_fields_presence['field'] + " is missing"
 
     if level == 'error':
-        analysis_fields_presence = required_fields_list_lower_case
+        analysis_fields_presence = required_fields_list_normal_case
         analysis_fields_presence = analysis_fields_presence.drop(columns=['Required or recommended'])
         analysis_fields_presence.loc[:, 'level'] = 'NaN'
         analysis_fields_presence.loc[:, 'row'] = 'NaN'
-        analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].isin(data_columns_lower_case)
+        analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].str.lower().isin(data_columns_lower_case)
         analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy()
         analysis_fields_presence.loc[:, 'level'] = 'error'
         analysis_fields_presence.loc[:, 'message'] = 'Required field ' + analysis_fields_presence['field'] + " is missing"
