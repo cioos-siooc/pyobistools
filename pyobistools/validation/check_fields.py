@@ -142,24 +142,24 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
 
 
 def check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False):
-    data_columns_normal_case =              list(data.columns)
-    data_columns_lower_case =               list(map(str.lower,data.columns))
+    data_columns_normal_case = list(data.columns)
+    data_columns_lower_case = list(map(str.lower, data.columns))
 
-    required_fields_list_normal_case =       dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
-    required_fields_list_normal_case.loc[:,'field'] = required_fields_list_normal_case['field'] 
+    required_fields_list_normal_case = dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Required field'].copy()
+    required_fields_list_normal_case.loc[:, 'field'] = required_fields_list_normal_case['field'] 
 
-    recommended_fields_list_normal_case =    dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
-    recommended_fields_list_normal_case.loc[:,'field'] = recommended_fields_list_normal_case['field'] 
+    recommended_fields_list_normal_case = dataframe_column_key[dataframe_column_key['Required or recommended'] == 'Recommended field'].copy()
+    recommended_fields_list_normal_case.loc[:, 'field'] = recommended_fields_list_normal_case['field']
 
-    analysis_fields_presence =                  pd.DataFrame()
-    analysis_missing_values =                   pd.DataFrame()
-    analysis_accepted_name_usage_id_check =     pd.DataFrame()
-    analysis_case_check_fields =                pd.DataFrame()
-    analysis_results =                          pd.DataFrame()
+    analysis_fields_presence = pd.DataFrame()
+    analysis_missing_values = pd.DataFrame()
+    analysis_accepted_name_usage_id_check = pd.DataFrame()
+    analysis_case_check_fields = pd.DataFrame()
+    analysis_results = pd.DataFrame()
 
     # FIND IF REQUIRED OR RECOMMENDED FIELDS ARE PRESENT
     if level == 'warning':
-        if recommended_fields_list_normal_case.empty == False:
+        if recommended_fields_list_normal_case.empty is False:
             analysis_fields_presence = recommended_fields_list_normal_case
             analysis_fields_presence = analysis_fields_presence.drop(columns=['Required or recommended'])
             analysis_fields_presence.loc[:, 'level'] = 'NaN'
@@ -182,22 +182,21 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     if len(analysis_fields_presence) == 0:
         analysis_fields_presence = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
 
-
     # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
     # subset of dataset using required or recommended columns and keeping na values
     data1 = data.replace('', NaN).copy()
 
     if level == 'error':
         column_type_based_level = dataframe_column_key['field'].loc[dataframe_column_key['Required or recommended'] == 'Required field'].tolist()
-        table_na_values = data1[data1.columns[data1.columns.str.lower().isin(list(map(str.lower,column_type_based_level)))]].isna()
+        table_na_values = data1[data1.columns[data1.columns.str.lower().isin(list(map(str.lower, column_type_based_level)))]].isna()
     if level == 'warning':
         column_type_based_level = dataframe_column_key['field'].loc[dataframe_column_key['Required or recommended'] == 'Recommended field'].tolist()
-        table_na_values = data1[data1.columns[data1.columns.str.lower().isin(list(map(str.lower,column_type_based_level)))]].isna()
+        table_na_values = data1[data1.columns[data1.columns.str.lower().isin(list(map(str.lower, column_type_based_level)))]].isna()
 
     for column in table_na_values:
         field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
         if len(table_na_values[table_na_values[column]]) != 0:
-            field_analysis.loc[:,'row'] = table_na_values[column][table_na_values[column]].index
+            field_analysis.loc[:, 'row'] = table_na_values[column][table_na_values[column]].index
             field_analysis.loc[:, 'field'] = column
             field_analysis.loc[:, 'level'] = 'error'
             if level == 'error':
@@ -210,9 +209,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     if len(analysis_missing_values) == 0:
         analysis_missing_values = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
    
-    
     # ACCEPTED_NAME_USAGE_ID_CHECK - IRRESPECTIVE OF CASE
-    if accepted_name_usage_id_check == True:
+    if accepted_name_usage_id_check:
         if 'acceptednameusageid' in data_columns_lower_case:
 
             data2 = data.replace('', NaN).copy()
@@ -237,7 +235,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         analysis_field_normal_case.loc[:, 'row'] = 'NaN'
 
         # analysis to find missing field with normal case
-        analysis_field_normal_case.loc[:,'message'] = analysis_field_normal_case["field"].isin(data_columns_normal_case)
+        analysis_field_normal_case.loc[:, 'message'] = analysis_field_normal_case["field"].isin(data_columns_normal_case)
         analysis_field_normal_case = analysis_field_normal_case.loc[~analysis_field_normal_case.message].copy()
 
         analysis_field_lower_case = dataframe_column_key.drop(columns=['Required or recommended'])
@@ -246,7 +244,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         analysis_field_lower_case.loc[:, 'row'] = 'NaN'
 
         # analysis to find missing field with lower case
-        analysis_field_lower_case.loc[:,'message'] = analysis_field_lower_case["field"].isin(data_columns_lower_case)
+        analysis_field_lower_case.loc[:, 'message'] = analysis_field_lower_case["field"].isin(data_columns_lower_case)
         analysis_field_lower_case = analysis_field_lower_case.loc[~analysis_field_lower_case.message].copy()
 
         # The difference between the two above table yields the field with incorrect case
@@ -254,23 +252,23 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             # find fields present in both previous analysis - means field has incorrect case
             analysis_case_check_fields = analysis_field_normal_case.loc[~analysis_field_normal_case['field'].str.lower().isin(analysis_field_lower_case['field'])]
             analysis_case_check_fields = pd.DataFrame(data= analysis_case_check_fields)
-            analysis_case_check_fields.loc[:,'level'] = 'warning'
-            analysis_case_check_fields.loc[:,'message'] = analysis_case_check_fields.agg('{0[field]} has incorrect case'.format, axis=1)
+            analysis_case_check_fields.loc[:, 'level'] = 'warning'
+            analysis_case_check_fields.loc[:, 'message'] = analysis_case_check_fields.agg('{0[field]} has incorrect case'.format, axis=1)
 
         if len(analysis_case_check_fields) == 0:
             analysis_case_check_fields = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
 
     #ANALYSIS RESULTS MERGE
-    if analysis_fields_presence.empty == False:
+    if analysis_fields_presence.empty is False:
         analysis_results = pd.concat([analysis_results, analysis_fields_presence])
 
-    if analysis_missing_values.empty == False:
+    if analysis_missing_values.empty is False:
         analysis_results = pd.concat([analysis_results, analysis_missing_values])
 
-    if accepted_name_usage_id_check == True:
-            analysis_results = pd.concat([analysis_results, analysis_accepted_name_usage_id_check] ).drop_duplicates(keep=False)
+    if accepted_name_usage_id_check:
+        analysis_results = pd.concat([analysis_results, analysis_accepted_name_usage_id_check] ).drop_duplicates(keep=False)
 
-    if analysis_case_check_fields.empty == False:
+    if analysis_case_check_fields.empty is False:
         analysis_results = pd.concat([analysis_results, analysis_case_check_fields])
     
     if len(analysis_results) == 0:
