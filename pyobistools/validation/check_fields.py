@@ -215,7 +215,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
 
             data2 = data.replace('', NaN).copy()
             data2.rename(columns=str.lower, inplace=True)
-            
+
             #previous error table filtered for scientifinameid errors
             analysis_accepted_name_usage_id_check = analysis_missing_values.copy()
             analysis_accepted_name_usage_id_check = analysis_accepted_name_usage_id_check[analysis_accepted_name_usage_id_check['field'].str.lower() == 'scientificnameid'].copy()
