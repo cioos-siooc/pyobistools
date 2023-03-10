@@ -69,7 +69,11 @@ def test_match_all_with_details():
     assert mola['parent_name_usage_id'] == 126233.0
     assert mola['kingdom'] == 'Animalia'
     assert mola['phylum'] == 'Chordata'
-    assert mola['class'] == 'Actinopteri'
+    # actinopteri became the superclass recently, Dec 2021, class is now Teleostei
+    # assert mola['class'] == 'Actinopteri'
+    # do we assert superclass?
+    # assert mola['superclass'] == 'Actinopteri'
+    assert mola['class'] == 'Teleostei'
     assert mola['order'] == 'Tetraodontiformes'
     assert mola['family'] == 'Molidae'
     assert mola['genus'] == 'Mola'
