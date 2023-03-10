@@ -63,10 +63,10 @@ def test_check_fields_occurrence_extension():
     for the occurrence_extension fromat. It also checks for empty values and case sensitivity.
     """
     field_data = pd.DataFrame({
-        'eventid': ["1", "1", "2"],
+        'eventID': ["1", "1", "2"],
         'occurrenceID': ["1", "2", "3"],
         'scientificName': ["Abra alba", NaN, ""],
-        'occurrencestatus': ["North Sea", "English Channel", "Flemish Banks"]
+        'occurrenceStatus': ["North Sea", "English Channel", "Flemish Banks"]
     })
 
     # required terms & empty values
