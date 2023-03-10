@@ -27,7 +27,7 @@ def test_check_fields_default():
 
     # required terms & empty values
     error = check_fields(field_data)
-    
+
     assert correct_data.astype(str).reset_index(drop=True).equals(
         error.astype(str).reset_index(drop=True))
 
@@ -98,5 +98,6 @@ def test_check_fields_extended_measurement_or_fact_extension():
     assert len(error.index) == 9
 
     # recommended terms if any, empty values & case sensitivity check
-    error = check_fields(field_data, analysis_type="extended_measurement_or_fact_extension", level="warning")
+    error = check_fields(
+        field_data, analysis_type="extended_measurement_or_fact_extension", level="warning")
     assert len(error.index) == 1
