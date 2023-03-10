@@ -63,10 +63,10 @@ def test_check_fields_occurrence_extension():
     for the occurrence_core fromat. This is the default behaviour for check_fields
     """
     field_data = pd.DataFrame({
-        'eventid': ["1", "1", "2"],
+        'eventID': ["1", "1", "2"],
         'occurrenceID': ["1", "2", "3"],
         'scientificName': ["Abra alba", NaN, ""],
-        'occurrencestatus': ["North Sea", "English Channel", "Flemish Banks"]
+        'occurrenceStatus': ["North Sea", "English Channel", "Flemish Banks"]
     })
     # required terms
     error = check_fields(field_data, analysis_type="occurrence_extension")
