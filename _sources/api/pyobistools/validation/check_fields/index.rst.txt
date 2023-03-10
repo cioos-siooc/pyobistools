@@ -31,27 +31,22 @@ Attributes
 
 
 .. py:data:: NaN
-   
 
    
 
 .. py:data:: event_core_fields
-   
 
    
 
 .. py:data:: occurrence_extension_fields
-   
 
    
 
 .. py:data:: extended_measurement_or_fact_extension_fields
-   
 
    
 
 .. py:data:: occurrence_core_fields
-   
 
    
 
