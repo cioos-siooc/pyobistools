@@ -32,7 +32,7 @@ def test_check_fields_default():
         error.astype(str).reset_index(drop=True))
 
     # recommended terms if any, empty values & case sensitivity check
-    error = check_fields(field_data, level="warning").reset_index(drop=True)
+    error = check_fields(field_data, level="warning")
     assert len(error.index) == 11
 
 
