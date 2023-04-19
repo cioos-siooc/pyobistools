@@ -33,7 +33,7 @@ def test_check_fields_default():
 
     # recommended terms if any, empty values & case sensitivity check
     error = check_fields(field_data, level="warning")
-    assert len(error) == 11
+    assert len(error.shape[0]) == 11
 
 
 def test_check_fields_event_core():
@@ -50,7 +50,7 @@ def test_check_fields_event_core():
 
     # required terms & empty values
     error = check_fields(field_data, analysis_type="event_core")
-    assert len(error) == 4
+    assert len(error.shape[0]) == 4
 
     # recommended terms if any, empty values & case sensitivity check
     error = check_fields(field_data, analysis_type="event_core", level="warning")
@@ -71,11 +71,11 @@ def test_check_fields_occurrence_extension():
 
     # required terms & empty values
     error = check_fields(field_data, analysis_type="occurrence_extension")
-    assert len(error) == 5
+    assert len(error.shape[0]) == 5
 
     # recommended terms if any, empty values & case sensitivity check
     error = check_fields(field_data, analysis_type="occurrence_extension", level="warning")
-    assert len(error) == 2
+    assert len(error.shape[0]) == 2
 
 
 def test_check_fields_extended_measurement_or_fact_extension():
@@ -95,9 +95,9 @@ def test_check_fields_extended_measurement_or_fact_extension():
 
     # required terms & empty values
     error = check_fields(field_data, analysis_type="extended_measurement_or_fact_extension")
-    assert len(error) == 9
+    assert len(error.shape[0]) == 9
 
     # recommended terms if any, empty values & case sensitivity check
     error = check_fields(
         field_data, analysis_type="extended_measurement_or_fact_extension", level="warning")
-    assert len(error) == 1
+    assert len(error.shape[0]) == 1
