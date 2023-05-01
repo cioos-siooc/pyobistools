@@ -213,11 +213,13 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         if len(table_na_values[table_na_values[column]]) != 0:
             field_analysis.loc[:, 'row'] = table_na_values[column][table_na_values[column]].index
             field_analysis.loc[:, 'field'] = column
-            field_analysis.loc[:, 'level'] = 'error'
+
             if level == 'error':
+                field_analysis.loc[:, 'level'] = 'error'
                 field_analysis.loc[:, 'message'] = field_analysis.agg(
                     'Empty value for required field {0[field]}'.format, axis=1)
             if level == 'warning':
+                field_analysis.loc[:, 'level'] = 'warning'
                 field_analysis.loc[:, 'message'] = field_analysis.agg(
                     'Empty value for recommended field {0[field]}'.format, axis=1)
 
