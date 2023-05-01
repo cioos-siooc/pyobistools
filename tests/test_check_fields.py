@@ -1,10 +1,10 @@
 
-import numpy as np
-import pandas as pd
+# import numpy as np
+# import pandas as pd
 
-from pyobistools.validation.check_fields import check_fields
+# from pyobistools.validation.check_fields import check_fields
 
-NaN = np.nan
+# NaN = np.nan
 
 
 # def test_check_fields_default():
