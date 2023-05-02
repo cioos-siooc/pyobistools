@@ -27,8 +27,6 @@ def test_check_fields_default():
 
     # required terms & empty values
     error = check_fields(field_data)
-    print((error))
-    print(len(error.index))
 
     assert correct_data.astype(str).reset_index(drop=True).equals(
         error.astype(str).reset_index(drop=True))
