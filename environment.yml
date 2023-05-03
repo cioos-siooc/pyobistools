@@ -13,4 +13,4 @@ dependencies:
 - pytest
 - pip
 - pip:
-  pyxylookup
+  - pyxylookup
