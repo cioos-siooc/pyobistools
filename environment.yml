@@ -8,7 +8,7 @@ dependencies:
   - certifi
   - cycler
   - freetype
-  - geos
+  - geos >= 3.7.2
   - intel-openmp
   - jpeg
   - kiwisolver
