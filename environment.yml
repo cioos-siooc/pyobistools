@@ -8,9 +8,9 @@ dependencies:
 - plotly
 - async
 - requests
-- pandas>=1.3.5,<=1.5.3
 - numpy
 - pytest
 - pip
 - pip:
   - pyxylookup
+  - pandas>=1.3.5,<=1.5.3
