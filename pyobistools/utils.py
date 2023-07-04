@@ -133,11 +133,11 @@ def names_analyse(data_valid_scientific_name):
         data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
-    # data_valid_scientific_name.sort_values(
-    #    [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    data_valid_scientific_name.sort_values(
+        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
 
-    columns = [('Dataset Values', 'scientificname'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
+    columns = [('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
                ('Database values', 'Unacceptreason'), ('Database values',
                                                        'Taxon_Rank'), ('Database values', 'Valid_TaxonID'),
                ('Database values', 'Valid_Name'), ('Database values', 'LSID')]
@@ -183,7 +183,7 @@ def names_ids_analyse(data_valid_scientific_name, data):
     data_valid_scientific_name = data_valid_scientific_name.drop(['scientificname2'], axis=1)
     data_cross_validation = data_cross_validation.drop(['scientificname2'], axis=1)
 
-    columns = [('Dataset Values', 'scientificname'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
+    columns = [('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
                ('Database values', 'Unacceptreason'), ('Database values',
                                                        'Taxon_Rank'), ('Database values', 'Valid_TaxonID'),
                ('Database values', 'Valid_Name'), ('Database values', 'LSID')]
