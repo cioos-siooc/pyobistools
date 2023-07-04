@@ -132,7 +132,10 @@ def names_analyse(data_valid_scientific_name):
     data_valid_scientific_name['Exact_Match'] = np.vectorize(exact_match_suffix)(
         data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower())
 
-    data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    # classer les valeurs par validité
+    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    data_valid_scientific_name.sort_values(
+        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
 
     columns = [('Dataset Values', 'scientificname'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
                ('Database values', 'Unacceptreason'), ('Database values',
@@ -170,7 +173,10 @@ def names_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+   # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    data_valid_scientific_name.sort_values(
+        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+
     data_cross_validation.sort_values(
         by=['ScientificName_V', 'scientificNameID_V'], ascending=True, inplace=True)
 
