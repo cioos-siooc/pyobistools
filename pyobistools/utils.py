@@ -220,7 +220,10 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
+    data_valid_scientific_name.sort_values(
+        [("Exact_Match"), ("ScientificName")], ascending=[True, True], inplace=True)
+
     data_cross_validation.sort_values(
         by=['ScientificName_V', 'TaxonRank_V', 'scientificNameID_V'], ascending=True, inplace=True)
 
