@@ -135,7 +135,8 @@ def names_analyse(data_valid_scientific_name):
     # classer les valeurs par validité
     # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     columns = [('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
                ('Database values', 'Unacceptreason'), ('Database values',
@@ -175,7 +176,8 @@ def names_ids_analyse(data_valid_scientific_name, data):
     # classer les valeurs par validité
    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     data_cross_validation.sort_values(
         by=['ScientificName_V', 'scientificNameID_V'], ascending=True, inplace=True)
@@ -228,7 +230,8 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
     # classer les valeurs par validité
     # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
+        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     data_cross_validation.sort_values(
         by=['ScientificName_V', 'TaxonRank_V', 'scientificNameID_V'], ascending=True, inplace=True)
