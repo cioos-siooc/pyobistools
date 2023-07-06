@@ -95,27 +95,27 @@ def exact_match_suffix(a, b):
         if a == b:
             return 'Oui, avec qualificatif / Yes, with qualifier'
         else:
-            return 'Non/no'
+            return 'Non/No'
     elif a[-2:] == 'sp':
         a = a[:-3]
         if a == b:
             return 'Oui, avec qualificatif / Yes, with qualifier'
         else:
-            return 'Non/no'
+            return 'Non/No'
     elif a[-4:] == 'spp.':
         a = a[:-5]
         if a == b:
             return 'Oui, avec qualificatif / Yes, with qualifier'
         else:
-            return 'Non/no'
+            return 'Non/No'
     elif a[-3:] == 'spp':
         a = a[:-4]
         if a == b:
             return 'Oui, avec qualificatif / Yes, with qualifier'
         else:
-            return 'Non/no'
+            return 'Non/No'
     else:
-        return "Non/no"
+        return "Non/No"
 
 # fonction qui permet de vérifier le match des colonnes
 
@@ -133,9 +133,7 @@ def names_analyse(data_valid_scientific_name):
         data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower())
 
     # classer les valeurs par validité
-    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
         by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     columns = [('Dataset Values', 'ScientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
@@ -174,9 +172,7 @@ def names_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-   # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
         by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     data_cross_validation.sort_values(
@@ -228,9 +224,7 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-    # data_valid_scientific_name.sort_values(by='Exact_Match', ascending=True, inplace=True)
     data_valid_scientific_name.sort_values(
-        # [("Exact_Match"), ("scientificname")], ascending=[True, True], inplace=True)
         by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
 
     data_cross_validation.sort_values(
