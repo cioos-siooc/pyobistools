@@ -1,6 +1,11 @@
-# pyobistools
-Python port of OBIS's obistools QC R package
+# pyobistools - Tools for data enhancement and quality control - but in Python
+Python port of OBIS's [obistools](https://github.com/iobis/obistools) QC R package
 
-# Starting point python code developed under Departement of Fisheries and Oceans Canada internal project
+Documentation available [here](https://cioos-siooc.github.io/pyobistools/)
 
-The python files that served as a sarting point for the development of this module have been developed for a specific project funded by the Departement of Fisheries and Oceans Canada.
+Other relevant OBIS Python modules:
++ [pyobis](https://github.com/iobis/pyobis) - retrieving data from OBIS for consumption/usage in analyses - in Python
++ [robis](https://github.com/iobis/robis) - retrieving data from OBIS for consumption/usage in analyses - In R
+
++ [obis-qc](https://github.com/iobis/obis-qc) - database-wide quality control of OBIS data held at OBIS - in R
+
