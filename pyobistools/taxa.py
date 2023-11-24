@@ -14,6 +14,7 @@ from pyobistools.utils import removesuffix
 import validation.check_scientificname_and_ids as check_names
 
 def match_taxa(names, ask=True, itis_usage=False):
+
     """ 
     Wrap the existing functionality in validation in the expected name for this function as per R's iobis/obistools.
 
@@ -23,7 +24,9 @@ def match_taxa(names, ask=True, itis_usage=False):
 
     @return structure with appended lsids where WoRMS (or ITIS can resolve them)
     """
+
     return check_names.check_scientificname_and_ids(names, value='names', itis_usage=itis_usage)
+
 
 STANDARD_SPECIES_COLUMNS = {
     'taxon_id': np.nan,
