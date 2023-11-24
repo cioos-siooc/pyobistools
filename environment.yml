@@ -14,4 +14,4 @@ dependencies:
 - pip
 - pip:
   - pyxylookup
-  importlib_metadata<5
+  - importlib_metadata<5
