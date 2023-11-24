@@ -98,7 +98,7 @@ def add_suffix(name: str) -> t.List[str]:
 
 
 def match_taxa(names, ask=True, itis_usage=False):
-    """ 
+    """
     Wrap the existing functionality in validation in the expected name for this function as per R's iobis/obistools.
 
     @param names    List of scientific names to check against
