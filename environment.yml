@@ -5,6 +5,7 @@ dependencies:
 - geopandas
 - pyworms
 - ckanapi
+- httpx
 - plotly
 - async
 - requests
