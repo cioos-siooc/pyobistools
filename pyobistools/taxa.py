@@ -11,7 +11,7 @@ import requests
 
 from pyobistools.utils import removesuffix
 
-import validation.check_scientificname_and_ids as check_names
+from pyobistools.validation import check_scientificname_and_ids as check_names
 
 
 STANDARD_SPECIES_COLUMNS = {
