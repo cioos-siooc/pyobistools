@@ -1,0 +1,1609 @@
+eventID,site_number,station_number,habitat_number,habitatID,measurementID,measurementType,measurementValue,measurementUnit
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-01,Habitat type,riffle,
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-02,Habitat length,"4,81",m
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-03,Habitat width,"23,2",m
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-04,Habitat depth,"5,1",cm
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-05,Substrate,"stones,cobbles",
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-06,Speed of flow,"1,9",s/m
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-07,Speed of flow,"0,526315789473684",m/s
+ABCD-10-1-2020-022,10,1,1,habitat-10-1-1,ABCD-2020-habitat-10-1-1-08,Notes relevant to habitat,good water visibility,
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-09,Habitat type,run,
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-010,Habitat length,"10,8",m
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-011,Habitat width,"21,6",m
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-012,Habitat depth,"5,49",cm
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-013,Substrate,"stones,cobbles",
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-014,Speed of flow,"3,2",s/m
+ABCD-10-1-2020-022,10,1,2,habitat-10-1-2,ABCD-2020-habitat-10-1-2-015,Speed of flow,"0,3125",m/s
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-016,Habitat type,riffle,
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-017,Habitat length,"13,19",m
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-018,Habitat width,14,m
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-019,Habitat depth,"6,66",cm
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-020,Substrate,"stones,cobbles",
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-021,Speed of flow,"1,87",s/m
+ABCD-10-1-2020-022,10,1,3,habitat-10-1-3,ABCD-2020-habitat-10-1-3-022,Speed of flow,"0,53475935828877",m/s
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-023,Habitat type,run,
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-024,Habitat length,"17,12",m
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-025,Habitat width,"21,2",m
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-026,Habitat depth,"1,03",cm
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-027,Substrate,"stones,cobbles",
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-028,Speed of flow,"7,02",s/m
+ABCD-10-1-2020-022,10,1,4,habitat-10-1-4,ABCD-2020-habitat-10-1-4-029,Speed of flow,"0,142450142450142",m/s
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-030,Habitat type,run,
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-031,Habitat length,"6,2",m
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-032,Habitat width,4,m
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-033,Habitat depth,"27,7",cm
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-034,Substrate,"stone,boulder",
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-035,Speed of flow,"6,52",s/m
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-036,Speed of flow,"0,153374233128834",m/s
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-037,pH,"6,78",
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-038,Conductivity,"35,7",μS
+ABCD-10-2-2020-023,10,2,1,habitat-10-2-1,ABCD-2020-habitat-10-2-1-039,Notes relevant to habitat,"dark water, dark bottom, cloudy with sun, med high water",
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-040,Habitat type,run,
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-041,Habitat length,"9,2",m
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-042,Habitat width,"2,9",m
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-043,Habitat depth,18,cm
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-044,Substrate,"stone,boulder",
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-045,Speed of flow,"1,86",s/m
+ABCD-10-2-2020-023,10,2,2,habitat-10-2-2,ABCD-2020-habitat-10-2-2-046,Speed of flow,"0,537634408602151",m/s
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-047,Habitat type,pool,
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-048,Habitat length,"13,5",m
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-049,Habitat width,"2,2",m
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-050,Habitat depth,51,cm
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-051,Substrate,"stone,boulder",
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-052,Speed of flow,"16,61",s/m
+ABCD-10-2-2020-023,10,2,3,habitat-10-2-3,ABCD-2020-habitat-10-2-3-053,Speed of flow,"0,060204695966285",m/s
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-054,Habitat type,riffle,
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-055,Habitat length,"9,9",m
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-056,Habitat width,"4,7",m
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-057,Habitat depth,27,cm
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-058,Substrate,"stone,boulder",
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-059,Speed of flow,"1,29",s/m
+ABCD-10-2-2020-023,10,2,4,habitat-10-2-4,ABCD-2020-habitat-10-2-4-060,Speed of flow,"0,775193798449612",m/s
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-061,Habitat type,run,
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-062,Habitat length,"15,3",m
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-063,Habitat width,"4,9",m
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-064,Habitat depth,"27,5",cm
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-065,Substrate,"stone,boulder",
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-066,Speed of flow,"2,92",s/m
+ABCD-10-2-2020-023,10,2,5,habitat-10-2-5,ABCD-2020-habitat-10-2-5-067,Speed of flow,"0,342465753424657",m/s
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-068,Habitat type,run,
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-069,Habitat length,"10,4",m
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-070,Habitat width,"2,2",m
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-071,Habitat depth,48,cm
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-072,Substrate,"stone,bedrock",
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-073,Speed of flow,"3,87",s/m
+ABCD-10-2-2020-023,10,2,6,habitat-10-2-6,ABCD-2020-habitat-10-2-6-074,Speed of flow,"0,258397932816537",m/s
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-075,Habitat type,riffle,
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-076,Habitat length,"16,06",m
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-077,Habitat width,"11,21",m
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-078,Habitat depth,24,cm
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-079,Substrate,"stones,cobbles",
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-080,Speed of flow,"1,7",s/m
+ABCD-1-1-2020-001,1,1,1,habitat-1-1-1,ABCD-2020-habitat-1-1-1-081,Speed of flow,"0,588235294117647",m/s
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-082,Habitat type,run,
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-083,Habitat length,"11,47",m
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-084,Habitat width,"2,93",m
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-085,Habitat depth,"17,5",cm
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-086,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-087,Speed of flow,"2,2",s/m
+ABCD-11-1-2020-027,11,1,1,habitat-11-1-1,ABCD-2020-habitat-11-1-1-088,Speed of flow,"0,454545454545455",m/s
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-089,Habitat type,run,
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-090,Habitat length,"11,87",m
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-091,Habitat width,"2,17",m
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-092,Habitat depth,"23,8",cm
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-093,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-094,Speed of flow,"5,62",s/m
+ABCD-11-1-2020-027,11,1,2,habitat-11-1-2,ABCD-2020-habitat-11-1-2-095,Speed of flow,"0,177935943060498",m/s
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-096,Habitat type,riffle,
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-097,Habitat length,"12,7",m
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-098,Habitat width,"4,5",m
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-099,Habitat depth,14,cm
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-0100,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-0101,Speed of flow,"1,49",s/m
+ABCD-11-1-2020-027,11,1,3,habitat-11-1-3,ABCD-2020-habitat-11-1-3-0102,Speed of flow,"0,671140939597315",m/s
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0103,Habitat type,pool,
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0104,Habitat length,"6,23",m
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0105,Habitat width,"3,8",m
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0106,Habitat depth,"22,5",cm
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0107,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0108,Speed of flow,"8,09",s/m
+ABCD-11-1-2020-027,11,1,4,habitat-11-1-4,ABCD-2020-habitat-11-1-4-0109,Speed of flow,"0,123609394313968",m/s
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0110,Habitat type,run,
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0111,Habitat length,"8,3",m
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0112,Habitat width,"8,04",m
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0113,Habitat depth,24,cm
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0114,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0115,Speed of flow,"2,69",s/m
+ABCD-11-1-2020-027,11,1,5,habitat-11-1-5,ABCD-2020-habitat-11-1-5-0116,Speed of flow,"0,371747211895911",m/s
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0117,Habitat type,pool,
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0118,Habitat length,"9,89",m
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0119,Habitat width,"9,34",m
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0120,Habitat depth,23,cm
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0121,Substrate,"rocks,pebbles",
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0122,Speed of flow,"8,12",s/m
+ABCD-11-1-2020-027,11,1,6,habitat-11-1-6,ABCD-2020-habitat-11-1-6-0123,Speed of flow,"0,123152709359606",m/s
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0124,Habitat type,run,
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0125,Habitat length,"15,46",m
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0126,Habitat width,"5,96",m
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0127,Habitat depth,17,cm
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0128,Substrate,"stones,cobbles",
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0129,Speed of flow,"4,07",s/m
+ABCD-1-1-2020-001,1,1,2,habitat-1-1-2,ABCD-2020-habitat-1-1-2-0130,Speed of flow,"0,245700245700246",m/s
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0131,Habitat type,riffle,
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0132,Habitat length,"14,7",m
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0133,Habitat width,"8,92",m
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0134,Habitat depth,10,cm
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0135,Substrate,"stones,cobbles",
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0136,Speed of flow,"1,58",s/m
+ABCD-10-2-2020-023,11,2,1,habitat-11-2-1,ABCD-2020-habitat-11-2-1-0137,Speed of flow,"0,632911392405063",m/s
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0138,Habitat type,run,
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0139,Habitat length,"14,93",m
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0140,Habitat width,"2,23",m
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0141,Habitat depth,"7,1",cm
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0142,Substrate,"stones,pebbles",
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0143,Speed of flow,"2,01",s/m
+ABCD-10-2-2020-023,11,2,2,habitat-11-2-2,ABCD-2020-habitat-11-2-2-0144,Speed of flow,"0,497512437810945",m/s
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0145,Habitat type,pool,
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0146,Habitat length,"9,52",m
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0147,Habitat width,"3,14",m
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0148,Habitat depth,27,cm
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0149,Substrate,"stones,pebbles",
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0150,Speed of flow,"15,18",s/m
+ABCD-10-2-2020-023,11,2,3,habitat-11-2-3,ABCD-2020-habitat-11-2-3-0151,Speed of flow,"0,065876152832675",m/s
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0152,Habitat type,run,
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0153,Habitat length,"10,78",m
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0154,Habitat width,"4,21",m
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0155,Habitat depth,23,cm
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0156,Substrate,"stones,bedrock",
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0157,Speed of flow,"2,06",s/m
+ABCD-10-2-2020-023,11,2,4,habitat-11-2-4,ABCD-2020-habitat-11-2-4-0158,Speed of flow,"0,485436893203883",m/s
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0159,Habitat type,riffle,
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0160,Habitat length,"15,46",m
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0161,Habitat width,"5,46",m
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0162,Habitat depth,"0,25",cm
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0163,Substrate,"stones,cobbles",
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0164,Speed of flow,"1,9",s/m
+ABCD-1-1-2020-001,1,1,3,habitat-1-1-3,ABCD-2020-habitat-1-1-3-0165,Speed of flow,"0,526315789473684",m/s
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0166,Habitat type,riffle,
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0167,Habitat length,"9,32",m
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0168,Habitat width,"3,38",m
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0169,Habitat depth,14,cm
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0170,Substrate,"stones,cobbles",
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0171,Speed of flow,"2,49",s/m
+ABCD-11-3-2020-026,11,3,1,habitat-11-3-1,ABCD-2020-habitat-11-3-1-0172,Speed of flow,"0,401606425702811",m/s
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0173,Habitat type,riffle,
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0174,Habitat length,"12,41",m
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0175,Habitat width,"6,07",m
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0176,Habitat depth,6,cm
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0177,Substrate,"stones,pebbles",
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0178,Speed of flow,"2,09",s/m
+ABCD-11-3-2020-026,11,3,2,habitat-11-3-2,ABCD-2020-habitat-11-3-2-0179,Speed of flow,"0,478468899521531",m/s
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0180,Habitat type,pool,
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0181,Habitat length,"8,76",m
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0182,Habitat width,"2,84",m
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0183,Habitat depth,"10,5",cm
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0184,Substrate,"stones,pebbles",
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0185,Speed of flow,"8,79",s/m
+ABCD-11-3-2020-026,11,3,3,habitat-11-3-3,ABCD-2020-habitat-11-3-3-0186,Speed of flow,"0,113765642775882",m/s
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0187,Habitat type,run,
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0188,Habitat length,"10,18",m
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0189,Habitat width,"3,78",m
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0190,Habitat depth,"21,2",cm
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0191,Substrate,"stones,pebbles",
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0192,Speed of flow,7,s/m
+ABCD-11-3-2020-026,11,3,4,habitat-11-3-4,ABCD-2020-habitat-11-3-4-0193,Speed of flow,"0,142857142857143",m/s
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0194,Habitat type,pool,
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0195,Habitat length,"10,54",m
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0196,Habitat width,"3,02",m
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0197,Habitat depth,"26,3",cm
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0198,Substrate,"stones,pebbles",
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0199,Speed of flow,"6,86",s/m
+ABCD-11-3-2020-026,11,3,5,habitat-11-3-5,ABCD-2020-habitat-11-3-5-0200,Speed of flow,"0,145772594752187",m/s
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0201,Habitat type,riffle,
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0202,Habitat length,"7,62",m
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0203,Habitat width,"2,36",m
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0204,Habitat depth,"8,1",cm
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0205,Substrate,"stones,pebbles",
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0206,Speed of flow,"2,19",s/m
+ABCD-11-3-2020-026,11,3,6,habitat-11-3-6,ABCD-2020-habitat-11-3-6-0207,Speed of flow,"0,45662100456621",m/s
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0208,Habitat type,pool,
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0209,Habitat length,"4,03",m
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0210,Habitat width,"3,22",m
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0211,Habitat depth,40,cm
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0212,Substrate,"stones,cobbles",
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0213,Speed of flow,"3,79",s/m
+ABCD-11-4-2020-025,11,4,1,habitat-11-4-1,ABCD-2020-habitat-11-4-1-0214,Speed of flow,"0,263852242744063",m/s
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0215,Habitat type,riffle,
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0216,Habitat length,"5,85",m
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0217,Habitat width,"3,34",m
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0218,Habitat depth,14,cm
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0219,Substrate,"stones,cobbles",
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0220,Speed of flow,"2,01",s/m
+ABCD-11-4-2020-025,11,4,2,habitat-11-4-2,ABCD-2020-habitat-11-4-2-0221,Speed of flow,"0,497512437810945",m/s
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0222,Habitat type,run,
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0223,Habitat length,"9,84",m
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0224,Habitat width,"3,41",m
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0225,Habitat depth,10,cm
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0226,Substrate,"stones,cobbles",
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0227,Speed of flow,"3,09",s/m
+ABCD-11-4-2020-025,11,4,3,habitat-11-4-3,ABCD-2020-habitat-11-4-3-0228,Speed of flow,"0,323624595469256",m/s
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0229,Habitat type,pool,
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0230,Habitat length,"9,8",m
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0231,Habitat width,"1,77",m
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0232,Habitat depth,13,cm
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0233,Substrate,"pebbles,sand",
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0234,Speed of flow,0,s/m
+ABCD-11-4-2020-025,11,4,4,habitat-11-4-4,ABCD-2020-habitat-11-4-4-0235,Speed of flow,0,m/s
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0236,Habitat type,run,
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0237,Habitat length,"13,03",m
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0238,Habitat width,"3,25",m
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0239,Habitat depth,24,cm
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0240,Substrate,"stones,cobbles",
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0241,Speed of flow,"2,96",s/m
+ABCD-11-4-2020-025,11,4,5,habitat-11-4-5,ABCD-2020-habitat-11-4-5-0242,Speed of flow,"0,337837837837838",m/s
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0243,Habitat type,pool,
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0244,Habitat length,"4,34",m
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0245,Habitat width,"1,38",m
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0246,Habitat depth,"8,5",cm
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0247,Substrate,"stones,cobbles",
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0248,Speed of flow,"25,07",s/m
+ABCD-11-4-2020-025,11,4,6,habitat-11-4-6,ABCD-2020-habitat-11-4-6-0249,Speed of flow,"0,039888312724372",m/s
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0250,Habitat type,run,
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0251,Habitat length,"5,39",m
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0252,Habitat width,"5,62",m
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0253,Habitat depth,12,cm
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0254,Substrate,"pebbles,stones",
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0255,Speed of flow,"2,8",s/m
+ABCD-11-4-2020-025,11,4,7,habitat-11-4-7,ABCD-2020-habitat-11-4-7-0256,Speed of flow,"0,357142857142857",m/s
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0257,Habitat type,pool,
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0258,Habitat length,"21,24",m
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0259,Habitat width,"1,5",m
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0260,Habitat depth,"9,5",cm
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0261,Substrate,"stones,cobbles",
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0262,Speed of flow,"4,38",s/m
+ABCD-1-2-2020-003,1,2,1,habitat-1-2-1,ABCD-2020-habitat-1-2-1-0263,Speed of flow,"0,228310502283105",m/s
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0264,Habitat type,riffle,
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0265,Habitat length,"7,03",m
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0266,Habitat width,"6,14",m
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0267,Habitat depth,"31,2",cm
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0268,Substrate,"rocks,cobbles",
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0269,Speed of flow,"1,44",s/m
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0270,Speed of flow,"0,694444444444444",m/s
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0271,pH,"7,57",
+ABCD-12-1-2020-028,12,1,1,habitat-12-1-1,ABCD-2020-habitat-12-1-1-0272,Conductivity,"58,6",μS
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0273,Habitat type,run,
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0274,Habitat length,"8,12",m
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0275,Habitat width,"6,06",m
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0276,Habitat depth,"27,3",cm
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0277,Substrate,"rocks,cobbles",
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0278,Speed of flow,"1,55",s/m
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0279,Speed of flow,"0,645161290322581",m/s
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0280,pH,"7,57",
+ABCD-12-1-2020-028,12,1,2,habitat-12-1-2,ABCD-2020-habitat-12-1-2-0281,Conductivity,"58,6",μS
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0282,Habitat type,riffle,
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0283,Habitat length,"19,06",m
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0284,Habitat width,"7,38",m
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0285,Habitat depth,"28,5",cm
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0286,Substrate,"rocks,cobbles",
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0287,Speed of flow,"1,68",s/m
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0288,Speed of flow,"0,595238095238095",m/s
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0289,pH,"7,57",
+ABCD-12-1-2020-028,12,1,3,habitat-12-1-3,ABCD-2020-habitat-12-1-3-0290,Conductivity,"58,6",μS
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0291,Habitat type,pool,
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0292,Habitat length,"6,92",m
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0293,Habitat width,"3,56",m
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0294,Habitat depth,13,cm
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0295,Substrate,"sand,pebbles",
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0296,Speed of flow,"27,34",s/m
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0297,Speed of flow,"0,036576444769568",m/s
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0298,pH,"7,57",
+ABCD-12-1-2020-028,12,1,4,habitat-12-1-4,ABCD-2020-habitat-12-1-4-0299,Conductivity,"58,6",μS
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0300,Habitat type,pool,
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0301,Habitat length,"10,5",m
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0302,Habitat width,"5,03",m
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0303,Habitat depth,"53,5",cm
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0304,Substrate,"stones,cobbles",
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0305,Speed of flow,4,s/m
+ABCD-1-2-2020-003,1,2,2,habitat-1-2-2,ABCD-2020-habitat-1-2-2-0306,Speed of flow,"0,25",m/s
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0307,Habitat type,riffle,
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0308,Habitat length,"11,82",m
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0309,Habitat width,"8,1",m
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0310,Habitat depth,15,cm
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0311,Substrate,"stones,cobble,boulder",
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0312,Speed of flow,"1,41",s/m
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0313,Speed of flow,"0,709219858156028",m/s
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0314,pH,"7,77",
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0315,Conductivity,"57,5",μS
+ABCD-12-2-2020-029,12,2,1,habitat-12-2-1,ABCD-2020-habitat-12-2-1-0316,Notes relevant to habitat,"good water visibility, overcast, water level medium, too close to ocean?",
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0317,Habitat type,run,
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0318,Habitat length,"4,52",m
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0319,Habitat width,"1,84",m
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0320,Habitat depth,13,cm
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0321,Substrate,"stones,cobble,boulder",
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0322,Speed of flow,"4,65",s/m
+ABCD-12-2-2020-029,12,2,2,habitat-12-2-2,ABCD-2020-habitat-12-2-2-0323,Speed of flow,"0,21505376344086",m/s
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0324,Habitat type,run,
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0325,Habitat length,"18,39",m
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0326,Habitat width,"4,66",m
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0327,Habitat depth,51,cm
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0328,Substrate,"stones,cobble,boulder",
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0329,Speed of flow,"2,81",s/m
+ABCD-12-2-2020-029,12,2,3,habitat-12-2-3,ABCD-2020-habitat-12-2-3-0330,Speed of flow,"0,355871886120996",m/s
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0331,Habitat type,pool,
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0332,Habitat length,"12,4",m
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0333,Habitat width,"2,47",m
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0334,Habitat depth,"19,5",cm
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0335,Substrate,"stones,cobble,boulder",
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0336,Speed of flow,"16,79",s/m
+ABCD-12-2-2020-029,12,2,4,habitat-12-2-4,ABCD-2020-habitat-12-2-4-0337,Speed of flow,"0,059559261465158",m/s
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0338,Habitat type,pool,
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0339,Habitat length,"12,52",m
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0340,Habitat width,"2,04",m
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0341,Habitat depth,6,cm
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0342,Substrate,"sand, stone",
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0343,Speed of flow,0,s/m
+ABCD-12-2-2020-029,12,2,5,habitat-12-2-5,ABCD-2020-habitat-12-2-5-0344,Speed of flow,0,m/s
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0345,Habitat type,run,
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0346,Habitat length,"13,26",m
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0347,Habitat width,"1,43",m
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0348,Habitat depth,48,cm
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0349,Substrate,"bedrock, cobble, boulder",
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0350,Speed of flow,"4,8",s/m
+ABCD-12-2-2020-029,12,2,6,habitat-12-2-6,ABCD-2020-habitat-12-2-6-0351,Speed of flow,"0,208333333333333",m/s
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0352,Habitat type,run,
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0353,Habitat length,"9,54",m
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0354,Habitat width,"5,44",m
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0355,Habitat depth,"46,4",cm
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0356,Substrate,"stones,cobbles",
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0357,Speed of flow,"4,46",s/m
+ABCD-1-2-2020-003,1,2,3,habitat-1-2-3,ABCD-2020-habitat-1-2-3-0358,Speed of flow,"0,224215246636771",m/s
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0359,Habitat type,pool,
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0360,Habitat length,"9,32",m
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0361,Habitat width,"3,4",m
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0362,Habitat depth,6,cm
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0363,Substrate,"stones,pebbles",
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0364,Speed of flow,"14,42",s/m
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0365,Speed of flow,"0,069348127600555",m/s
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0366,pH,"7,84",
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0367,Conductivity,"59,8",μS
+ABCD-12-3-2020-030,12,3,1,habitat-12-3-1,ABCD-2020-habitat-12-3-1-0368,Notes relevant to habitat,"4 eels not removed first pass, 1 eel missed second",
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0369,Habitat type,run,
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0370,Habitat length,"10,52",m
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0371,Habitat width,"1,92",m
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0372,Habitat depth,"38,5",cm
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0373,Substrate,"bedrock, stones",
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0374,Speed of flow,"2,71",s/m
+ABCD-12-3-2020-030,12,3,2,habitat-12-3-2,ABCD-2020-habitat-12-3-2-0375,Speed of flow,"0,3690036900369",m/s
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0376,Habitat type,riffle,
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0377,Habitat length,"9,43",m
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0378,Habitat width,"2,96",m
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0379,Habitat depth,"8,5",cm
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0380,Substrate,"stones, pebbles",
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0381,Speed of flow,"2,68",s/m
+ABCD-12-3-2020-030,12,3,3,habitat-12-3-3,ABCD-2020-habitat-12-3-3-0382,Speed of flow,"0,373134328358209",m/s
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0383,Habitat type,run,
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0384,Habitat length,"3,05",m
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0385,Habitat width,"7,74",m
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0386,Habitat depth,21,cm
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0387,Substrate,"bedrock, pebbles",
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0388,Speed of flow,"2,52",s/m
+ABCD-12-3-2020-030,12,3,4,habitat-12-3-4,ABCD-2020-habitat-12-3-4-0389,Speed of flow,"0,396825396825397",m/s
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0390,Habitat type,riffle,
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0391,Habitat length,"8,2",m
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0392,Habitat width,"5,14",m
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0393,Habitat depth,"9,5",cm
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0394,Substrate,"stones, bedrock",
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0395,Speed of flow,"2,93",s/m
+ABCD-12-3-2020-030,12,3,5,habitat-12-3-5,ABCD-2020-habitat-12-3-5-0396,Speed of flow,"0,341296928327645",m/s
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0397,Habitat type,riffle,
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0398,Habitat length,"10,32",m
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0399,Habitat width,"3,17",m
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0400,Habitat depth,18,cm
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0401,Substrate,"stones, cobbles",
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0402,Speed of flow,"2,75",s/m
+ABCD-12-3-2020-030,12,3,6,habitat-12-3-6,ABCD-2020-habitat-12-3-6-0403,Speed of flow,"0,363636363636364",m/s
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0404,Habitat type,run,
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0405,Habitat length,"8,87",m
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0406,Habitat width,"2,1",m
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0407,Habitat depth,12,cm
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0408,Substrate,"bedrock, stones",
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0409,Speed of flow,"2,01",s/m
+ABCD-12-3-2020-030,12,3,7,habitat-12-3-7,ABCD-2020-habitat-12-3-7-0410,Speed of flow,"0,497512437810945",m/s
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0411,Habitat type,run,
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0412,Habitat length,"21,24",m
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0413,Habitat width,"1,6",m
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0414,Habitat depth,"57,6",cm
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0415,Substrate,"stones,cobbles",
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0416,Speed of flow,"2,14",s/m
+ABCD-1-2-2020-003,1,2,4,habitat-1-2-4,ABCD-2020-habitat-1-2-4-0417,Speed of flow,"0,467289719626168",m/s
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0418,Habitat type,run,
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0419,Habitat length,"6,16",m
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0420,Habitat width,"2,08",m
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0421,Habitat depth,11,cm
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0422,Substrate,"cobbles,stones",
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0423,Speed of flow,"5,81",s/m
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0424,Speed of flow,"0,172117039586919",m/s
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0425,pH,"7,84",
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0426,Conductivity,"59,8",μS
+ABCD-12-4-2020-031,12,4,1,habitat-12-4-1,ABCD-2020-habitat-12-4-1-0427,Notes relevant to habitat,"10 eels not removed first pass, diet mixed with 3",
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0428,Habitat type,run,
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0429,Habitat length,"7,27",m
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0430,Habitat width,"3,84",m
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0431,Habitat depth,37,cm
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0432,Substrate,"cobble, boulders, pebbles",
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0433,Speed of flow,"4,08",s/m
+ABCD-12-4-2020-031,12,4,2,habitat-12-4-2,ABCD-2020-habitat-12-4-2-0434,Speed of flow,"0,245098039215686",m/s
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0435,Habitat type,riffle,
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0436,Habitat length,"15,05",m
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0437,Habitat width,"3,3",m
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0438,Habitat depth,23,cm
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0439,Substrate,"cobble, boulders, pebbles",
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0440,Speed of flow,"2,65",s/m
+ABCD-12-4-2020-031,12,4,3,habitat-12-4-3,ABCD-2020-habitat-12-4-3-0441,Speed of flow,"0,377358490566038",m/s
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0442,Habitat type,pool,
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0443,Habitat length,"3,78",m
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0444,Habitat width,"3,11",m
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0445,Habitat depth,44,cm
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0446,Substrate,"bedrock, pebbles",
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0447,Speed of flow,"9,05",s/m
+ABCD-12-4-2020-031,12,4,4,habitat-12-4-4,ABCD-2020-habitat-12-4-4-0448,Speed of flow,"0,110497237569061",m/s
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0449,Habitat type,riffle,
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0450,Habitat length,"4,86",m
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0451,Habitat width,"12,27",m
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0452,Habitat depth,6,cm
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0453,Substrate,bedrock,
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0454,Speed of flow,"3,87",s/m
+ABCD-12-4-2020-031,12,4,5,habitat-12-4-5,ABCD-2020-habitat-12-4-5-0455,Speed of flow,"0,258397932816537",m/s
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0456,Habitat type,riffle,
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0457,Habitat length,"4,3",m
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0458,Habitat width,"2,75",m
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0459,Habitat depth,32,cm
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0460,Substrate,"bedrock, cobbles",
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0461,Speed of flow,"8,2",s/m
+ABCD-12-4-2020-031,12,4,6,habitat-12-4-6,ABCD-2020-habitat-12-4-6-0462,Speed of flow,"0,121951219512195",m/s
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0463,Habitat type,pool,
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0464,Habitat length,"7,18",m
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0465,Habitat width,"2,1",m
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0466,Habitat depth,33,cm
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0467,Substrate,"bedrock, stones",
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0468,Speed of flow,"5,32",s/m
+ABCD-12-4-2020-031,12,4,7,habitat-12-4-7,ABCD-2020-habitat-12-4-7-0469,Speed of flow,"0,18796992481203",m/s
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0470,Habitat type,pool,
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0471,Habitat length,"20,25",m
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0472,Habitat width,"1,44",m
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0473,Habitat depth,"80,3",cm
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0474,Substrate,"stones,cobbles",
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0475,Speed of flow,"5,49",s/m
+ABCD-1-2-2020-003,1,2,5,habitat-1-2-5,ABCD-2020-habitat-1-2-5-0476,Speed of flow,"0,182149362477231",m/s
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0477,Habitat type,run,
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0478,Habitat length,"10,8",m
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0479,Habitat width,"15,8",m
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0480,Habitat depth,29,cm
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0481,Substrate,"stones,cobbles",
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0482,Speed of flow,"1,7",s/m
+ABCD-1-3-2020-002,1,3,1,habitat-1-3-1,ABCD-2020-habitat-1-3-1-0483,Speed of flow,"0,588235294117647",m/s
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0484,Habitat type,run,
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0485,Habitat length,"7,2",m
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0486,Habitat width,"2,57",m
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0487,Habitat depth,22,cm
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0488,Substrate,"pebbles,cobble",
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0489,Speed of flow,"1,13",s/m
+ABCD-13-1-2020-032,13,1,1,habitat-13-1-1,ABCD-2020-habitat-13-1-1-0490,Speed of flow,"0,884955752212389",m/s
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0491,Habitat type,riffle,
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0492,Habitat length,"3,55",m
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0493,Habitat width,"3,53",m
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0494,Habitat depth,11,cm
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0495,Substrate,"pebbles,cobble",
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0496,Speed of flow,"2,02",s/m
+ABCD-13-1-2020-032,13,1,2,habitat-13-1-2,ABCD-2020-habitat-13-1-2-0497,Speed of flow,"0,495049504950495",m/s
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0498,Habitat type,run,
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0499,Habitat length,"6,13",m
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0500,Habitat width,"1,5",m
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0501,Habitat depth,49,cm
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0502,Substrate,"pebble,boulders",
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0503,Speed of flow,"1,83",s/m
+ABCD-13-1-2020-032,13,1,3,habitat-13-1-3,ABCD-2020-habitat-13-1-3-0504,Speed of flow,"0,546448087431694",m/s
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0505,Habitat type,run,
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0506,Habitat length,"5,17",m
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0507,Habitat width,"3,54",m
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0508,Habitat depth,29,cm
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0509,Substrate,"stone,cobble",
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0510,Speed of flow,"3,15",s/m
+ABCD-13-1-2020-032,13,1,4,habitat-13-1-4,ABCD-2020-habitat-13-1-4-0511,Speed of flow,"0,317460317460317",m/s
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0512,Habitat type,riffle,
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0513,Habitat length,"5,28",m
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0514,Habitat width,"3,42",m
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0515,Habitat depth,10,cm
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0516,Substrate,bedrock,
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0517,Speed of flow,"1,05",s/m
+ABCD-13-1-2020-032,13,1,5,habitat-13-1-5,ABCD-2020-habitat-13-1-5-0518,Speed of flow,"0,952380952380952",m/s
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0519,Habitat type,pool,
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0520,Habitat length,"3,36",m
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0521,Habitat width,"2,43",m
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0522,Habitat depth,32,cm
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0523,Substrate,"sand,wooddebris",
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0524,Speed of flow,0,s/m
+ABCD-13-1-2020-032,13,1,6,habitat-13-1-6,ABCD-2020-habitat-13-1-6-0525,Speed of flow,0,m/s
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0526,Habitat type,pool,
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0527,Habitat length,"2,54",m
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0528,Habitat width,"2,75",m
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0529,Habitat depth,28,cm
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0530,Substrate,"bedrock,stone",
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0531,Speed of flow,"5,12",s/m
+ABCD-13-1-2020-032,13,1,7,habitat-13-1-7,ABCD-2020-habitat-13-1-7-0532,Speed of flow,"0,1953125",m/s
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0533,Habitat type,pool,
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0534,Habitat length,"3,96",m
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0535,Habitat width,"1,58",m
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0536,Habitat depth,26,cm
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0537,Substrate,"cobble,stone",
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0538,Speed of flow,"12,42",s/m
+ABCD-13-1-2020-032,13,1,8,habitat-13-1-8,ABCD-2020-habitat-13-1-8-0539,Speed of flow,"0,080515297906602",m/s
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0540,Habitat type,pool,
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0541,Habitat length,"5,09",m
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0542,Habitat width,"1,72",m
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0543,Habitat depth,60,cm
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0544,Substrate,"stone,boulder",
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0545,Speed of flow,"8,05",s/m
+ABCD-13-1-2020-032,13,1,9,habitat-13-1-9,ABCD-2020-habitat-13-1-9-0546,Speed of flow,"0,124223602484472",m/s
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0547,Habitat type,run,
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0548,Habitat length,"18,9",m
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0549,Habitat width,"9,7",m
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0550,Habitat depth,54,cm
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0551,Substrate,"stones,cobbles",
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0552,Speed of flow,"1,95",s/m
+ABCD-1-3-2020-002,1,3,2,habitat-1-3-2,ABCD-2020-habitat-1-3-2-0553,Speed of flow,"0,512820512820513",m/s
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0554,Habitat type,riffle,
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0555,Habitat length,"25,5",m
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0556,Habitat width,"4,8",m
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0557,Habitat depth,17,cm
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0558,Substrate,"stone,boulder",
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0559,Speed of flow,"2,39",s/m
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0560,Speed of flow,"0,418410041841004",m/s
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0561,pH,"7,27",
+ABCD-13-2-2020-033,13,2,1,habitat-13-2-1,ABCD-2020-habitat-13-2-1-0562,Conductivity,"59,6",μS
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0563,Habitat type,riffle,
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0564,Habitat length,"22,4",m
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0565,Habitat width,"11,4",m
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0566,Habitat depth,23,cm
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0567,Substrate,"stones,boulders",
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0568,Speed of flow,"1,28",s/m
+ABCD-1-3-2020-002,1,3,3,habitat-1-3-3,ABCD-2020-habitat-1-3-3-0569,Speed of flow,"0,78125",m/s
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0570,Habitat type,pool,
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0571,Habitat length,"10,4",m
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0572,Habitat width,"2,3",m
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0573,Habitat depth,66,cm
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0574,Substrate,"stones,boulders",
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0575,Speed of flow,"6,19",s/m
+ABCD-1-3-2020-002,1,3,4,habitat-1-3-4,ABCD-2020-habitat-1-3-4-0576,Speed of flow,"0,161550888529887",m/s
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0577,Habitat type,pool,
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0578,Habitat length,"5,5",m
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0579,Habitat width,"4,21",m
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0580,Habitat depth,53,cm
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0581,Substrate,"stones,boulders",
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0582,Speed of flow,"7,62",s/m
+ABCD-1-3-2020-002,1,3,5,habitat-1-3-5,ABCD-2020-habitat-1-3-5-0583,Speed of flow,"0,131233595800525",m/s
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0584,Habitat type,run,
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0585,Habitat length,7,m
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0586,Habitat width,"8,44",m
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0587,Habitat depth,"21,3",cm
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0588,Substrate,"clay, stones",
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0589,Speed of flow,"1,75",s/m
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0590,Speed of flow,"0,571428571428571",m/s
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0591,pH,"7,42",
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0592,Conductivity,"81,5",μS
+ABCD-14-1-2020-034,14,1,1,habitat-14-1-1,ABCD-2020-habitat-14-1-1-0593,Notes relevant to habitat,"clear water, good visibility, sunny (no clouds), fast water in riffles, medium water height, dark river bottom habitat 2 to 6",
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0594,Habitat type,riffle,
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0595,Habitat length,"2,86",m
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0596,Habitat width,"7,05",m
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0597,Habitat depth,"24,5",cm
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0598,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0599,Speed of flow,"1,04",s/m
+ABCD-14-1-2020-034,14,1,2,habitat-14-1-2,ABCD-2020-habitat-14-1-2-0600,Speed of flow,"0,961538461538461",m/s
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0601,Habitat type,run,
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0602,Habitat length,"5,32",m
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0603,Habitat width,"4,45",m
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0604,Habitat depth,32,cm
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0605,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0606,Speed of flow,"1,68",s/m
+ABCD-14-1-2020-034,14,1,3,habitat-14-1-3,ABCD-2020-habitat-14-1-3-0607,Speed of flow,"0,595238095238095",m/s
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0608,Habitat type,run,
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0609,Habitat length,"23,12",m
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0610,Habitat width,"2,43",m
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0611,Habitat depth,"44,5",cm
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0612,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0613,Speed of flow,"3,43",s/m
+ABCD-14-1-2020-034,14,1,4,habitat-14-1-4,ABCD-2020-habitat-14-1-4-0614,Speed of flow,"0,291545189504373",m/s
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0615,Habitat type,run,
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0616,Habitat length,"14,31",m
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0617,Habitat width,"4,82",m
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0618,Habitat depth,"45,1",cm
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0619,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0620,Speed of flow,"4,86",s/m
+ABCD-14-1-2020-034,14,1,5,habitat-14-1-5,ABCD-2020-habitat-14-1-5-0621,Speed of flow,"0,205761316872428",m/s
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0622,Habitat type,riffle,
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0623,Habitat length,"14,95",m
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0624,Habitat width,"4,55",m
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0625,Habitat depth,"36,5",cm
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0626,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0627,Speed of flow,"1,26",s/m
+ABCD-14-1-2020-034,14,1,6,habitat-14-1-6,ABCD-2020-habitat-14-1-6-0628,Speed of flow,"0,793650793650794",m/s
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0629,Habitat type,pool,
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0630,Habitat length,"3,75",m
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0631,Habitat width,"3,52",m
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0632,Habitat depth,"44,2",cm
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0633,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0634,Speed of flow,"8,39",s/m
+ABCD-14-1-2020-034,14,1,7,habitat-14-1-7,ABCD-2020-habitat-14-1-7-0635,Speed of flow,"0,119189511323004",m/s
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0636,Habitat type,pool,
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0637,Habitat length,"3,23",m
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0638,Habitat width,"1,56",m
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0639,Habitat depth,"57,4",cm
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0640,Substrate,"stones,boulders",
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0641,Speed of flow,0,s/m
+ABCD-14-1-2020-034,14,1,8,habitat-14-1-8,ABCD-2020-habitat-14-1-8-0642,Speed of flow,0,m/s
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0643,Habitat type,run,
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0644,Habitat length,"15,97",m
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0645,Habitat width,"2,56",m
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0646,Habitat depth,35,cm
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0647,Substrate,"stones,cobble",
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0648,Speed of flow,"2,29",s/m
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0649,Speed of flow,"0,436681222707424",m/s
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0650,pH,"7,43",
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0651,Conductivity,"89,7",μS
+ABCD-14-2-2020-035,14,2,1,habitat-14-2-1,ABCD-2020-habitat-14-2-1-0652,Notes relevant to habitat,poor visibility (dark water and sun reflection) electrofisher not in for portion of pass 2 ,
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0653,Habitat type,pool,
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0654,Habitat length,"14,13",m
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0655,Habitat width,"4,34",m
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0656,Habitat depth,36,cm
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0657,Substrate,"stones,cobble",
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0658,Speed of flow,"17,95",s/m
+ABCD-14-2-2020-035,14,2,2,habitat-14-2-2,ABCD-2020-habitat-14-2-2-0659,Speed of flow,"0,055710306406685",m/s
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0660,Habitat type,riffle,
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0661,Habitat length,"11,65",m
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0662,Habitat width,"6,42",m
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0663,Habitat depth,15,cm
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0664,Substrate,"stones,cobble",
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0665,Speed of flow,"1,49",s/m
+ABCD-14-2-2020-035,14,2,3,habitat-14-2-3,ABCD-2020-habitat-14-2-3-0666,Speed of flow,"0,671140939597315",m/s
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0667,Habitat type,run,
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0668,Habitat length,"6,16",m
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0669,Habitat width,"2,17",m
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0670,Habitat depth,"12,5",cm
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0671,Substrate,"stones,cobble",
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0672,Speed of flow,"2,35",s/m
+ABCD-14-2-2020-035,14,2,4,habitat-14-2-4,ABCD-2020-habitat-14-2-4-0673,Speed of flow,"0,425531914893617",m/s
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0674,Habitat type,riffle,
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0675,Habitat length,"15,01",m
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0676,Habitat width,"8,98",m
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0677,Habitat depth,20,cm
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0678,Substrate,"stones,cobble,boulders",
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0679,Speed of flow,"2,43",s/m
+ABCD-14-2-2020-035,14,2,5,habitat-14-2-5,ABCD-2020-habitat-14-2-5-0680,Speed of flow,"0,411522633744856",m/s
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0681,Habitat type,pool,
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0682,Habitat length,"12,99",m
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0683,Habitat width,"2,38",m
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0684,Habitat depth,"19,5",cm
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0685,Substrate,"stones,cobble,boulders",
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0686,Speed of flow,"5,12",s/m
+ABCD-14-2-2020-035,14,2,6,habitat-14-2-6,ABCD-2020-habitat-14-2-6-0687,Speed of flow,"0,1953125",m/s
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0688,Habitat type,run,
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0689,Habitat length,13,m
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0690,Habitat width,"2,61",m
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0691,Habitat depth,4,cm
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0692,Substrate,"stones,cobble,boulders",
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0693,Speed of flow,"3,9",s/m
+ABCD-14-2-2020-035,14,2,7,habitat-14-2-7,ABCD-2020-habitat-14-2-7-0694,Speed of flow,"0,256410256410256",m/s
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0695,Habitat type,pool,
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0696,Habitat length,"12,91",m
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0697,Habitat width,"2,53",m
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0698,Habitat depth,42,cm
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0699,Substrate,"cobble,boulders",
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0700,Speed of flow,"14,79",s/m
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0701,Speed of flow,"0,067613252197431",m/s
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0702,pH,"7,63",
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0703,Conductivity,"89,2",μS
+ABCD-14-3-2020-036,14,3,1,habitat-14-3-1,ABCD-2020-habitat-14-3-1-0704,Notes relevant to habitat,"poor visibility (sun and dark), sun no clouds, top net slipped 1/3 through 2nd pass",
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0705,Habitat type,riffle,
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0706,Habitat length,"12,6",m
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0707,Habitat width,"7,98",m
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0708,Habitat depth,36,cm
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0709,Substrate,"cobble,boulders",
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0710,Speed of flow,"2,93",s/m
+ABCD-14-3-2020-036,14,3,2,habitat-14-3-2,ABCD-2020-habitat-14-3-2-0711,Speed of flow,"0,341296928327645",m/s
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0712,Habitat type,run,
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0713,Habitat length,"6,92",m
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0714,Habitat width,"2,77",m
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0715,Habitat depth,29,cm
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0716,Substrate,"cobble,boulders",
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0717,Speed of flow,"3,98",s/m
+ABCD-14-3-2020-036,14,3,3,habitat-14-3-3,ABCD-2020-habitat-14-3-3-0718,Speed of flow,"0,251256281407035",m/s
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0719,Habitat type,run,
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0720,Habitat length,"8,17",m
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0721,Habitat width,"1,74",m
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0722,Habitat depth,25,cm
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0723,Substrate,"cobble,boulders",
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0724,Speed of flow,2,s/m
+ABCD-14-3-2020-036,14,3,4,habitat-14-3-4,ABCD-2020-habitat-14-3-4-0725,Speed of flow,"0,5",m/s
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0726,Habitat type,riffle,
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0727,Habitat length,"21,44",m
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0728,Habitat width,"4,96",m
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0729,Habitat depth,31,cm
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0730,Substrate,boulders,
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0731,Speed of flow,"1,87",s/m
+ABCD-14-3-2020-036,14,3,5,habitat-14-3-5,ABCD-2020-habitat-14-3-5-0732,Speed of flow,"0,53475935828877",m/s
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0733,Habitat type,run,
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0734,Habitat length,"10,31",m
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0735,Habitat width,"4,17",m
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0736,Habitat depth,27,cm
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0737,Substrate,"stones,cobble",
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0738,Speed of flow,"2,39",s/m
+ABCD-14-3-2020-036,14,3,6,habitat-14-3-6,ABCD-2020-habitat-14-3-6-0739,Speed of flow,"0,418410041841004",m/s
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0740,Habitat type,pool,
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0741,Habitat length,"4,92",m
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0742,Habitat width,"1,41",m
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0743,Habitat depth,41,cm
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0744,Substrate,"stones,boulders",
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0745,Speed of flow,0,s/m
+ABCD-14-3-2020-036,14,3,7,habitat-14-3-7,ABCD-2020-habitat-14-3-7-0746,Speed of flow,0,m/s
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0747,Habitat type,riffle,
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0748,Habitat length,"2,49",m
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0749,Habitat width,"4,88",m
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0750,Habitat depth,23,cm
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0751,Substrate,"cobble,boulders",
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0752,Speed of flow,"1,78",s/m
+ABCD-14-3-2020-036,14,3,8,habitat-14-3-8,ABCD-2020-habitat-14-3-8-0753,Speed of flow,"0,561797752808989",m/s
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0754,Habitat type,riffle,
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0755,Habitat length,"5,28",m
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0756,Habitat width,"3,11",m
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0757,Habitat depth,21,cm
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0758,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0759,Speed of flow,"1,69",s/m
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0760,Speed of flow,"0,591715976331361",m/s
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0761,pH,"7,45",
+ABCD-15-1-2020-037,15,1,1,habitat-15-1-1,ABCD-2020-habitat-15-1-1-0762,Conductivity,"66,5",μS
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0763,Habitat type,pool,
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0764,Habitat length,"4,98",m
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0765,Habitat width,"0,97",m
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0766,Habitat depth,28,cm
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0767,Substrate,"cobbles,silt",
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0768,Speed of flow,0,s/m
+ABCD-15-1-2020-037,15,1,10,habitat-15-1-10,ABCD-2020-habitat-15-1-10-0769,Speed of flow,0,m/s
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0770,Habitat type,pool,
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0771,Habitat length,"2,65",m
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0772,Habitat width,"1,51",m
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0773,Habitat depth,"30,5",cm
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0774,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0775,Speed of flow,"26,53",s/m
+ABCD-15-1-2020-037,15,1,2,habitat-15-1-2,ABCD-2020-habitat-15-1-2-0776,Speed of flow,"0,037693177534866",m/s
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0777,Habitat type,pool,
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0778,Habitat length,"3,31",m
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0779,Habitat width,"2,28",m
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0780,Habitat depth,31,cm
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0781,Substrate,"stones,cobbles,sand",
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0782,Speed of flow,"16,7",s/m
+ABCD-15-1-2020-037,15,1,3,habitat-15-1-3,ABCD-2020-habitat-15-1-3-0783,Speed of flow,"0,059880239520958",m/s
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0784,Habitat type,run,
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0785,Habitat length,"5,32",m
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0786,Habitat width,"3,36",m
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0787,Habitat depth,32,cm
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0788,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0789,Speed of flow,"3,02",s/m
+ABCD-15-1-2020-037,15,1,4,habitat-15-1-4,ABCD-2020-habitat-15-1-4-0790,Speed of flow,"0,33112582781457",m/s
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0791,Habitat type,riffle,
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0792,Habitat length,"3,92",m
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0793,Habitat width,"5,58",m
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0794,Habitat depth,16,cm
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0795,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0796,Speed of flow,"1,51",s/m
+ABCD-15-1-2020-037,15,1,5,habitat-15-1-5,ABCD-2020-habitat-15-1-5-0797,Speed of flow,"0,662251655629139",m/s
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0798,Habitat type,pool,
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0799,Habitat length,"6,64",m
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0800,Habitat width,"1,7",m
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0801,Habitat depth,65,cm
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0802,Substrate,"stones,cobbles,silt",
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0803,Speed of flow,0,s/m
+ABCD-15-1-2020-037,15,1,6,habitat-15-1-6,ABCD-2020-habitat-15-1-6-0804,Speed of flow,0,m/s
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0805,Habitat type,run,
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0806,Habitat length,"9,48",m
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0807,Habitat width,"1,31",m
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0808,Habitat depth,29,cm
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0809,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0810,Speed of flow,"1,44",s/m
+ABCD-15-1-2020-037,15,1,7,habitat-15-1-7,ABCD-2020-habitat-15-1-7-0811,Speed of flow,"0,694444444444444",m/s
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0812,Habitat type,riffle,
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0813,Habitat length,"12,62",m
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0814,Habitat width,"2,73",m
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0815,Habitat depth,21,cm
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0816,Substrate,"stones,cobbles",
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0817,Speed of flow,"1,95",s/m
+ABCD-15-1-2020-037,15,1,8,habitat-15-1-8,ABCD-2020-habitat-15-1-8-0818,Speed of flow,"0,512820512820513",m/s
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0819,Habitat type,pool,
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0820,Habitat length,"6,04",m
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0821,Habitat width,"1,35",m
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0822,Habitat depth,18,cm
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0823,Substrate,"cobbles,duckweed",
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0824,Speed of flow,0,s/m
+ABCD-15-1-2020-037,15,1,9,habitat-15-1-9,ABCD-2020-habitat-15-1-9-0825,Speed of flow,0,m/s
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0826,Habitat type,run,
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0827,Habitat length,"5,01",m
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0828,Habitat width,"6,83",m
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0829,Habitat depth,24,cm
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0830,Substrate,"pebbles, cobbles",
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0831,Speed of flow,"1,66",s/m
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0832,Speed of flow,"0,602409638554217",m/s
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0833,pH,"7,31",
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0834,Conductivity,"56,1",μS
+ABCD-15-2-2020-038,15,2,1,habitat-15-2-1,ABCD-2020-habitat-15-2-1-0835,Notes relevant to habitat,estimates of eels and sticklebacks unreliable because some were put back in station. ,
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0836,Habitat type,run,
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0837,Habitat length,"12,48",m
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0838,Habitat width,"2,93",m
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0839,Habitat depth,31,cm
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0840,Substrate,"pebbles, cobbles",
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0841,Speed of flow,"7,11",s/m
+ABCD-15-2-2020-038,15,2,2,habitat-15-2-2,ABCD-2020-habitat-15-2-2-0842,Speed of flow,"0,140646976090014",m/s
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0843,Habitat type,pool,
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0844,Habitat length,"8,82",m
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0845,Habitat width,"4,92",m
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0846,Habitat depth,19,cm
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0847,Substrate,"pebbles, cobbles, sand, algae",
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0848,Speed of flow,0,s/m
+ABCD-15-2-2020-038,15,2,3,habitat-15-2-3,ABCD-2020-habitat-15-2-3-0849,Speed of flow,0,m/s
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0850,Habitat type,riffle,
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0851,Habitat length,"25,05",m
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0852,Habitat width,"7,42",m
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0853,Habitat depth,17,cm
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0854,Substrate,"cobbles, stones",
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0855,Speed of flow,"1,41",s/m
+ABCD-15-2-2020-038,15,2,4,habitat-15-2-4,ABCD-2020-habitat-15-2-4-0856,Speed of flow,"0,709219858156028",m/s
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0857,Habitat type,pool,
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0858,Habitat length,"3,46",m
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0859,Habitat width,"1,35",m
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0860,Habitat depth,16,cm
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0861,Substrate,"stones, cobbles",
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0862,Speed of flow,0,s/m
+ABCD-15-2-2020-038,15,2,5,habitat-15-2-5,ABCD-2020-habitat-15-2-5-0863,Speed of flow,0,m/s
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0864,Habitat type,riffle,
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0865,Habitat length,"4,49",m
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0866,Habitat width,"7,67",m
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0867,Habitat depth,29,cm
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0868,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0869,Speed of flow,"1,19",s/m
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0870,Speed of flow,"0,840336134453782",m/s
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0871,pH,"6,66",
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0872,Conductivity,"41,8",μS
+ABCD-16-1-2020-039,16,1,1,habitat-16-1-1,ABCD-2020-habitat-16-1-1-0873,Notes relevant to habitat,"1 small dead salmon, dark bottom (slippery), sunny no clouds, fast flow, water over top of both nets (barely)",
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0874,Habitat type,run,
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0875,Habitat length,"21,5",m
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0876,Habitat width,"5,17",m
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0877,Habitat depth,"61,5",cm
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0878,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0879,Speed of flow,"3,93",s/m
+ABCD-16-1-2020-039,16,1,2,habitat-16-1-2,ABCD-2020-habitat-16-1-2-0880,Speed of flow,"0,254452926208651",m/s
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0881,Habitat type,pool,
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0882,Habitat length,"15,68",m
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0883,Habitat width,"3,34",m
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0884,Habitat depth,15,cm
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0885,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0886,Speed of flow,"9,7",s/m
+ABCD-16-1-2020-039,16,1,3,habitat-16-1-3,ABCD-2020-habitat-16-1-3-0887,Speed of flow,"0,103092783505155",m/s
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0888,Habitat type,run,
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0889,Habitat length,"20,35",m
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0890,Habitat width,"3,92",m
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0891,Habitat depth,35,cm
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0892,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0893,Speed of flow,"3,61",s/m
+ABCD-16-1-2020-039,16,1,4,habitat-16-1-4,ABCD-2020-habitat-16-1-4-0894,Speed of flow,"0,277008310249307",m/s
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0895,Habitat type,pool,
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0896,Habitat length,"13,14",m
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0897,Habitat width,"2,34",m
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0898,Habitat depth,"24,5",cm
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0899,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0900,Speed of flow,"6,52",s/m
+ABCD-16-1-2020-039,16,1,5,habitat-16-1-5,ABCD-2020-habitat-16-1-5-0901,Speed of flow,"0,153374233128834",m/s
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0902,Habitat type,pool,
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0903,Habitat length,"11,8",m
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0904,Habitat width,"3,16",m
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0905,Habitat depth,15,cm
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0906,Substrate,"boulders,cobbles",
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0907,Speed of flow,"19,12",s/m
+ABCD-16-1-2020-039,16,1,6,habitat-16-1-6,ABCD-2020-habitat-16-1-6-0908,Speed of flow,"0,052301255230126",m/s
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0909,Habitat type,run,
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0910,Habitat length,"8,4",m
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0911,Habitat width,"6,45",m
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0912,Habitat depth,"54,5",cm
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0913,Substrate,"cobbles,boulders",
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0914,Speed of flow,"3,05",s/m
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0915,Speed of flow,"0,327868852459016",m/s
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0916,pH,"6,84",
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0917,Conductivity,"42,7",μS
+ABCD-16-2-2020-040,16,2,1,habitat-16-2-1,ABCD-2020-habitat-16-2-1-0918,Notes relevant to habitat,"fish 12 already clipped, fish 17 no id on paper, counted as salmon",
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0919,Habitat type,pool,
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0920,Habitat length,"3,67",m
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0921,Habitat width,"3,48",m
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0922,Habitat depth,24,cm
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0923,Substrate,"boulders,cobbles",
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0924,Speed of flow,"4,46",s/m
+ABCD-16-2-2020-040,16,2,2,habitat-16-2-2,ABCD-2020-habitat-16-2-2-0925,Speed of flow,"0,224215246636771",m/s
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0926,Habitat type,riffle,
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0927,Habitat length,"15,8",m
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0928,Habitat width,"4,66",m
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0929,Habitat depth,30,cm
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0930,Substrate,"cobbles,stones",
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0931,Speed of flow,"1,56",s/m
+ABCD-16-2-2020-040,16,2,3,habitat-16-2-3,ABCD-2020-habitat-16-2-3-0932,Speed of flow,"0,641025641025641",m/s
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0933,Habitat type,riffle,
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0934,Habitat length,"9,75",m
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0935,Habitat width,"4,64",m
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0936,Habitat depth,13,cm
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0937,Substrate,stones,
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0938,Speed of flow,"4,14",s/m
+ABCD-16-2-2020-040,16,2,4,habitat-16-2-4,ABCD-2020-habitat-16-2-4-0939,Speed of flow,"0,241545893719807",m/s
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0940,Habitat type,pool,
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0941,Habitat length,"10,47",m
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0942,Habitat width,"4,29",m
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0943,Habitat depth,24,cm
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0944,Substrate,"cobbles, stones",
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0945,Speed of flow,"8,3",s/m
+ABCD-16-2-2020-040,16,2,5,habitat-16-2-5,ABCD-2020-habitat-16-2-5-0946,Speed of flow,"0,120481927710843",m/s
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0947,Habitat type,run,
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0948,Habitat length,"17,28",m
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0949,Habitat width,"8,01",m
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0950,Habitat depth,38,cm
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0951,Substrate,"cobbles, boulders, stones",
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0952,Speed of flow,"2,51",s/m
+ABCD-16-2-2020-040,16,2,6,habitat-16-2-6,ABCD-2020-habitat-16-2-6-0953,Speed of flow,"0,398406374501992",m/s
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0954,Habitat type,run,
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0955,Habitat length,"21,99",m
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0956,Habitat width,"4,18",m
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0957,Habitat depth,"37,5",cm
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0958,Substrate,"cobbles, boulders, stones",
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0959,Speed of flow,"2,62",s/m
+ABCD-16-2-2020-040,16,2,7,habitat-16-2-7,ABCD-2020-habitat-16-2-7-0960,Speed of flow,"0,381679389312977",m/s
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0961,Habitat type,riffle,
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0962,Habitat length,"3,88",m
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0963,Habitat width,"11,05",m
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0964,Habitat depth,"16,5",cm
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0965,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0966,Speed of flow,"2,85",s/m
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0967,Speed of flow,"0,350877192982456",m/s
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0968,pH,"7,17",
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0969,Conductivity,"42,2",μS
+ABCD-16-3-2020-041,16,3,1,habitat-16-3-1,ABCD-2020-habitat-16-3-1-0970,Notes relevant to habitat,one trout at station 2 a char,
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0971,Habitat type,run,
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0972,Habitat length,"8,61",m
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0973,Habitat width,"2,69",m
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0974,Habitat depth,40,cm
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0975,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0976,Speed of flow,"1,9",s/m
+ABCD-16-3-2020-041,16,3,2,habitat-16-3-2,ABCD-2020-habitat-16-3-2-0977,Speed of flow,"0,526315789473684",m/s
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0978,Habitat type,run,
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0979,Habitat length,"6,24",m
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0980,Habitat width,"7,38",m
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0981,Habitat depth,28,cm
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0982,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0983,Speed of flow,"4,45",s/m
+ABCD-16-3-2020-041,16,3,3,habitat-16-3-3,ABCD-2020-habitat-16-3-3-0984,Speed of flow,"0,224719101123595",m/s
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0985,Habitat type,riffle,
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0986,Habitat length,"4,01",m
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0987,Habitat width,"5,76",m
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0988,Habitat depth,34,cm
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0989,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0990,Speed of flow,"3,92",s/m
+ABCD-16-3-2020-041,16,3,4,habitat-16-3-4,ABCD-2020-habitat-16-3-4-0991,Speed of flow,"0,255102040816327",m/s
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0992,Habitat type,pool,
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0993,Habitat length,"4,2",m
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0994,Habitat width,"2,22",m
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0995,Habitat depth,33,cm
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0996,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0997,Speed of flow,"4,4",s/m
+ABCD-16-3-2020-041,16,3,5,habitat-16-3-5,ABCD-2020-habitat-16-3-5-0998,Speed of flow,"0,227272727272727",m/s
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-0999,Habitat type,run,
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01000,Habitat length,"1,38",m
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01001,Habitat width,"6,08",m
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01002,Habitat depth,"35,5",cm
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01003,Substrate,"cobbles, boulders",
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01004,Speed of flow,"2,63",s/m
+ABCD-16-3-2020-041,16,3,6,habitat-16-3-6,ABCD-2020-habitat-16-3-6-01005,Speed of flow,"0,380228136882129",m/s
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01006,Habitat type,pool,
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01007,Habitat length,"2,56",m
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01008,Habitat width,"4,18",m
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01009,Habitat depth,24,cm
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01010,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01011,Speed of flow,"10,05",s/m
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01012,Speed of flow,"0,099502487562189",m/s
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01013,pH,"7,25",
+ABCD-16-4-2020-042,16,4,1,habitat-16-4-1,ABCD-2020-habitat-16-4-1-01014,Conductivity,37,μS
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01015,Habitat type,riffle,
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01016,Habitat length,"3,7",m
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01017,Habitat width,"4,25",m
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01018,Habitat depth,18,cm
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01019,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01020,Speed of flow,"4,07",s/m
+ABCD-16-4-2020-042,16,4,2,habitat-16-4-2,ABCD-2020-habitat-16-4-2-01021,Speed of flow,"0,245700245700246",m/s
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01022,Habitat type,pool,
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01023,Habitat length,"3,76",m
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01024,Habitat width,"3,42",m
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01025,Habitat depth,29,cm
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01026,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01027,Speed of flow,"21,84",s/m
+ABCD-16-4-2020-042,16,4,3,habitat-16-4-3,ABCD-2020-habitat-16-4-3-01028,Speed of flow,"0,045787545787546",m/s
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01029,Habitat type,riffle,
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01030,Habitat length,"14,48",m
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01031,Habitat width,"2,17",m
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01032,Habitat depth,11,cm
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01033,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01034,Speed of flow,"1,7",s/m
+ABCD-16-4-2020-042,16,4,4,habitat-16-4-4,ABCD-2020-habitat-16-4-4-01035,Speed of flow,"0,588235294117647",m/s
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01036,Habitat type,run,
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01037,Habitat length,"7,44",m
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01038,Habitat width,"6,68",m
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01039,Habitat depth,9,cm
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01040,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01041,Speed of flow,"5,43",s/m
+ABCD-16-4-2020-042,16,4,5,habitat-16-4-5,ABCD-2020-habitat-16-4-5-01042,Speed of flow,"0,184162062615101",m/s
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01043,Habitat type,pool,
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01044,Habitat length,"13,25",m
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01045,Habitat width,"4,37",m
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01046,Habitat depth,16,cm
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01047,Substrate,"cobbles, boulders",
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01048,Speed of flow,"6,53",s/m
+ABCD-16-4-2020-042,16,4,6,habitat-16-4-6,ABCD-2020-habitat-16-4-6-01049,Speed of flow,"0,153139356814701",m/s
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01050,Habitat type,run,
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01051,Habitat length,"20,6",m
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01052,Habitat width,"15,93",m
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01053,Habitat depth,"18,8",cm
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01054,Substrate,"stones,cobbles,watergrass",
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01055,Speed of flow,"5,39",s/m
+ABCD-2-1-2020-004,2,1,1,habitat-2-1-1,ABCD-2020-habitat-2-1-1-01056,Speed of flow,"0,185528756957328",m/s
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01057,Habitat type,pool,
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01058,Habitat length,"14,34",m
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01059,Habitat width,6,m
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01060,Habitat depth,"14,6",cm
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01061,Substrate,"stones,cobbles,watergrass",
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01062,Speed of flow,"14,34",s/m
+ABCD-2-1-2020-004,2,1,2,habitat-2-1-2,ABCD-2020-habitat-2-1-2-01063,Speed of flow,"0,069735006973501",m/s
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01064,Habitat type,riffle,
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01065,Habitat length,"5,3",m
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01066,Habitat width,"1,14",m
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01067,Habitat depth,6,cm
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01068,Substrate,"pebbles,gravel",
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01069,Speed of flow,"3,52",s/m
+ABCD-2-1-2020-004,2,2,1,habitat-2-2-1,ABCD-2020-habitat-2-2-1-01070,Speed of flow,"0,284090909090909",m/s
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01071,Habitat type,run,
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01072,Habitat length,"4,46",m
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01073,Habitat width,"2,04",m
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01074,Habitat depth,"16,8",cm
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01075,Substrate,"pebbles,gravel",
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01076,Speed of flow,"7,8",s/m
+ABCD-2-2-2020-005,2,2,2,habitat-2-2-2,ABCD-2020-habitat-2-2-2-01077,Speed of flow,"0,128205128205128",m/s
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01078,Habitat type,pool,
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01079,Habitat length,"2,36",m
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01080,Habitat width,"2,13",m
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01081,Habitat depth,25,cm
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01082,Substrate,"pebbles,gravel",
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01083,Speed of flow,"35,53",s/m
+ABCD-2-2-2020-005,2,2,3,habitat-2-2-3,ABCD-2020-habitat-2-2-3-01084,Speed of flow,"0,02814522938362",m/s
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01085,Habitat type,riffle,
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01086,Habitat length,"2,22",m
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01087,Habitat width,"1,1",m
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01088,Habitat depth,11,cm
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01089,Substrate,"pebbles,gravel",
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01090,Speed of flow,"4,86",s/m
+ABCD-2-2-2020-005,2,2,4,habitat-2-2-4,ABCD-2020-habitat-2-2-4-01091,Speed of flow,"0,205761316872428",m/s
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01092,Habitat type,run,
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01093,Habitat length,"5,34",m
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01094,Habitat width,"1,56",m
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01095,Habitat depth,8,cm
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01096,Substrate,"pebbles,gravel,sand",
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01097,Speed of flow,"12,72",s/m
+ABCD-2-2-2020-005,2,2,5,habitat-2-2-5,ABCD-2020-habitat-2-2-5-01098,Speed of flow,"0,078616352201258",m/s
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01099,Habitat type,riffle,
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01100,Habitat length,"3,07",m
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01101,Habitat width,"1,9",m
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01102,Habitat depth,6,cm
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01103,Substrate,"pebbles,gravel",
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01104,Speed of flow,"4,3",s/m
+ABCD-2-2-2020-005,2,2,6,habitat-2-2-6,ABCD-2020-habitat-2-2-6-01105,Speed of flow,"0,232558139534884",m/s
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01106,Habitat type,pool,
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01107,Habitat length,"4,91",m
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01108,Habitat width,"1,7",m
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01109,Habitat depth,23,cm
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01110,Substrate,"pebbles,gravel",
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01111,Speed of flow,"42,6",s/m
+ABCD-2-2-2020-005,2,2,7,habitat-2-2-7,ABCD-2020-habitat-2-2-7-01112,Speed of flow,"0,023474178403756",m/s
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01113,Habitat type,run,
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01114,Habitat length,30,m
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01115,Habitat width,"4,39",m
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01116,Habitat depth,12,cm
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01117,Substrate,"pebbles,sand",
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01118,Speed of flow,"2,93",s/m
+ABCD-2-3-2020-006,2,3,1,habitat-2-3-1,ABCD-2020-habitat-2-3-1-01119,Speed of flow,"0,341296928327645",m/s
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01120,Habitat type,pool,
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01121,Habitat length,"7,6",m
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01122,Habitat width,"4,27",m
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01123,Habitat depth,"19,5",cm
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01124,Substrate,"pebbles,sand",
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01125,Speed of flow,"17,21",s/m
+ABCD-2-3-2020-006,2,3,2,habitat-2-3-2,ABCD-2020-habitat-2-3-2-01126,Speed of flow,"0,058105752469495",m/s
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01127,Habitat type,pool,
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01128,Habitat length,"7,02",m
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01129,Habitat width,"2,35",m
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01130,Habitat depth,26,cm
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01131,Substrate,"pebbles,sand",
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01132,Speed of flow,"17,07",s/m
+ABCD-2-3-2020-006,2,3,3,habitat-2-3-3,ABCD-2020-habitat-2-3-3-01133,Speed of flow,"0,058582308142941",m/s
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01134,Habitat type,run,
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01135,Habitat length,"15,6",m
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01136,Habitat width,"5,35",m
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01137,Habitat depth,57,cm
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01138,Substrate,"pebbles,sand",
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01139,Speed of flow,"14,41",s/m
+ABCD-2-3-2020-006,2,3,4,habitat-2-3-4,ABCD-2020-habitat-2-3-4-01140,Speed of flow,"0,06939625260236",m/s
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01141,Habitat type,pool,
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01142,Habitat length,"10,9",m
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01143,Habitat width,"3,3",m
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01144,Habitat depth,"14,3",cm
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01145,Substrate,"sand,pebbles",
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01146,Speed of flow,"8,26",s/m
+ABCD-3-1-2020-007,3,1,1,habitat-3-1-1,ABCD-2020-habitat-3-1-1-01147,Speed of flow,"0,121065375302663",m/s
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01148,Habitat type,run,
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01149,Habitat length,"24,4",m
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01150,Habitat width,"3,6",m
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01151,Habitat depth,"14,5",cm
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01152,Substrate,"stones,cobbles,sand",
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01153,Speed of flow,"1,78",s/m
+ABCD-3-1-2020-007,3,1,2,habitat-3-1-2,ABCD-2020-habitat-3-1-2-01154,Speed of flow,"0,561797752808989",m/s
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01155,Habitat type,pool,
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01156,Habitat length,"5,04",m
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01157,Habitat width,"3,26",m
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01158,Habitat depth,"7,1",cm
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01159,Substrate,"stones,cobbles",
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01160,Speed of flow,"8,34",s/m
+ABCD-3-1-2020-007,3,1,3,habitat-3-1-3,ABCD-2020-habitat-3-1-3-01161,Speed of flow,"0,119904076738609",m/s
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01162,Habitat type,riffle,
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01163,Habitat length,"7,65",m
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01164,Habitat width,"4,1",m
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01165,Habitat depth,"3,97",cm
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01166,Substrate,"stones,cobbles",
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01167,Speed of flow,"1,56",s/m
+ABCD-3-1-2020-007,3,1,4,habitat-3-1-4,ABCD-2020-habitat-3-1-4-01168,Speed of flow,"0,641025641025641",m/s
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01169,Habitat type,pool,
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01170,Habitat length,"4,26",m
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01171,Habitat width,"2,95",m
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01172,Habitat depth,"4,05",cm
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01173,Substrate,"stones,cobbles,sand",
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01174,Speed of flow,"13,06",s/m
+ABCD-3-1-2020-007,3,1,5,habitat-3-1-5,ABCD-2020-habitat-3-1-5-01175,Speed of flow,"0,076569678407351",m/s
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01176,Habitat type,pool,
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01177,Habitat length,"4,85",m
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01178,Habitat width,"3,16",m
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01179,Habitat depth,"8,76",cm
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01180,Substrate,"stones,boulders",
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01181,Speed of flow,"9,46",s/m
+ABCD-3-1-2020-007,3,1,6,habitat-3-1-6,ABCD-2020-habitat-3-1-6-01182,Speed of flow,"0,105708245243129",m/s
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01183,Habitat type,run,
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01184,Habitat length,"15,33",m
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01185,Habitat width,"4,28",m
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01186,Habitat depth,23,cm
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01187,Substrate,"stone,cobbles",
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01188,Speed of flow,"16,06",s/m
+ABCD-4-1-2020-009,4,1,1,habitat-4-1-1,ABCD-2020-habitat-4-1-1-01189,Speed of flow,"0,062266500622665",m/s
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01190,Habitat type,pool,
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01191,Habitat length,"9,34",m
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01192,Habitat width,"3,8",m
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01193,Habitat depth,29,cm
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01194,Substrate,"cobbles,sand",
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01195,Speed of flow,"16,14",s/m
+ABCD-4-1-2020-009,4,1,2,habitat-4-1-2,ABCD-2020-habitat-4-1-2-01196,Speed of flow,"0,061957868649319",m/s
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01197,Habitat type,riffle,
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01198,Habitat length,"9,91",m
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01199,Habitat width,"2,13",m
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01200,Habitat depth,8,cm
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01201,Substrate,"cobbles,pebbles",
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01202,Speed of flow,"2,77",s/m
+ABCD-4-1-2020-009,4,1,3,habitat-4-1-3,ABCD-2020-habitat-4-1-3-01203,Speed of flow,"0,36101083032491",m/s
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01204,Habitat type,riffle,
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01205,Habitat length,"20,1",m
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01206,Habitat width,"8,5",m
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01207,Habitat depth,"5,5",cm
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01208,Substrate,"stones,cobbles",
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01209,Speed of flow,"3,81",s/m
+ABCD-4-1-2020-009,4,1,4,habitat-4-1-4,ABCD-2020-habitat-4-1-4-01210,Speed of flow,"0,26246719160105",m/s
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01211,Habitat type,run,
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01212,Habitat length,"11,59",m
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01213,Habitat width,"4,15",m
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01214,Habitat depth,33,cm
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01215,Substrate,"stones,cobbles",
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01216,Speed of flow,"1,71",s/m
+ABCD-4-1-2020-009,4,1,5,habitat-4-1-5,ABCD-2020-habitat-4-1-5-01217,Speed of flow,"0,584795321637427",m/s
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01218,Habitat type,riffle,
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01219,Habitat length,"6,98",m
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01220,Habitat width,"2,33",m
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01221,Habitat depth,"14,5",cm
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01222,Substrate,"stones,cobbles",
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01223,Speed of flow,"2,08",s/m
+ABCD-4-1-2020-009,4,1,6,habitat-4-1-6,ABCD-2020-habitat-4-1-6-01224,Speed of flow,"0,480769230769231",m/s
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01225,Habitat type,riffle,
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01226,Habitat length,"13,15",m
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01227,Habitat width,"1,12",m
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01228,Habitat depth,4,cm
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01229,Substrate,"stones,cobbles",
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01230,Speed of flow,"2,62",s/m
+ABCD-4-1-2020-009,4,1,7,habitat-4-1-7,ABCD-2020-habitat-4-1-7-01231,Speed of flow,"0,381679389312977",m/s
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01232,Habitat type,pool,
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01233,Habitat length,"2,9",m
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01234,Habitat width,"3,04",m
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01235,Habitat depth,22,cm
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01236,Substrate,"stones,cobbles",
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01237,Speed of flow,"17,3",s/m
+ABCD-4-1-2020-009,4,1,8,habitat-4-1-8,ABCD-2020-habitat-4-1-8-01238,Speed of flow,"0,057803468208093",m/s
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01239,Habitat type,pool,
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01240,Habitat length,"3,66",m
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01241,Habitat width,"3,1",m
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01242,Habitat depth,"78,5",cm
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01243,Substrate,"stones,cobbles",
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01244,Speed of flow,"1,53",s/m
+ABCD-4-2-2020-010,4,2,1,habitat-4-2-1,ABCD-2020-habitat-4-2-1-01245,Speed of flow,"0,65359477124183",m/s
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01246,Habitat type,riffle,
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01247,Habitat length,"4,97",m
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01248,Habitat width,"5,1",m
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01249,Habitat depth,"13,5",cm
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01250,Substrate,clay,
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01251,Speed of flow,"7,31",s/m
+ABCD-4-2-2020-010,4,2,2,habitat-4-2-2,ABCD-2020-habitat-4-2-2-01252,Speed of flow,"0,136798905608755",m/s
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01253,Habitat type,run,
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01254,Habitat length,"12,46",m
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01255,Habitat width,"7,34",m
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01256,Habitat depth,24,cm
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01257,Substrate,"stones,cobbles",
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01258,Speed of flow,"1,62",s/m
+ABCD-4-2-2020-010,4,2,3,habitat-4-2-3,ABCD-2020-habitat-4-2-3-01259,Speed of flow,"0,617283950617284",m/s
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01260,Habitat type,riffle,
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01261,Habitat length,"7,7",m
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01262,Habitat width,"3,94",m
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01263,Habitat depth,30,cm
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01264,Substrate,"cobble,boulder",
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01265,Speed of flow,"1,05",s/m
+ABCD-4-2-2020-010,4,2,4,habitat-4-2-4,ABCD-2020-habitat-4-2-4-01266,Speed of flow,"0,952380952380952",m/s
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01267,Habitat type,run,
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01268,Habitat length,"7,23",m
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01269,Habitat width,"6,47",m
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01270,Habitat depth,13,cm
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01271,Substrate,"cobble,boulder",
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01272,Speed of flow,"2,46",s/m
+ABCD-4-2-2020-010,4,2,5,habitat-4-2-5,ABCD-2020-habitat-4-2-5-01273,Speed of flow,"0,40650406504065",m/s
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01274,Habitat type,pool,
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01275,Habitat length,"9,02",m
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01276,Habitat width,"2,4",m
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01277,Habitat depth,"38,5",cm
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01278,Substrate,"stones,boulder",
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01279,Speed of flow,"18,82",s/m
+ABCD-4-3-2020-011,4,3,1,habitat-4-3-1,ABCD-2020-habitat-4-3-1-01280,Speed of flow,"0,053134962805526",m/s
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01281,Habitat type,run,
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01282,Habitat length,"11,6",m
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01283,Habitat width,"4,47",m
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01284,Habitat depth,"27,5",cm
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01285,Substrate,"stones,boulder",
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01286,Speed of flow,"5,54",s/m
+ABCD-4-3-2020-011,4,3,2,habitat-4-3-2,ABCD-2020-habitat-4-3-2-01287,Speed of flow,"0,180505415162455",m/s
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01288,Habitat type,riffle,
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01289,Habitat length,"7,6",m
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01290,Habitat width,"6,55",m
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01291,Habitat depth,"20,5",cm
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01292,Substrate,"stones,boulder",
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01293,Speed of flow,"2,85",s/m
+ABCD-4-3-2020-011,4,3,3,habitat-4-3-3,ABCD-2020-habitat-4-3-3-01294,Speed of flow,"0,350877192982456",m/s
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01295,Habitat type,pool,
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01296,Habitat length,"18,08",m
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01297,Habitat width,"6,76",m
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01298,Habitat depth,49,cm
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01299,Speed of flow,6,s/m
+ABCD-5-1-2020-012,5,1,1,habitat-5-1-1,ABCD-2020-habitat-5-1-1-01300,Speed of flow,"0,166666666666667",m/s
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01301,Habitat type,run,
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01302,Habitat length,"30,5",m
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01303,Habitat width,"14,3",m
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01304,Habitat depth,33,cm
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01305,Speed of flow,"3,37",s/m
+ABCD-5-1-2020-012,5,1,2,habitat-5-1-2,ABCD-2020-habitat-5-1-2-01306,Speed of flow,"0,29673590504451",m/s
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01307,Habitat type,pool,
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01308,Habitat length,"5,41",m
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01309,Habitat width,"5,62",m
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01310,Habitat depth,39,cm
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01311,Speed of flow,"15,06",s/m
+ABCD-5-2-2020-013,5,2,1,habitat-5-2-1,ABCD-2020-habitat-5-2-1-01312,Speed of flow,"0,066401062416999",m/s
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01313,Habitat type,riffle,
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01314,Habitat length,"21,1",m
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01315,Habitat width,"7,37",m
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01316,Habitat depth,14,cm
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01317,Speed of flow,"1,61",s/m
+ABCD-5-2-2020-013,5,2,2,habitat-5-2-2,ABCD-2020-habitat-5-2-2-01318,Speed of flow,"0,62111801242236",m/s
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01319,Habitat type,pool,
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01320,Habitat length,"8,66",m
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01321,Habitat width,"4,31",m
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01322,Habitat depth,32,cm
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01323,Speed of flow,"18,52",s/m
+ABCD-5-2-2020-013,5,2,3,habitat-5-2-3,ABCD-2020-habitat-5-2-3-01324,Speed of flow,"0,053995680345572",m/s
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01325,Habitat type,run,
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01326,Habitat length,"6,17",m
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01327,Habitat width,"8,32",m
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01328,Habitat depth,48,cm
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01329,Speed of flow,"2,71",s/m
+ABCD-5-2-2020-013,5,2,4,habitat-5-2-4,ABCD-2020-habitat-5-2-4-01330,Speed of flow,"0,3690036900369",m/s
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01331,Habitat type,riffle,
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01332,Habitat length,"11,2",m
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01333,Habitat width,"5,67",m
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01334,Habitat depth,9,cm
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01335,Speed of flow,"2,56",s/m
+ABCD-5-2-2020-013,5,2,5,habitat-5-2-5,ABCD-2020-habitat-5-2-5-01336,Speed of flow,"0,390625",m/s
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01337,Habitat type,pool,
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01338,Habitat length,"28,63",m
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01339,Habitat width,"4,29",m
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01340,Habitat depth,15,cm
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01341,Speed of flow,"9,27",s/m
+ABCD-5-2-2020-013,5,2,6,habitat-5-2-6,ABCD-2020-habitat-5-2-6-01342,Speed of flow,"0,107874865156419",m/s
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01343,Habitat type,riffle,
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01344,Habitat length,"9,14",m
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01345,Habitat width,"7,63",m
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01346,Habitat depth,21,cm
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01347,Substrate,"stones,boulders",
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01348,Speed of flow,"1,94",s/m
+ABCD-6-1-2020-014,6,1,1,habitat-6-1-1,ABCD-2020-habitat-6-1-1-01349,Speed of flow,"0,515463917525773",m/s
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01350,Habitat type,run,
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01351,Habitat length,"18,01",m
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01352,Habitat width,"3,2",m
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01353,Habitat depth,30,cm
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01354,Substrate,"stones,boulders",
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01355,Speed of flow,"3,06",s/m
+ABCD-6-1-2020-014,6,1,2,habitat-6-1-2,ABCD-2020-habitat-6-1-2-01356,Speed of flow,"0,326797385620915",m/s
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01357,Habitat type,run,
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01358,Habitat length,"20,8",m
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01359,Habitat width,"4,85",m
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01360,Habitat depth,9,cm
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01361,Substrate,"stones,boulders",
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01362,Speed of flow,"11,33",s/m
+ABCD-6-1-2020-014,6,1,3,habitat-6-1-3,ABCD-2020-habitat-6-1-3-01363,Speed of flow,"0,088261253309797",m/s
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01364,Habitat type,riffle,
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01365,Habitat length,"12,87",m
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01366,Habitat width,"7,9",m
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01367,Habitat depth,"17,3",cm
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01368,Substrate,"boulders,bedrock",
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01369,Speed of flow,"2,74",s/m
+ABCD-6-2-2020-015,6,2,1,habitat-6-2-1,ABCD-2020-habitat-6-2-1-01370,Speed of flow,"0,364963503649635",m/s
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01371,Habitat type,pool,
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01372,Habitat length,"17,52",m
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01373,Habitat width,"3,52",m
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01374,Habitat depth,"26,5",cm
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01375,Substrate,"boulders,bedrock",
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01376,Speed of flow,"17,61",s/m
+ABCD-6-2-2020-015,6,2,2,habitat-6-2-2,ABCD-2020-habitat-6-2-2-01377,Speed of flow,"0,056785917092561",m/s
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01378,Habitat type,pool,
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01379,Habitat length,"11,9",m
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01380,Habitat width,"2,05",m
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01381,Habitat depth,"19,7",cm
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01382,Substrate,"boulders,bedrock",
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01383,Speed of flow,"23,91",s/m
+ABCD-6-2-2020-015,6,2,3,habitat-6-2-3,ABCD-2020-habitat-6-2-3-01384,Speed of flow,"0,041823504809703",m/s
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01385,Habitat type,run,
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01386,Habitat length,"10,28",m
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01387,Habitat width,"7,42",m
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01388,Habitat depth,"49,92",cm
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01389,Substrate,"boulders,bedrock",
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01390,Speed of flow,"4,47",s/m
+ABCD-6-2-2020-015,6,2,4,habitat-6-2-4,ABCD-2020-habitat-6-2-4-01391,Speed of flow,"0,223713646532438",m/s
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01392,Habitat type,riffle,
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01393,Habitat length,"10,09",m
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01394,Habitat width,"7,37",m
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01395,Habitat depth,10,cm
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01396,Substrate,"stones,cobbles",
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01397,Speed of flow,"2,13",s/m
+ABCD-6-3-2020-016,6,3,1,habitat-6-3-1,ABCD-2020-habitat-6-3-1-01398,Speed of flow,"0,469483568075117",m/s
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01399,Habitat type,run,
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01400,Habitat length,"10,4",m
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01401,Habitat width,"5,55",m
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01402,Habitat depth,23,cm
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01403,Substrate,"stones,cobbles",
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01404,Speed of flow,"2,99",s/m
+ABCD-6-3-2020-016,6,3,2,habitat-6-3-2,ABCD-2020-habitat-6-3-2-01405,Speed of flow,"0,334448160535117",m/s
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01406,Habitat type,pool,
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01407,Habitat length,"9,13",m
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01408,Habitat width,"4,45",m
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01409,Habitat depth,19,cm
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01410,Substrate,"stones,cobbles",
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01411,Speed of flow,"9,12",s/m
+ABCD-6-3-2020-016,6,3,3,habitat-6-3-3,ABCD-2020-habitat-6-3-3-01412,Speed of flow,"0,109649122807018",m/s
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01413,Habitat type,riffle,
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01414,Habitat length,"7,08",m
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01415,Habitat width,"3,02",m
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01416,Habitat depth,16,cm
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01417,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01418,Speed of flow,"1,39",s/m
+ABCD-7-1-2020-017,7,1,1,habitat-7-1-1,ABCD-2020-habitat-7-1-1-01419,Speed of flow,"0,719424460431655",m/s
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01420,Habitat type,run,
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01421,Habitat length,"5,1",m
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01422,Habitat width,"1,46",m
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01423,Habitat depth,31,cm
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01424,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01425,Speed of flow,"1,41",s/m
+ABCD-7-1-2020-017,7,1,2,habitat-7-1-2,ABCD-2020-habitat-7-1-2-01426,Speed of flow,"0,709219858156028",m/s
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01427,Habitat type,riffle,
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01428,Habitat length,"8,33",m
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01429,Habitat width,"5,48",m
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01430,Habitat depth,18,cm
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01431,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01432,Speed of flow,"1,04",s/m
+ABCD-7-1-2020-017,7,1,3,habitat-7-1-3,ABCD-2020-habitat-7-1-3-01433,Speed of flow,"0,961538461538461",m/s
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01434,Habitat type,pool,
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01435,Habitat length,"5,1",m
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01436,Habitat width,"1,16",m
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01437,Habitat depth,17,cm
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01438,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01439,Speed of flow,"16,21",s/m
+ABCD-7-1-2020-017,7,1,4,habitat-7-1-4,ABCD-2020-habitat-7-1-4-01440,Speed of flow,"0,061690314620605",m/s
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01441,Habitat type,run,
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01442,Habitat length,"5,33",m
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01443,Habitat width,"3,92",m
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01444,Habitat depth,34,cm
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01445,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01446,Speed of flow,"1,21",s/m
+ABCD-7-1-2020-017,7,1,5,habitat-7-1-5,ABCD-2020-habitat-7-1-5-01447,Speed of flow,"0,826446280991735",m/s
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01448,Habitat type,riffle,
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01449,Habitat length,"6,6",m
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01450,Habitat width,"4,34",m
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01451,Habitat depth,37,cm
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01452,Substrate,"stones,boulders",
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01453,Speed of flow,"1,58",s/m
+ABCD-7-1-2020-017,7,1,6,habitat-7-1-6,ABCD-2020-habitat-7-1-6-01454,Speed of flow,"0,632911392405063",m/s
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01455,Habitat type,riffle,
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01456,Habitat length,"4,88",m
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01457,Habitat width,"4,45",m
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01458,Habitat depth,"10,2",cm
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01459,Substrate,"pebbles,stones",
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01460,Speed of flow,"1,46",s/m
+ABCD-7-2-2020-018,7,2,1,habitat-7-2-1,ABCD-2020-habitat-7-2-1-01461,Speed of flow,"0,684931506849315",m/s
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01462,Habitat type,run,
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01463,Habitat length,"6,57",m
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01464,Habitat width,"4,11",m
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01465,Habitat depth,"19,8",cm
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01466,Substrate,"pebbles,stones",
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01467,Speed of flow,"3,62",s/m
+ABCD-7-2-2020-019,7,2,2,habitat-7-2-2,ABCD-2020-habitat-7-2-2-01468,Speed of flow,"0,276243093922652",m/s
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01469,Habitat type,pool,
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01470,Habitat length,"3,6",m
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01471,Habitat width,"2,56",m
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01472,Habitat depth,14,cm
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01473,Substrate,"pebbles,stones",
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01474,Speed of flow,"5,54",s/m
+ABCD-7-2-2020-020,7,2,3,habitat-7-2-3,ABCD-2020-habitat-7-2-3-01475,Speed of flow,"0,180505415162455",m/s
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01476,Habitat type,riffle,
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01477,Habitat length,"7,96",m
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01478,Habitat width,"6,7",m
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01479,Habitat depth,"13,2",cm
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01480,Substrate,"pebbles,stones",
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01481,Speed of flow,"1,3",s/m
+ABCD-7-2-2020-021,7,2,4,habitat-7-2-4,ABCD-2020-habitat-7-2-4-01482,Speed of flow,"0,769230769230769",m/s
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01483,Habitat type,pool,
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01484,Habitat length,"4,47",m
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01485,Habitat width,"3,8",m
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01486,Habitat depth,"18,1",cm
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01487,Substrate,"pebbles,stones",
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01488,Speed of flow,"20,4",s/m
+ABCD-7-2-2020-022,7,2,5,habitat-7-2-5,ABCD-2020-habitat-7-2-5-01489,Speed of flow,"0,049019607843137",m/s
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01490,Habitat type,riffle,
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01491,Habitat length,"6,67",m
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01492,Habitat width,"4,9",m
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01493,Habitat depth,"7,5",cm
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01494,Substrate,"pebbles,stones",
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01495,Speed of flow,"1,05",s/m
+ABCD-7-2-2020-023,7,2,6,habitat-7-2-6,ABCD-2020-habitat-7-2-6-01496,Speed of flow,"0,952380952380952",m/s
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01497,Habitat type,riffle,
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01498,Habitat length,"10,94",m
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01499,Habitat width,"3,6",m
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01500,Habitat depth,"20,1",cm
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01501,Substrate,"pebbles,stones,bedrock",
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01502,Speed of flow,"1,73",s/m
+ABCD-7-2-2020-024,7,2,7,habitat-7-2-7,ABCD-2020-habitat-7-2-7-01503,Speed of flow,"0,578034682080925",m/s
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01504,Habitat type,riffle,
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01505,Habitat length,"28,48",m
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01506,Habitat width,"7,42",m
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01507,Habitat depth,18,cm
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01508,Substrate,"cobbles,boulders",
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01509,Speed of flow,"1,38",s/m
+ABCD-8-1-2020-019,8,1,1,habitat-8-1-1,ABCD-2020-habitat-8-1-1-01510,Speed of flow,"0,72463768115942",m/s
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01511,Habitat type,run,
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01512,Habitat length,"10,7",m
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01513,Habitat width,"9,37",m
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01514,Habitat depth,32,cm
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01515,Substrate,"cobbles,boulders",
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01516,Speed of flow,"3,64",s/m
+ABCD-8-1-2020-019,8,1,2,habitat-8-1-2,ABCD-2020-habitat-8-1-2-01517,Speed of flow,"0,274725274725275",m/s
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01518,Habitat type,riffle,
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01519,Habitat length,"17,55",m
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01520,Habitat width,"7,56",m
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01521,Habitat depth,17,cm
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01522,Substrate,"cobbles,boulders",
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01523,Speed of flow,"2,23",s/m
+ABCD-8-1-2020-019,8,1,3,habitat-8-1-3,ABCD-2020-habitat-8-1-3-01524,Speed of flow,"0,448430493273543",m/s
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01525,Habitat type,run,
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01526,Habitat length,"32,45",m
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01527,Habitat width,"4,8",m
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01528,Habitat depth,"17,5",cm
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01529,Substrate,"cobbles,boulders",
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01530,Speed of flow,"2,4",s/m
+ABCD-8-1-2020-019,8,1,4,habitat-8-1-4,ABCD-2020-habitat-8-1-4-01531,Speed of flow,"0,416666666666667",m/s
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01532,Habitat type,run,
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01533,Habitat length,"32,45",m
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01534,Habitat width,"3,18",m
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01535,Habitat depth,22,cm
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01536,Substrate,"cobbles,boulders",
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01537,Speed of flow,"2,68",s/m
+ABCD-8-1-2020-019,8,1,5,habitat-8-1-5,ABCD-2020-habitat-8-1-5-01538,Speed of flow,"0,373134328358209",m/s
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01539,Habitat type,riffle,
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01540,Habitat length,"7,31",m
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01541,Habitat width,"9,22",m
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01542,Habitat depth,13,cm
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01543,Substrate,"cobbles,boulder",
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01544,Speed of flow,"1,87",s/m
+ABCD-9-1-2020-020,9,1,1,habitat-9-1-1,ABCD-2020-habitat-9-1-1-01545,Speed of flow,"0,53475935828877",m/s
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01546,Habitat type,run,
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01547,Habitat length,"8,03",m
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01548,Habitat width,"2,97",m
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01549,Habitat depth,19,cm
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01550,Substrate,"boulder,bedrock",
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01551,Speed of flow,"3,03",s/m
+ABCD-9-1-2020-020,9,1,2,habitat-9-1-2,ABCD-2020-habitat-9-1-2-01552,Speed of flow,"0,33003300330033",m/s
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01553,Habitat type,riffle,
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01554,Habitat length,"5,64",m
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01555,Habitat width,"8,53",m
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01556,Habitat depth,7,cm
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01557,Substrate,"cobbles,boulder",
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01558,Speed of flow,"2,37",s/m
+ABCD-9-1-2020-020,9,1,3,habitat-9-1-3,ABCD-2020-habitat-9-1-3-01559,Speed of flow,"0,421940928270042",m/s
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01560,Habitat type,run,
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01561,Habitat length,"9,98",m
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01562,Habitat width,"7,45",m
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01563,Habitat depth,22,cm
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01564,Substrate,"cobbles,boulder",
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01565,Speed of flow,"2,77",s/m
+ABCD-9-1-2020-020,9,1,4,habitat-9-1-4,ABCD-2020-habitat-9-1-4-01566,Speed of flow,"0,36101083032491",m/s
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01567,Habitat type,pool,
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01568,Habitat length,"11,53",m
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01569,Habitat width,"8,77",m
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01570,Habitat depth,"38,5",cm
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01571,Substrate,"stone,cobbles,bedrock",
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01572,Speed of flow,"10,96",s/m
+ABCD-9-1-2020-020,9,1,5,habitat-9-1-5,ABCD-2020-habitat-9-1-5-01573,Speed of flow,"0,091240875912409",m/s
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01574,Habitat type,riffle,
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01575,Habitat length,"3,46",m
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01576,Habitat width,"6,46",m
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01577,Habitat depth,16,cm
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01578,Substrate,"stone,cobbles",
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01579,Speed of flow,"2,54",s/m
+ABCD-9-1-2020-020,9,1,6,habitat-9-1-6,ABCD-2020-habitat-9-1-6-01580,Speed of flow,"0,393700787401575",m/s
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01581,Habitat type,run,
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01582,Habitat length,"13,03",m
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01583,Habitat width,"4,85",m
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01584,Habitat depth,24,cm
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01585,Substrate,"stones,cobbles",
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01586,Speed of flow,"2,68",s/m
+ABCD-9-2-2020-021,9,2,1,habitat-9-2-1,ABCD-2020-habitat-9-2-1-01587,Speed of flow,"0,373134328358209",m/s
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01588,Habitat type,riffle,
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01589,Habitat length,"24,73",m
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01590,Habitat width,"6,94",m
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01591,Habitat depth,34,cm
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01592,Substrate,"stones,cobbles",
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01593,Speed of flow,"1,36",s/m
+ABCD-9-2-2020-021,9,2,2,habitat-9-2-2,ABCD-2020-habitat-9-2-2-01594,Speed of flow,"0,735294117647059",m/s
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01595,Habitat type,pool,
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01596,Habitat length,26,m
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01597,Habitat width,"1,2",m
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01598,Habitat depth,17,cm
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01599,Substrate,"stones,cobbles, clay",
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01600,Speed of flow,"6,37",s/m
+ABCD-9-2-2020-021,9,2,3,habitat-9-2-3,ABCD-2020-habitat-9-2-3-01601,Speed of flow,"0,156985871271586",m/s
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01602,Habitat type,pool,
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01603,Habitat length,"6,52",m
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01604,Habitat width,"4,93",m
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01605,Habitat depth,59,cm
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01606,Substrate,"stones,cobbles",
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01607,Speed of flow,"6,33",s/m
+ABCD-9-2-2020-021,9,2,4,habitat-9-2-4,ABCD-2020-habitat-9-2-4-01608,Speed of flow,"0,157977883096367",m/s
