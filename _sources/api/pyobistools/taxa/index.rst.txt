@@ -16,6 +16,7 @@ Functions
    pyobistools.taxa._standardize_types
    pyobistools.taxa.remove_suffix
    pyobistools.taxa.add_suffix
+   pyobistools.taxa.match_taxa
    pyobistools.taxa.search_worms
    pyobistools.taxa.search_itis
    pyobistools.taxa.search_obis
@@ -44,6 +45,17 @@ Attributes
 .. py:function:: add_suffix(name)
 
    Adds suffixes to a name for searching ITIS
+
+
+.. py:function:: match_taxa(names, ask=True, itis_usage=False)
+
+   Wrap the existing functionality in validation in the expected name for this function as per R's iobis/obistools.
+
+   @param names    List of scientific names to check against
+   @param ask      Do we ask the user to resolve multi-match or ambiguous names?
+   @param itis_usage   Pass through the ITIS check setting for the client function to handle
+
+   @return structure with appended lsids where WoRMS (or ITIS can resolve them)
 
 
 .. py:function:: search_worms(names, kwargs = {})

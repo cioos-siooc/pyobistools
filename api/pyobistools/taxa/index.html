@@ -49,16 +49,19 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.add_suffix" title="pyobistools.taxa.add_suffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_suffix</span></code></a>(name)</p></td>
 <td><p>Adds suffixes to a name for searching ITIS</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_worms" title="pyobistools.taxa.search_worms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_worms</span></code></a>(names[, kwargs])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.match_taxa" title="pyobistools.taxa.match_taxa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_taxa</span></code></a>(names[, ask, itis_usage])</p></td>
+<td><p>Wrap the existing functionality in validation in the expected name for this function as per R's iobis/obistools.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search_worms" title="pyobistools.taxa.search_worms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_worms</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches WoRMS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search_itis" title="pyobistools.taxa.search_itis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_itis</span></code></a>(names[, kwargs])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_itis" title="pyobistools.taxa.search_itis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_itis</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches ITIS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search_obis" title="pyobistools.taxa.search_obis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_obis</span></code></a>(names[, kwargs])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search_obis" title="pyobistools.taxa.search_obis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_obis</span></code></a>(names[, kwargs])</p></td>
 <td><p>Searches OBIS for records based on a list of scientific names and returns</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.taxa.search" title="pyobistools.taxa.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(names[, worms_kwargs, itis_kwargs, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.taxa.search" title="pyobistools.taxa.search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search</span></code></a>(names[, worms_kwargs, itis_kwargs, ...])</p></td>
 <td><p>Search a list of scientific names in WoRMS, ITIS and OBIS and return the resulting</p></td>
 </tr>
 </tbody>
@@ -116,6 +119,16 @@
 <dd class="field-even"><p>List[str]</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.taxa.match_taxa">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.taxa.</span></span><span class="sig-name descname"><span class="pre">match_taxa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itis_usage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/taxa.html#match_taxa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.taxa.match_taxa" title="Link to this definition">¶</a></dt>
+<dd><p>Wrap the existing functionality in validation in the expected name for this function as per R’s iobis/obistools.</p>
+<p>&#64;param names    List of scientific names to check against
+&#64;param ask      Do we ask the user to resolve multi-match or ambiguous names?
+&#64;param itis_usage   Pass through the ITIS check setting for the client function to handle</p>
+<p>&#64;return structure with appended lsids where WoRMS (or ITIS can resolve them)</p>
 </dd></dl>
 
 <dl class="py function">

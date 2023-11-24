@@ -43,6 +43,9 @@
 
 <span class="kn">from</span> <span class="nn">pyobistools.utils</span> <span class="kn">import</span> <span class="n">removesuffix</span>
 
+<span class="kn">from</span> <span class="nn">pyobistools.validation</span> <span class="kn">import</span> <span class="n">check_scientificname_and_ids</span> <span class="k">as</span> <span class="n">check_names</span>
+
+
 <div class="viewcode-block" id="STANDARD_SPECIES_COLUMNS">
 <a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.STANDARD_SPECIES_COLUMNS">[docs]</a>
 <span class="n">STANDARD_SPECIES_COLUMNS</span> <span class="o">=</span> <span class="p">{</span>
@@ -135,6 +138,23 @@
 
     <span class="c1"># Return a name for each suffix with whitespace remvoed</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">suffixes</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="match_taxa">
+<a class="viewcode-back" href="../../api/pyobistools/taxa/index.html#pyobistools.taxa.match_taxa">[docs]</a>
+<span class="k">def</span> <span class="nf">match_taxa</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">itis_usage</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Wrap the existing functionality in validation in the expected name for this function as per R&#39;s iobis/obistools.</span>
+
+<span class="sd">    @param names    List of scientific names to check against</span>
+<span class="sd">    @param ask      Do we ask the user to resolve multi-match or ambiguous names?</span>
+<span class="sd">    @param itis_usage   Pass through the ITIS check setting for the client function to handle</span>
+
+<span class="sd">    @return structure with appended lsids where WoRMS (or ITIS can resolve them)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">check_names</span><span class="o">.</span><span class="n">check_scientificname_and_ids</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;names&#39;</span><span class="p">,</span> <span class="n">itis_usage</span><span class="o">=</span><span class="n">itis_usage</span><span class="p">)</span></div>
 
 
 
