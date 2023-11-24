@@ -34,6 +34,7 @@
 <span class="kn">import</span> <span class="nn">pyxylookup</span> <span class="k">as</span> <span class="nn">xy</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># alternate idea for shapefiles from Bio Mobilization workshop module 6 example</span>
 <span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="nn">shpreader</span>
@@ -100,15 +101,16 @@
             <span class="n">asdataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="c1"># gdf on_land needs to be a boolean series.</span>
-        <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;on_land&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shoredistance</span><span class="p">[</span><span class="s2">&quot;shoredistance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span>
+        <span class="c1"># multiply by the buffer amount, defaults to zero so right side evals zero without a buffer value</span>
+        <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;on_land&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shoredistance</span><span class="p">[</span><span class="s2">&quot;shoredistance&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">buffer</span><span class="p">)</span>
     <span class="c1"># Are we returning a report or the offending data?</span>
     <span class="k">if</span> <span class="n">report</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">gdf</span><span class="p">[</span>
                 <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;on_land&quot;</span><span class="p">]</span>
-            <span class="p">]</span>  <span class="c1"># TODO: return a report format describing which rows are land-bound</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">()</span>  <span class="c1"># return empty dataframe? empty row?</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>   <span class="c1"># the function returns an empty dataframe</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># return empty dataframe in the same shape, as per the R implementation</span>
     <span class="k">else</span><span class="p">:</span>  <span class="c1"># if we are not returning a report, return the offending rows themselves.</span>
         <span class="k">return</span> <span class="n">gdf</span><span class="p">[</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;on_land&quot;</span><span class="p">]]</span></div>
 
