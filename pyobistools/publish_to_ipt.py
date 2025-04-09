@@ -3,7 +3,6 @@ import dbtools
 import os
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 from bs4 import BeautifulSoup
-from publish_to_obis import has_collcode, get_obis_shortname, get_obis_iptid
 
 # TODO: extend this to allow checking for different versions of the IPT as the forms may change?
 # Functional for IPT 2.6.3
