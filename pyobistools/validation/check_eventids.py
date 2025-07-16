@@ -68,41 +68,27 @@ def check_eventids(data):
     return field_analysis
 
 
-# Check if all eventIDs in an extension have corresponding eventIDs in the core.
-# event - The event records.
-# extension - The extension records.
-# field - The eventID field name in the extension records.
+def check_extension_eventids(core, extension_or_emof, field='eventID'):
 
+    core = pd.DataFrame(data=core)
+    core = core.replace('', NaN)
+    core.rename(columns=str.lower, inplace=True)
 
-def check_extension_eventids(event, extension, field='eventID'):
-    event = pd.DataFrame(data=event)
-    event = event.replace('', NaN)
-    event.rename(columns=str.lower, inplace=True)
-    column_names = list(event.columns)
+    extension_or_emof = pd.DataFrame(data=extension_or_emof)
+    extension_or_emof = extension_or_emof.replace('', NaN)
+    extension_or_emof.rename(columns=str.lower, inplace=True)
+    
+    # check if all eventIDs (or occurrenceIDs) in an extension or emof file have corresponding eventIDs (or occurrenceIDs) in the core file
+    field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
+    field_lower = field.lower()
 
-    extension = pd.DataFrame(data=extension)
-    extension = extension.replace('', NaN)
-    extension.rename(columns=str.lower, inplace=True)
-
-    if 'eventid' in column_names:
-        field = field.lower()
-
-        extension_eventids = extension[field]
-        event_eventids = event['eventid']
-
-        field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-
-        extension_eventids = pd.DataFrame(data=extension_eventids)
-        extension_eventids.loc[:, 'message'] = extension_eventids[field].isin(event_eventids)
-
-        extension_eventids = extension_eventids[~extension_eventids['message']]
-
-        if len(extension_eventids) != 0:
-            field_analysis['field'] = extension_eventids[field]
+    if field_lower in core.columns and field_lower in extension_or_emof.columns:
+        missing_values = extension_or_emof[~extension_or_emof[field_lower].isin(core[field_lower])][field_lower]
+        if not missing_values.empty:
+            field_analysis['row'] = missing_values.index
+            field_analysis['message'] = [
+                f"Field {v} has no corresponding {field} in the core" for v in missing_values]
+            field_analysis['field'] = field_lower
             field_analysis['level'] = 'error'
-            field_analysis['row'] = extension_eventids.index
-            field_analysis['message'] = field_analysis.agg(
-                'Field {0[field]} has no corresponding eventID in the core'.format, axis=1)
-            field_analysis['field'] = field
 
-        return field_analysis
+    return field_analysis

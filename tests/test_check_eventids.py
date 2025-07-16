@@ -96,5 +96,5 @@ def test_check_eventids_eventids_extension_corresponding_core():
         'measurementremarks': ["", NaN, "not calibrated"]
     })
 
-    error = check_extension_eventids(event=event, extension=extension)
+    error = check_extension_eventids(event, extension)
     assert len(error.index) == 1
