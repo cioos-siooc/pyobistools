@@ -194,6 +194,29 @@ def change_publishing_org_ipt_project(projname: str, ipt_url: str, ipt_session, 
     contents = ipt_session.post(ipt_url + 'manage/resource-changePublishingOrganization.do', data = pub_params)
     return contents
 
+def register_ipt_project(projname: str, ipt_url: str, ipt_session):
+    """
+    Update Register the given IPT project with GBIF
+    Author: Mathew Biddle
+    :param projname: the project name as given by get_obis_shortname()
+    :param ipt_url: URL of the IPT to publish to
+    :param ipt_session: authenticated requests session for the IPT
+
+    Need to do the following in the dialog-confirm. 
+       * check checkbox-confirm
+       * select yes-button
+
+    :return: URL of the resource
+    """
+
+    pub_params = {'r' : projname,          # resource = dataset name
+                  'checkbox-confirm': 'true',  # checkbox-confirm
+                  'yes-button': 'Yes',
+                 }
+    
+    contents = ipt_session.post(ipt_url + 'manage/resource-registerResource.do', data = pub_params)
+    return contents
+
 def publish_ipt_project(projname: str, ipt_url: str, ipt_session, publishing_notes: str = ""):
     """
     Update metadata for a project on the given IPT
