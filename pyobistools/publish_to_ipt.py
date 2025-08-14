@@ -167,6 +167,32 @@ def make_public_ipt_project(projname: str, ipt_url: str, ipt_session):
     contents = ipt_session.post(ipt_url + 'manage/resource-makePublic.do', data = pub_params)
     return contents
 
+def change_publishing_org_ipt_project(projname: str, ipt_url: str, ipt_session, new_publishing_org_name: str):
+    """
+    Update metadata for a project on the given IPT
+    Author: Mathew Biddle
+    :param projname: the project name as given by get_obis_shortname()
+    :param ipt_url: URL of the IPT to publish to
+    :param ipt_session: authenticated requests session for the IPT
+    :param new_publishing_org: the new publishing organisation ID. See publishingOrganizationKey in the IPT source.
+
+    :return: URL of the resource
+    """
+    # set your publishing organization name to key value pair in this dictionary
+    pub_orgs = {
+                 'No organisation': "625a5522-1886-4998-be46-52c66dd566c9",
+                }
+
+    if new_publishing_org_name not in pub_orgs:
+        print(f"Publishing organisation '{new_publishing_org_name}' not recognised as one of {pub_orgs.keys()}. Please check the name and try again.")
+        return None
+
+    pub_params = {'r' : projname,          # resource = dataset name
+                  'publishingOrganizationKey': pub_orgs[new_publishing_org_name],
+                 }
+    
+    contents = ipt_session.post(ipt_url + 'manage/resource-changePublishingOrganization.do', data = pub_params)
+    return contents
 
 def publish_ipt_project(projname: str, ipt_url: str, ipt_session, publishing_notes: str = ""):
     """
