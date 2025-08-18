@@ -110,3 +110,4 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
 
     if value == 'names_taxons_ids':
         data_valid_scientific_name, data_cross_validation = names_taxons_ids_analyse(data_valid_scientific_name, data)
+        return data_valid_scientific_name, data_cross_validation
