@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 # TODO: extend this to allow checking for different versions of the IPT as the forms may change?
 # Functional for IPT 2.6.3
 
+
 def open_ipt_session(ipt_auth, ipt_url):
     """
     Begin a session with the target IPT
@@ -213,3 +214,62 @@ def check_if_project_exists(projname: str, ipt_url: str, ipt_session):
     elif contents.status_code == 200:
         print("Found existing project by name: '{}'".format(projname))
         return True
+
+
+def change_publishing_org_ipt_project(projname: str, ipt_url: str, ipt_session, new_publishing_org_name: str):
+    """
+    Change the publishing organization in the given IPT project
+    Author: Mathew Biddle
+    Maintainer: Mathew Biddle, Jon Pye
+    :param projname: the project name as given by get_obis_shortname()
+    :param ipt_url: URL of the IPT to publish to
+    :param ipt_session: authenticated requests session for the IPT
+    :param new_publishing_org: the new publishing organisation to set for this project. See publishingOrganizationKey in the IPT source.
+
+    :return: URL of the resource
+    """
+    pub_orgs = {'NOAA Integrated Ocean Observing System': "1d38bb22-cbea-4845-8b0c-f62551076080",
+                 'No organization': "625a5522-1886-4998-be46-52c66dd566c9",
+                 'SCAR - AntOBIS': "104e9c96-791b-4f14-978c-f581cb214912",
+                 'The Marine Genome Project': "aa0b26e8-779c-4645-a569-5f39fa85d528",
+                 'USFWS-AK': "530fda11-7af7-4447-9649-0f9fc22e6156",
+                 'United States Fish and Wildlife Service': "f8dbeca7-3131-41ab-872f-bfad71041f3f",
+                 'United States Geological Survey': "c3ad790a-d426-4ac1-8e32-da61f81f0117",
+                 'Ocean Tracking Network':"6772852d-ca2e-496f-9bea-dcf86134cb19",
+                }
+
+    if new_publishing_org_name not in pub_orgs:
+        print(f"Publishing organization '{new_publishing_org_name}' not recognised as one of {pub_orgs.keys()}. Please check the name and try again.")
+        return None
+
+    pub_params = {'r' : projname,          # resource = dataset name
+                  'publishingOrganizationKey': pub_orgs[new_publishing_org_name],
+                 }
+    
+    contents = ipt_session.post(ipt_url + 'manage/resource-changePublishingOrganization.do', data = pub_params)
+    return contents
+    
+
+def register_ipt_project(projname: str, ipt_url: str, ipt_session):
+    """
+    Update Register the given IPT project with GBIF
+    Author: Mathew Biddle
+    Maintainer: Mathew Biddle, Jon Pye
+    :param projname: the project name as given by get_obis_shortname()
+    :param ipt_url: URL of the IPT to publish to
+    :param ipt_session: authenticated requests session for the IPT
+
+    Need to do the following in the dialog-confirm. 
+       * check checkbox-confirm
+       * select yes-button
+
+    :return: URL of the resource
+    """
+
+    pub_params = {'r' : projname,          # resource = dataset name
+                  'checkbox-confirm': 'true',  # checkbox-confirm
+                  'yes-button': 'Yes',
+                 }
+    
+    contents = ipt_session.post(ipt_url + 'manage/resource-registerResource.do', data = pub_params)
+    return contents
