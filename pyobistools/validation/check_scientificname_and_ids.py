@@ -5,7 +5,8 @@ import requests
 from numpy import random
 from pyobistools.utils import (function_add_suffix, function_suffix_removal,
                                names_analyse, names_ids_analyse,
-                               names_taxons_ids_analyse)
+                               names_taxons_ids_analyse, pick_worms_record,
+                               pick_itis_record)
 
 NaN = np.nan
 
@@ -37,15 +38,20 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                 response2 = response.json()
                 for key in list_of_list:
                     if response2:
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID'] = response2[0].get('AphiaID', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Status'] = response2[0].get('status', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Unacceptreason'] = response2[0].get('unacceptreason', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Taxon_Rank'] = response2[0].get('rank', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID'] = response2[0].get('valid_AphiaID', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name'] = response2[0].get('valid_name', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID'] = response2[0].get('lsid', '')
-                        data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Source'] = "Worms"
-                        print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                        rec = pick_worms_record(response2)
+                        if rec:
+                            mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                            data_valid_scientific_name.loc[mask, 'TaxonID'] = rec.get('AphiaID', '')
+                            data_valid_scientific_name.loc[mask, 'Status'] = rec.get('status', '')
+                            data_valid_scientific_name.loc[mask, 'Unacceptreason'] = rec.get('unacceptreason', '')
+                            data_valid_scientific_name.loc[mask, 'Taxon_Rank'] = rec.get('rank', '')
+                            data_valid_scientific_name.loc[mask, 'Valid_TaxonID'] = rec.get('valid_AphiaID', '')
+                            data_valid_scientific_name.loc[mask, 'Valid_Name'] = rec.get('valid_name', '')
+                            data_valid_scientific_name.loc[mask, 'LSID'] = rec.get('lsid', '')
+                            data_valid_scientific_name.loc[mask, 'Source'] = "Worms"
+                            print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                        else:
+                            print(f"{index} : {response.status_code}: Worms {list_of_list[key]} - No usable record")
                     else:
                         print(f"{index} : {response.status_code}: Worms {list_of_list[key]} - Empty response")
 
@@ -69,12 +75,24 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                             response4 = response3.json()
 
                             # entre les valeurs du serveur dans le tableau
-                            if response4['scientificNames'] != [None]:
-                                data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'TaxonID'] = response4['scientificNames'][0]['tsn']
-                                data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
-                                data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
-                                data_valid_scientific_name.loc[data_valid_scientific_name['scientificname'] == list_of_list[key], 'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + response4['scientificNames'][0]['tsn']
-                                print(f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
+                            if response4.get('scientificNames') and response4['scientificNames'] != [None]:
+                                rec_itis = pick_itis_record(response4, list_of_list[key])
+                                if rec_itis:
+                                    tsn = rec_itis.get('tsn', '')
+                                    name = rec_itis.get('combinedName', '')
+
+                                    mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                                    data_valid_scientific_name.loc[mask, 'TaxonID'] = tsn
+                                    data_valid_scientific_name.loc[mask, 'Status'] = rec_itis.get('status', '')
+                                    data_valid_scientific_name.loc[mask, 'Unacceptreason'] = rec_itis.get('unacceptreason', '')
+                                    data_valid_scientific_name.loc[mask, 'Taxon_Rank'] = rec_itis.get('rank', '')
+                                    data_valid_scientific_name.loc[mask, 'Valid_TaxonID'] = tsn
+                                    data_valid_scientific_name.loc[mask, 'Valid_Name'] = name
+                                    data_valid_scientific_name.loc[mask, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + tsn
+                                    data_valid_scientific_name.loc[mask, 'Source'] = "Itis"
+                                    print(f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
+                                else:
+                                    print(f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - No usable record")
                             else:
                                 print(f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - Empty answer")
                         else:

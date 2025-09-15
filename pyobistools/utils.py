@@ -5,6 +5,79 @@ import pandas as pd
 
 NaN = np.nan
 
+def pick_worms_record(response):
+    """
+    Parameters:
+        - response: parsed JSON from WoRMS -> list[dict] or dict
+
+    Strategy: 
+        - return the first record with status=='accepted' (case-insensitive);
+        - If response is empty/invalid, return None.
+    """
+    # Normalize to list of dicts
+    if isinstance(response, dict):
+        records = [response]
+    elif isinstance(response, list):
+        records = response
+    else:
+        return None
+
+    if not records:
+        return None
+
+    # return the first 'accepted'
+    for r in records:
+        if str(r.get('status', '')).strip().lower() == 'accepted':
+            return r
+        
+    # No accepted record found
+    return None
+
+
+
+def pick_itis_record(response_json, original_name):
+    """
+    Select the ITIS record whose name exactly matches the requested name.
+
+    Parameters
+    - response_json: dict from ITIS `searchByScientificName` endpoint
+                     expected shape: { 'scientificNames': [ { 'combinedName': str, 'tsn': str, ... }, ... ] }
+    - original_name: str, the scientific name as queried (e.g., from function_add_suffix)
+
+    Returns
+    - dict (the matching record) or None if no suitable record was found.
+
+    Strategy
+    - return exact character match on 'combinedName' against original_name
+    - Fallback to case-insensitive if no exact match
+    - If still not found, return None
+    """
+    if not isinstance(response_json, dict):
+        return None
+
+    items = response_json.get('scientificNames')
+    if not items or items == [None]:
+        return None
+
+    # Filter out any None entries just in case
+    records = [r for r in items if isinstance(r, dict)]
+    if not records:
+        return None
+
+    # 1) Exact character match
+    for r in records:
+        if str(r.get('combinedName', '')) == str(original_name):
+            return r
+
+    # 2) Case-insensitive exact match
+    orig_lower = str(original_name).lower()
+    for r in records:
+        if str(r.get('combinedName', '')).lower() == orig_lower:
+            return r
+
+    # 3) No exact match found
+    return None
+
 
 def removesuffix(obj: str, suffix: str) -> str:
     # https://peps.python.org/pep-0616/
