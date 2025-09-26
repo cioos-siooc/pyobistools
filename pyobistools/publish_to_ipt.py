@@ -197,6 +197,26 @@ def change_publishing_org_ipt_project(projname: str, ipt_url: str, ipt_session, 
     contents = ipt_session.post(ipt_url + 'manage/resource-changePublishingOrganization.do', data = pub_params)
     return contents
 
+def add_obis_network_ipt_project(projname: str, ipt_url: str, ipt_session):
+    """
+    Add the OBIS network to the given IPT project
+    Author: Mathew Biddle
+    :param projname: the project name as given by get_obis_shortname()
+    :param ipt_url: URL of the IPT to publish to
+    :param ipt_session: authenticated requests session for the IPT
+
+    :return: URL of the resource
+    """
+    pub_params = {
+            "r": projname, 
+            "id": "2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6", #"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6", # "Ocean Biodiversity Information System (OBIS)"
+        }
+    contents = ipt_session.post(
+        ipt_url + "manage/resource-addNetwork.do", data=pub_params
+    )
+    
+    return contents
+
 def register_ipt_project(projname: str, ipt_url: str, ipt_session):
     """
     Update Register the given IPT project with GBIF. Note - only works for IPT 3.x+
