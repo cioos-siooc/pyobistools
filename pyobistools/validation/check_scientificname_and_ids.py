@@ -24,8 +24,9 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
     data_valid_scientific_name = data_valid_scientific_name.reindex(columns=header_list)
     data_valid_scientific_name = data_valid_scientific_name.drop_duplicates(subset=[
                                                                             "scientificname"])
-    data_valid_scientific_name.reset_index(drop=True, inplace=True)
-    data_valid_scientific_name.replace(NaN, "", inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.reset_index(drop=True)
+    data_valid_scientific_name = data_valid_scientific_name.replace(NaN, "")
+    data_valid_scientific_name = data_valid_scientific_name.infer_objects(copy=False)
 
     # get rid of sp, sp. and spp. suffix because Worms database does not support them
     liste_noms_pre_modif, liste_noms, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point = function_suffix_removal(
@@ -48,22 +49,16 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                 for key in list_of_list:
                     # print(list_of_list[key])
                     response2 = response.json()
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'TaxonID'] = response2[0]['AphiaID']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Status'] = response2[0]['status']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Unacceptreason'] = response2[0]['unacceptreason']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Taxon_Rank'] = response2[0]['rank']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Valid_TaxonID'] = response2[0]['valid_AphiaID']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Valid_Name'] = response2[0]['valid_name']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'LSID'] = response2[0]['lsid']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Source'] = "Worms"
+                    mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                    # Batch update for pandas 2 compatibility
+                    data_valid_scientific_name.loc[mask, 'TaxonID'] = response2[0]['AphiaID']
+                    data_valid_scientific_name.loc[mask, 'Status'] = response2[0]['status']
+                    data_valid_scientific_name.loc[mask, 'Unacceptreason'] = response2[0]['unacceptreason']
+                    data_valid_scientific_name.loc[mask, 'Taxon_Rank'] = response2[0]['rank']
+                    data_valid_scientific_name.loc[mask, 'Valid_TaxonID'] = response2[0]['valid_AphiaID']
+                    data_valid_scientific_name.loc[mask, 'Valid_Name'] = response2[0]['valid_name']
+                    data_valid_scientific_name.loc[mask, 'LSID'] = response2[0]['lsid']
+                    data_valid_scientific_name.loc[mask, 'Source'] = "Worms"
                     print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
 
             # if empty answer from Worms, prepare table for Itis later on
@@ -71,8 +66,8 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                 list_of_list = function_add_suffix(
                     nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
                 for key in list_of_list:
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Source'] = "Itis"
+                    mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                    data_valid_scientific_name.loc[mask, 'Source'] = "Itis"
                     print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
 
     # definition of async calls sequence
@@ -101,16 +96,14 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                     # entre les valeurs du serveur dans le tableau
                     if response4['scientificNames'] != [None]:
                         #   for key in list_of_list:
-                        data_valid_scientific_name.loc[row,
-                                                       'TaxonID'] = response4['scientificNames'][0]['tsn']
-                        data_valid_scientific_name.loc[row,
-                                                       'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
-                        data_valid_scientific_name.loc[row,
-                                                       'Valid_Name'] = response4['scientificNames'][0]['combinedName']
-                        data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + \
+                        # Use .at[] for single-value assignment (pandas 2 compatible)
+                        data_valid_scientific_name.at[row, 'TaxonID'] = response4['scientificNames'][0]['tsn']
+                        data_valid_scientific_name.at[row, 'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
+                        data_valid_scientific_name.at[row, 'Valid_Name'] = response4['scientificNames'][0]['combinedName']
+                        data_valid_scientific_name.at[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + \
                             response4['scientificNames'][0]['tsn']
                         print(
-                            f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+                            f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.at[row, 'scientificname']}")
 
                     else:
                         print(

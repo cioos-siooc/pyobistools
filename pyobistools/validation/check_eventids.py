@@ -8,7 +8,8 @@ def check_eventids(data):
     NaN = np.nan
     data = pd.DataFrame(data=data)
     data = data.replace('', NaN)
-    data.rename(columns=str.lower, inplace=True)
+    data = data.infer_objects(copy=False)
+    data = data.rename(columns=str.lower)
     column_names = list(data.columns)
 
     field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
@@ -45,8 +46,10 @@ def check_eventids(data):
             event_parenteventids = data["parenteventid"][(
                 data["parenteventid"].notna()) & (data["parenteventid"] != '')]
             event_parenteventids = pd.DataFrame(data=event_parenteventids)
-            event_parenteventids.loc[:, 'message'] = event_parenteventids['parenteventid'].isin(
-                event_eventids)
+            # Use assign() for pandas 2 compatibility
+            event_parenteventids = event_parenteventids.assign(
+                message=event_parenteventids['parenteventid'].isin(event_eventids)
+            )
             event_parenteventids = event_parenteventids[~event_parenteventids["message"]]
 
             if len(event_parenteventids[~event_parenteventids["message"]]) != 0:
@@ -77,12 +80,14 @@ def check_eventids(data):
 def check_extension_eventids(event, extension, field='eventID'):
     event = pd.DataFrame(data=event)
     event = event.replace('', NaN)
-    event.rename(columns=str.lower, inplace=True)
+    event = event.infer_objects(copy=False)
+    event = event.rename(columns=str.lower)
     column_names = list(event.columns)
 
     extension = pd.DataFrame(data=extension)
     extension = extension.replace('', NaN)
-    extension.rename(columns=str.lower, inplace=True)
+    extension = extension.infer_objects(copy=False)
+    extension = extension.rename(columns=str.lower)
 
     if 'eventid' in column_names:
         field = field.lower()
@@ -93,7 +98,10 @@ def check_extension_eventids(event, extension, field='eventID'):
         field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
 
         extension_eventids = pd.DataFrame(data=extension_eventids)
-        extension_eventids.loc[:, 'message'] = extension_eventids[field].isin(event_eventids)
+        # Use assign() for pandas 2 compatibility
+        extension_eventids = extension_eventids.assign(
+            message=extension_eventids[field].isin(event_eventids)
+        )
 
         extension_eventids = extension_eventids[~extension_eventids['message']]
 

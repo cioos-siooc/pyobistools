@@ -54,9 +54,8 @@ def check_onland(data, land=None, report=False, buffer=0, offline=False):
 
     if offline:
         # spatial query to find overlaps between each lat/lon in my dataset and the land polygons
-        # try using geopandas.GeoSeries.contains()
-        for index, row in gdf.iterrows():
-            gdf.loc[index, "on_land"] = land.contains(row.geometry)
+        # Vectorized operation for pandas 2 compatibility
+        gdf["on_land"] = gdf.geometry.apply(lambda geom: land.contains(geom))
 
     else:  # we're in online mode - use xylookup.lookup()
         shoredistance = xy.lookup(

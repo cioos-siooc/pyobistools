@@ -166,29 +166,33 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             analysis_fields_presence = recommended_fields_list_normal_case
             analysis_fields_presence = analysis_fields_presence.drop(
                 columns=['Required or recommended'])
-            analysis_fields_presence.loc[:, 'level'] = 'NaN'
-            analysis_fields_presence.loc[:, 'row'] = 'NaN'
-            analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].str.lower().isin(
-                data_columns_lower_case)
+            analysis_fields_presence = analysis_fields_presence.assign(
+                level='NaN',
+                row='NaN',
+                message=analysis_fields_presence["field"].str.lower().isin(data_columns_lower_case)
+            )
             analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy(
             )
-            analysis_fields_presence.loc[:, 'level'] = 'warning'
-            analysis_fields_presence.loc[:, 'message'] = 'Recommended field ' + \
-                analysis_fields_presence['field'] + " is missing"
+            analysis_fields_presence = analysis_fields_presence.assign(
+                level='warning',
+                message='Recommended field ' + analysis_fields_presence['field'] + " is missing"
+            )
 
     if level == 'error':
         analysis_fields_presence = required_fields_list_normal_case
         analysis_fields_presence = analysis_fields_presence.drop(
             columns=['Required or recommended'])
-        analysis_fields_presence.loc[:, 'level'] = 'NaN'
-        analysis_fields_presence.loc[:, 'row'] = 'NaN'
-        analysis_fields_presence.loc[:, 'message'] = analysis_fields_presence["field"].str.lower().isin(
-            data_columns_lower_case)
+        analysis_fields_presence = analysis_fields_presence.assign(
+            level='NaN',
+            row='NaN',
+            message=analysis_fields_presence["field"].str.lower().isin(data_columns_lower_case)
+        )
         analysis_fields_presence = analysis_fields_presence.loc[~analysis_fields_presence.message].copy(
         )
-        analysis_fields_presence.loc[:, 'level'] = 'error'
-        analysis_fields_presence.loc[:, 'message'] = 'Required field ' + \
-            analysis_fields_presence['field'] + " is missing"
+        analysis_fields_presence = analysis_fields_presence.assign(
+            level='error',
+            message='Required field ' + analysis_fields_presence['field'] + " is missing"
+        )
 
     if len(analysis_fields_presence) == 0:
         analysis_fields_presence = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
@@ -196,6 +200,7 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
     # FIND EMPLTY VALUES FOR REQUIRED OR RECOMMENDED FIELDS
     # subset of dataset using required or recommended columns and keeping na values
     data1 = data.replace('', NaN).copy()
+    data1 = data1.infer_objects(copy=False)
 
     if level == 'error':
         column_type_based_level = dataframe_column_key['field'].loc[dataframe_column_key['Required or recommended'] == 'Required field'].tolist(
@@ -209,19 +214,22 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             list(map(str.lower, column_type_based_level)))]].isna()
 
     for column in table_na_values:
-        field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
         if len(table_na_values[table_na_values[column]]) != 0:
-            field_analysis.loc[:, 'row'] = table_na_values[column][table_na_values[column]].index
-            field_analysis.loc[:, 'field'] = column
-
+            row_indices = table_na_values[column][table_na_values[column]].index
+            
             if level == 'error':
-                field_analysis.loc[:, 'level'] = 'error'
-                field_analysis.loc[:, 'message'] = field_analysis.agg(
-                    'Empty value for required field {0[field]}'.format, axis=1)
-            if level == 'warning':
-                field_analysis.loc[:, 'level'] = 'warning'
-                field_analysis.loc[:, 'message'] = field_analysis.agg(
-                    'Empty value for recommended field {0[field]}'.format, axis=1)
+                message_text = f'Empty value for required field {column}'
+                level_text = 'error'
+            else:
+                message_text = f'Empty value for recommended field {column}'
+                level_text = 'warning'
+            
+            field_analysis = pd.DataFrame({
+                'field': [column] * len(row_indices),
+                'level': [level_text] * len(row_indices),
+                'row': row_indices,
+                'message': [message_text] * len(row_indices)
+            })
 
             analysis_missing_values = pd.concat([analysis_missing_values, field_analysis])
 
@@ -233,7 +241,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         if 'acceptednameusageid' in data_columns_lower_case:
 
             data2 = data.replace('', NaN).copy()
-            data2.rename(columns=str.lower, inplace=True)
+            data2 = data2.infer_objects(copy=False)
+            data2 = data2.rename(columns=str.lower)
 
             # previous error table filtered for scientifinameid errors
             analysis_accepted_name_usage_id_check = analysis_missing_values.copy()
@@ -253,23 +262,29 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
 
         # dataframe filling for column analysis
         analysis_field_normal_case = dataframe_column_key.drop(columns=['Required or recommended'])
-        analysis_field_normal_case.loc[:, 'level'] = 'NaN'
-        analysis_field_normal_case.loc[:, 'row'] = 'NaN'
+        analysis_field_normal_case = analysis_field_normal_case.assign(
+            level='NaN',
+            row='NaN'
+        )
 
         # analysis to find missing field with normal case
-        analysis_field_normal_case.loc[:, 'message'] = analysis_field_normal_case["field"].isin(
-            data_columns_normal_case)
+        analysis_field_normal_case = analysis_field_normal_case.assign(
+            message=analysis_field_normal_case["field"].isin(data_columns_normal_case)
+        )
         analysis_field_normal_case = analysis_field_normal_case.loc[~analysis_field_normal_case.message].copy(
         )
 
         analysis_field_lower_case = dataframe_column_key.drop(columns=['Required or recommended'])
-        analysis_field_lower_case['field'] = analysis_field_lower_case['field'].str.lower()
-        analysis_field_lower_case.loc[:, 'level'] = 'NaN'
-        analysis_field_lower_case.loc[:, 'row'] = 'NaN'
+        analysis_field_lower_case = analysis_field_lower_case.assign(
+            field=analysis_field_lower_case['field'].str.lower(),
+            level='NaN',
+            row='NaN'
+        )
 
         # analysis to find missing field with lower case
-        analysis_field_lower_case.loc[:, 'message'] = analysis_field_lower_case["field"].isin(
-            data_columns_lower_case)
+        analysis_field_lower_case = analysis_field_lower_case.assign(
+            message=analysis_field_lower_case["field"].isin(data_columns_lower_case)
+        )
         analysis_field_lower_case = analysis_field_lower_case.loc[~analysis_field_lower_case.message].copy(
         )
 
@@ -277,11 +292,12 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
         if len(analysis_field_lower_case) != 0:
             # find fields present in both previous analysis - means field has incorrect case
             analysis_case_check_fields = analysis_field_normal_case.loc[~analysis_field_normal_case['field'].str.lower(
-            ).isin(analysis_field_lower_case['field'])]
+            ).isin(analysis_field_lower_case['field'])].copy()
             analysis_case_check_fields = pd.DataFrame(data=analysis_case_check_fields)
-            analysis_case_check_fields.loc[:, 'level'] = 'warning'
-            analysis_case_check_fields.loc[:, 'message'] = analysis_case_check_fields.agg(
-                '{0[field]} has incorrect case'.format, axis=1)
+            analysis_case_check_fields = analysis_case_check_fields.assign(
+                level='warning',
+                message=analysis_case_check_fields['field'] + ' has incorrect case'
+            )
 
         if len(analysis_case_check_fields) == 0:
             analysis_case_check_fields = pd.DataFrame(columns=['field', 'level', 'row', 'message'])

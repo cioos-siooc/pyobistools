@@ -133,8 +133,8 @@ def names_analyse(data_valid_scientific_name):
         data_valid_scientific_name["scientificname"].str.lower(), data_valid_scientific_name['Valid_Name'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(
-        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.sort_values(
+        by=['Exact_Match', 'scientificname'], ascending=True)
 
     columns = [('Dataset Values', 'scientificName'), ('Validation', 'Exact_Match'), ('Database values', 'TaxonID'), ('Database values', 'Status'),
                ('Database values', 'Unacceptreason'), ('Database values',
@@ -172,11 +172,11 @@ def names_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(
-        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.sort_values(
+        by=['Exact_Match', 'scientificname'], ascending=True)
 
-    data_cross_validation.sort_values(
-        by=['ScientificName_V', 'scientificNameID_V'], ascending=True, inplace=True)
+    data_cross_validation = data_cross_validation.sort_values(
+        by=['ScientificName_V', 'scientificNameID_V'], ascending=True)
 
     data_valid_scientific_name = data_valid_scientific_name.drop(['scientificname2'], axis=1)
     data_cross_validation = data_cross_validation.drop(['scientificname2'], axis=1)
@@ -224,11 +224,11 @@ def names_taxons_ids_analyse(data_valid_scientific_name, data):
         data_cross_validation["scientificnameid"].str.lower(), data_cross_validation['LSID'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(
-        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.sort_values(
+        by=['Exact_Match', 'scientificname'], ascending=True)
 
-    data_cross_validation.sort_values(
-        by=['ScientificName_V', 'TaxonRank_V', 'scientificNameID_V'], ascending=True, inplace=True)
+    data_cross_validation = data_cross_validation.sort_values(
+        by=['ScientificName_V', 'TaxonRank_V', 'scientificNameID_V'], ascending=True)
 
     data_valid_scientific_name = data_valid_scientific_name.drop(['scientificname2'], axis=1)
     data_cross_validation = data_cross_validation.drop(['scientificname2'], axis=1)

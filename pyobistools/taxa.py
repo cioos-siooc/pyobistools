@@ -215,10 +215,12 @@ def search_itis(names: t.List[str],
     # Standardize the OBIS return data format
     results = pd.DataFrame(rows)
 
-    # Set the lsid when a taxon_id is defined
-    results.loc[results.taxon_id.notna(), 'lsid'] = results.apply(
-        lambda x: "urn:lsid:itis.gov:itis_tsn:" + str(x.taxon_id), axis=1
-    )
+    # Set the lsid when a taxon_id is defined (fix logic for pandas 2)
+    mask = results.taxon_id.notna()
+    if mask.any():
+        results.loc[mask, 'lsid'] = results.loc[mask].apply(
+            lambda x: "urn:lsid:itis.gov:itis_tsn:" + str(x.taxon_id), axis=1
+        )
     results['valid_taxon_id'] = results.taxon_id.copy()
     results['match_from'] = 'itis'
     results = _standardize_types(results)
