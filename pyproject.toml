@@ -1,7 +1,17 @@
 [project]
-name = "pyobistools"
+name = "pyobistoolssandbox"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyobistools",
+    "pytest>=8.4.2",
+    "pyworms>=0.4.0",
+]
+
+[tool.uv.sources]
+pyobistools = { git = "https://github.com/cioos-siooc/pyobistools.git", rev = "pandas-upgrade" }
