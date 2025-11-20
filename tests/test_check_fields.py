@@ -18,12 +18,56 @@ def test_check_fields_default():
         'locality': ["North Sea", "English Channel", "Flemish Banks"],
         'minimumDepthInMeters': ["10", "", "5"]})
     # required terms
-    correct_data = pd.DataFrame(data={
-        'field': ["basisOfRecord", "scientificNameID", "eventDate", "decimalLatitude", "decimalLongitude", "occurrenceStatus", "countryCode", "kingdom", "geodeticDatum", "scientificName", "scientificName"],
-        'level': ["error", "error", "error", "error", "error", "error", "error", "error", "error", "error", "error"],
-        'row': ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', '1', '2'],
-        'message': ["Required field basisOfRecord is missing", "Required field scientificNameID is missing", "Required field eventDate is missing", "Required field decimalLatitude is missing", "Required field decimalLongitude is missing", "Required field occurrenceStatus is missing", "Required field countryCode is missing", "Required field kingdom is missing", "Required field geodeticDatum is missing", 'Empty value for required field scientificName', 'Empty value for required field scientificName']
-    })
+    correct_data = pd.DataFrame(
+        data={
+            'field': [
+                "basisOfRecord",
+                "scientificNameID",
+                "eventDate",
+                "decimalLatitude",
+                "decimalLongitude",
+                "occurrenceStatus",
+                "countryCode",
+                "kingdom",
+                "geodeticDatum",
+                "scientificName",
+                "scientificName"],
+            'level': [
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error"],
+            'row': [
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                '1',
+                '2'],
+            'message': [
+                "Required field basisOfRecord is missing",
+                "Required field scientificNameID is missing",
+                "Required field eventDate is missing",
+                "Required field decimalLatitude is missing",
+                "Required field decimalLongitude is missing",
+                "Required field occurrenceStatus is missing",
+                "Required field countryCode is missing",
+                "Required field kingdom is missing",
+                "Required field geodeticDatum is missing",
+                'Empty value for required field scientificName',
+                'Empty value for required field scientificName']})
 
     # required terms & empty values
     error = check_fields(field_data)
