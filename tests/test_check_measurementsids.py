@@ -21,11 +21,11 @@ def test_check_measurementids():
     correct_data = pd.DataFrame(data={
         'field': ["measurementid", "measurementid"],
         'level': ["error", "error"],
-        'row':  ['1', '2'],
+        'row': ['1', '2'],
         'message': ["measurementid 2 is duplicated", "measurementid 2 is duplicated"]})
 
     error = check_measurementids(field_data)
 
-        # reset index of both dataframe or the compare won't work
+    # reset index of both dataframe or the compare won't work
     assert correct_data.astype(str).reset_index(drop=True).equals(
         error.astype(str).reset_index(drop=True))

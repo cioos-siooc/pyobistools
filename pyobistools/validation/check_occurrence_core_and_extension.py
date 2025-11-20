@@ -4,8 +4,19 @@ import pandas as pd
 NaN = np.nan
 
 permitted_values_occurrencestatus = ['absent', 'present']
-permitted_values_basisofrecord = ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'HumanObservation', 'MachineObservation', 'MaterialSample', 'MaterialCitation', 'MaterialEntity', 'Occurrence',
-                        'Taxon', 'Event']
+permitted_values_basisofrecord = [
+    'PreservedSpecimen',
+    'FossilSpecimen',
+    'LivingSpecimen',
+    'HumanObservation',
+    'MachineObservation',
+    'MaterialSample',
+    'MaterialCitation',
+    'MaterialEntity',
+    'Occurrence',
+    'Taxon',
+    'Event']
+
 
 def check_occurrence_core_and_extension(data):
     NaN = np.nan
@@ -23,14 +34,15 @@ def check_occurrence_core_and_extension(data):
 
             field_analysis['row'] = duplicates_occurrenceid.index
             field_analysis['message'] = [
-            f"occurrenceid {v} is duplicated" for v in duplicates_occurrenceid]
+                f"occurrenceid {v} is duplicated" for v in duplicates_occurrenceid]
             field_analysis['field'] = 'occurrenceid'
             field_analysis['level'] = 'error'
 
     # check values of column occurrenceStatus are either 'present' or 'absent'
     field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-    invalid_occ_status = data[~data['occurrencestatus'].isin(permitted_values_occurrencestatus)]['occurrencestatus']
-    
+    invalid_occ_status = data[~data['occurrencestatus'].isin(
+        permitted_values_occurrencestatus)]['occurrencestatus']
+
     field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
     if not invalid_occ_status.empty:
 
@@ -44,7 +56,7 @@ def check_occurrence_core_and_extension(data):
     field_analysis3 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
 
     invalid_bor = data[~data['basisofrecord'].isin(permitted_values_basisofrecord)]['basisofrecord']
-    
+
     field_analysis3 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
     if not invalid_bor.empty:
 
@@ -62,5 +74,3 @@ def check_occurrence_core_and_extension(data):
         field_analysis = pd.concat([field_analysis, field_analysis3])
 
     return field_analysis
-
-

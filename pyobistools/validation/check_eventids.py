@@ -77,13 +77,15 @@ def check_extension_eventids(core, extension_or_emof, field='eventID'):
     extension_or_emof = pd.DataFrame(data=extension_or_emof)
     extension_or_emof = extension_or_emof.replace('', NaN)
     extension_or_emof.rename(columns=str.lower, inplace=True)
-    
-    # check if all eventIDs (or occurrenceIDs) in an extension or emof file have corresponding eventIDs (or occurrenceIDs) in the core file
+
+    # check if all eventIDs (or occurrenceIDs) in an extension or emof file
+    # have corresponding eventIDs (or occurrenceIDs) in the core file
     field_analysis = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
     field_lower = field.lower()
 
     if field_lower in core.columns and field_lower in extension_or_emof.columns:
-        missing_values = extension_or_emof[~extension_or_emof[field_lower].isin(core[field_lower])][field_lower]
+        missing_values = extension_or_emof[~extension_or_emof[field_lower].isin(
+            core[field_lower])][field_lower]
         if not missing_values.empty:
             field_analysis['row'] = missing_values.index
             field_analysis['message'] = [
