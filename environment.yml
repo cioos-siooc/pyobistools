@@ -12,7 +12,7 @@ dependencies:
 - requests
 - numpy
 - pytest
-- pandas
+- pandas>=2.0.0
 - pip
 - pip:
   - pyxylookup
