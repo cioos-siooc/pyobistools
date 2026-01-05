@@ -70,8 +70,11 @@ def check_na(data, level, dataframe_column_key, data_columns_lower_case, data_co
 
     
     data_clean = data.copy()
-    data_clean.replace('', np.nan, inplace=True)
-
+    old_option = pd.get_option('future.no_silent_downcasting')
+    pd.set_option('future.no_silent_downcasting', True)# have to temp suppress warning. following recommended pattern on next line.
+    data_clean = data_clean.replace('', np.nan).infer_objects(copy=False)
+    pd.set_option('future.no_silent_downcasting', old_option)
+    
     if level == 'error':
         field_list = dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Required field', 'field'].tolist()
     elif level == 'warning':
