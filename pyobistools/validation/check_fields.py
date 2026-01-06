@@ -1,12 +1,131 @@
 import numpy as np
 import pandas as pd
-from pyobistools.validation.validationVars import ( #There is copy and paste across scripts. If it is all the same lets put it in a common file. Need to double check. 
-    event_core_fields,
-    occurrence_extension_fields,
-    extended_measurement_or_fact_extension_fields,
-    occurrence_core_fields
-)
+import warnings
+
 NaN = np.nan
+
+event_core_fields = {
+    'field': [
+        "eventID",
+        "eventDate",
+        "decimalLatitude",
+        "decimalLongitude",
+        "countryCode",
+        "geodeticDatum"],
+    'Required or recommended': [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field"],
+}
+
+occurrence_extension_fields = {
+    'field': [
+        "eventID",
+        "occurrenceID",
+        "basisOfRecord",
+        "scientificName",
+        "scientificNameID",
+        "kingdom",
+        "occurrenceStatus"],
+    'Required or recommended': [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field"],
+}
+
+extended_measurement_or_fact_extension_fields = {
+    "field": [
+        "measurementID",
+        "eventID",
+        "occurrenceID",
+        "measurementType",
+        "measurementTypeID",
+        "measurementValue",
+        "measurementValueID",
+        "measurementAccuracy",
+        "measurementUnit",
+        "measurementUnitID",
+        "measurementDeterminedDate",
+        "measurementDeterminedBy",
+        "measurementMethod",
+        "measurementRemarks"
+    ],
+
+    "Required or recommended": [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+    ],
+}
+
+occurrence_core_fields = {
+    'field': [
+        "occurrenceID",
+        "basisOfRecord",
+        "scientificName",
+        "scientificNameID",
+        "eventDate",
+        "decimalLatitude",
+        "decimalLongitude",
+        "occurrenceStatus",
+        "countryCode",
+        "kingdom",
+        "geodeticDatum",
+        "minimumDepthInMeters",
+        "maximumDepthInMeters",
+        "coordinateUncertaintyInMeters",
+        "samplingProtocol",
+        "taxonRank",
+        "organismQuantity",
+        "organismQuantityType",
+        "datasetName",
+        "dataGeneralizations",
+        "informationWithheld",
+        "institutionCode",
+    ],
+    'Required or recommended': [
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Required field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+        "Recommended field",
+    ],
+}
 def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
@@ -70,10 +189,10 @@ def check_na(data, level, dataframe_column_key, data_columns_lower_case, data_co
 
     
     data_clean = data.copy()
-    old_option = pd.get_option('future.no_silent_downcasting')
-    pd.set_option('future.no_silent_downcasting', True)# have to temp suppress warning. following recommended pattern on next line.
-    data_clean = data_clean.replace('', np.nan).infer_objects(copy=False)
-    pd.set_option('future.no_silent_downcasting', old_option)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        data_clean = data_clean.replace('', np.nan).infer_objects() #This line will throw a warning, but we are following the recommended pattern 
+    
     
     if level == 'error':
         field_list = dataframe_column_key.loc[dataframe_column_key['Required or recommended'] == 'Required field', 'field'].tolist()

@@ -1,17 +1,16 @@
 import numpy as np
 import pandas as pd
-
+import warnings
 NaN = np.nan
 
 
 def check_eventids(data):
     NaN = np.nan
     data = pd.DataFrame(data=data)
-    #data = data.replace('', NaN)
-    old_option = pd.get_option('future.no_silent_downcasting')
-    pd.set_option('future.no_silent_downcasting', True)# have to temp suppress warning. following recommended pattern on next line
-    data = data.replace('', np.nan).infer_objects(copy=False)
-    pd.set_option('future.no_silent_downcasting', old_option)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        data = data.replace('', np.nan).infer_objects() #This line will throw a warning, but we are following the recommended pattern 
+    
     
     data.rename(columns=str.lower, inplace=True)
     column_names = list(data.columns)
