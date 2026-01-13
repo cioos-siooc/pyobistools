@@ -1,21 +1,19 @@
-:py:mod:`pyobistools.validation.check_onland`
-=============================================
+pyobistools.validation.check_onland
+===================================
 
 .. py:module:: pyobistools.validation.check_onland
 
 
-Module Contents
----------------
-
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
    pyobistools.validation.check_onland.check_onland
 
 
+Module Contents
+---------------
 
 .. py:function:: check_onland(data, land=None, report=False, buffer=0, offline=False)
 

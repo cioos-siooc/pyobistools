@@ -1,25 +1,11 @@
-:py:mod:`pyobistools.validation.check_fields`
-=============================================
+pyobistools.validation.check_fields
+===================================
 
 .. py:module:: pyobistools.validation.check_fields
 
 
-Module Contents
----------------
-
-
-Functions
-~~~~~~~~~
-
-.. autoapisummary::
-
-   pyobistools.validation.check_fields.check_fields
-   pyobistools.validation.check_fields.check_fields_generic
-
-
-
 Attributes
-~~~~~~~~~~
+----------
 
 .. autoapisummary::
 
@@ -30,29 +16,29 @@ Attributes
    pyobistools.validation.check_fields.occurrence_core_fields
 
 
-.. py:data:: NaN
+Functions
+---------
 
-   
+.. autoapisummary::
+
+   pyobistools.validation.check_fields.check_fields
+   pyobistools.validation.check_fields.check_fields_generic
+
+
+Module Contents
+---------------
+
+.. py:data:: NaN
 
 .. py:data:: event_core_fields
 
-   
-
 .. py:data:: occurrence_extension_fields
-
-   
 
 .. py:data:: extended_measurement_or_fact_extension_fields
 
-   
-
 .. py:data:: occurrence_core_fields
-
-   
 
 .. py:function:: check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False)
 
-
 .. py:function:: check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False)
-
 

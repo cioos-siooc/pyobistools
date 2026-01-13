@@ -1,26 +1,26 @@
-:py:mod:`pyobistools`
-=====================
+pyobistools
+===========
 
 .. py:module:: pyobistools
 
 
-Subpackages
------------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 3
-
-   validation/index.rst
-
-
 Submodules
 ----------
+
 .. toctree::
-   :titlesonly:
    :maxdepth: 1
 
-   taxa/index.rst
-   utils/index.rst
+   /api/pyobistools/taxa/index
+   /api/pyobistools/utils/index
+   /api/pyobistools/validation/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   pyobistools.__version__
 
 
 Package Contents
@@ -29,5 +29,4 @@ Package Contents
 .. py:data:: __version__
    :value: '1.0.0'
 
-   
 

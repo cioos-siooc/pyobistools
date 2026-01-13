@@ -1,15 +1,19 @@
-:py:mod:`pyobistools.taxa`
-==========================
+pyobistools.taxa
+================
 
 .. py:module:: pyobistools.taxa
 
 
-Module Contents
----------------
+Attributes
+----------
+
+.. autoapisummary::
+
+   pyobistools.taxa.STANDARD_SPECIES_COLUMNS
 
 
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -23,24 +27,14 @@ Functions
    pyobistools.taxa.search
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pyobistools.taxa.STANDARD_SPECIES_COLUMNS
-
+Module Contents
+---------------
 
 .. py:data:: STANDARD_SPECIES_COLUMNS
 
-   
-
 .. py:function:: _standardize_types(df)
 
-
 .. py:function:: remove_suffix(name)
-
 
 .. py:function:: add_suffix(name)
 

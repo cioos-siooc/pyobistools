@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>pyobistools.validation &#8212; pyobistools 2.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
     <script src="../../../_static/documentation_options.js?v=f5cff4aa"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pyobistools.validation.check_eventids" href="check_eventids/index.html" />
-    <link rel="prev" title="pyobistools" href="../index.html" />
+    <link rel="prev" title="pyobistools.utils" href="../utils/index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
+
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  
 
   </head><body>
   
@@ -33,15 +35,15 @@
           <div class="body" role="main">
             
   <section id="module-pyobistools.validation">
-<span id="pyobistools-validation"></span><h1><a class="reference internal" href="#module-pyobistools.validation" title="pyobistools.validation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation</span></code></a><a class="headerlink" href="#module-pyobistools.validation" title="Link to this heading">¶</a></h1>
+<span id="pyobistools-validation"></span><h1>pyobistools.validation<a class="headerlink" href="#module-pyobistools.validation" title="Link to this heading">¶</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="check_eventids/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_eventids</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="check_fields/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_fields</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="check_onland/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_onland</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="check_scientificname_and_ids/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_scientificname_and_ids</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="check_eventids/index.html">pyobistools.validation.check_eventids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check_fields/index.html">pyobistools.validation.check_fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check_onland/index.html">pyobistools.validation.check_onland</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check_scientificname_and_ids/index.html">pyobistools.validation.check_scientificname_and_ids</a></li>
 </ul>
 </div>
 </section>
@@ -52,7 +54,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">pyobistools</a></h1>
 
@@ -72,7 +74,16 @@
 
 
 
-<h3>Navigation</h3>
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../development.html">Development and Testing</a></li>
@@ -87,24 +98,14 @@
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">API Reference</a><ul>
-  <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools</span></code></a><ul>
-      <li>Previous: <a href="../index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools</span></code></a></li>
-      <li>Next: <a href="check_eventids/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyobistools.validation.check_eventids</span></code></a></li>
+  <li><a href="../index.html">pyobistools</a><ul>
+      <li>Previous: <a href="../utils/index.html" title="previous chapter">pyobistools.utils</a></li>
+      <li>Next: <a href="check_eventids/index.html" title="next chapter">pyobistools.validation.check_eventids</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -118,11 +119,11 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2022, BunchOfPeople.
+      &#169;2022, BunchOfPeople.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>
 

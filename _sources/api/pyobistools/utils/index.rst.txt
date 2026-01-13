@@ -1,15 +1,19 @@
-:py:mod:`pyobistools.utils`
-===========================
+pyobistools.utils
+=================
 
 .. py:module:: pyobistools.utils
 
 
-Module Contents
----------------
+Attributes
+----------
+
+.. autoapisummary::
+
+   pyobistools.utils.NaN
 
 
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -23,40 +27,24 @@ Functions
    pyobistools.utils.names_taxons_ids_analyse
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pyobistools.utils.NaN
-
+Module Contents
+---------------
 
 .. py:data:: NaN
 
-   
-
 .. py:function:: removesuffix(obj, suffix)
-
 
 .. py:function:: function_suffix_removal(data_valid_nom_scientifique)
 
-
 .. py:function:: function_add_suffix(nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-
 
 .. py:function:: exact_match_suffix(a, b)
 
-
 .. py:function:: exact_match(a, b)
-
 
 .. py:function:: names_analyse(data_valid_scientific_name)
 
-
 .. py:function:: names_ids_analyse(data_valid_scientific_name, data)
 
-
 .. py:function:: names_taxons_ids_analyse(data_valid_scientific_name, data)
-
 

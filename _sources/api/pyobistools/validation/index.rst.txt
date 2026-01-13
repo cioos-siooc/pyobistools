@@ -1,18 +1,18 @@
-:py:mod:`pyobistools.validation`
-================================
+pyobistools.validation
+======================
 
 .. py:module:: pyobistools.validation
 
 
 Submodules
 ----------
+
 .. toctree::
-   :titlesonly:
    :maxdepth: 1
 
-   check_eventids/index.rst
-   check_fields/index.rst
-   check_onland/index.rst
-   check_scientificname_and_ids/index.rst
+   /api/pyobistools/validation/check_eventids/index
+   /api/pyobistools/validation/check_fields/index
+   /api/pyobistools/validation/check_onland/index
+   /api/pyobistools/validation/check_scientificname_and_ids/index
 
 
