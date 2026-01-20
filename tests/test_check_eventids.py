@@ -23,7 +23,7 @@ def test_check_eventids_presence_eventids_parenteventid():
     correct_data = pd.DataFrame(data={
         'field': ["eventid", "parenteventid"],
         'level': ["error", "error"],
-        'row':  ['NaN', 'NaN'],
+        'row': ['NaN', 'NaN'],
         'message': ["Field eventid is missing", "Field parenteventid is missing"]})
 
     error = check_eventids(field_data)
@@ -65,7 +65,7 @@ def test_check_eventids_parenteventids_corresponding_eventIDs():
     correct_data = pd.DataFrame(data={
         'field': ["parenteventid"],
         'level': ["error"],
-        'row':  [2],
+        'row': [2],
         'message': ["parenteventid 4 has no corresponding eventID"]})
 
     error = check_eventids(field_data)
@@ -96,5 +96,5 @@ def test_check_eventids_eventids_extension_corresponding_core():
         'measurementremarks': ["", NaN, "not calibrated"]
     })
 
-    error = check_extension_eventids(event=event, extension=extension)
+    error = check_extension_eventids(event, extension)
     assert len(error.index) == 1

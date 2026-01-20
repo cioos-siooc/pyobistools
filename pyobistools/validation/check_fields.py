@@ -127,7 +127,11 @@ occurrence_core_fields = {
 }
 
 
-def check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False):
+def check_fields(
+        data,
+        level='error',
+        analysis_type='occurrence_core',
+        accepted_name_usage_id_check=False):
     # if statements to determine the analysis to run
     if analysis_type == 'event_core':
         dataframe_column_key = pd.DataFrame(data=event_core_fields)
@@ -141,7 +145,11 @@ def check_fields(data, level='error', analysis_type='occurrence_core', accepted_
     return check_fields_generic(data, level, dataframe_column_key, accepted_name_usage_id_check)
 
 
-def check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False):
+def check_fields_generic(
+        data,
+        level='error',
+        dataframe_column_key=None,
+        accepted_name_usage_id_check=False):
     data_columns_normal_case = list(data.columns)
     data_columns_lower_case = list(map(str.lower, data.columns))
 
@@ -244,7 +252,8 @@ def check_fields_generic(data, level='error', dataframe_column_key=None, accepte
             index_of_filtered_data = data2[(data2['scientificnameid'].isna()) & (
                 data2['acceptednameusageid'].notna())].index
 
-            # filter analysis_accepted_name_usage_id_check to keep only rows where we know scientificnameid IS EMPTY and acceptednameusageid IS NOT EMPTY
+            # filter analysis_accepted_name_usage_id_check to keep only rows where we
+            # know scientificnameid IS EMPTY and acceptednameusageid IS NOT EMPTY
             analysis_accepted_name_usage_id_check = analysis_accepted_name_usage_id_check[analysis_accepted_name_usage_id_check["row"].isin(
                 index_of_filtered_data)]
 
