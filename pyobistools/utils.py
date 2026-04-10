@@ -1,38 +1,58 @@
 #!/usr/bin/env python
 # coding=utf-8
+import warnings
 import numpy as np
 import pandas as pd
 
 NaN = np.nan
 
 
-def pick_worms_record(response):
+def pick_worms_record(response, name=None, listall=False, warn=True):
     """
     Parameters:
         - response: parsed JSON from WoRMS -> list[dict] or dict
+        - name: optional scientific name string, used in warning messages
+        - listall: if False (default) returns a single dict; if True returns a
+                   list of all accepted records
+        - warn: if True (default), controls warning behaviour throughout the
+                lookup pipeline; when listall=False, warns if multiple accepted
+                records are found; also gates ITIS fallback warnings in callers
 
     Strategy:
-        - return the first record with status=='accepted' (case-insensitive);
-        - If response is empty/invalid, return None.
+        - Collect all records with status=='accepted' (case-insensitive).
+        - listall=False: return the first accepted record; warn if ambiguous.
+        - listall=True: return the full list of accepted records, no warning.
+        - If no accepted records, return None (listall=False) or [] (listall=True).
     """
-    # Normalize to list of dicts
     if isinstance(response, dict):
         records = [response]
     elif isinstance(response, list):
         records = response
     else:
-        return None
+        return [] if listall else None
 
     if not records:
-        return None
+        return [] if listall else None
 
-    # return the first 'accepted'
-    for r in records:
-        if str(r.get('status', '')).strip().lower() == 'accepted':
-            return r
+    accepted = [r for r in records if str(r.get('status', '')).strip().lower() == 'accepted']
 
-    # No accepted record found
-    return None
+    if not accepted:
+        return [] if listall else None
+
+    if listall:
+        return accepted
+
+    # listall=False: return first
+    if len(accepted) > 1 and warn:
+        ids = [r.get('AphiaID') for r in accepted]
+        label = f"'{name}'" if name else "unknown taxon"
+        warnings.warn(
+            f"Ambiguous taxon {label}: {len(accepted)} accepted records found "
+            f"(AphiaIDs: {ids}). Returning first.",
+            UserWarning,
+            stacklevel=2,
+        )
+    return accepted[0]
 
 
 def pick_itis_record(response_json, original_name):

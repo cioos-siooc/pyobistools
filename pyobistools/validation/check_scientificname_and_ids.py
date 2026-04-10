@@ -1,4 +1,5 @@
 import time
+import warnings
 import numpy as np
 import pandas as pd
 import requests
@@ -11,7 +12,7 @@ from pyobistools.utils import (function_add_suffix, function_suffix_removal,
 NaN = np.nan
 
 
-def check_scientificname_and_ids(data, value, itis_usage=False):
+def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
     data = pd.DataFrame(data=data)
     data = data.rename(columns=str.lower)
     data_valid_scientific_name = data
@@ -47,7 +48,7 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                 response2 = response.json()
                 for key in list_of_list:
                     if response2:
-                        rec = pick_worms_record(response2)
+                        rec = pick_worms_record(response2, name=nom, warn=warn)
                         if rec:
                             mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
                             data_valid_scientific_name.loc[mask, 'TaxonID'] = rec.get('AphiaID', '')
@@ -83,6 +84,12 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
                 if itis_usage:
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
                                                    == list_of_list[key], 'Source'] = "Itis"
+                    if warn:
+                        warnings.warn(
+                            f"WoRMS returned no content for '{list_of_list[key]}'. Falling back to ITIS.",
+                            UserWarning,
+                            stacklevel=2,
+                        )
 
                     try:
                         response3 = requests.get(
