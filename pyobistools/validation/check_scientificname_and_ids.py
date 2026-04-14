@@ -51,9 +51,11 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
         if response.status_code == 200:
             try:
                 response2 = response.json()
+                rec = None
+                if response2:
+                    rec = pick_worms_record(response2, name=nom, warn=warn)
                 for key in list_of_list:
                     if response2:
-                        rec = pick_worms_record(response2, name=nom, warn=warn)
                         if rec:
                             mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
                             data_valid_scientific_name.loc[mask, 'TaxonID'] = rec.get('AphiaID', '')
