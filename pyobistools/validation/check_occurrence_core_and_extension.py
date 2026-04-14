@@ -40,31 +40,38 @@ def check_occurrence_core_and_extension(data):
 
     # check values of column occurrenceStatus are either 'present' or 'absent'
     field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-    invalid_occ_status = data[~data['occurrencestatus'].isin(
-        permitted_values_occurrencestatus)]['occurrencestatus']
+    if 'occurrencestatus' in column_names:
+        invalid_occ_status = data[~data['occurrencestatus'].isin(
+            permitted_values_occurrencestatus)]['occurrencestatus']
 
-    field_analysis2 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-    if not invalid_occ_status.empty:
+        if not invalid_occ_status.empty:
 
-        field_analysis2['row'] = invalid_occ_status.index
-        field_analysis2['message'] = [
-            f"occurrencestatus {v} is not permitted" for v in invalid_occ_status]
-        field_analysis2['field'] = 'occurrencestatus'
-        field_analysis2['level'] = 'error'
+            field_analysis2['row'] = invalid_occ_status.index
+            field_analysis2['message'] = [
+                f"occurrencestatus {v} is not permitted" for v in invalid_occ_status]
+            field_analysis2['field'] = 'occurrencestatus'
+            field_analysis2['level'] = 'error'
+    else:
+        field_analysis2 = pd.DataFrame(np.array(
+            [['occurrencestatus', 'error', 'NaN', 'Field occurrencestatus is missing']]),
+            columns=['field', 'level', 'row', 'message'])
 
     # check values of column basisOfRecord  are correspond to permitted values
     field_analysis3 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
+    if 'basisofrecord' in column_names:
+        invalid_bor = data[~data['basisofrecord'].isin(permitted_values_basisofrecord)]['basisofrecord']
 
-    invalid_bor = data[~data['basisofrecord'].isin(permitted_values_basisofrecord)]['basisofrecord']
+        if not invalid_bor.empty:
 
-    field_analysis3 = pd.DataFrame(columns=['field', 'level', 'row', 'message'])
-    if not invalid_bor.empty:
-
-        field_analysis3['row'] = invalid_bor.index
-        field_analysis3['message'] = [
-            f"basisofrecord {v} is not permitted" for v in invalid_bor]
-        field_analysis3['field'] = 'basisofrecord'
-        field_analysis3['level'] = 'error'
+            field_analysis3['row'] = invalid_bor.index
+            field_analysis3['message'] = [
+                f"basisofrecord {v} is not permitted" for v in invalid_bor]
+            field_analysis3['field'] = 'basisofrecord'
+            field_analysis3['level'] = 'error'
+    else:
+        field_analysis3 = pd.DataFrame(np.array(
+            [['basisofrecord', 'error', 'NaN', 'Field basisofrecord is missing']]),
+            columns=['field', 'level', 'row', 'message'])
 
     # append error tables together
     if not field_analysis2.empty:
