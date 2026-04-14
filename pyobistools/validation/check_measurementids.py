@@ -3,20 +3,6 @@ import pandas as pd
 
 NaN = np.nan
 
-permitted_values_occurrencestatus = ['absent', 'present']
-permitted_values_basisofrecord = [
-    'PreservedSpecimen',
-    'FossilSpecimen',
-    'LivingSpecimen',
-    'HumanObservation',
-    'MachineObservation',
-    'MaterialSample',
-    'MaterialCitation',
-    'MaterialEntity',
-    'Occurrence',
-    'Taxon',
-    'Event']
-
 
 def check_measurementids(data):
     NaN = np.nan
