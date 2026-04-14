@@ -49,7 +49,7 @@ def check_eventids(data):
             event_parenteventids = data["parenteventid"][(
                 data["parenteventid"].notna()) & (data["parenteventid"] != '')]
             event_parenteventids = pd.DataFrame(data=event_parenteventids)
-            event_parenteventids.loc[:, 'message'] = event_parenteventids['parenteventid'].isin(
+            event_parenteventids['message'] = event_parenteventids['parenteventid'].isin(
                 event_eventids)
             event_parenteventids = event_parenteventids[~event_parenteventids["message"]]
 
