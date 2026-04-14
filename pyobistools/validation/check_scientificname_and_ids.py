@@ -1,4 +1,5 @@
 import time
+import urllib.parse
 import warnings
 import numpy as np
 import pandas as pd
@@ -41,7 +42,7 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
             liste_noms_spp_point)
 
         response = requests.get(
-            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
+            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(nom)}?like=false&marine_only=false&offset=1")
 
         if response.status_code == 200:
             try:
@@ -93,7 +94,8 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
 
                     try:
                         response3 = requests.get(
-                            f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={list_of_list[key]}")
+                            "https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName",
+                            params={"srchKey": list_of_list[key]})
                         if response3.status_code == 200:
                             response4 = response3.json()
 
