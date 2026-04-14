@@ -1,6 +1,7 @@
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from pyobistools.validation.check_fields import check_fields
 
@@ -153,6 +154,5 @@ def test_check_fields_invalid_level():
         'scientificName': ["Abra alba", "Buccinum", "Carcinus"],
     })
 
-    import pytest
-    with pytest.raises((ValueError, UnboundLocalError)):
+    with pytest.raises(ValueError):
         check_fields(field_data, level="invalid")

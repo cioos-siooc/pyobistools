@@ -228,7 +228,8 @@ def check_na(data, level, dataframe_column_key, data_columns_lower_case, data_co
     return analysis_missing_values[['field', 'level', 'row', 'message']].reset_index(drop=True)
     
 def check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False):
-    #to-do: should check to make sure level is either error or warning
+    if level not in ('error', 'warning'):
+        raise ValueError(f"level must be 'error' or 'warning', got '{level}'")
     data_columns_normal_case = list(data.columns)
     data_columns_lower_case = list(map(str.lower, data.columns))
     
