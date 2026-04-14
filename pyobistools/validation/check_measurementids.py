@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import warnings
 
 NaN = np.nan
 
@@ -7,7 +8,9 @@ NaN = np.nan
 def check_measurementids(data):
     NaN = np.nan
     data = pd.DataFrame(data=data)
-    data = data.replace('', NaN)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        data = data.replace('', NaN).infer_objects()
     data.rename(columns=str.lower, inplace=True)
     column_names = list(data.columns)
 

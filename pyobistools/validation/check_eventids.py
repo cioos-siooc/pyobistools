@@ -75,11 +75,15 @@ def check_eventids(data):
 def check_extension_eventids(core, extension_or_emof, field='eventID'):
 
     core = pd.DataFrame(data=core)
-    core = core.replace('', NaN)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        core = core.replace('', NaN).infer_objects()
     core.rename(columns=str.lower, inplace=True)
 
     extension_or_emof = pd.DataFrame(data=extension_or_emof)
-    extension_or_emof = extension_or_emof.replace('', NaN)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        extension_or_emof = extension_or_emof.replace('', NaN).infer_objects()
     extension_or_emof.rename(columns=str.lower, inplace=True)
 
     # check if all eventIDs (or occurrenceIDs) in an extension or emof file
