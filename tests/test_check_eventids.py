@@ -98,3 +98,19 @@ def test_check_eventids_eventids_extension_corresponding_core():
 
     error = check_extension_eventids(event, extension)
     assert len(error.index) == 1
+
+
+def test_check_extension_eventids_with_occurrenceid():
+    core = pd.DataFrame({
+        'occurrenceID': ["1", "2", "3"],
+        'eventID': ["A", "B", "C"],
+    })
+
+    extension = pd.DataFrame({
+        'occurrenceID': ["1", "4", "3"],
+        'measurementType': ["temperature", "salinity", "depth"],
+    })
+
+    error = check_extension_eventids(core, extension, field='occurrenceID')
+    assert len(error.index) == 1
+    assert error.iloc[0]['message'] == "Field 4 has no corresponding occurrenceID in the core"

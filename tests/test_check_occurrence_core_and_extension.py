@@ -44,3 +44,23 @@ def test_check_occurrence_core_and_extension():
     # reset index of both dataframe or the compare won't work
     assert correct_data.astype(str).reset_index(drop=True).equals(
         error.astype(str).reset_index(drop=True))
+
+
+def test_check_occurrence_missing_occurrencestatus():
+    field_data = pd.DataFrame({
+        'occurrenceID': ['1', '2', '3'],
+        'basisOfRecord': ['HumanObservation', 'HumanObservation', 'HumanObservation'],
+    })
+
+    error = check_occurrence_core_and_extension(field_data)
+    assert any(error['message'] == 'Field occurrencestatus is missing')
+
+
+def test_check_occurrence_missing_basisofrecord():
+    field_data = pd.DataFrame({
+        'occurrenceID': ['1', '2', '3'],
+        'occurrenceStatus': ['present', 'absent', 'present'],
+    })
+
+    error = check_occurrence_core_and_extension(field_data)
+    assert any(error['message'] == 'Field basisofrecord is missing')
