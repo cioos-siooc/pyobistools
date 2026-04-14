@@ -5,10 +5,8 @@ dependencies:
 - geopandas
 - pyworms
 - ckanapi
-- httpx
 - plotly
 - cartopy
-- async
 - requests
 - numpy
 - pytest
@@ -16,5 +14,3 @@ dependencies:
 - pip
 - pip:
   - pyxylookup
-  - asyncio
-  - httpx
