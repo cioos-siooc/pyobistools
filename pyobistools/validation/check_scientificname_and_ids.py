@@ -152,7 +152,7 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
     try:
         data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
 
-    except BaseException:
+    except KeyError:
         pass
 
     # Analysis and tables preparation section
