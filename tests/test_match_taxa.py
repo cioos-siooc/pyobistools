@@ -5,11 +5,15 @@ match taxa
 import pandas as pd
 
 """ test_names <- c("Abra alva", "Buccinum fusiforme", "Buccinum fusiforme", "Buccinum fusiforme", "ljkf hlqsdkf") """
-test_names = pd.DataFrame({"Abra alva",
-                           "Buccinum fusiforme",
-                           "Buccinum fusiforme",
-                           "Buccinum fusiforme",
-                           "ljkf hlqsdkf"})
+test_names = pd.DataFrame({
+    "name": [
+        "Abra alva",
+        "Buccinum fusiforme",
+        "Buccinum fusiforme",
+        "Buccinum fusiforme",
+        "ljkf hlqsdkf",
+    ]
+})
 
 
 def test_match_taxa():
