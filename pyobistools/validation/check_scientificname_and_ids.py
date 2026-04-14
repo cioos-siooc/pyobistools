@@ -1,3 +1,4 @@
+import logging
 import time
 import urllib.parse
 import warnings
@@ -5,6 +6,8 @@ import numpy as np
 import pandas as pd
 import requests
 from numpy import random
+
+logger = logging.getLogger(__name__)
 from pyobistools.utils import (function_add_suffix, function_suffix_removal,
                                names_analyse, names_ids_analyse,
                                names_taxons_ids_analyse, pick_worms_record,
@@ -42,7 +45,8 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
             liste_noms_spp_point)
 
         response = requests.get(
-            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(nom)}?like=false&marine_only=false&offset=1")
+            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(nom)}?like=false&marine_only=false&offset=1",
+            timeout=30)
 
         if response.status_code == 200:
             try:
@@ -63,24 +67,24 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
                                                            'Valid_Name'] = rec.get('valid_name', '')
                             data_valid_scientific_name.loc[mask, 'LSID'] = rec.get('lsid', '')
                             data_valid_scientific_name.loc[mask, 'Source'] = "Worms"
-                            print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                            logger.info(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
                         else:
-                            print(
+                            logger.info(
                                 f"{index} : {response.status_code}: Worms {list_of_list[key]} - No usable record")
                     else:
-                        print(
+                        logger.info(
                             f"{index} : {response.status_code}: Worms {list_of_list[key]} - Empty response")
 
             except ValueError:
-                print(f"JSON decode error for {nom}")
+                logger.error(f"JSON decode error for {nom}")
 
             except Exception as e:
-                print(f"Error processing response for {nom}: {e}")
+                logger.error(f"Error processing response for {nom}: {e}")
 
         # if empty answer from Worms, prepare table for Itis later on
         elif response.status_code == 204:
             for key in list_of_list:
-                print(f"{index} : {response.status_code}: Worms {list_of_list[key]} - No content")
+                logger.info(f"{index} : {response.status_code}: Worms {list_of_list[key]} - No content")
 
                 if itis_usage:
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
@@ -95,7 +99,8 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
                     try:
                         response3 = requests.get(
                             "https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName",
-                            params={"srchKey": list_of_list[key]})
+                            params={"srchKey": list_of_list[key]},
+                            timeout=30)
                         if response3.status_code == 200:
                             response4 = response3.json()
 
@@ -120,25 +125,25 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
                                     data_valid_scientific_name.loc[mask,
                                                                    'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + tsn
                                     data_valid_scientific_name.loc[mask, 'Source'] = "Itis"
-                                    print(
+                                    logger.info(
                                         f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
                                 else:
-                                    print(
+                                    logger.info(
                                         f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - No usable record")
                             else:
-                                print(
+                                logger.info(
                                     f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - Empty answer")
                         else:
-                            print(f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
+                            logger.warning(f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
 
                     except ValueError:
-                        print(f"JSON decode error for ITIS request for {list_of_list[key]}")
+                        logger.error(f"JSON decode error for ITIS request for {list_of_list[key]}")
 
                     except Exception as e:
-                        print(f"Error processing ITIS response for {list_of_list[key]}: {e}")
+                        logger.error(f"Error processing ITIS response for {list_of_list[key]}: {e}")
 
         else:
-            print(f"{index} : {response.status_code}: Worms {nom} - Error response")
+            logger.warning(f"{index} : {response.status_code}: Worms {nom} - Error response")
 
         # delay bwt requests
         time.sleep(round(random.uniform(.5, 1.5), 1))
