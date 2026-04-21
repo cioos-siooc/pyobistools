@@ -45,7 +45,7 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
             liste_noms_spp_point)
 
         response = requests.get(
-            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(nom)}?like=false&marine_only=false&offset=1",
+            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(urllib.parse.unquote(nom))}?like=false&marine_only=false&offset=1",
             timeout=30)
 
         if response.status_code == 200:

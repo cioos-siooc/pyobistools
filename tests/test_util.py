@@ -106,6 +106,23 @@ def test_itis_fallback_no_warn(mock_get, mock_sleep):
         check_scientificname_and_ids(data, 'names', itis_usage=True, warn=False)
 
 
+@patch('time.sleep')
+@patch('pyobistools.validation.check_scientificname_and_ids.requests.get')
+def test_worms_url_not_double_encoded(mock_get, mock_sleep):
+    # Regression test for issue #76: function_suffix_removal pre-encodes spaces
+    # as %20, so an unguarded urllib.parse.quote() re-encoded the % to %25.
+    worms_response = Mock(status_code=200)
+    worms_response.json.return_value = []
+    mock_get.return_value = worms_response
+
+    data = pd.DataFrame({'scientificname': ['Haploops setosa']})
+    check_scientificname_and_ids(data, 'names')
+
+    called_url = mock_get.call_args.args[0]
+    assert 'Haploops%20setosa' in called_url
+    assert '%2520' not in called_url
+
+
 # --- pick_itis_record tests ---
 
 def test_pick_itis_exact_match():
