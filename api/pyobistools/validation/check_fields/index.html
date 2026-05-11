@@ -15,7 +15,7 @@
     <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="pyobistools.validation.check_onland" href="../check_onland/index.html" />
+    <link rel="next" title="pyobistools.validation.check_measurementids" href="../check_measurementids/index.html" />
     <link rel="prev" title="pyobistools.validation.check_eventids" href="../check_eventids/index.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
@@ -65,7 +65,16 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_fields" title="pyobistools.validation.check_fields.check_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_fields</span></code></a>(data[, level, analysis_type, ...])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_fields_generic" title="pyobistools.validation.check_fields.check_fields_generic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_fields_generic</span></code></a>(data[, level, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.get_field_presence" title="pyobistools.validation.check_fields.get_field_presence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_field_presence</span></code></a>(level, dataframe_column_key, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_case" title="pyobistools.validation.check_fields.check_case"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_case</span></code></a>(dataframe_column_key, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_na" title="pyobistools.validation.check_fields.check_na"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_na</span></code></a>(data, level, dataframe_column_key, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.validation.check_fields.check_fields_generic" title="pyobistools.validation.check_fields.check_fields_generic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_fields_generic</span></code></a>(data[, level, ...])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -101,6 +110,21 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyobistools.validation.check_fields.check_fields">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">check_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'occurrence_core'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accepted_name_usage_id_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#check_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.check_fields" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.get_field_presence">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">get_field_presence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe_column_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns_lower_case</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#get_field_presence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.get_field_presence" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.check_case">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">check_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe_column_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns_normal_case</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns_lower_case</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#check_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.check_case" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.validation.check_fields.check_na">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.validation.check_fields.</span></span><span class="sig-name descname"><span class="pre">check_na</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe_column_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns_lower_case</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns_normal_case</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pyobistools/validation/check_fields.html#check_na"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.validation.check_fields.check_na" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -163,7 +187,7 @@
   <li><a href="../../index.html">pyobistools</a><ul>
   <li><a href="../index.html">pyobistools.validation</a><ul>
       <li>Previous: <a href="../check_eventids/index.html" title="previous chapter">pyobistools.validation.check_eventids</a></li>
-      <li>Next: <a href="../check_onland/index.html" title="next chapter">pyobistools.validation.check_onland</a></li>
+      <li>Next: <a href="../check_measurementids/index.html" title="next chapter">pyobistools.validation.check_measurementids</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

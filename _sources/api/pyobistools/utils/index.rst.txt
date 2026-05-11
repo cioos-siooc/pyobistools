@@ -17,6 +17,8 @@ Functions
 
 .. autoapisummary::
 
+   pyobistools.utils.pick_worms_record
+   pyobistools.utils.pick_itis_record
    pyobistools.utils.removesuffix
    pyobistools.utils.function_suffix_removal
    pyobistools.utils.function_add_suffix
@@ -31,6 +33,41 @@ Module Contents
 ---------------
 
 .. py:data:: NaN
+
+.. py:function:: pick_worms_record(response, name=None, listall=False, warn=True)
+
+   :param - response: parsed JSON from WoRMS -> list[dict] or dict
+   :param - name: optional scientific name string, used in warning messages
+   :param - listall: if False (default) returns a single dict; if True returns a
+                     list of all accepted records
+   :param - warn: if True (default), controls warning behaviour throughout the
+                  lookup pipeline; when listall=False, warns if multiple accepted
+                  records are found; also gates ITIS fallback warnings in callers
+
+   Strategy:
+       - Collect all records with status=='accepted' (case-insensitive).
+       - listall=False: return the first accepted record; warn if ambiguous.
+       - listall=True: return the full list of accepted records, no warning.
+       - If no accepted records, return None (listall=False) or [] (listall=True).
+
+
+.. py:function:: pick_itis_record(response_json, original_name)
+
+   Select the ITIS record whose name exactly matches the requested name.
+
+   Parameters
+   - response_json: dict from ITIS `searchByScientificName` endpoint
+                    expected shape: { 'scientificNames': [ { 'combinedName': str, 'tsn': str, ... }, ... ] }
+   - original_name: str, the scientific name as queried (e.g., from function_add_suffix)
+
+   Returns
+   - dict (the matching record) or None if no suitable record was found.
+
+   Strategy
+   - return exact character match on 'combinedName' against original_name
+   - Fallback to case-insensitive if no exact match
+   - If still not found, return None
+
 
 .. py:function:: removesuffix(obj, suffix)
 

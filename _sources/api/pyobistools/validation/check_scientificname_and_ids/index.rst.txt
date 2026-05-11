@@ -9,6 +9,7 @@ Attributes
 
 .. autoapisummary::
 
+   pyobistools.validation.check_scientificname_and_ids.logger
    pyobistools.validation.check_scientificname_and_ids.NaN
 
 
@@ -23,7 +24,9 @@ Functions
 Module Contents
 ---------------
 
+.. py:data:: logger
+
 .. py:data:: NaN
 
-.. py:function:: check_scientificname_and_ids(data, value, itis_usage=False)
+.. py:function:: check_scientificname_and_ids(data, value, itis_usage=False, warn=True)
 

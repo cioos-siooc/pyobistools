@@ -12,6 +12,8 @@ Submodules
 
    /api/pyobistools/validation/check_eventids/index
    /api/pyobistools/validation/check_fields/index
+   /api/pyobistools/validation/check_measurementids/index
+   /api/pyobistools/validation/check_occurrence_core_and_extension/index
    /api/pyobistools/validation/check_onland/index
    /api/pyobistools/validation/check_scientificname_and_ids/index
 

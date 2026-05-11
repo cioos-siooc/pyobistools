@@ -1,0 +1,39 @@
+pyobistools.validation.check_occurrence_core_and_extension
+==========================================================
+
+.. py:module:: pyobistools.validation.check_occurrence_core_and_extension
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   pyobistools.validation.check_occurrence_core_and_extension.NaN
+   pyobistools.validation.check_occurrence_core_and_extension.permitted_values_occurrencestatus
+   pyobistools.validation.check_occurrence_core_and_extension.permitted_values_basisofrecord
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   pyobistools.validation.check_occurrence_core_and_extension.check_occurrence_core_and_extension
+
+
+Module Contents
+---------------
+
+.. py:data:: NaN
+
+.. py:data:: permitted_values_occurrencestatus
+   :value: ['absent', 'present']
+
+
+.. py:data:: permitted_values_basisofrecord
+   :value: ['PreservedSpecimen', 'FossilSpecimen', 'LivingSpecimen', 'HumanObservation',...
+
+
+.. py:function:: check_occurrence_core_and_extension(data)
+

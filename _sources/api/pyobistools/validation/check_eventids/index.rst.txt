@@ -28,5 +28,5 @@ Module Contents
 
 .. py:function:: check_eventids(data)
 
-.. py:function:: check_extension_eventids(event, extension, field='eventID')
+.. py:function:: check_extension_eventids(core, extension_or_emof, field='eventID')
 

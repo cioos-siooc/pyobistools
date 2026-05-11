@@ -50,6 +50,12 @@
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.pick_worms_record" title="pyobistools.utils.pick_worms_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pick_worms_record</span></code></a>(response[, name, listall, warn])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyobistools.utils.pick_itis_record" title="pyobistools.utils.pick_itis_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pick_itis_record</span></code></a>(response_json, original_name)</p></td>
+<td><p>Select the ITIS record whose name exactly matches the requested name.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pyobistools.utils.removesuffix" title="pyobistools.utils.removesuffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removesuffix</span></code></a>(obj, suffix)</p></td>
 <td><p></p></td>
 </tr>
@@ -83,6 +89,53 @@
 <dt class="sig sig-object py" id="pyobistools.utils.NaN">
 <span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">NaN</span></span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#NaN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.NaN" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.pick_worms_record">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">pick_worms_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listall</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#pick_worms_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.pick_worms_record" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>response</strong> (<em>-</em>) – parsed JSON from WoRMS -&gt; list[dict] or dict</p></li>
+<li><p><strong>name</strong> (<em>-</em>) – optional scientific name string, used in warning messages</p></li>
+<li><p><strong>listall</strong> (<em>-</em>) – if False (default) returns a single dict; if True returns a
+list of all accepted records</p></li>
+<li><p><strong>warn</strong> (<em>-</em>) – if True (default), controls warning behaviour throughout the
+lookup pipeline; when listall=False, warns if multiple accepted
+records are found; also gates ITIS fallback warnings in callers</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Strategy:</dt><dd><ul class="simple">
+<li><p>Collect all records with status==’accepted’ (case-insensitive).</p></li>
+<li><p>listall=False: return the first accepted record; warn if ambiguous.</p></li>
+<li><p>listall=True: return the full list of accepted records, no warning.</p></li>
+<li><p>If no accepted records, return None (listall=False) or [] (listall=True).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobistools.utils.pick_itis_record">
+<span class="sig-prename descclassname"><span class="pre">pyobistools.utils.</span></span><span class="sig-name descname"><span class="pre">pick_itis_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pyobistools/utils.html#pick_itis_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobistools.utils.pick_itis_record" title="Link to this definition">¶</a></dt>
+<dd><p>Select the ITIS record whose name exactly matches the requested name.</p>
+<p>Parameters
+- response_json: dict from ITIS <cite>searchByScientificName</cite> endpoint</p>
+<blockquote>
+<div><p>expected shape: { ‘scientificNames’: [ { ‘combinedName’: str, ‘tsn’: str, … }, … ] }</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>original_name: str, the scientific name as queried (e.g., from function_add_suffix)</p></li>
+</ul>
+<p>Returns
+- dict (the matching record) or None if no suitable record was found.</p>
+<p>Strategy
+- return exact character match on ‘combinedName’ against original_name
+- Fallback to case-insensitive if no exact match
+- If still not found, return None</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyobistools.utils.removesuffix">

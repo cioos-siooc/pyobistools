@@ -22,6 +22,9 @@ Functions
 .. autoapisummary::
 
    pyobistools.validation.check_fields.check_fields
+   pyobistools.validation.check_fields.get_field_presence
+   pyobistools.validation.check_fields.check_case
+   pyobistools.validation.check_fields.check_na
    pyobistools.validation.check_fields.check_fields_generic
 
 
@@ -39,6 +42,12 @@ Module Contents
 .. py:data:: occurrence_core_fields
 
 .. py:function:: check_fields(data, level='error', analysis_type='occurrence_core', accepted_name_usage_id_check=False)
+
+.. py:function:: get_field_presence(level, dataframe_column_key, data_columns_lower_case)
+
+.. py:function:: check_case(dataframe_column_key, data_columns_normal_case, data_columns_lower_case)
+
+.. py:function:: check_na(data, level, dataframe_column_key, data_columns_lower_case, data_columns_normal_case)
 
 .. py:function:: check_fields_generic(data, level='error', dataframe_column_key=None, accepted_name_usage_id_check=False)
 
