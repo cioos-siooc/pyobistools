@@ -5,15 +5,12 @@ dependencies:
 - geopandas
 - pyworms
 - ckanapi
-- httpx
 - plotly
-- async
+- cartopy
 - requests
 - numpy
 - pytest
-- pandas>=1.3.5,<=1.5.3
+- pandas>=2.0.0
 - pip
 - pip:
   - pyxylookup
-  - asyncio
-  - httpx

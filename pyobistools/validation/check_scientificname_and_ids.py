@@ -1,19 +1,22 @@
-import asyncio
+import logging
 import time
-
-import httpx
+import urllib.parse
+import warnings
 import numpy as np
 import pandas as pd
 import requests
+from numpy import random
 
+logger = logging.getLogger(__name__)
 from pyobistools.utils import (function_add_suffix, function_suffix_removal,
                                names_analyse, names_ids_analyse,
-                               names_taxons_ids_analyse)
+                               names_taxons_ids_analyse, pick_worms_record,
+                               pick_itis_record)
 
 NaN = np.nan
 
 
-def check_scientificname_and_ids(data, value, itis_usage=False):
+def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
     data = pd.DataFrame(data=data)
     data = data.rename(columns=str.lower)
     data_valid_scientific_name = data
@@ -31,96 +34,128 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
     liste_noms_pre_modif, liste_noms, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point = function_suffix_removal(
         data_valid_scientific_name)
 
-    # fonction async
-    timeout = httpx.Timeout(10)
+    for index, nom in enumerate(liste_noms):
+        #  print(nom)
+        list_of_list = function_add_suffix(
+            nom,
+            liste_noms_sans_suffix,
+            liste_noms_sp,
+            liste_noms_sp_point,
+            liste_noms_spp,
+            liste_noms_spp_point)
 
-    async def info_noms(index, nom):
-        async with httpx.AsyncClient(timeout=timeout) as client:
-            list_of_list = function_add_suffix(
-                nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-            # print(list_of_list)
-            # print(list_of_list.keys())
+        response = requests.get(
+            f"https://www.marinespecies.org/rest/AphiaRecordsByName/{urllib.parse.quote(urllib.parse.unquote(nom))}?like=false&marine_only=false&offset=1",
+            timeout=30)
 
-            response = await client.get(f"https://www.marinespecies.org/rest/AphiaRecordsByName/{nom}?like=false&marine_only=false&offset=1")
-
-            # si réponse positive de Worms, fait:
-            if response.status_code == 200:
+        if response.status_code == 200:
+            try:
+                response2 = response.json()
+                rec = None
+                if response2:
+                    rec = pick_worms_record(response2, name=nom, warn=warn)
                 for key in list_of_list:
-                    # print(list_of_list[key])
-                    response2 = response.json()
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'TaxonID'] = response2[0]['AphiaID']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Status'] = response2[0]['status']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Unacceptreason'] = response2[0]['unacceptreason']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Taxon_Rank'] = response2[0]['rank']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Valid_TaxonID'] = response2[0]['valid_AphiaID']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Valid_Name'] = response2[0]['valid_name']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'LSID'] = response2[0]['lsid']
-                    data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
-                                                   == list_of_list[key], 'Source'] = "Worms"
-                    print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                    if response2:
+                        if rec:
+                            mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                            data_valid_scientific_name.loc[mask, 'TaxonID'] = rec.get('AphiaID', '')
+                            data_valid_scientific_name.loc[mask, 'Status'] = rec.get('status', '')
+                            data_valid_scientific_name.loc[mask, 'Unacceptreason'] = rec.get(
+                                'unacceptreason', '')
+                            data_valid_scientific_name.loc[mask, 'Taxon_Rank'] = rec.get('rank', '')
+                            data_valid_scientific_name.loc[mask, 'Valid_TaxonID'] = rec.get(
+                                'valid_AphiaID', '')
+                            data_valid_scientific_name.loc[mask,
+                                                           'Valid_Name'] = rec.get('valid_name', '')
+                            data_valid_scientific_name.loc[mask, 'LSID'] = rec.get('lsid', '')
+                            data_valid_scientific_name.loc[mask, 'Source'] = "Worms"
+                            logger.info(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                        else:
+                            logger.info(
+                                f"{index} : {response.status_code}: Worms {list_of_list[key]} - No usable record")
+                    else:
+                        logger.info(
+                            f"{index} : {response.status_code}: Worms {list_of_list[key]} - Empty response")
 
-            # if empty answer from Worms, prepare table for Itis later on
-            if response.status_code == 204:
-                list_of_list = function_add_suffix(
-                    nom, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point)
-                for key in list_of_list:
+            except ValueError:
+                logger.error(f"JSON decode error for {nom}")
+
+            except Exception as e:
+                logger.error(f"Error processing response for {nom}: {e}")
+
+        # if empty answer from Worms, prepare table for Itis later on
+        elif response.status_code == 204:
+            for key in list_of_list:
+                logger.info(f"{index} : {response.status_code}: Worms {list_of_list[key]} - No content")
+
+                if itis_usage:
                     data_valid_scientific_name.loc[data_valid_scientific_name['scientificname']
                                                    == list_of_list[key], 'Source'] = "Itis"
-                    print(f"{index} : {response.status_code}: Worms {list_of_list[key]} ")
+                    if warn:
+                        warnings.warn(
+                            f"WoRMS returned no content for '{list_of_list[key]}'. Falling back to ITIS.",
+                            UserWarning,
+                            stacklevel=2,
+                        )
 
-    # definition of async calls sequence
+                    try:
+                        response3 = requests.get(
+                            "https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName",
+                            params={"srchKey": list_of_list[key]},
+                            timeout=30)
+                        if response3.status_code == 200:
+                            response4 = response3.json()
 
-    async def main(liste_noms):
-        task_list = []
-        for index, nom in enumerate(liste_noms):
-            task_list.append(info_noms(index, nom))
-        await asyncio.gather(*task_list)
+                            # entre les valeurs du serveur dans le tableau
+                            if response4.get(
+                                    'scientificNames') and response4['scientificNames'] != [None]:
+                                rec_itis = pick_itis_record(response4, list_of_list[key])
+                                if rec_itis:
+                                    tsn = rec_itis.get('tsn', '')
+                                    name = rec_itis.get('combinedName', '')
 
-    # call and timing of the async calls
-    start_time = time.monotonic()
-    asyncio.run(main(liste_noms))
-    end_time = time.monotonic()
+                                    mask = data_valid_scientific_name['scientificname'] == list_of_list[key]
+                                    data_valid_scientific_name.loc[mask, 'TaxonID'] = tsn
+                                    data_valid_scientific_name.loc[mask, 'Status'] = rec_itis.get(
+                                        'status', '')
+                                    data_valid_scientific_name.loc[mask, 'Unacceptreason'] = rec_itis.get(
+                                        'unacceptreason', '')
+                                    data_valid_scientific_name.loc[mask, 'Taxon_Rank'] = rec_itis.get(
+                                        'rank', '')
+                                    data_valid_scientific_name.loc[mask, 'Valid_TaxonID'] = tsn
+                                    data_valid_scientific_name.loc[mask, 'Valid_Name'] = name
+                                    data_valid_scientific_name.loc[mask,
+                                                                   'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + tsn
+                                    data_valid_scientific_name.loc[mask, 'Source'] = "Itis"
+                                    logger.info(
+                                        f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
+                                else:
+                                    logger.info(
+                                        f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - No usable record")
+                            else:
+                                logger.info(
+                                    f"{index} : {response3.status_code}: Itis  {list_of_list[key]} - Empty answer")
+                        else:
+                            logger.warning(f"{index} : {response3.status_code}: Itis  {list_of_list[key]}")
 
-    # for empty answers from WORMS, try ITIS if option is selected
-    if itis_usage:
-        s = requests.Session()
-        for row in data_valid_scientific_name.index:
-            if data_valid_scientific_name.loc[row, 'Source'] == 'Itis':
-                response3 = s.get(
-                    f"https://www.itis.gov/ITISWebService/jsonservice/searchByScientificName?srchKey={data_valid_scientific_name.loc[row, 'scientificname']}")
-                if response3.status_code == 200:
-                    response4 = response3.json()
+                    except ValueError:
+                        logger.error(f"JSON decode error for ITIS request for {list_of_list[key]}")
 
-                    # entre les valeurs du serveur dans le tableau
-                    if response4['scientificNames'] != [None]:
-                        #   for key in list_of_list:
-                        data_valid_scientific_name.loc[row,
-                                                       'TaxonID'] = response4['scientificNames'][0]['tsn']
-                        data_valid_scientific_name.loc[row,
-                                                       'Valid_TaxonID'] = response4['scientificNames'][0]['tsn']
-                        data_valid_scientific_name.loc[row,
-                                                       'Valid_Name'] = response4['scientificNames'][0]['combinedName']
-                        data_valid_scientific_name.loc[row, 'LSID'] = "urn:lsid:itis.gov:itis_tsn:" + \
-                            response4['scientificNames'][0]['tsn']
-                        print(
-                            f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+                    except Exception as e:
+                        logger.error(f"Error processing ITIS response for {list_of_list[key]}: {e}")
 
-                    else:
-                        print(
-                            f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']} - Empty answer")
+        else:
+            logger.warning(f"{index} : {response.status_code}: Worms {nom} - Error response")
 
-                else:
-                    print(
-                        f"{row} : {response3.status_code}: Itis {data_valid_scientific_name.loc[row, 'scientificname']}")
+        # delay bwt requests
+        time.sleep(round(random.uniform(.5, 1.5), 1))
 
-    data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
+    # if itis_usage:
+    try:
+        data_valid_scientific_name = data_valid_scientific_name.drop(['Source'], axis=1)
+
+    except KeyError:
+        pass
 
     # Analysis and tables preparation section
     if value == 'names':
@@ -136,5 +171,3 @@ def check_scientificname_and_ids(data, value, itis_usage=False):
         data_valid_scientific_name, data_cross_validation = names_taxons_ids_analyse(
             data_valid_scientific_name, data)
         return data_valid_scientific_name, data_cross_validation
-
-    print(f"Time Taken:{end_time - start_time}")

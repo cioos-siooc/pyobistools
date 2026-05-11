@@ -67,7 +67,8 @@ def check_onland(data, land=None, report=False, buffer=0, offline=False):
             asdataframe=True,
         )
         # gdf on_land needs to be a boolean series.
-        # multiply by the buffer amount, defaults to zero so right side evals zero without a buffer value
+        # multiply by the buffer amount, defaults to zero so right side evals zero
+        # without a buffer value
         gdf["on_land"] = shoredistance["shoredistance"] < (-1 * buffer)
     # Are we returning a report or the offending data?
     if report:
@@ -76,6 +77,7 @@ def check_onland(data, land=None, report=False, buffer=0, offline=False):
                 gdf["on_land"]
             ]
         else:   # the function returns an empty dataframe
-            return pd.DataFrame(index=data.index, columns=data.columns)  # return empty dataframe in the same shape, as per the R implementation
+            # return empty dataframe in the same shape, as per the R implementation
+            return pd.DataFrame(index=data.index, columns=data.columns)
     else:  # if we are not returning a report, return the offending rows themselves.
         return gdf[gdf["on_land"]]

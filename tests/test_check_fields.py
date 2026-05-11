@@ -1,6 +1,7 @@
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from pyobistools.validation.check_fields import check_fields
 
@@ -18,12 +19,56 @@ def test_check_fields_default():
         'locality': ["North Sea", "English Channel", "Flemish Banks"],
         'minimumDepthInMeters': ["10", "", "5"]})
     # required terms
-    correct_data = pd.DataFrame(data={
-        'field': ["basisOfRecord", "scientificNameID", "eventDate", "decimalLatitude", "decimalLongitude", "occurrenceStatus", "countryCode", "kingdom", "geodeticDatum", "scientificName", "scientificName"],
-        'level': ["error", "error", "error", "error", "error", "error", "error", "error", "error", "error", "error"],
-        'row': ['NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', 'NaN', '1', '2'],
-        'message': ["Required field basisOfRecord is missing", "Required field scientificNameID is missing", "Required field eventDate is missing", "Required field decimalLatitude is missing", "Required field decimalLongitude is missing", "Required field occurrenceStatus is missing", "Required field countryCode is missing", "Required field kingdom is missing", "Required field geodeticDatum is missing", 'Empty value for required field scientificName', 'Empty value for required field scientificName']
-    })
+    correct_data = pd.DataFrame(
+        data={
+            'field': [
+                "basisOfRecord",
+                "scientificNameID",
+                "eventDate",
+                "decimalLatitude",
+                "decimalLongitude",
+                "occurrenceStatus",
+                "countryCode",
+                "kingdom",
+                "geodeticDatum",
+                "scientificName",
+                "scientificName"],
+            'level': [
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error",
+                "error"],
+            'row': [
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                'NaN',
+                '1',
+                '2'],
+            'message': [
+                "Required field basisOfRecord is missing",
+                "Required field scientificNameID is missing",
+                "Required field eventDate is missing",
+                "Required field decimalLatitude is missing",
+                "Required field decimalLongitude is missing",
+                "Required field occurrenceStatus is missing",
+                "Required field countryCode is missing",
+                "Required field kingdom is missing",
+                "Required field geodeticDatum is missing",
+                'Empty value for required field scientificName',
+                'Empty value for required field scientificName']})
 
     # required terms & empty values
     error = check_fields(field_data)
@@ -101,3 +146,13 @@ def test_check_fields_extended_measurement_or_fact_extension():
     error = check_fields(
         field_data, analysis_type="extended_measurement_or_fact_extension", level="warning")
     assert len(error.index) == 1
+
+
+def test_check_fields_invalid_level():
+    field_data = pd.DataFrame({
+        'occurrenceID': ["1", "2", "3"],
+        'scientificName': ["Abra alba", "Buccinum", "Carcinus"],
+    })
+
+    with pytest.raises(ValueError):
+        check_fields(field_data, level="invalid")

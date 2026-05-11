@@ -5,9 +5,19 @@ check eventDate
 import pandas as pd
 
 
-data_nodate = pd.DataFrame({'scientificName': ["Abra alva", "Buccinum fusiforme", "Buccinum fusiforme", "Buccinum fusiforme", "ljkf hlqsdkf"]})
+data_nodate = pd.DataFrame({'scientificName': ["Abra alva",
+                                               "Buccinum fusiforme",
+                                               "Buccinum fusiforme",
+                                               "Buccinum fusiforme",
+                                               "ljkf hlqsdkf"]})
 
-data_goodformats = pd.DataFrame({'eventDate': ["2016", "2016-01", "2016-01-02", "2016-01-02 13:00", "2016-01-02T13:00", "2016-01-02 13:00:00/2016-01-02 14:00:00", "2016-01-02 13:00:00/14:00:00"]})
+data_goodformats = pd.DataFrame({'eventDate': ["2016",
+                                               "2016-01",
+                                               "2016-01-02",
+                                               "2016-01-02 13:00",
+                                               "2016-01-02T13:00",
+                                               "2016-01-02 13:00:00/2016-01-02 14:00:00",
+                                               "2016-01-02 13:00:00/14:00:00"]})
 
 data_badformats = pd.DataFrame({'eventDate': ["2016/01/02", "2016-01-02 13h00"]})
 

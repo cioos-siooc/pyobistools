@@ -6,9 +6,9 @@ from pyobistools import taxa
 
 def test_match_quick():
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ],
+        'thisisntaspecies',
+        'Mola mola'
+    ],
         quick=True
     )
     assert len(results) == 2
@@ -16,9 +16,9 @@ def test_match_quick():
 
 def test_match_all_with_details():
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ]
+        'thisisntaspecies',
+        'Mola mola'
+    ]
     )
     assert len(results) == 6
 
@@ -148,9 +148,9 @@ def test_search_worms():
     assert len(results) == 2
 
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ],
+        'thisisntaspecies',
+        'Mola mola'
+    ],
         order=['worms']
     )
     assert len(results) == 2
@@ -164,9 +164,9 @@ def test_search_itis():
     assert len(results) == 2
 
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ],
+        'thisisntaspecies',
+        'Mola mola'
+    ],
         order=['itis']
     )
     assert len(results) == 2
@@ -180,9 +180,9 @@ def test_search_obis():
     assert len(results) == 2
 
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ],
+        'thisisntaspecies',
+        'Mola mola'
+    ],
         order=['obis']
     )
     assert len(results) == 2
@@ -196,9 +196,9 @@ def test_search_two():
     assert len(results) == 2
 
     results = taxa.search([
-            'thisisntaspecies',
-            'Mola mola'
-        ],
+        'thisisntaspecies',
+        'Mola mola'
+    ],
         order=['worms', 'obis']
     )
     assert len(results) == 4
