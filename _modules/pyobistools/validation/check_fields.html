@@ -175,6 +175,8 @@
     <span class="p">],</span>
 <span class="p">}</span></div>
 
+
+
 <div class="viewcode-block" id="check_fields">
 <a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_fields">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_fields</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">analysis_type</span><span class="o">=</span><span class="s1">&#39;occurrence_core&#39;</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -191,27 +193,28 @@
     <span class="k">return</span> <span class="n">check_fields_generic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="p">)</span></div>
 
 
+
 <div class="viewcode-block" id="get_field_presence">
 <a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.get_field_presence">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">get_field_presence</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">):</span>
-    
+
     <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;warning&#39;</span><span class="p">:</span> 
+
+    <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;warning&#39;</span><span class="p">:</span>
         <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">dataframe_column_key</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataframe_column_key</span><span class="p">[</span><span class="s1">&#39;Required or recommended&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Recommended field&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span>
         <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">dataframe_column_key</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataframe_column_key</span><span class="p">[</span><span class="s1">&#39;Required or recommended&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Required field&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
+
     <span class="k">if</span> <span class="n">analysis_fields_presence</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
-        
+
     <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">NaN</span>
     <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">NaN</span>
-    <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">NaN</span> 
-    
+    <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">NaN</span>
+
     <span class="n">missing_mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data_columns_lower_case</span><span class="p">)</span>
     <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">analysis_fields_presence</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">missing_mask</span><span class="p">]</span>
-    
+
     <span class="k">if</span> <span class="n">analysis_fields_presence</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
 
@@ -219,9 +222,10 @@
     <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;Required field &#39;</span> <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;error&#39;</span> <span class="k">else</span> <span class="s1">&#39;Recommended field &#39;</span>
     <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">analysis_fields_presence</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; is missing&#39;</span>
     <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">analysis_fields_presence</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">analysis_fields_presence</span> </div>
+    <span class="k">return</span> <span class="n">analysis_fields_presence</span></div>
 
-    
+
+
 <div class="viewcode-block" id="check_case">
 <a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_case">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_case</span><span class="p">(</span><span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_normal_case</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">):</span>
@@ -229,7 +233,7 @@
     <span class="n">df_fields</span> <span class="o">=</span> <span class="n">dataframe_column_key</span><span class="p">[[</span><span class="s1">&#39;field&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
     <span class="n">mask_incorrect_case</span> <span class="o">=</span> <span class="n">df_fields</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data_columns_lower_case</span><span class="p">)</span> <span class="o">&amp;</span> \
-                          <span class="o">~</span><span class="n">df_fields</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data_columns_normal_case</span><span class="p">)</span>
+        <span class="o">~</span><span class="n">df_fields</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data_columns_normal_case</span><span class="p">)</span>
 
     <span class="n">result</span> <span class="o">=</span> <span class="n">df_fields</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_incorrect_case</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
@@ -243,17 +247,17 @@
         <span class="k">return</span> <span class="n">result</span></div>
 
 
+
 <div class="viewcode-block" id="check_na">
 <a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_na">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_na</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">,</span> <span class="n">data_columns_normal_case</span><span class="p">):</span>
 
-    
     <span class="n">data_clean</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
-        <span class="n">data_clean</span> <span class="o">=</span> <span class="n">data_clean</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">infer_objects</span><span class="p">()</span> <span class="c1">#This line will throw a warning, but we are following the recommended pattern </span>
-    
-    
+        <span class="c1"># This line will throw a warning, but we are following the recommended pattern</span>
+        <span class="n">data_clean</span> <span class="o">=</span> <span class="n">data_clean</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">infer_objects</span><span class="p">()</span>
+
     <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span>
         <span class="n">field_list</span> <span class="o">=</span> <span class="n">dataframe_column_key</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dataframe_column_key</span><span class="p">[</span><span class="s1">&#39;Required or recommended&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Required field&#39;</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;warning&#39;</span><span class="p">:</span>
@@ -262,7 +266,6 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">field_list</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">])</span>
 
-    
     <span class="n">field_list_lower</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">field_list</span><span class="p">]</span>
     <span class="n">existing_fields_lower</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">field_list_lower</span> <span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">data_columns_lower_case</span><span class="p">]</span>
 
@@ -287,7 +290,8 @@
 
     <span class="k">return</span> <span class="n">analysis_missing_values</span><span class="p">[[</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-    
+
+
 <div class="viewcode-block" id="check_fields_generic">
 <a class="viewcode-back" href="../../../api/pyobistools/validation/check_fields/index.html#pyobistools.validation.check_fields.check_fields_generic">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">check_fields_generic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">accepted_name_usage_id_check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -295,17 +299,15 @@
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;level must be &#39;error&#39; or &#39;warning&#39;, got &#39;</span><span class="si">{</span><span class="n">level</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
     <span class="n">data_columns_normal_case</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
     <span class="n">data_columns_lower_case</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-    
+
     <span class="n">analysis_missing_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">analysis_accepted_name_usage_id_check</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">analysis_case_check_fields</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">analysis_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-    
-    
-    <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">get_field_presence</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span><span class="n">data_columns_lower_case</span><span class="p">)</span>
+
+    <span class="n">analysis_fields_presence</span> <span class="o">=</span> <span class="n">get_field_presence</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">)</span>
 
     <span class="n">analysis_missing_values</span> <span class="o">=</span> <span class="n">check_na</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">,</span> <span class="n">data_columns_normal_case</span><span class="p">)</span>
-
 
     <span class="c1"># ACCEPTED_NAME_USAGE_ID_CHECK - IRRESPECTIVE OF CASE</span>
     <span class="k">if</span> <span class="n">accepted_name_usage_id_check</span><span class="p">:</span>
@@ -328,9 +330,9 @@
             <span class="n">analysis_accepted_name_usage_id_check</span> <span class="o">=</span> <span class="n">analysis_accepted_name_usage_id_check</span><span class="p">[</span><span class="n">analysis_accepted_name_usage_id_check</span><span class="p">[</span><span class="s2">&quot;row&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
                 <span class="n">index_of_filtered_data</span><span class="p">)]</span>
 
-    <span class="c1"># FIND FIELDS WITH INCORRECT CASE </span>
+    <span class="c1"># FIND FIELDS WITH INCORRECT CASE</span>
     <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;warning&#39;</span><span class="p">:</span>
-        <span class="n">analysis_case_check_fields</span> <span class="o">=</span> <span class="n">check_case</span><span class="p">(</span><span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_normal_case</span><span class="p">,</span><span class="n">data_columns_lower_case</span> <span class="p">)</span>
+        <span class="n">analysis_case_check_fields</span> <span class="o">=</span> <span class="n">check_case</span><span class="p">(</span><span class="n">dataframe_column_key</span><span class="p">,</span> <span class="n">data_columns_normal_case</span><span class="p">,</span> <span class="n">data_columns_lower_case</span><span class="p">)</span>
     <span class="c1"># ANALYSIS RESULTS MERGE</span>
     <span class="k">if</span> <span class="n">analysis_fields_presence</span><span class="o">.</span><span class="n">empty</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
         <span class="n">analysis_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">analysis_results</span><span class="p">,</span> <span class="n">analysis_fields_presence</span><span class="p">])</span>
