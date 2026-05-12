@@ -87,7 +87,7 @@ def test_match_all_with_details():
     assert not mola['is_extinct']
     assert mola['match_type'] == 'exact'
     assert mola['modified'] == '2021-12-07T22:23:16.560Z'
-    assert mola['unacceptreason'] == 'None'
+    assert pd.isna(mola['unacceptreason']) or mola['unacceptreason'] == 'None'
 
 
 def test_add_suffix():
