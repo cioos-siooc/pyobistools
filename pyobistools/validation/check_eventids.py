@@ -5,13 +5,12 @@ NaN = np.nan
 
 
 def check_eventids(data):
-    NaN = np.nan
     data = pd.DataFrame(data=data)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", FutureWarning)
-        data = data.replace('', np.nan).infer_objects() #This line will throw a warning, but we are following the recommended pattern 
-    
-    
+        # This line will throw a warning, but we are following the recommended pattern
+        data = data.replace('', np.nan).infer_objects()
+
     data.rename(columns=str.lower, inplace=True)
     column_names = list(data.columns)
 

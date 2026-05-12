@@ -7,11 +7,12 @@ import pandas as pd
 import requests
 from numpy import random
 
-logger = logging.getLogger(__name__)
 from pyobistools.utils import (function_add_suffix, function_suffix_removal,
                                names_analyse, names_ids_analyse,
                                names_taxons_ids_analyse, pick_worms_record,
                                pick_itis_record)
+
+logger = logging.getLogger(__name__)
 
 NaN = np.nan
 
