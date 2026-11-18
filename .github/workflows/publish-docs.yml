@@ -1,24 +1,43 @@
 name: Build and Publish Sphinx Docs
 
+# no permissions by default
+permissions: {}
+
 on:
+  pull_request:
   push:
-    branches: [main]
+    branches:
+      - main
+  release:
+    types:
+      - published
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-    - uses: actions/setup-python@v2
-    - uses: actions/checkout@master
+
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
       with:
         fetch-depth: 0
+        persist-credentials: false
+
+    - name: Set up Python
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+      with:
+        python-version: "3.x"
+
     - name: Build and Commit
-      uses: sphinx-notes/pages@v2
+      uses: sphinx-notes/pages@3b962c125b2db7b1f5194d949873fa46d6101d0f  # v3.7
       with:
         documentation_path: ./docs/source
         requirements_path: ./docs/requirements.txt
+
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@881a6320fdb16eb5318c5054f31c218aec2b324c  #v1.3.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
