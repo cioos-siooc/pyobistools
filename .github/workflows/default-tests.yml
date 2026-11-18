@@ -34,4 +34,4 @@ jobs:
 
     - name: Tests
       run: |
-        pytest --disable-warnings
+        python -m pytest --disable-warnings
