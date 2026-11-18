@@ -27,7 +27,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install erddapy
+    - name: Install library
       run: |
         python -m pip install --group dev
         python -m pip install -e .[extras]
