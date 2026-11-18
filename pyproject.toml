@@ -33,7 +33,10 @@ urls.repository = "https://github.com/cioos-siooc/pyobistools"
 
 [dependency-groups]
 dev = [
+  "ckanapi",
+  "plotly",
   "pytest",
+  "requests",
 ]
 
 [tool.setuptools]
