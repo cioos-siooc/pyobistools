@@ -7,7 +7,7 @@ name = "pyobistools"
 description = "Python tools for quality-controlling data for publishing to OBIS"
 readme = "README.md"
 license = "BSD-3-Clause"
-license-files = { file = "LICENSE" }
+license-files = [ "LICENSE" ]
 requires-python = ">=3.11"
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
