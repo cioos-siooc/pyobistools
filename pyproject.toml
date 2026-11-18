@@ -26,6 +26,7 @@ optional-dependencies.extras = [
   "cartopy",
   "geopandas",
   "pyxylookup",
+  "shapely",
 ]
 urls.documentation = "https://ioos.github.io/pyobistools"
 urls.homepage = "https://github.com/ioos/pyobistools"
