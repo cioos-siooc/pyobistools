@@ -1,0 +1,46 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [ "setuptools>=42", "setuptools-scm" ]
+
+[project]
+name = "pyobistools"
+description = "Python tools for quality-controlling data for publishing to OBIS"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = { file = "LICENSE" }
+requires-python = ">=3.11"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
+]
+dynamic = [ "version" ]
+dependencies = [
+  "pandas>=2,<3",
+  "pyworms>=0.2,<1",
+]
+optional-dependencies.extras = [
+  "cartopy",
+  "geopandas",
+  "pyxylookup",
+]
+urls.documentation = "https://ioos.github.io/pyobistools"
+urls.homepage = "https://github.com/ioos/pyobistools"
+urls.repository = "https://github.com/cioos-siooc/pyobistools"
+
+[dependency-groups]
+dev = [
+  "pytest",
+]
+
+[tool.setuptools]
+packages = [ "pyobistools" ]
+include-package-data = true
+
+[tool.setuptools_scm]
+tag_regex = "^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$"
+write_to = "pyobistools/_version.py"
+write_to_template = "__version__ = '{version}'"
