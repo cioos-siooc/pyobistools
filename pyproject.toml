@@ -19,8 +19,8 @@ classifiers = [
 ]
 dynamic = [ "version" ]
 dependencies = [
-  "pandas>=2,<3",
-  "pyworms>=0.2,<1",
+  "pandas>=3",
+  "pyworms>=0.4",
 ]
 optional-dependencies.extras = [
   "cartopy",
