@@ -13,7 +13,6 @@ except ImportError as err:
     raise ImportError(msg) from err
 
 
-
 def check_onland(data, land=None, report=False, buffer=0, offline=False):
     """
     Check which points are likely to be located on land
