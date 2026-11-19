@@ -234,8 +234,8 @@ def names_analyse(data_valid_scientific_name):
         data_valid_scientific_name['Valid_Name'].str.lower())
 
     # classer les valeurs par validité
-    data_valid_scientific_name.sort_values(
-        by=['Exact_Match', 'scientificname'], ascending=True, inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.sort_values(
+        by=['Exact_Match', 'scientificname'], ascending=True)
 
     columns = [
         ('Dataset Values',

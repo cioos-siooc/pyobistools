@@ -1,13 +1,16 @@
 # Problems with importing the obisqc solution, use pyxylookup directly.
-import pyxylookup as xy
 import warnings
-import geopandas as gpd
 import pandas as pd
 
-# alternate idea for shapefiles from Bio Mobilization workshop module 6 example
-import cartopy.io.shapereader as shpreader
-from shapely.ops import unary_union
-from shapely.prepared import prep
+try:
+    import pyxylookup as xy
+    import geopandas as gpd
+    import cartopy.io.shapereader as shpreader
+    from shapely.ops import unary_union
+    from shapely.prepared import prep
+except ImportError as err:
+    msg = "`check_onland` require the 'extras' dependencies."
+    raise ImportError(msg) from err
 
 
 def check_onland(data, land=None, report=False, buffer=0, offline=False):

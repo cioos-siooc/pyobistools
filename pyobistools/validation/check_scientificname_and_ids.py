@@ -28,8 +28,8 @@ def check_scientificname_and_ids(data, value, itis_usage=False, warn=True):
     data_valid_scientific_name = data_valid_scientific_name.reindex(columns=header_list)
     data_valid_scientific_name = data_valid_scientific_name.drop_duplicates(subset=[
                                                                             "scientificname"])
-    data_valid_scientific_name.reset_index(drop=True, inplace=True)
-    data_valid_scientific_name.replace(NaN, "", inplace=True)
+    data_valid_scientific_name = data_valid_scientific_name.reset_index(drop=True)
+    data_valid_scientific_name = data_valid_scientific_name.replace(NaN, "")
 
     # get rid of sp, sp. and spp. suffix because Worms database does not support them
     liste_noms_pre_modif, liste_noms, liste_noms_sans_suffix, liste_noms_sp, liste_noms_sp_point, liste_noms_spp, liste_noms_spp_point = function_suffix_removal(
